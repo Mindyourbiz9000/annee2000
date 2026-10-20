@@ -11,12 +11,18 @@ import { fold, foreignScript } from './lib/video-meta.mjs';
 import { search } from './lib/youtube.mjs';
 
 const ROOT = new URL('../', import.meta.url).pathname;
-const CACHE = ROOT + 'data/videos/music-auto.json';
+const FULL_CACHE = ROOT + 'data/videos/music-auto.json';
+const CLIPS_CACHE = ROOT + 'data/videos/music-clips.json';
 const MAX = { clip: 3, live: 12, version: 6, react: 6, coulisses: 6, paroles: 3, reprise: 6 };
 
 const args = process.argv.slice(2);
 const only = args.includes('--only') ? new Set(args[args.indexOf('--only') + 1].split(',')) : null;
 const redo = args.includes('--redo');
+// --clips-only : passe rapide, une seule recherche par tube pour trouver le clip (pour le blind test).
+// Elle tourne à côté de la passe complète, avec son propre fichier, et ne traite que les tubes sans vidéo.
+const clipsOnly = args.includes('--clips-only');
+const CACHE = clipsOnly ? CLIPS_CACHE : FULL_CACHE;
+const readJson = async (f) => { try { return JSON.parse(await readFile(f, 'utf8')); } catch { return {}; } };
 
 const norm = (s = '') => fold(s).replace(/[^a-z0-9]+/g, ' ').trim();
 const STOP = new Set(['le', 'la', 'les', 'l', 'un', 'une', 'des', 'de', 'du', 'd', 'et', 'a', 'en', 'au', 'the', 'feat', 'featuring', 'ft', 'and', 'of', 'me', 'my', 'je', 'tu', 'il', 'on', 'it']);
@@ -52,14 +58,16 @@ function kindOf(hit, v) {
 
 async function main() {
   const data = JSON.parse(await readFile(ROOT + 'data/hits.json', 'utf8'));
-  let cache = {};
-  try { cache = JSON.parse(await readFile(CACHE, 'utf8')); } catch {}
-  const queue = args.includes('--merge-only') ? [] : data.hits.filter((h) => (only ? only.has(h.id) : redo || !cache[h.id])).sort((a, b) => b.score - a.score);
+  const cache = await readJson(CACHE);
+  const full = clipsOnly ? await readJson(FULL_CACHE) : cache;
+  const queue = args.includes('--merge-only') ? [] : data.hits
+    .filter((h) => (only ? only.has(h.id) : redo || (!cache[h.id] && !full[h.id]?.length)))
+    .sort((a, b) => b.score - a.score);
 
   let n = 0;
   for (const h of queue) {
     const a = mainArtist(h.artist);
-    const queries = [
+    const queries = clipsOnly ? [{ q: `${a} ${h.title} clip officiel`, pages: 1 }] : [
       { q: `${a} ${h.title} clip officiel`, pages: 1 },
       { q: `${a} ${h.title} live ${h.year}`, pages: 2 },
       { q: `${a} ${h.title} réaction`, pages: 1 },
@@ -91,7 +99,9 @@ async function main() {
 
   // On relit hits.json : le catalogue a pu être reconstruit pendant la recherche.
   const fresh = JSON.parse(await readFile(ROOT + 'data/hits.json', 'utf8'));
-  for (const h of fresh.hits) h.videos = cache[h.id] || h.videos || [];
+  // La passe complète l'emporte sur la passe rapide (clip seul).
+  const [fullNow, clipsNow] = [await readJson(FULL_CACHE), await readJson(CLIPS_CACHE)];
+  for (const h of fresh.hits) h.videos = (fullNow[h.id]?.length ? fullNow[h.id] : clipsNow[h.id]) || h.videos || [];
   data.hits = fresh.hits;
   await writeFile(ROOT + 'data/hits.json', JSON.stringify(fresh, null, 1));
   console.log(`${data.hits.filter((h) => h.videos.length).length}/${data.hits.length} tubes avec vidéos.`);

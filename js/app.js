@@ -737,7 +737,7 @@ function renderMusicTimeline() {
 }
 
 /* ---------- Blind test ---------- */
-const bt = { duration: 10, level: 'normal', year: 0, genre: '', rounds: 10, queue: [], i: 0, score: 0, results: [], player: null, timer: null, revealed: false };
+const bt = { broken: new Set(), guard: null, duration: 10, level: 'normal', year: 0, genre: '', rounds: 10, queue: [], i: 0, score: 0, results: [], player: null, timer: null, revealed: false };
 const BT_LEVELS = { facile: ['Facile', 150], normal: ['Normal', 450], expert: ['Expert', Infinity] };
 
 // Le lecteur YouTube programmable (API IFrame), chargé une seule fois à la demande.
@@ -754,15 +754,52 @@ function loadYouTubeApi() {
   return ytReady;
 }
 
-const clipOf = (h) => h.videos?.find((v) => v.kind === 'clip');
-const words = (s) => fold(s.replace(/\(.*?\)|\[.*?\]/g, '')).replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((w) => w.length > 1 && !['le', 'la', 'les', 'de', 'des', 'du', 'un', 'une', 'et', 'the', 'feat', 'featuring'].includes(w));
-// Une réponse est bonne si elle contient l'essentiel des mots du titre (ou de l'artiste).
-function guessMatches(answer, target) {
-  const a = new Set(words(answer));
-  const t = words(target);
-  if (!t.length || !a.size) return false;
-  const found = t.filter((w) => a.has(w)).length;
-  return found / t.length >= 0.6;
+const clipOf = (h) => h.videos?.find((v) => v.kind === 'clip' && !bt.broken.has(v.youtubeId));
+
+// Comparaison tolérante des réponses : fautes de frappe, singulier/pluriel, y/i, lettres doublées…
+const BT_STOP = new Set(['le', 'la', 'les', 'l', 'de', 'des', 'du', 'd', 'un', 'une', 'et', 'the', 'a', 'an', 'it', 's', 'i', 'feat', 'featuring', 'ft', 'of', 'and', 'to', 'in', 'on', 'my', 'me', 'je', 'tu', 'il', 'en']);
+const btNorm = (w) => w.replace(/ph/g, 'f').replace(/y/g, 'i').replace(/(.)\1+/g, '$1');
+const btWords = (s) => fold(s.replace(/\(.*?\)|\[.*?\]/g, ''))
+  .replace(/['’]/g, ' ').replace(/[^a-z0-9 ]/g, ' ').split(/\s+/)
+  .filter((w) => w && !BT_STOP.has(w)).map(btNorm);
+function levenshtein(a, b) {
+  if (Math.abs(a.length - b.length) > 2) return 3;
+  const row = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    let prev = row[0];
+    row[0] = i;
+    for (let j = 1; j <= b.length; j++) {
+      const cur = row[j];
+      row[j] = Math.min(row[j] + 1, row[j - 1] + 1, prev + (a[i - 1] === b[j - 1] ? 0 : 1));
+      prev = cur;
+    }
+  }
+  return row[b.length];
+}
+function sameWord(a, b) {
+  if (a === b) return true;
+  const sing = (w) => w.replace(/(s|x)$/, '');
+  if (sing(a) === sing(b)) return true;
+  const len = Math.min(a.length, b.length);
+  if (len < 3) return false;
+  return levenshtein(a, b) <= (len >= 7 ? 2 : 1);
+}
+const found = (answer, target) => target.filter((t) => answer.some((a) => sameWord(a, t)));
+// Titre : la moitié des mots importants, dont au moins un de 4 lettres ou plus.
+function titleMatches(answer, title) {
+  const a = btWords(answer);
+  const t = btWords(title);
+  if (!a.length || !t.length) return false;
+  const ok = found(a, t);
+  return ok.length / t.length >= 0.5 && ok.some((w) => w.length >= 4 || t.length === 1);
+}
+// Artiste : un mot de 4 lettres ou plus suffit (le nom de famille), sinon le nom complet.
+function artistMatches(answer, artist) {
+  const a = btWords(answer);
+  const t = btWords(artist);
+  if (!a.length || !t.length) return false;
+  const ok = found(a, t);
+  return ok.some((w) => w.length >= 4) || ok.length === t.length;
 }
 
 function renderBlindSetup() {
@@ -827,8 +864,12 @@ function startBlindGame() {
 
 function renderBlindRound() {
   clearTimeout(bt.timer);
-  if (bt.results.length >= bt.rounds || bt.i >= bt.queue.length) return renderBlindEnd();
-  const h = bt.queue[bt.i];
+  clearTimeout(bt.guard);
+  if (bt.results.length >= bt.rounds) return renderBlindEnd();
+  // Tube suivant de la file qui a encore un clip lisible.
+  while (bt.i < bt.queue.length && !clipOf(bt.queue[bt.i])) bt.i += 1;
+  if (bt.i >= bt.queue.length) return renderBlindEnd();
+  let h = bt.queue[bt.i];
   bt.revealed = false;
   $view.innerHTML = `
     <section class="blind">
@@ -850,7 +891,8 @@ function renderBlindRound() {
       </div>
       <div class="blind__panel panel">
         <div class="actions" id="bt-listen">
-          <button class="gel gel--zap" type="button" id="bt-play">▶ Écouter l'extrait (${bt.duration} s)</button>
+          <button class="gel gel--zap" type="button" id="bt-play" hidden>▶ Écouter l'extrait</button>
+          <button class="gel gel--lime" type="button" id="bt-more" hidden>⏩ 10 secondes de plus</button>
           <button class="gel gel--ghost" type="button" id="bt-replay" hidden>🔁 Réécouter</button>
         </div>
         <form class="search" id="bt-form" autocomplete="off">
@@ -863,64 +905,123 @@ function renderBlindRound() {
       </div>
     </section>`;
 
-  const status = (txt) => { document.getElementById('bt-count').textContent = txt; };
-  status('Prêt ?');
-  const playExtract = async () => {
-    status('Chargement…');
-    const YT = await loadYouTubeApi();
-    const id = clipOf(h).youtubeId;
-    const onState = (e) => {
-      if (e.data === YT.PlayerState.PLAYING && !bt.revealed) {
-        clearTimeout(bt.timer);
-        let left = bt.duration;
+  const $ = (id) => document.getElementById(id);
+  const status = (txt) => { $('bt-count').textContent = txt; };
+  const show = (id, on) => { $(id).hidden = !on; };
+  let playing = false;
+  let ready = false;
+  let pending = 0; // secondes à écouter au prochain démarrage de la lecture
+
+  // Écoute pendant `seconds` à partir de la position actuelle, puis pause.
+  const countdown = (seconds) => {
+    clearTimeout(bt.timer);
+    let left = seconds;
+    status(`${left}`);
+    show('bt-more', false);
+    show('bt-replay', false);
+    const tick = () => {
+      if (bt.revealed) return;
+      left -= 1;
+      if (left <= 0) {
+        bt.player?.pauseVideo?.();
+        status('À toi !');
+        show('bt-more', true);
+        show('bt-replay', true);
+      } else {
         status(`${left}`);
-        const tick = () => {
-          left -= 1;
-          if (bt.revealed) return;
-          if (left <= 0) {
-            bt.player.pauseVideo();
-            status('À toi !');
-            document.getElementById('bt-replay').hidden = false;
-          } else {
-            status(`${left}`);
-            bt.timer = setTimeout(tick, 1000);
-          }
-        };
         bt.timer = setTimeout(tick, 1000);
       }
     };
-    const onError = () => {
-      // Vidéo non lisible ici : on passe au tube suivant sans compter la manche.
-      status('Extrait indisponible, on passe au suivant…');
-      bt.i += 1;
-      setTimeout(renderBlindRound, 1200);
+    bt.timer = setTimeout(tick, 1000);
+  };
+  const listenFor = (seconds, fromStart) => {
+    pending = seconds;
+    if (fromStart) bt.player?.seekTo?.(0, true);
+    bt.player?.playVideo?.();
+  };
+
+  // Extrait en panne : on note la vidéo et on passe au tube suivant, sans changer de manche.
+  const swapSong = () => {
+    clearTimeout(bt.guard);
+    clearTimeout(bt.timer);
+    if (bt.revealed) return;
+    const c = clipOf(h);
+    if (c) bt.broken.add(c.youtubeId);
+    status('Extrait indisponible, on change de tube…');
+    bt.i += 1;
+    while (bt.i < bt.queue.length && !clipOf(bt.queue[bt.i])) bt.i += 1;
+    if (bt.i >= bt.queue.length) return renderBlindEnd();
+    h = bt.queue[bt.i];
+    setTimeout(() => start(), 600);
+  };
+
+  const start = async () => {
+    status('Chargement…');
+    playing = false;
+    ready = false;
+    show('bt-play', false);
+    const YT = await loadYouTubeApi();
+    if (bt.revealed) return;
+    const id = clipOf(h).youtubeId;
+    pending = bt.duration;
+    const onState = (e) => {
+      if (e.data === YT.PlayerState.PLAYING && !bt.revealed) {
+        playing = true;
+        clearTimeout(bt.guard);
+        show('bt-play', false);
+        if (pending) {
+          countdown(pending);
+          pending = 0;
+        }
+      }
     };
-    // Un lecteur neuf à chaque manche (l'écran est redessiné entre deux manches).
     try { bt.player?.destroy?.(); } catch {}
     bt.player = new YT.Player('bt-player', {
       videoId: id,
       playerVars: { autoplay: 1, controls: 0, disablekb: 1, modestbranding: 1, rel: 0, playsinline: 1, start: 0 },
-      events: { onReady: (e) => e.target.playVideo(), onStateChange: onState, onError },
+      events: {
+        onReady: (e) => {
+          ready = true;
+          clearTimeout(bt.guard);
+          e.target.playVideo();
+          // Lecture automatique bloquée par le navigateur : on propose le bouton.
+          bt.guard = setTimeout(() => {
+            if (playing || bt.revealed) return;
+            const st = bt.player?.getPlayerState?.();
+            if (st === YT.PlayerState.BUFFERING) {
+              bt.guard = setTimeout(() => { if (!playing) swapSong(); }, 8000);
+              return;
+            }
+            status('Appuie sur ▶ pour écouter');
+            show('bt-play', true);
+            bt.guard = setTimeout(() => { if (!playing && $('bt-play')?.hidden) swapSong(); }, 15000);
+          }, 4000);
+        },
+        onStateChange: onState,
+        onError: swapSong,
+      },
     });
+    // Le lecteur ne se charge pas du tout : autre tube.
+    bt.guard = setTimeout(() => { if (!ready && !playing) swapSong(); }, 12000);
   };
-  document.getElementById('bt-play').addEventListener('click', (e) => {
-    e.target.hidden = true;
-    playExtract();
-    document.getElementById('bt-guess').focus();
+
+  $('bt-play').addEventListener('click', () => {
+    show('bt-play', false);
+    listenFor(bt.duration, true);
   });
-  document.getElementById('bt-replay').addEventListener('click', () => {
-    bt.player?.seekTo(0, true);
-    bt.player?.playVideo();
-  });
-  document.getElementById('bt-form').addEventListener('submit', (e) => {
+  $('bt-more').addEventListener('click', () => listenFor(10, false));
+  $('bt-replay').addEventListener('click', () => listenFor(bt.duration, true));
+  $('bt-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    const g = document.getElementById('bt-guess').value;
+    const g = $('bt-guess').value;
     if (!g.trim()) return;
-    const title = guessMatches(g, h.title);
-    const artist = guessMatches(g, mainArtistOf(h.artist));
+    const title = titleMatches(g, h.title);
+    const artist = artistMatches(g, mainArtistOf(h.artist)) || artistMatches(g, h.artist);
     revealBlind(h, title ? 2 : artist ? 1 : 0, g);
   });
-  document.getElementById('bt-giveup').addEventListener('click', () => revealBlind(h, 0, ''));
+  $('bt-giveup').addEventListener('click', () => revealBlind(h, 0, ''));
+  $('bt-guess').focus();
+  start();
 }
 
 const mainArtistOf = (a) => a.split(/\s+(?:featuring|feat\.?|ft\.?|et|&|avec|vs\.?|x)\s+|\s*[/,]\s*/i)[0];
@@ -929,6 +1030,7 @@ function revealBlind(h, points, guess) {
   if (bt.revealed) return;
   bt.revealed = true;
   clearTimeout(bt.timer);
+  clearTimeout(bt.guard);
   bt.score += points;
   bt.results.push({ h, points, guess });
   document.getElementById('bt-cover').classList.add('is-gone');
