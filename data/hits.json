@@ -700,6 +700,15 @@
      "source": "auto"
     },
     {
+     "youtubeId": "wgE0QH3-lzI",
+     "title": "Garou interprète “​​Seul”  - C à vous - 11/04/2022",
+     "kind": "live",
+     "channelName": "C à vous - France Télévisions",
+     "seconds": 150,
+     "year": 2022,
+     "source": "auto"
+    },
+    {
      "youtubeId": "2Gmw-1pZmak",
      "title": "Garou - Seul en live dans le Grand Studio RTL - RTL - RTL",
      "kind": "live",
@@ -736,15 +745,6 @@
      "source": "auto"
     },
     {
-     "youtubeId": "M92qQVt-4d0",
-     "title": "LA CHANSON PRÉFÉRÉE DE MON ADOLESCENCE : « SEUL » DE GAROU 💕",
-     "kind": "live",
-     "channelName": "CHRIS REACTIONS",
-     "seconds": 456,
-     "year": null,
-     "source": "auto"
-    },
-    {
      "youtubeId": "R3jDPgpUN9k",
      "title": "Garou - Seul (Official Audio)",
      "kind": "version",
@@ -772,15 +772,6 @@
      "source": "auto"
     },
     {
-     "youtubeId": "wgE0QH3-lzI",
-     "title": "Garou interprète “​​Seul”  - C à vous - 11/04/2022",
-     "kind": "version",
-     "channelName": "C à vous - France Télévisions",
-     "seconds": 150,
-     "year": 2022,
-     "source": "auto"
-    },
-    {
      "youtubeId": "1zUwQTLhSVY",
      "title": "Garou - Seul - Quebec 2008",
      "kind": "version",
@@ -796,6 +787,24 @@
      "channelName": "Garou Fans Brazil",
      "seconds": 340,
      "year": 2008,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "NptYx2PPWJU",
+     "title": "Garou - Seul - 2014",
+     "kind": "version",
+     "channelName": "Garou Fans Brazil",
+     "seconds": 268,
+     "year": 2014,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "M92qQVt-4d0",
+     "title": "LA CHANSON PRÉFÉRÉE DE MON ADOLESCENCE : « SEUL » DE GAROU 💕",
+     "kind": "react",
+     "channelName": "CHRIS REACTIONS",
+     "seconds": 456,
+     "year": null,
      "source": "auto"
     },
     {
@@ -856,7 +865,71 @@
    "description": "La Musique est une chanson interprétée par la chanteuse française Nicoletta en 1967. Il s'agit d'une adaptation d'une chanson américaine, Angelica, écrite et composée par Cynthia Weil et Barry Mann et interprétée par ce dernier en 1966. Les paroles en français sont signées Ann Grégory.",
    "wikipedia": "https://fr.wikipedia.org/wiki/La_Musique_(chanson)",
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "UFfWHGO52d4",
+     "title": "Star Academy 1 La Musique (clip officiel HD)",
+     "kind": "live",
+     "channelName": "Clip Introuvable",
+     "seconds": 204,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "23AvPb7RkXA",
+     "title": "Star Academy 1 - La Musique \"LIVE\" HQ",
+     "kind": "live",
+     "channelName": "STAR AC' lover",
+     "seconds": 191,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "xBn1rhoNYoE",
+     "title": "Star Academy 1   La Musique Live Repet   20 Ans Star Ac 1",
+     "kind": "live",
+     "channelName": "  label aurelien  musique officielle",
+     "seconds": 201,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "eqpv7cscnYc",
+     "title": "TF1 : STAR ACADEMY 1, LA MUSIQUE INTRO PRIME (2001)",
+     "kind": "live",
+     "channelName": "Valentino Palumbo",
+     "seconds": 141,
+     "year": 2001,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "laz__Xx7Z14",
+     "title": "Star Academy 1 - La Musique CLIP STUDIO [HD]",
+     "kind": "live",
+     "channelName": "TopKitsch ",
+     "seconds": 191,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "0Zr_kkijt38",
+     "title": "Star Academy 1 - La Musique 1ère Prestation Prime [HD]",
+     "kind": "live",
+     "channelName": "TopKitsch ",
+     "seconds": 224,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "7wwZWMQ4cCQ",
+     "title": "Star Academy 1 (2001) 'La Musique (Angelica)' - Lyrics/Paroles",
+     "kind": "paroles",
+     "channelName": "MoonLyrics",
+     "seconds": 203,
+     "year": 2001,
+     "source": "auto"
+    }
+   ],
    "score": 520
   },
   {
@@ -1258,7 +1331,116 @@
    "description": "",
    "wikipedia": null,
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "eR4R336tB2w",
+     "title": "Bratisla Boys - Stach Stach (Clip Officiel)",
+     "kind": "clip",
+     "channelName": "Daftworld",
+     "seconds": 197,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "jBIQt43S6rU",
+     "title": "Bratisla Boys -Stach Stach (Clip officiel)",
+     "kind": "clip",
+     "channelName": "chris bouster",
+     "seconds": 161,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "0mv7ljo9x0g",
+     "title": "Bratisla Boys - Stach Stach",
+     "kind": "version",
+     "channelName": "Pitisburcio",
+     "seconds": 200,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "dguwagsajok",
+     "title": "Bratisla Boys - Stach Stach HD",
+     "kind": "version",
+     "channelName": "FAT TV",
+     "seconds": 200,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Ng0kNjnUYwQ",
+     "title": "Michael Youn - Bratisla Boys - Stach Stach Video.mp4",
+     "kind": "version",
+     "channelName": "anonyme404",
+     "seconds": 396,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "GyHHhBVM6Hs",
+     "title": "#NOPLP Leslie \"Stach Stach\" (Bratisla Boys) (1er Avril 2020)",
+     "kind": "version",
+     "channelName": "Nagui",
+     "seconds": 166,
+     "year": 2020,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "kglYrjXPXTE",
+     "title": "Bratisla Boys - Stach Stach (Edit Long) [Audio HQ]",
+     "kind": "version",
+     "channelName": "GoldenMusic",
+     "seconds": 197,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "6ZYGQFWmkaE",
+     "title": "Stach Stach (Bratisla Boys)",
+     "kind": "version",
+     "channelName": "Estelle BATO",
+     "seconds": 167,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "AVJoloSeFIg",
+     "title": "Première réaction des Bratisla Boys : Stach Stach (WTF ?!?) | Réaction de Dereck",
+     "kind": "react",
+     "channelName": "Dereck Reacts",
+     "seconds": 454,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "2j-KrA0KYyU",
+     "title": "BRATISLA BOYS - STACH STACH (@mespetitskaraokes)",
+     "kind": "paroles",
+     "channelName": "Mes Petits Karaokes",
+     "seconds": 195,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "T7G7UUC46YA",
+     "title": "BIO * SOIREE ENTREPRISE - LES BRATISLA BOYS STACH STACH (LIVE 2007).wmv",
+     "kind": "reprise",
+     "channelName": "bioooooooooooooo",
+     "seconds": 210,
+     "year": 2007,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "EbADkhuNl9E",
+     "title": "Stach stach (Bratisla Boys) cover - Paul Dubrowski",
+     "kind": "reprise",
+     "channelName": "Paul Dubrowski",
+     "seconds": 152,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 525
   },
   {
@@ -1829,7 +2011,233 @@
    "description": "Hey oh est une chanson du duo nantais Tragédie en septembre 2003. Il s'agit du premier single extrait de leur premier album studio Tragédie (2003). La chanson a rencontré un grand succès en France et en Belgique (Wallonie), atteignant la première place dans ces deux pays francophones.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Hey_oh",
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "ROqfklvWDAk",
+     "title": "Tragédie - Hey Oh (Clip Officiel)",
+     "kind": "clip",
+     "channelName": "100% Chanson Française",
+     "seconds": 213,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "XIVT2SFWZHE",
+     "title": "Tragédie - Hey Oh | Clip Officiel | Groupe Tragédie",
+     "kind": "clip",
+     "channelName": "Tragédie Officiel",
+     "seconds": 215,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "NYbNhTPpQ3I",
+     "title": "TRAGÉDIE 💣 : POURQUOI ILS ONT DISPARUS  🇫🇷 ? ( Vitaa, Hey Oh)😲",
+     "kind": "live",
+     "channelName": "Musicfeelings tv",
+     "seconds": 1794,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "XgXcOnR_Xms",
+     "title": "Live NRJ - Tragédie \"Hey Oh\"",
+     "kind": "live",
+     "channelName": "NRJ Belgique",
+     "seconds": 227,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "uKLMcdE9_TQ",
+     "title": "Génération Rap & RnB - Tragédie - (Sexy Pour Moi/Hey Oh)_HD 60fps",
+     "kind": "live",
+     "channelName": "Leg3nd97",
+     "seconds": 602,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "4xf1HubjuXQ",
+     "title": "Tragedie - Hey Oh Live",
+     "kind": "live",
+     "channelName": "Wev Arcanam",
+     "seconds": 286,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "gZZUaazHqP0",
+     "title": "Tragédie - Hey Oh (Part.1) - Concert De La Pentecôte D'Alizay (20/05/2018)",
+     "kind": "live",
+     "channelName": "Guillaume CELLIER (ZECKO)",
+     "seconds": 236,
+     "year": 2018,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "5CG9pW21VaY",
+     "title": "18 Tragédie - Hey Oh (LIVE) (320 Kbps)",
+     "kind": "live",
+     "channelName": "Músicas Raras",
+     "seconds": 346,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "rQRBFhTektY",
+     "title": "Tragédie - Hey Oh (LIVE) [Génération Rap & R&B] DVD",
+     "kind": "live",
+     "channelName": "América • Songs",
+     "seconds": 263,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "YvCzpGwOuAg",
+     "title": "Tragédie - Hey Oh (LIVE 4) [TV]",
+     "kind": "live",
+     "channelName": "América • Songs",
+     "seconds": 184,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "d70xqNee-qk",
+     "title": "Un Américain écoute du FRENCH RNB 🇫🇷  | Tragédie - Hey Oh",
+     "kind": "live",
+     "channelName": "No Tatts",
+     "seconds": 502,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "uI3Zho03gIg",
+     "title": "Tragédie - Hey Oh (LIVE 2)",
+     "kind": "live",
+     "channelName": "América • Songs",
+     "seconds": 225,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "0pkCTPOanaA",
+     "title": "Tragédie - Hey Oh (LIVE 3)",
+     "kind": "live",
+     "channelName": "América • Songs",
+     "seconds": 286,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "jPWL7SvGtQw",
+     "title": "Tragédie Feat. Mary J.Blige - Hey oh (Remix)",
+     "kind": "version",
+     "channelName": "MultiTodomusica",
+     "seconds": 240,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "23eS6M-EkBk",
+     "title": "Tragedie - \"Hey Oh\" [Ao Vivo]",
+     "kind": "version",
+     "channelName": "Wev Arcanam",
+     "seconds": 313,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "QyAUONxHmkE",
+     "title": "Tragédie - Hey Oh",
+     "kind": "version",
+     "channelName": "América • Songs",
+     "seconds": 212,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "yCm3KJj7JlU",
+     "title": "Tragédie - Hey Oh, Born In 90",
+     "kind": "version",
+     "channelName": "Minis Channel",
+     "seconds": 252,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "3BiAEb8W-rc",
+     "title": "TRAGÉDIE - HEY OH (MODAVE SEPTEMBER 2018)",
+     "kind": "version",
+     "channelName": "eric pirenne",
+     "seconds": 238,
+     "year": 2018,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "tUD2us_V5MM",
+     "title": "Tragédie - Hey Oh ( en duo avec Larusso)",
+     "kind": "version",
+     "channelName": "z space",
+     "seconds": 236,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "vmxyB0Iis4o",
+     "title": "First Time Reaction Tragedie Hey Oh (00's CATCHY BOP!) | Dereck Reacts",
+     "kind": "react",
+     "channelName": "Dereck Reacts",
+     "seconds": 516,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "kYK__vZOvQ0",
+     "title": "réaction au clip de tragédie hey oh",
+     "kind": "react",
+     "channelName": "Ys2s off",
+     "seconds": 373,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "OmM4Zh-RT2o",
+     "title": "Le groupe Tragédie vous raconte l'histoire de leur tube mythique \"Hey Oh\"",
+     "kind": "coulisses",
+     "channelName": "Casting.fr",
+     "seconds": 84,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "368L_98aYm8",
+     "title": "Hey oh - Tragedie (Letra / Paroles)",
+     "kind": "paroles",
+     "channelName": "Sarah Dedes ",
+     "seconds": 215,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "XTk2Ie1dmGY",
+     "title": "Tragédie - Hey oh [Karaoké Audio HQ Paroles]",
+     "kind": "paroles",
+     "channelName": "100% Lyrics Karaoké ♪",
+     "seconds": 212,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "aTMEJ835Lgc",
+     "title": "Brandon Wolff - Hey Oh (Tragédie - N’oubliez Pas Les Paroles)",
+     "kind": "paroles",
+     "channelName": "Brandon Wolff",
+     "seconds": 80,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 495
   },
   {
@@ -2414,7 +2822,143 @@
    "description": "Si demain... (Turn Around) est une chanson interprétée par Bonnie Tyler et Kareen Antonn sortie en 2003. Il s’agit d’une reprise bilingue de Total Eclipse of the Heart, de Bonnie Tyler.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Si_demain..._(Turn_Around)",
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "eCFKj_V1uEQ",
+     "title": "bonnie tyler et kareen antonn - si demain.wmv",
+     "kind": "clip",
+     "channelName": "Laurent Dm",
+     "seconds": 252,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "4GdexGU8fv0",
+     "title": "Turn Around Live | Si Demain | Kareen Antonn | Ok Fred Groupe",
+     "kind": "live",
+     "channelName": "Ok Fred Groupe - Musique Live & DJ pour Événements",
+     "seconds": 267,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Lqwrygz_j9c",
+     "title": "Bonnie Tyler & Kareen Antonn   Si Demain Live Symphonic Show",
+     "kind": "live",
+     "channelName": "MrJanOlesen",
+     "seconds": 252,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "G9naFSV0Au0",
+     "title": "Bonnie Tyler and Kareen Antonn Si Demain  Turn Around",
+     "kind": "live",
+     "channelName": "Leo Maestracci",
+     "seconds": 457,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "zcto02bHCrw",
+     "title": "Bonnie Tyler and Kareen Antonn Si Demain  Turn Around",
+     "kind": "live",
+     "channelName": "Leo Maestracci",
+     "seconds": 457,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "o82uGBXACRU",
+     "title": "Bonnie Tyler   Kareen Antonn 2004   Si demain Turn around o",
+     "kind": "version",
+     "channelName": "chilimba98",
+     "seconds": 234,
+     "year": 2004,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "_159f3kE4vU",
+     "title": "KAREEN ANTONN - SI DEMAIN",
+     "kind": "version",
+     "channelName": "MyWIESIU",
+     "seconds": 275,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Lkpb61MqCgE",
+     "title": "Si demain ( turn around ) - Bonnie Tyler & Kareen Antonn",
+     "kind": "version",
+     "channelName": "Alexandros Ketsetzidis",
+     "seconds": 233,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "wh0xQ8BsyiU",
+     "title": "kareen Antonn - Si demain (Bonnie Tyler - Total eclipse of the heart)",
+     "kind": "version",
+     "channelName": "manufer64",
+     "seconds": 233,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "a4jAx-2K1SM",
+     "title": "kareen Antonn --si demain ---",
+     "kind": "version",
+     "channelName": "martine briavoine",
+     "seconds": 233,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "z91fnyyQy4I",
+     "title": "Bonnie Tyler - Si Demain (Turn Around) (Duet With Kareen Antonn)",
+     "kind": "version",
+     "channelName": "하늘전설skystory",
+     "seconds": 251,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "dioGIot9J9E",
+     "title": "Shnootz - Reaction Video (Bonnie Tyler & Kareen Antonn - Si demain [Turn Around])",
+     "kind": "react",
+     "channelName": "Matt Snider",
+     "seconds": 403,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "MXGokfLRUKI",
+     "title": "Bonnie TYLER & Kareen ANTONN - Si demain .. (Turn Around) LYRICS",
+     "kind": "paroles",
+     "channelName": "Jenny59",
+     "seconds": 231,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "VY51Di_Uuhw",
+     "title": "Si demain... (Turn Around) - Bonnie Tyler & Kareen Antonn | Karaoke Version | KaraFun",
+     "kind": "paroles",
+     "channelName": "KaraFun Karaoke",
+     "seconds": 234,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "81B0UMcnYpI",
+     "title": "Lyrics   Si Demain Turn Around Kareen Antonn Bonnie Tyler",
+     "kind": "paroles",
+     "channelName": "EspaceMusique",
+     "seconds": 230,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 475
   },
   {
@@ -4052,21 +4596,21 @@
      "source": "auto"
     },
     {
-     "youtubeId": "4s1HTbho6LI",
-     "title": "This Producer REACTS To Gnarls Barkley - Crazy (Official Video)",
-     "kind": "clip",
-     "channelName": "Music Recording Network Stream",
-     "seconds": 331,
-     "year": null,
-     "source": "auto"
-    },
-    {
      "youtubeId": "q5Uh0yG0ckM",
      "title": "Gnarls Barkley - Crazy long version",
      "kind": "live",
      "channelName": "Heinz",
      "seconds": 955,
      "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "8Ml3BRuezes",
+     "title": "Gnarls Barkley – Crazy | Sol | The Voice France 2016 | Blind Audition",
+     "kind": "live",
+     "channelName": "The Voice : la plus belle voix",
+     "seconds": 143,
+     "year": 2016,
      "source": "auto"
     },
     {
@@ -4106,6 +4650,15 @@
      "source": "auto"
     },
     {
+     "youtubeId": "l964Xu9i8hY",
+     "title": "Coaches The Voice USA sing “Crazy” by Gnarls Barkley (Season 1, 2011)",
+     "kind": "live",
+     "channelName": "Best of The Voice",
+     "seconds": 127,
+     "year": 2011,
+     "source": "auto"
+    },
+    {
      "youtubeId": "WjEN5zyIMwY",
      "title": "Crazy - Gnarls Barkley (Live from Late Show with David Letterman)",
      "kind": "live",
@@ -4121,24 +4674,6 @@
      "channelName": "CeeLo Green Fans",
      "seconds": 232,
      "year": 2007,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "jn08_ZfNSpc",
-     "title": "Deconstructing Gnarls Barkley's Crazy",
-     "kind": "live",
-     "channelName": "King Benny Garcia",
-     "seconds": 528,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "uSoKOw0F4Qo",
-     "title": "Gnarls Barkley - Crazy | REVIEW",
-     "kind": "live",
-     "channelName": "Views From The 502",
-     "seconds": 1202,
-     "year": null,
      "source": "auto"
     },
     {
@@ -4169,29 +4704,11 @@
      "source": "auto"
     },
     {
-     "youtubeId": "Qe500eIK1oA",
-     "title": "Gnarls Barkley - Crazy",
-     "kind": "version",
-     "channelName": "Oral Fixations",
-     "seconds": 182,
-     "year": null,
-     "source": "auto"
-    },
-    {
      "youtubeId": "S8EX1taYL40",
      "title": "Gnarls Barkley Crazy HD 1080p + Violín con subs Español",
      "kind": "version",
      "channelName": "Noviembre Anaranjado",
      "seconds": 185,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "x8j2UFW3IAY",
-     "title": "Gnarls Barkley - Crazy (Anthony Jimenez Remix) (Extended)",
-     "kind": "version",
-     "channelName": "Anthony Jimenez Sax",
-     "seconds": 193,
      "year": null,
      "source": "auto"
     },
@@ -4205,20 +4722,38 @@
      "source": "auto"
     },
     {
-     "youtubeId": "f2jgdsHzDf4",
-     "title": "\"Crazy\" (Gnarls Barkley) - Angela Ricci",
-     "kind": "version",
-     "channelName": "Angela Ricci",
-     "seconds": 240,
-     "year": null,
-     "source": "auto"
-    },
-    {
      "youtubeId": "hh5ZdQrz4Qk",
      "title": "Gnarls Barkley- - - \" Crazy \"  ( H Q )",
      "kind": "version",
      "channelName": "buzz834",
      "seconds": 298,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "uizD0NrtL5w",
+     "title": "GNARLS BARKLEY - CRAZY on THE TONIGHT SHOW 2006",
+     "kind": "version",
+     "channelName": "flexxmi",
+     "seconds": 216,
+     "year": 2006,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "WOjFhKg4h3s",
+     "title": "Gnarls Barkley - Crazy - From the Basement",
+     "kind": "version",
+     "channelName": "scottybeans",
+     "seconds": 294,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "7_TDYn7XrfE",
+     "title": "Gnarls Barkley - Crazy \"Music Video\"",
+     "kind": "version",
+     "channelName": "Samslice12",
+     "seconds": 129,
      "year": null,
      "source": "auto"
     },
@@ -4241,6 +4776,15 @@
      "source": "auto"
     },
     {
+     "youtubeId": "Uti9zRim_jU",
+     "title": "Vocal Coach discovers Gnarls Barkley - Crazy (Live)",
+     "kind": "react",
+     "channelName": "Beth Roars",
+     "seconds": 490,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "tZRY_YHaSPs",
      "title": "Gnarls Barkley- Crazy | REACTION",
      "kind": "react",
@@ -4255,15 +4799,6 @@
      "kind": "react",
      "channelName": "ProDayDJ ",
      "seconds": 500,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "4Xj6QZwhplU",
-     "title": "Lockdown Fest | GNARLS BARKLEY Crazy Reaction",
-     "kind": "react",
-     "channelName": "Enoma",
-     "seconds": 506,
      "year": null,
      "source": "auto"
     },
@@ -4286,38 +4821,29 @@
      "source": "auto"
     },
     {
-     "youtubeId": "U0EW0s1fN-8",
-     "title": "Gnarls Barkley - Crazy Lyrics",
+     "youtubeId": "M9qpqre7jJM",
+     "title": "Gnarls Barkley - Crazy | Lyrics",
      "kind": "paroles",
-     "channelName": "Zarif",
-     "seconds": 179,
+     "channelName": "riot wav",
+     "seconds": 178,
      "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "aGIgu02S3R4",
-     "title": "Gnarls Barkley - Crazy (Lyrics) \"I remember when I lost my mind\" (tiktok)",
+     "youtubeId": "z5zu8A4-iQw",
+     "title": "Vietsub | Crazy - Gnarls Barkley | Lyrics Video",
      "kind": "paroles",
-     "channelName": "GenuineLyrics",
+     "channelName": "Vietsub Mỗi Ngày",
      "seconds": 180,
      "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "lp5RBIPtwP0",
-     "title": "Gnarls Barkley - Crazy (IMY2 Cover)",
+     "youtubeId": "9qe-ZviQtTk",
+     "title": "The BEST Gnarls Barkley's CRAZY covers in The Voice | Who sings it best? #4",
      "kind": "reprise",
-     "channelName": "IMY2",
-     "seconds": 182,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "Uti9zRim_jU",
-     "title": "Vocal Coach discovers Gnarls Barkley - Crazy (Live)",
-     "kind": "reprise",
-     "channelName": "Beth Roars",
-     "seconds": 490,
+     "channelName": "Best of The Voice",
+     "seconds": 340,
      "year": null,
      "source": "auto"
     }
@@ -4343,7 +4869,80 @@
    "description": "Pas le temps est une chanson enregistrée par le rappeur français Faf Larage. Elle est sortie comme single en septembre 2006 et est utilisée comme thème de la série télévisée américaine Prison Break. La face B est C'est pas ma faute, une chanson qui est sortie en single en octobre 2007.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Pas_le_temps",
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "sugcFgpjuio",
+     "title": "Faf Larage - Pas le temps (Clip Officiel HD)",
+     "kind": "clip",
+     "channelName": "JS7457B",
+     "seconds": 216,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ZPZhUQuGGQQ",
+     "title": "Faf Larage \"Pas Le Temps\"",
+     "kind": "version",
+     "channelName": "emiressources",
+     "seconds": 255,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "NZgmSN7ACI8",
+     "title": "FaF Larage  \"j'ai pas le temps\"",
+     "kind": "version",
+     "channelName": "Chris L",
+     "seconds": 295,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "CBA6v6oUXK0",
+     "title": "Faf Larage - Pas le temps (2006)",
+     "kind": "version",
+     "channelName": "Raymond Trencavel",
+     "seconds": 248,
+     "year": 2006,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "aHuhD6YfrNg",
+     "title": "Faf Larage - Pas le temps (Audio, Version aigue +0.5)",
+     "kind": "version",
+     "channelName": "Raphaël Baudet",
+     "seconds": 220,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "edJ8fGXHZ9c",
+     "title": "Faf Larage & Nader - Pas le temps",
+     "kind": "version",
+     "channelName": "FoxMulder1987",
+     "seconds": 207,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ZWcviTcwB9w",
+     "title": "Faf Larage - Pas Le Temps",
+     "kind": "version",
+     "channelName": "Xueiruc",
+     "seconds": 225,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "XiJf0egv_pg",
+     "title": "Faf Larage - Pas le Temps (Paroles)",
+     "kind": "paroles",
+     "channelName": "Pinytos",
+     "seconds": 216,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 430
   },
   {
@@ -5275,7 +5874,170 @@
    "description": "Garçon est une chanson interprétée par la chanteuse française Koxie, sortie en single sur le label AZ le 26 juin 2007.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Gar%C3%A7on_(chanson)",
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "ythzoQih-XU",
+     "title": "Koxie - Garçon",
+     "kind": "clip",
+     "channelName": "KoxieVEVO",
+     "seconds": 217,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "mE_2TcJThZc",
+     "title": "Clip officiel Koxie Garcon",
+     "kind": "clip",
+     "channelName": "thesoldatof28",
+     "seconds": 224,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "vtLS8mfHomY",
+     "title": "Re: Koxie - Garcon [CLIP OFFICIEL]",
+     "kind": "clip",
+     "channelName": "rachidbey",
+     "seconds": 16,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "eZN_emUig6M",
+     "title": "KOXIE   Garçon    TF1 GENERATION TUBES DE TOUJOURS",
+     "kind": "live",
+     "channelName": "djpaulo annee90",
+     "seconds": 128,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "PPafwbpX2go",
+     "title": "Koxie-Garçon",
+     "kind": "live",
+     "channelName": "ChiChiHuaHua83",
+     "seconds": 504,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "b2LQeKIPhio",
+     "title": "KOXIE, 20 ANS APRES \"Garçon\" AVEC OU SANS LA CEDILLE ?",
+     "kind": "live",
+     "channelName": "YinonShow ",
+     "seconds": 3533,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "P040DlaNe5U",
+     "title": "Koxie - Garçon",
+     "kind": "version",
+     "channelName": "MsPerfectFlower",
+     "seconds": 215,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Y1ZSTW-_JOo",
+     "title": "Koxie - garçon",
+     "kind": "version",
+     "channelName": "MeyBlack",
+     "seconds": 222,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Wuvs3wlDD0I",
+     "title": "Koxie - Garçon | Disney Remix | Yzilapi",
+     "kind": "version",
+     "channelName": "Yzilapi",
+     "seconds": 243,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "9iCQAHxZVso",
+     "title": "Koxie Garçon",
+     "kind": "version",
+     "channelName": "boubounetdu12",
+     "seconds": 216,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "qpdS3v1XUb8",
+     "title": "Marguerite reprend “Garçon” de Koxie… et c’est encore mieux que l’original 🔥🔥",
+     "kind": "version",
+     "channelName": "le grognard du net",
+     "seconds": 254,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "9cYYLknekpg",
+     "title": "Koxie - Garçon",
+     "kind": "version",
+     "channelName": "Purnat17",
+     "seconds": 216,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "FE2Bgv2kH4U",
+     "title": "Koxie - Garçon - REACTION",
+     "kind": "react",
+     "channelName": "Music Reactions of the World",
+     "seconds": 469,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "QkDmnQXpHeQ",
+     "title": "Koxie : que devient la chanteuse, interprète  Garçon, tube de l'année 2007??",
+     "kind": "coulisses",
+     "channelName": "Fr.express",
+     "seconds": 184,
+     "year": 2007,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "dzupAIhRZfI",
+     "title": "Koxie - Garçon | Lyrics.be",
+     "kind": "paroles",
+     "channelName": "Lyrics. BE",
+     "seconds": 215,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "MvtyLvE6NGM",
+     "title": "Koxie - Garçon (Marguerite Cover)",
+     "kind": "reprise",
+     "channelName": "Planet Fanzine",
+     "seconds": 265,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "JG3jL9qbBqk",
+     "title": "Marguerite - Garçon (Koxie Cover, Waxx, Fanzine)",
+     "kind": "reprise",
+     "channelName": "Maybe Random Stuff",
+     "seconds": 261,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "yR3YlhKOQLk",
+     "title": "Koxie reprise de  Garçon",
+     "kind": "reprise",
+     "channelName": "aurore diy",
+     "seconds": 214,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 470
   },
   {
@@ -5294,7 +6056,269 @@
    "description": "Don't Stop the Music est une chanson dance de la chanteuse Rihanna, issu de son troisième album Good Girl Gone Bad sorti en 2007. Il est en France le second single extrait de l'album et le troisième single dans certains autres pays, où sa sortie fut précédée du titre Shut Up and Drive. À l'origine, il devait également être le troisième single américain, mais finalement la chanson fut uniquement envoyée aux radios et éditée pour être jouée dans les clubs.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Don%27t_Stop_the_Music_(chanson_de_Rihanna)",
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "6asN_KsFCgY",
+     "title": "Rihanna - Don't Stop The Music-Official Video HighDefinition",
+     "kind": "clip",
+     "channelName": "RihannaChrisBrownVIC",
+     "seconds": 265,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "se3J_bXPqs4",
+     "title": "Rihanna - Don't Stop the Music (Official Video) (High Quality)",
+     "kind": "clip",
+     "channelName": "UrbanClipz",
+     "seconds": 241,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ZwryxRvkdhI",
+     "title": "Rihanna feat Claudia Don't Stop The Music Live At Star Academy 2007 Most  Amazing Performance In HD",
+     "kind": "live",
+     "channelName": "Amit Ramkissoon",
+     "seconds": 202,
+     "year": 2007,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "P8F-8Jna9Oo",
+     "title": "[1080P/60FPS] Rihanna - Don't Stop The Music (Live @ Wetten, dass..?)",
+     "kind": "live",
+     "channelName": "Upscale Archive",
+     "seconds": 221,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "x-z4M3rp4xM",
+     "title": "Rihanna Don't Stop The Music Live in Ellen DeGeneres Show HD",
+     "kind": "live",
+     "channelName": "Rihanna Reign",
+     "seconds": 272,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "FkDH1Y4aZoE",
+     "title": "Rihanna   Don't Stop The Music DVD Live in Manchester] HD",
+     "kind": "live",
+     "channelName": "Musiqua Steel",
+     "seconds": 245,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "FioeT6MD2Wg",
+     "title": "Rihanna 'Don't Stop The Music' (Live)",
+     "kind": "live",
+     "channelName": "The Skylover Diary",
+     "seconds": 301,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "269xcIsgJk0",
+     "title": "RIHANNA-PLEASE DON'T STOP THE MUSIC Good Girl Gone Bad Live 2008 720p HDTV DD5 1 x264-HDL",
+     "kind": "live",
+     "channelName": "Svetlin Velichkov",
+     "seconds": 419,
+     "year": 2008,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "zMOjA3pUPcE",
+     "title": "Rihanna - Don't Stop The Music (Star Academy)",
+     "kind": "live",
+     "channelName": "Divas Forever",
+     "seconds": 209,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "0z5AxOPgKhI",
+     "title": "Rihanna - Please Don't Stop The Music Live at The o2 - 15/11/11 HD",
+     "kind": "live",
+     "channelName": "edddale09",
+     "seconds": 213,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "tTA7yqY8Vxo",
+     "title": "Rihanna \"Don't Stop The Music\" Live From New York - 10.11.07",
+     "kind": "live",
+     "channelName": "ABenjaminIrby",
+     "seconds": 239,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "RAObUzkxP5c",
+     "title": "Rihanna - Don`t Stop The Music Live Earth 2007",
+     "kind": "live",
+     "channelName": "MartinCleyson",
+     "seconds": 223,
+     "year": 2007,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "b79o3AKczfo",
+     "title": "Rihanna ft. Claudia - Don't Stop The Music (Live Star Academy 2007).avi",
+     "kind": "live",
+     "channelName": "Fabrício O.S.",
+     "seconds": 201,
+     "year": 2007,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "R7xrGa77_T0",
+     "title": "Rihanna - Don't Stop The Music (Live in Ischgl)",
+     "kind": "live",
+     "channelName": "conanedogawa1",
+     "seconds": 258,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "yd8jh9QYfEs",
+     "title": "Rihanna - Don't Stop The Music",
+     "kind": "version",
+     "channelName": "Rihanna",
+     "seconds": 234,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "p9Ygppti7YI",
+     "title": "Don’t Stop The Music / Only Girl (In The World) / We Found Love / Where Have You Been (...",
+     "kind": "version",
+     "channelName": "Rihanna",
+     "seconds": 233,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "DT13fOL32Hc",
+     "title": "Rihanna - Don't Stop The Music (Audio)",
+     "kind": "version",
+     "channelName": "Juan Marquez",
+     "seconds": 268,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "_hJbZb0WMLI",
+     "title": "Rihanna - Don't Stop The Music [Remastered]",
+     "kind": "version",
+     "channelName": "RicDiOlive",
+     "seconds": 232,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "nuOVEAMarhk",
+     "title": "Rihanna Don't stop the music HD",
+     "kind": "version",
+     "channelName": "MVPMIXER",
+     "seconds": 222,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ckdkL4PiWFc",
+     "title": "Rihanna - Don't Stop The Music (Tradução) (Clipe Legendado)",
+     "kind": "version",
+     "channelName": "I Love Legendas",
+     "seconds": 232,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "pSEzM8KhpTw",
+     "title": "Rihanna - Don't Stop The Music (REACTION)",
+     "kind": "react",
+     "channelName": "CHASEYODREAMS",
+     "seconds": 385,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "MGiMwGh75fY",
+     "title": "Rihanna - Don't Stop The Music | REACTION",
+     "kind": "react",
+     "channelName": "BrosReact0151",
+     "seconds": 425,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ZlVadYkQtPE",
+     "title": "RIHANNA - DON’T STOP THE MUSIC | RÉACTION ! (LE TUBE DE L'ANNÉE 🔥)",
+     "kind": "react",
+     "channelName": "Momed Reacts et 2 autre(s)",
+     "seconds": 296,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "xEuXyBbJTU0",
+     "title": "Rihanna - Don't Stop The Music | THE CLUB STILL PLAYING THIS! | TWINS REACTION",
+     "kind": "react",
+     "channelName": "KTwinsTV",
+     "seconds": 378,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "iJYoYU1p-pQ",
+     "title": "Rihanna Don't Stop The Music Video First Time Reaction",
+     "kind": "react",
+     "channelName": "Inyo Reacts",
+     "seconds": 309,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "wsheAMMQuZI",
+     "title": "Rihanna Don't Stop The Music Music Video Reaction",
+     "kind": "react",
+     "channelName": "Danson's Music Reactions ",
+     "seconds": 337,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "OfWIGJpOih8",
+     "title": "Rihanna - Don't Stop The Music (Lyrics)",
+     "kind": "paroles",
+     "channelName": "Unique Sound",
+     "seconds": 267,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "wChU2N7Q3GU",
+     "title": "Rihanna - Don’t Stop the Music (Lyrics)",
+     "kind": "paroles",
+     "channelName": "Watermelon Music et bemu",
+     "seconds": 272,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "_P7Yr4_caB8",
+     "title": "Rihanna - Don't Stop The Music (Lyrics)",
+     "kind": "paroles",
+     "channelName": "7clouds",
+     "seconds": 267,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 420
   },
   {
@@ -6023,7 +7047,242 @@
    "description": "Tired of Being Sorry est une chanson de l'artiste espagnol Enrique Iglesias sortie le 29 septembre 2007 sous la maison de disques américaine Interscope. 3e single extrait de l'album Insomniac, Tired of Being Sorry est également le 2e single international. La chanson a été écrite par Scott Thomas, Géraldine Delacoux et produite par Scott Thomas.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Tired_of_Being_Sorry",
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "unKAuwy2dWk",
+     "title": "Nâdiya - Tired of Being Sorry avec Enrique Iglesias (clip officiel)",
+     "kind": "clip",
+     "channelName": "Nâdiya officiel",
+     "seconds": 236,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "OXiJjhbkrxg",
+     "title": "Enrique Iglesias - Tired Of Being Sorry Official Music Video HQ",
+     "kind": "clip",
+     "channelName": "Bad Boy Edd",
+     "seconds": 265,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "h0CEh6Dz-UY",
+     "title": "Nâdiya & Enrique Iglesias - Tired of Being Sorry ( Official Video 4K | 60 fps )",
+     "kind": "clip",
+     "channelName": "MUSIC EVOLUTION",
+     "seconds": 245,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "PkbEjheIe9o",
+     "title": "Enrique Iglesias et Nadiya - Tired of Being Sorry. Féte de la Musique 21 06 2008",
+     "kind": "live",
+     "channelName": "germany2006hh",
+     "seconds": 258,
+     "year": 2008,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "q8yvQBG-QBk",
+     "title": "Enrique Iglesias & Nadiya - Fete de la musique 2008 - Tired of being sorry",
+     "kind": "live",
+     "channelName": "lateniiista",
+     "seconds": 324,
+     "year": 2008,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Ng5_12dPX30",
+     "title": "Enrique Iglesias Feat. Nadiya - Tired of Being Sorry (LIVE) Féte de la Musique 2008",
+     "kind": "live",
+     "channelName": "Enrique Iglesias",
+     "seconds": 243,
+     "year": 2008,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "cjugqQ8-5YA",
+     "title": "Enrique Iglesias ft. Nadiya - Tired of being sorry (LIVE promo)",
+     "kind": "live",
+     "channelName": "enr7que",
+     "seconds": 247,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "lJQBs6yP77Q",
+     "title": "(HQ)Enrique Iglesias - Tired Of Being sorry & Alice LIVE _ Star Academy.",
+     "kind": "live",
+     "channelName": "Dante100236",
+     "seconds": 271,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "5np-3mJaqqU",
+     "title": "Enrique Ft Nadiya - Tired Of Being Sorry Live",
+     "kind": "live",
+     "channelName": "Abd7almageed",
+     "seconds": 247,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "hTVMGG7r0UY",
+     "title": "Enrique Iglesias - Tired Of Being Sorry feat. Alice LIVE _ Star Academy.",
+     "kind": "live",
+     "channelName": "Dante100236",
+     "seconds": 270,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Q_ky2SetHV0",
+     "title": "Enrique Iglesias-Tired of being sorry Live 2007 TMF Awards",
+     "kind": "live",
+     "channelName": "elyanyha",
+     "seconds": 248,
+     "year": 2007,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "pPKEqQJTq-Q",
+     "title": "Enrique Iglesias - Tired Of Being Sorry (LIVE)",
+     "kind": "live",
+     "channelName": "Enrique Iglesias",
+     "seconds": 297,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "f7q16lQWKWI",
+     "title": "Enrique Iglesias - Tired Of Being Sorry (LIVE)",
+     "kind": "live",
+     "channelName": "Enrique Iglesias",
+     "seconds": 247,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "lsSCf9sY1ZQ",
+     "title": "Enrique Iglesias -Tired Of Being Sorry- live in Malta",
+     "kind": "live",
+     "channelName": "Jemo",
+     "seconds": 333,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "JA4z8zgsQek",
+     "title": "Enrique Iglesias - France 2 - Encore une chanson - Tired of being sorry",
+     "kind": "live",
+     "channelName": "Claude Kramer",
+     "seconds": 439,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "X86S5oZzzh4",
+     "title": "Enrique Iglesias - Tired Of Being Sorry (MUSIC VIDEO)",
+     "kind": "version",
+     "channelName": "Enrique Iglesias",
+     "seconds": 261,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ycDf0H4K7Ao",
+     "title": "Enrique Iglesias &  Nadiya - Tired Of Being Sorry",
+     "kind": "version",
+     "channelName": "bakika2",
+     "seconds": 271,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "iqcu5efgGoQ",
+     "title": "[HD] Nadiya & Enrique Iglesias - Tired Of Being Sorry (LDDO 2009)",
+     "kind": "version",
+     "channelName": "JubeXYZw",
+     "seconds": 189,
+     "year": 2009,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "H3cVVrxwZJE",
+     "title": "Enrique Iglesias ft Nadiya. Tired Of Being Sorry",
+     "kind": "version",
+     "channelName": "Оля Стрелец",
+     "seconds": 275,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Fb8w9c0LPzI",
+     "title": "Enrique Iglesias Nadiya -- ▲♫ Tired of Being Sorry▲♫ with Nrj Awards in French",
+     "kind": "version",
+     "channelName": "Dante100236",
+     "seconds": 244,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "H3RICCVSl3k",
+     "title": "Nadiya & Enrique Iglesias - Tired Of Being Sorry",
+     "kind": "version",
+     "channelName": "Xristos ganas",
+     "seconds": 189,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "L0BMpxLn2NA",
+     "title": "🎵 Enrique Iglesias - Tired Of Being Sorry REACTION",
+     "kind": "react",
+     "channelName": "Brad After Dark",
+     "seconds": 386,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "jFbH5lJhSg8",
+     "title": "Making of Enrique Iglesias - Tired Of being Sorry",
+     "kind": "coulisses",
+     "channelName": "animyvghpl",
+     "seconds": 251,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "m0Kkp7ygnzw",
+     "title": "Nâdiya & Enrique Iglesias - Tired of being sorry (Laisse le destin l'emporter) - Paroles",
+     "kind": "paroles",
+     "channelName": "RouxioMusic",
+     "seconds": 268,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "TkzWwNiBtqE",
+     "title": "Enrique Iglesias - Tired Of Being Sorry (Lyrics)",
+     "kind": "paroles",
+     "channelName": "Re-Ly Video",
+     "seconds": 234,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "GbgoSw3b03Y",
+     "title": "Enrique Iglesias ft Nadiya : Tired of being sorry (lyrics-paroles)",
+     "kind": "paroles",
+     "channelName": "Paroles-des-chansons",
+     "seconds": 239,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 580
   },
   {
@@ -6046,7 +7305,278 @@
    "description": "American Boy est un single à succès de la chanteuse britannique Estelle en duo avec le rappeur et producteur américain Kanye West. Le titre a été composé par Will.i.am des Black Eyed Peas. Il reprend le sample du morceau Impatient sur l'album Songs About Girls de Will.i.am.",
    "wikipedia": "https://fr.wikipedia.org/wiki/American_Boy",
    "views60d": 1174,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "FAD_5NWzM5g",
+     "title": "Estelle - American Boy (feat. Kanye West) [Official Video]",
+     "kind": "clip",
+     "channelName": "Atlantic Records",
+     "seconds": 242,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ti0i3AWqOYQ",
+     "title": "Estelle: “American Boy\" (Live at Apple Music Studios) | The One",
+     "kind": "live",
+     "channelName": "Apple Music et Estelle",
+     "seconds": 212,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "9aeWXddqQiQ",
+     "title": "Celine Mork vs. Mathilde E. Høglo | American Boy(Estelle, Kanye West)| Battles|The Voice Norway 2025",
+     "kind": "live",
+     "channelName": "The Voice Norway",
+     "seconds": 164,
+     "year": 2025,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "AI9h4dQf6hw",
+     "title": "Estelle with \"American Boy\" on Skyville Live",
+     "kind": "live",
+     "channelName": "Music is...",
+     "seconds": 228,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "MKZ66ywRCxo",
+     "title": "Kanye West Ft Estelle American Boy Live La Fete De La Musique 2008",
+     "kind": "live",
+     "channelName": "karl dupont",
+     "seconds": 310,
+     "year": 2008,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "wIDk4pWbzRQ",
+     "title": "Estelle - American boy live",
+     "kind": "live",
+     "channelName": "CHARMEDAK",
+     "seconds": 205,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "BH5iHqoP4zE",
+     "title": "Estelle \"American Boy\" On The Radar Live Performance",
+     "kind": "live",
+     "channelName": "On The Radar Radio",
+     "seconds": 233,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "8V6a8eNeeL0",
+     "title": "Estelle - 'American Boy' ● Alyah Lukunku | Blinds | The Voice Belgique Saison 11",
+     "kind": "live",
+     "channelName": "The Voice Belgique",
+     "seconds": 130,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ThRyHUDYMlc",
+     "title": "American Boy - Estelle (Live Jools Holland 2008) HQ",
+     "kind": "live",
+     "channelName": "aazeem s",
+     "seconds": 230,
+     "year": 2008,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "eC4KMHXviis",
+     "title": "Estelle - American Boy [avec Kanye West] | Asia et BJ",
+     "kind": "live",
+     "channelName": "Asia and BJ",
+     "seconds": 547,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "bQ2Sv8va5tI",
+     "title": "Estelle Live In Session American Boy For Fresh40!!",
+     "kind": "live",
+     "channelName": "해외선물 강남TV",
+     "seconds": 412,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "H8SMhAAZF4A",
+     "title": "Estelle on \"American Boy\", \"Stay Alta\" and Black British Music",
+     "kind": "live",
+     "channelName": "CCTV: The Nonstop Pop Show Podcast et Estelle",
+     "seconds": 3570,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-2e8sK3Xbd0",
+     "title": "Estelle Live Performance, \"American Boy,\" 8.2.08",
+     "kind": "live",
+     "channelName": "Vivrant Thang",
+     "seconds": 271,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Ic5vxw3eijY",
+     "title": "Estelle - American Boy [Feat. Kanye West] [Video]",
+     "kind": "version",
+     "channelName": "Estelle",
+     "seconds": 242,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "eQ1g_SOqGmI",
+     "title": "Estelle - American Boy (No Rap) HQ",
+     "kind": "version",
+     "channelName": "LoafDV",
+     "seconds": 245,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "tG1DPN5xxvE",
+     "title": "Estelle - American boy",
+     "kind": "version",
+     "channelName": "fabbro22",
+     "seconds": 246,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "RKoI35jZhCE",
+     "title": "American Boy ft. Kanye West (Lost Frequencies Remix)",
+     "kind": "version",
+     "channelName": "Estelle",
+     "seconds": 240,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "KXIWqDU_8x8",
+     "title": "ESTELLE - AMERICAN BOY - WORLD MUSIC AWARD 2008 by REALHQVIDEO",
+     "kind": "version",
+     "channelName": "CINEMAsulWEB",
+     "seconds": 204,
+     "year": 2008,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "5hAGlCYN0eo",
+     "title": "(Legendado) Estelle feat. Kanye West - American Boy",
+     "kind": "version",
+     "channelName": "DaMikrophony",
+     "seconds": 169,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "QHh3Wer4kIA",
+     "title": "AMAZING CROWD REACTION | Estelle - American Boy | Allie Sherlock Cover",
+     "kind": "react",
+     "channelName": "Allie Sherlock",
+     "seconds": 261,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "5knM6awnD7s",
+     "title": "GOOD SINGER! | Estelle Ft Kanye West - American Boy  [First Time Hearing] : Roadie&Star React 003",
+     "kind": "react",
+     "channelName": "Alides Hidding * Time Bandits",
+     "seconds": 841,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "_9VGdxkBGsk",
+     "title": "MetalHead Reacts: Estelle's 'American Boy'",
+     "kind": "react",
+     "channelName": "Ryan Squared",
+     "seconds": 726,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "16EyDyhaF5Q",
+     "title": "First Time Hearing Estelle - American Boy [Feat. Kanye West] | REACTION",
+     "kind": "react",
+     "channelName": "Africa Reacts",
+     "seconds": 429,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Qr4RAAUuRN0",
+     "title": "Estelle \"American Boy\" On The Radar Live Performance - REACTION!!!",
+     "kind": "react",
+     "channelName": "RealistKixng",
+     "seconds": 317,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "b4ix8eqZCTY",
+     "title": "(Donnie & D Reacts) Estelle -American Boy #reaction #react #music #rnb #estelle #musicvideo",
+     "kind": "react",
+     "channelName": "Donnie&D",
+     "seconds": 431,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "eKFpJZl9-pQ",
+     "title": "Estelle | L'histoire derrière « American Boy », Kanye West et sa signature avec John Legend",
+     "kind": "coulisses",
+     "channelName": "Shawn Stockman's On That Note",
+     "seconds": 4035,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Je9GiKk77Z4",
+     "title": "NEW ESTELLE INTERVIEW-- BY AN 8-YEAR-OLD AMERICAN BOY",
+     "kind": "coulisses",
+     "channelName": "PopularCultureKid",
+     "seconds": 560,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "m-lDjlrlR_g",
+     "title": "Getting To Know: Estelle \"American Boy Was A Hit Even Before Kanye!\" - Interview | Dropout UK",
+     "kind": "coulisses",
+     "channelName": "DropoutUK",
+     "seconds": 500,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "1bpi2CLZTbI",
+     "title": "Estelle - American Boy (Lyrics)",
+     "kind": "paroles",
+     "channelName": "British Pop Bangers",
+     "seconds": 247,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "4Mk_hGfIWIc",
+     "title": "American Boy | Estelle & Kanye West | funk cover ft. @StaceyRyanMusic + LELAND SKLAR",
+     "kind": "reprise",
+     "channelName": "Scary Pockets",
+     "seconds": 254,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 548
   },
   {
@@ -6068,7 +7598,179 @@
    "description": "Rayon de soleil est le premier single du chanteur français William Baldé, sorti en juin 2008, extrait de l'album En corps étranger. En France, la chanson entre directement à la 1re place des ventes de singles qu'elle occupe durant neuf semaines consécutives. Elle devient le tube de l'été 2008.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Rayon_de_soleil_(chanson)",
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "FzcH4C2DduM",
+     "title": "William Baldé - Rayon de soleil (Clip officiel)",
+     "kind": "clip",
+     "channelName": "100% Chanson Française",
+     "seconds": 226,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "iFGybsMq-Z8",
+     "title": "UN RAYON DE SOLEIL clip ( william baldé) au lavandou",
+     "kind": "clip",
+     "channelName": "ptitilou",
+     "seconds": 259,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "eItvqBqxsr4",
+     "title": "William Baldé - Rayon de Soleil - Clip officiel",
+     "kind": "clip",
+     "channelName": "TheMrjeremie",
+     "seconds": 221,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "BlqLzPT3PTw",
+     "title": "william baldé -un rayon de soleil en live",
+     "kind": "live",
+     "channelName": "noemie763",
+     "seconds": 240,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "8-BpHDK4HQw",
+     "title": "Un Rayon de Soleil - William Baldé - Live",
+     "kind": "live",
+     "channelName": "Taraka",
+     "seconds": 319,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "xM-MGW-LfPg",
+     "title": "William Baldé - Rayon de soleil |  LIVE Reggae #festival  Poupet deraille 2024 | UHD4K |",
+     "kind": "live",
+     "channelName": "My like music",
+     "seconds": 87,
+     "year": 2024,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "z_0HOygCYms",
+     "title": "Rayon de Soleil - Concert William Baldé",
+     "kind": "live",
+     "channelName": "Jenny Michaudel",
+     "seconds": 362,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "EfeNDqbdybg",
+     "title": "William Baldé - Un rayon de soleil Concert 22.07.08",
+     "kind": "live",
+     "channelName": "xheloiis3",
+     "seconds": 233,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "oERRqCSvWbY",
+     "title": "William Baldé - Rayon de soleil",
+     "kind": "version",
+     "channelName": "marieorore",
+     "seconds": 298,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "m3Z2qJRyW58",
+     "title": "William Baldé  Rayon de Soleil",
+     "kind": "version",
+     "channelName": "beatrice gauer",
+     "seconds": 220,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-8fdl4MhYv8",
+     "title": "William Baldé ~ Un rayon de soleil",
+     "kind": "version",
+     "channelName": "galochebenjamin",
+     "seconds": 308,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "4IZsitQA8PE",
+     "title": "Rayon de soleil - William Baldé",
+     "kind": "version",
+     "channelName": "wellymms",
+     "seconds": 78,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "HDNNrG9gEzQ",
+     "title": "William Baldé - Rayon de soleil",
+     "kind": "version",
+     "channelName": "fraty music",
+     "seconds": 219,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-XzX6ZVwvdA",
+     "title": "William Baldé   Rayon de soleil",
+     "kind": "version",
+     "channelName": "TheMrjeremie",
+     "seconds": 298,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "V5q4_2efYYM",
+     "title": "William Baldé - Un rayon de soleil (Paroles)",
+     "kind": "paroles",
+     "channelName": "Paroles - Chansons Françaises",
+     "seconds": 196,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "RCvUoLr3WBI",
+     "title": "WILLIAM BALDE - RAYON DE SOLEIL (@mespetitskaraokes)",
+     "kind": "paroles",
+     "channelName": "Mes Petits Karaokes",
+     "seconds": 303,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "IPQHuVpOmPI",
+     "title": "William Baldé - Un rayon de soleil  [Karaoke]",
+     "kind": "paroles",
+     "channelName": "Karaokeum ",
+     "seconds": 301,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "gE-2rxsIAms",
+     "title": "TUTO GUITARE + BATTERIE : Un Rayon de soleil - William Baldé",
+     "kind": "reprise",
+     "channelName": "Maxitabs - Cours de guitare en ligne",
+     "seconds": 120,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "QMWHAoo39fg",
+     "title": "rayon de soleil william balde parodie",
+     "kind": "reprise",
+     "channelName": "merlin stephanie",
+     "seconds": 293,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 470
   },
   {
@@ -6699,7 +8401,188 @@
    "description": "Sexy Bitch, connue également sous le nom de Sexy Chick pour la version propre, est le deuxième single extrait du quatrième album studio One Love de David Guetta. La chanson contient un featuring du chanteur américano-sénégalais Akon. La chanson sort le 28 juillet 2009 dans le monde.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Sexy_Bitch",
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "miw3lov5vkc",
+     "title": "David Guetta (Ft. Akon) - Sexy Bitch /slowed+reverb/",
+     "kind": "clip",
+     "channelName": "Dark Lapiz",
+     "seconds": 235,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "VnK0A3YMXu0",
+     "title": "David Guetta & Akon - Sexy Bitch (Live @ Stade de France)",
+     "kind": "live",
+     "channelName": "David Guetta",
+     "seconds": 201,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "zeUraEYWmfg",
+     "title": "Lopez Tonight - \" Sexy Bitch \" - David Guetta Feat. Akon - Live HD",
+     "kind": "live",
+     "channelName": "LatinasEn4",
+     "seconds": 220,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "rul02Y-U_qE",
+     "title": "David Guetta ft Akon- My New Sexy Bitch (live) in Ibiza-FUCK ME IM FAMOUS",
+     "kind": "live",
+     "channelName": "4dearly",
+     "seconds": 452,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "omDSmS5ZLQM",
+     "title": "David Guetta Feat. Akon - Sexy Bitch (live)",
+     "kind": "live",
+     "channelName": "Александр",
+     "seconds": 219,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "mXrMfO0kY_M",
+     "title": "Aircraft Live - Sexy Bitch (by David Guetta)",
+     "kind": "live",
+     "channelName": "AircraftLive",
+     "seconds": 282,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "QuN4APaPwzw",
+     "title": "David Guetta Feat Akon Sexy Bitch Live In Ibiza  Dj SieFalaA",
+     "kind": "live",
+     "channelName": "siefalaa",
+     "seconds": 207,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "MLxVr6ilo7E",
+     "title": "Akon ft. David Guetta - Sexy Bitch LIVE VERSION",
+     "kind": "live",
+     "channelName": "cardoesch",
+     "seconds": 110,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "E6QdRvdENyw",
+     "title": "David Guetta - Sexy bitch live (2009 Budapest)",
+     "kind": "live",
+     "channelName": "csakko",
+     "seconds": 290,
+     "year": 2009,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ib-yDJCyec4",
+     "title": "David Guetta feat. Akon - Sexy Bitch LIVE LEGENDADO (by:YMIB)",
+     "kind": "live",
+     "channelName": "YourMusicIsBest",
+     "seconds": 198,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "gYRNkA2MKBc",
+     "title": "David Guetta   Sexy Bitch live at creamfields 2009",
+     "kind": "live",
+     "channelName": "09scouselad",
+     "seconds": 161,
+     "year": 2009,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "WpZ3X9nPGjQ",
+     "title": "David Guetta feat. Akon - Sexy Bitch - live @ Pacha Ibiza 30 July 2009",
+     "kind": "live",
+     "channelName": "gillesgengler",
+     "seconds": 36,
+     "year": 2009,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "xI5fVEzUT7o",
+     "title": "David Guetta Feat. Akon-Sexy Bitch-Live In Ibiza -BBC",
+     "kind": "live",
+     "channelName": "superpaulmike",
+     "seconds": 207,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "mZNsCFzXEVc",
+     "title": "David Guetta feat. Akon - Sexy Bitch [HQ]",
+     "kind": "version",
+     "channelName": "soprambaba92izi",
+     "seconds": 194,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "kLrhlLm45OM",
+     "title": "David Guetta, Akon - Sexy Bitch (Daikee X Mirasso Bootleg)",
+     "kind": "version",
+     "channelName": "Daikee",
+     "seconds": 229,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "GFPmGyNp07w",
+     "title": "David Guetta ft Akon - Sexy chick sexy bitch  HD",
+     "kind": "version",
+     "channelName": "franctec",
+     "seconds": 209,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "MlK6uBb1ACs",
+     "title": "David Guetta : the story about \"Sexy Bitch\" feat. Akon",
+     "kind": "version",
+     "channelName": "David Guetta",
+     "seconds": 138,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "C7H5WSe0Gyw",
+     "title": "03 David Guetta - \"Sexy Bitch\" (feat. Akon)",
+     "kind": "version",
+     "channelName": "DavidGuettaDJ",
+     "seconds": 197,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "kMXJLi5-04g",
+     "title": "#VEVOCertified, Pt. 9: Sexy Bitch (David Guetta Commentar...",
+     "kind": "version",
+     "channelName": "David Guetta",
+     "seconds": 71,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "IZviyybFBIc",
+     "title": "CRITIQUE DE CHANSON POP : « Sexy Bitch » de David Guetta ft. Akon",
+     "kind": "react",
+     "channelName": "Todd in the Shadows",
+     "seconds": 539,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 475
   },
   {
@@ -6720,7 +8603,251 @@
    "description": "I Know You Want Me (Calle Ocho) est le deuxième extrait de l'album Rebelution du rappeur Pitbull et paru en single. Cette chanson s’est classé partout en Europe dans le top 10. En France, le titre a été n°1 des ventes et n°1 des clubs.",
    "wikipedia": "https://fr.wikipedia.org/wiki/I_Know_You_Want_Me_(Calle_Ocho)",
    "views60d": 298,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "E2tMV96xULk",
+     "title": "Pitbull - I Know You Want Me (Calle Ocho) (Official Video) [Ultra Records]",
+     "kind": "clip",
+     "channelName": "Ultra Records",
+     "seconds": 246,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "hFoxg4IFtqc",
+     "title": "PITBULL - I know you want me (calle ocho) [Official video HD]",
+     "kind": "clip",
+     "channelName": "DO IT YOURSELF",
+     "seconds": 241,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "AbYgHNg-S7g",
+     "title": "Pitbull - I Know You Want Me (Official Video Brazil)",
+     "kind": "clip",
+     "channelName": "Music Top Internacional",
+     "seconds": 247,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "DMCBc5MpE6I",
+     "title": "Pitbull mix - Maldito alcohol - Anthem - I know you want me - Don stop party",
+     "kind": "live",
+     "channelName": "Dj Clandestino",
+     "seconds": 518,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "BAlY412ru1M",
+     "title": "Pitbull - I Know You Want Me (Calle Ocho) (Live on the Honda Stage at the iHeartRadio Theater LA)",
+     "kind": "live",
+     "channelName": "Pitbull",
+     "seconds": 147,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "yU0OTIv--Ps",
+     "title": "I Know You Want Me (Calle Ocho) (Live On Letterman)",
+     "kind": "live",
+     "channelName": "Pitbull",
+     "seconds": 145,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "6iaW4fsNYTg",
+     "title": "Pitbull Hotel Room Service I Know You Want Me Calle Ocho Live At The ALMA Awards",
+     "kind": "live",
+     "channelName": "UrbayDanella",
+     "seconds": 230,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "oHnHTdTfB3w",
+     "title": "HD Pitbull I Know You Want Me Calle Ocho Hotel Room Service Live At Ellen Show 09 10 2009",
+     "kind": "live",
+     "channelName": "UrbayDanella",
+     "seconds": 256,
+     "year": 2009,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "tioGO1oRiSk",
+     "title": "Pitbull - I Know You Want Me (Calle Ocho) LIVE AT MSG",
+     "kind": "live",
+     "channelName": "Billboard",
+     "seconds": 241,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "xP6djd6Ym28",
+     "title": "Pitbull   I Know you want me Calle 8 Live Jimmy Kimmel HDrip",
+     "kind": "live",
+     "channelName": "Benjy J. Sanchez",
+     "seconds": 190,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ZZZ6f6EHoPM",
+     "title": "Pitbull - I Know You Want Me ( Calle Ocho ), Hotel Room Service ( Live ) En Vivo",
+     "kind": "live",
+     "channelName": "Videohd01",
+     "seconds": 258,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "NBR_SqldtG4",
+     "title": "Pitbull - I Know You Want Me (Live from Party After Dark Tour 2025, Cologne, Germany)",
+     "kind": "live",
+     "channelName": "The Sedighis Concerts",
+     "seconds": 84,
+     "year": 2025,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Z0y1Ed7u3VI",
+     "title": "Pitbull-I Know You Want Me (Calle Ocho) (Live at AXE Lounge) HD!!",
+     "kind": "live",
+     "channelName": "brucew741",
+     "seconds": 111,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "gX54Hesh_cg",
+     "title": "Pitbull - I Know You Want Me (Calle Ocho) (Warsaw Live 23.07.2026)",
+     "kind": "live",
+     "channelName": "smizin",
+     "seconds": 81,
+     "year": 2026,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "h24AUFhXJDg",
+     "title": "I Know You Want Me (Calle Ocho) - Pitbull Live at The Climate Pledge Arena in Seattle 12/8/2023",
+     "kind": "live",
+     "channelName": "Devin Creisler Studios",
+     "seconds": 89,
+     "year": 2023,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "8F8nBXEYP2g",
+     "title": "Pitbull - I Know You Want Me (Calle Ocho)",
+     "kind": "version",
+     "channelName": "ItalianHype",
+     "seconds": 238,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "LF9_klwCok0",
+     "title": "Pitbull - I Know You Want Me (Calle Ocho) with Pitbull Introduction",
+     "kind": "version",
+     "channelName": "Ultra Records",
+     "seconds": 391,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "okp0P14qM_U",
+     "title": "Pitbull - I Know You Want Me (Calle Ocho)",
+     "kind": "version",
+     "channelName": "Top Squad",
+     "seconds": 239,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "DmH7keba3pE",
+     "title": "Pitbull - I know you want me (official bootleg)",
+     "kind": "version",
+     "channelName": "DJ KLASH",
+     "seconds": 210,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "WdjDh459ZpQ",
+     "title": "[127] I KNOW YOU WANT ME - PITBULL - (ELECTRO LATINO] - DJ LOCO CABANA-PERU FT. LEONARDO CARDONA",
+     "kind": "version",
+     "channelName": "DJ LOCO CABANA PERU",
+     "seconds": 190,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "9Bev2ShJ4A0",
+     "title": "Pitbull - I Know You Want Me (Calle Ocho) (James Lucas Afro House Remix)",
+     "kind": "version",
+     "channelName": "Afro House Mafia",
+     "seconds": 242,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "9nY4vroW3NQ",
+     "title": "Pitbull - I Know You Want Me (Behind The Scenes Part 2)",
+     "kind": "coulisses",
+     "channelName": "Ultra Records",
+     "seconds": 276,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "uYv6q1qJi9w",
+     "title": "Pitbull - I Know You Want Me (Behind The Scenes Part 1)",
+     "kind": "coulisses",
+     "channelName": "Ultra Records",
+     "seconds": 225,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "lpEWDtMSGK4",
+     "title": "Pitbull - I Know You Want Me - Exclusive Interview",
+     "kind": "coulisses",
+     "channelName": "SonyTheQube",
+     "seconds": 181,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "VrSqqoEOg8I",
+     "title": "Pitbull - I Know You Want Me (Calle Ocho) (Letra)",
+     "kind": "paroles",
+     "channelName": "nightlife",
+     "seconds": 239,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "04jwPVTFNOE",
+     "title": "Pitbull - I Know You Want Me (Calle Ocho) [Lyrics]",
+     "kind": "paroles",
+     "channelName": "Hip Hop/R&B Lyrics",
+     "seconds": 238,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "OTieDm_uKsU",
+     "title": "Pitbull - I Know You Want Me (Calle Ocho) (Lyrics)",
+     "kind": "paroles",
+     "channelName": "7clouds",
+     "seconds": 238,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 459
   },
   {
@@ -7689,7 +9816,116 @@
    "description": "Mignon mignon est une sonnerie téléchargeable et le deuxième single par le personnage publicitaire René la Taupe. La chanson connut un grand succès en France pendant l'année 2010.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Mignon_mignon",
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "24pUKRQt7fk",
+     "title": "René la Taupe - Mignon Mignon ( clip officiel )",
+     "kind": "clip",
+     "channelName": "YourKid TV",
+     "seconds": 157,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "0iW0q3pl24g",
+     "title": "René la Taupe - Mignon Mignon (Clip Vidéo Officiel)",
+     "kind": "clip",
+     "channelName": "Jamba Music",
+     "seconds": 60,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "LsTXI-SPxuE",
+     "title": "René la Taupe   Mignon Mignon  clip officiel )",
+     "kind": "clip",
+     "channelName": "amaury koeune",
+     "seconds": 157,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "t0PMPHSrM0c",
+     "title": "René la Taupe - Mignon, Mignon (Multilanguage)",
+     "kind": "live",
+     "channelName": "René la Taupe Archive",
+     "seconds": 842,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "xBCaugTVVJE",
+     "title": "(Jivesqua Event Footage?) René La Taupe - Mignon Mignon Live Footage",
+     "kind": "live",
+     "channelName": "depois eu mudo o nome.",
+     "seconds": 237,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Ja1R5dJFt9g",
+     "title": "René La Taupe - Mignon Mignon",
+     "kind": "version",
+     "channelName": "Jamba Music",
+     "seconds": 148,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Vn8Wjoxlw3U",
+     "title": "René La Taupe - Mignon Mignon (remix)",
+     "kind": "version",
+     "channelName": "Jamba Music",
+     "seconds": 30,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "lT6DcNeP3Dc",
+     "title": "René La Taupe - Mignon Mignon",
+     "kind": "version",
+     "channelName": "Jamba Music",
+     "seconds": 30,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "mn7U2uir1yI",
+     "title": "René La Taupe - Mignon Mignon (remix)",
+     "kind": "version",
+     "channelName": "Jamba Music",
+     "seconds": 30,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "cUc1yany4oc",
+     "title": "René la Taupe - Mignon Mignon (La vraie voix de René d'origine).",
+     "kind": "version",
+     "channelName": "denis basile",
+     "seconds": 100,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "r6KJkReIbXw",
+     "title": "Rene La Taupe - Mignon.",
+     "kind": "version",
+     "channelName": "Amanda Vincent",
+     "seconds": 30,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "NT9Pzta4nLQ",
+     "title": "KARAOKE René La Taupe : Mignon Mignon !!",
+     "kind": "paroles",
+     "channelName": "MsBebemarie",
+     "seconds": 148,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 650
   },
   {
