@@ -738,7 +738,8 @@ function renderMusicTimeline() {
 
 /* ---------- Blind test ---------- */
 const bt = { broken: new Set(), guard: null, duration: 10, level: 'normal', year: 0, genre: '', rounds: 10, queue: [], i: 0, score: 0, results: [], player: null, timer: null, revealed: false };
-const BT_LEVELS = { facile: ['Facile', 150], normal: ['Normal', 450], expert: ['Expert', Infinity] };
+// Facile : les 400 plus gros tubes ; Normal : tous ; Expert : les tubes moins connus (hors 300 premiers).
+const BT_LEVELS = { facile: ['Facile', 400], normal: ['Normal', Infinity], expert: ['Expert', Infinity, 300] };
 
 // Le lecteur YouTube programmable (API IFrame), chargé une seule fois à la demande.
 let ytReady = null;
@@ -848,8 +849,8 @@ function renderBlindSetup() {
 }
 
 function blindPool() {
-  const max = BT_LEVELS[bt.level][1];
-  return [...HITS].filter((h) => clipOf(h)).sort((a, b) => b.score - a.score).slice(0, max)
+  const [, max, skip = 0] = BT_LEVELS[bt.level];
+  return [...HITS].sort((a, b) => b.score - a.score).slice(skip, skip + max).filter((h) => clipOf(h))
     .filter((h) => (!bt.year || h.year === bt.year) && (!bt.genre || h.genre === bt.genre));
 }
 
