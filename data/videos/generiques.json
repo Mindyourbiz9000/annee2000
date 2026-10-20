@@ -5558,5 +5558,58 @@
    "seconds": 74,
    "source": "auto"
   }
+ ],
+ "disney-kid": [],
+ "drole-de-reveil": [],
+ "la-teloose": [],
+ "a-toi-l-actu": [],
+ "dede-les-doigts-de-fee": [],
+ "generation-albator": [],
+ "l-appel-gagnant": [
+  {
+   "youtubeId": "lyp-a1zfIYs",
+   "title": "L'Appel Gagnant générique AB4 2006",
+   "kind": "générique",
+   "channelName": "invité",
+   "seconds": 16,
+   "source": "auto"
+  }
+ ],
+ "l-inventeur-de-l-annee": [
+  {
+   "youtubeId": "-gwakh_80k4",
+   "title": "Generique L'inventeur de l'année - M6  - O.Foucre Post-Production",
+   "kind": "générique",
+   "channelName": "OFoucre",
+   "seconds": 14,
+   "source": "auto"
+  },
+  {
+   "youtubeId": "elGYLhBkmDk",
+   "title": "L'Inventeur De L'Année générique M6 2007",
+   "kind": "générique",
+   "channelName": "invité",
+   "seconds": 19,
+   "source": "auto"
+  }
+ ],
+ "on-a-tout-revise": [],
+ "point-route": [
+  {
+   "youtubeId": "piV93peBXN0",
+   "title": "France 2 - Générique Point Route (2007)",
+   "kind": "générique",
+   "channelName": "ArchivoS. (Archivo)",
+   "seconds": 26,
+   "source": "auto"
+  },
+  {
+   "youtubeId": "0RRdeYeea18",
+   "title": "France 2 - Générique Point Route (2006)",
+   "kind": "générique",
+   "channelName": "ArchivoS. (Archivo)",
+   "seconds": 13,
+   "source": "auto"
+  }
  ]
 }
