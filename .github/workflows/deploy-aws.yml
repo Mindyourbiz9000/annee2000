@@ -1,8 +1,7 @@
 name: Déploiement AWS (S3 + CloudFront)
 
+# Lancement manuel seulement : le déploiement courant se fait avec ./deploy.sh depuis AWS CloudShell.
 on:
-  push:
-    branches: [main, claude/wizardly-mendel-ojlr60]
   workflow_dispatch:
 
 permissions:

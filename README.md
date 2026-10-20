@@ -59,9 +59,15 @@ Les vidéos sont seulement intégrées via le lecteur YouTube (`youtube-nocookie
 ## Déploiement
 
 Le site est hébergé sur AWS : bucket S3 privé `annee2000-site-158346964722` (Paris) servi par CloudFront
-(https://d22mgjxgcxd3e3.cloudfront.net). Le workflow `.github/workflows/deploy-aws.yml` le met à jour à chaque push :
-il se connecte à AWS par OIDC avec le rôle `annee2000-deploy` (aucune clé stockée sur GitHub), synchronise les fichiers
-du site et vide le cache CloudFront.
+(https://d22mgjxgcxd3e3.cloudfront.net). Pour mettre en ligne la dernière version, dans AWS CloudShell :
+
+```bash
+cd ~/annee2000 && ./deploy.sh
+```
+
+Le script récupère la branche, synchronise les fichiers du site sur S3 et vide le cache CloudFront.
+(Le workflow `.github/workflows/deploy-aws.yml` existe aussi, en lancement manuel, mais la connexion OIDC
+GitHub → AWS n'est pas encore fonctionnelle.)
 
 ## Licences
 
