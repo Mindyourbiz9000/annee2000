@@ -37,7 +37,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/%2B_Clair",
    "views60d": 179,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "gb6O6pB84_k",
+     "title": "CANAL+ +Clair avec David Pujadas du 15 septembre 2001",
+     "kind": "episode",
+     "year": 2001,
+     "channelName": "TOP GENERIQUES",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "z58FsSMj1fk",
+     "title": "CANAL+ +Clair n°1 invité Laurent Ruquier du 1er septembre 2001",
+     "kind": "episode",
+     "year": 2001,
+     "channelName": "TOP GENERIQUES",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "M-XzWVnMRMI",
+     "title": "Canal+ - 20 Janvier 2007 - + Clair",
+     "kind": "episode",
+     "year": 2007,
+     "channelName": "Coyotte98 Archives",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "K90rLpNrrqU",
+     "title": "CANAL+ +Clair du 14 juin 2003",
+     "kind": "episode",
+     "year": 2003,
+     "channelName": "TOP GENERIQUES",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Jiv3Am2fmW4",
+     "title": "Canal+ - 27 Janvier 2007 - + Clair",
+     "kind": "episode",
+     "year": 2007,
+     "channelName": "Coyotte98 Archives",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "YTfSezNOEno",
+     "title": "Canal+ - 29 Mars 2008 - + Clair",
+     "kind": "episode",
+     "year": 2008,
+     "channelName": "Coyotte98 Archives",
+     "source": "auto"
+    }
+   ],
    "score": 234,
    "fame": 2
   },
@@ -349,7 +398,40 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/100_minutes_pour_convaincre",
    "views60d": 173,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "auElCVGk-7c",
+     "title": "Nicolas Sarkozy: 100 minutes pour convaincre (2003)",
+     "kind": "episode",
+     "year": 2003,
+     "channelName": "Lukas Weber",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Dmnfmt-jx7A",
+     "title": "100 minutes pour convaincre avec Jean Marie Lepen France Juin 2002 partie 2",
+     "kind": "episode",
+     "year": 2002,
+     "channelName": "Romain Pilgrim",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "1zWZxJEewQE",
+     "title": "100 minutes pour convaincre avec Jean Marie Lepen France Juin 2002 partie 1",
+     "kind": "episode",
+     "year": 2002,
+     "channelName": "Romain Pilgrim",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "4nGWkEieDng",
+     "title": "100 minutes pour convaincre : Nicolas Sarkozy en 2002",
+     "kind": "extrait",
+     "year": 2002,
+     "channelName": "kimman",
+     "source": "auto"
+    }
+   ],
    "score": 232,
    "fame": 2
   },
@@ -370,7 +452,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/120_minutes_de_bonheur",
    "views60d": 153,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "fC9xGItNbvA",
+     "title": "Le meilleur des bêtisiers de TF1 ! 😂 - 120 Minutes de Bonheur - Émission Intégrale - EDL",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Rires & Prime",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "4GhCYKOWGxM",
+     "title": "Les Moments les plus drôles de la TV en 2004 ! - 120 Minutes de Bonheur - Intégrale - P1 04-05 - EDL",
+     "kind": "episode",
+     "year": 2004,
+     "channelName": "Rires & Prime",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "8Y_VJmnnCM0",
+     "title": "Les Moments les plus Insolites de 2003 ! - 120 Minutes de Bonheur - Intégrale - P1 03-04 - EDL",
+     "kind": "episode",
+     "year": 2003,
+     "channelName": "Rires & Prime",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "RJIsvDI9JMk",
+     "title": "Quand les Présentateurs pètent un Câble ! - 120 Minutes de Bonheur - Émission Intégrale - EDL",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Rires & Prime",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "dNg__rEkqGs",
+     "title": "Le meilleur Bêtisier de la TV 2001 ! - 120 Minutes de Bonheur - Émission Intégrale - EDL",
+     "kind": "episode",
+     "year": 2001,
+     "channelName": "Rires & Prime",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "mK7kCibXgd0",
+     "title": "Les MEILLEURS Fous Rires de 2001 ! - 120 Minutes de Bonheur - Émission Intégrale - EDL",
+     "kind": "episode",
+     "year": 2001,
+     "channelName": "Rires & Prime",
+     "source": "auto"
+    }
+   ],
    "score": 227,
    "fame": 2
   },
@@ -1941,7 +2072,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Amour,_gloire_et_d%C3%A9bats_d%27id%C3%A9es",
    "views60d": 157,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "_pyd_RJ9NJA",
+     "title": "Amour gloire et débats d'idées- L'intégrale 2/2",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Rod Legrocha",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "84WPsrPXjk4",
+     "title": "Amour, Gloire et Débats d'idées, épisode 01 - Une bien étrange trahison...",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "pixeljessie1989",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Vo6DbldLQjU",
+     "title": "Amour, Gloire et Débats d'idées, épisode 13 - Un bien étrange Euro-Langage...",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "pixeljessie1989",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "wDOoIIx0bPc",
+     "title": "Amour, Gloire et Débats d'idées, épisode 34 - Un bien étrange eurosepticisme...*",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "pixeljessie1989",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "cU4aT8Ga0jw",
+     "title": "Amour, Gloire et Débats d'idées, épisode 02 - De bien étranges états d'âmes...",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "pixeljessie1989",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "jSiWSJY8Zjg",
+     "title": "Amour, Gloire et Débats d'idées, épisode 17 - Spécial Bilan 1997...",
+     "kind": "extrait",
+     "year": 1997,
+     "channelName": "pixeljessie1989",
+     "source": "auto"
+    }
+   ],
    "score": 228,
    "fame": 2
   },
@@ -4824,7 +5004,40 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Carnaval_(%C3%A9mission_de_t%C3%A9l%C3%A9vision)",
    "views60d": 181,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "BsEYlXyWB7o",
+     "title": "TF1 - Carnaval de Rio - 15.02.1985 (VHSRIP)",
+     "kind": "episode",
+     "year": 1985,
+     "channelName": "Darmi TV - La Génération Tivi",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "im7gdSesD7g",
+     "title": "TF1 1er Janvier 1987 Carnaval",
+     "kind": "episode",
+     "year": 1987,
+     "channelName": "TéléK7",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "3ptucp2O1mQ",
+     "title": "Francis Cabrel, Pierre Bachelet et Renaud imitent Elvis - Carnaval TF1 (2 janv. 1987) ",
+     "kind": "extrait",
+     "year": 1987,
+     "channelName": "Motherloadontheroad",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Y9N5kkfQybw",
+     "title": "LES GRANDS PRÉPARATIFS DU CARNAVAL DE NICE 2018 (jt de 13h TF1)",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Théo Boyer",
+     "source": "auto"
+    }
+   ],
    "score": 234,
    "fame": 2
   },
@@ -4845,7 +5058,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Carte_postale_gourmande",
    "views60d": 174,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "iFSTgeVADm0",
+     "title": "Carte postale gourmande",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Olivier RICHARD",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "G91IOmc4WLc",
+     "title": "France 5  Carte postale gourmande Le soleil LJ Vannucci Jean Luc Petitrenaud #cuisinefrançaise #chef",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Dialogues autour d’un engrenage ",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "j0iwppTC7y4",
+     "title": "La 5e BA + Carte Postale Gourmande + Le Magazine de la Santé incomplet",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Tv autrefois",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Tc30RojYKNM",
+     "title": "Jean Luc PETITRENAUD carte postale gourmande le marché de La Rochelle clip",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "jacquesfabien",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "gqKDvKlFUM0",
+     "title": "Jean Luc PETITRENAUD carte postale gourmande Johan LECLERRE",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "jacquesfabien",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "I_m07AvhG4s",
+     "title": "Carte postale gourmande",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Gérard Sallé",
+     "source": "auto"
+    }
+   ],
    "score": 232,
    "fame": 2
   },
@@ -6149,7 +6411,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/ConsoMag",
    "views60d": 153,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "F93keshDvyg",
+     "title": "France 2 - 18 Juin 2005 - Consomag des aides pour se loger",
+     "kind": "extrait",
+     "year": 2005,
+     "channelName": "Coyotte98 Archives",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "_0Qx26Z3Vdk",
+     "title": "ConsoMag France 2 - Tourisme : Les Ecolabels",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Poitou-Charentes Pro",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "IzkoP--JAao",
+     "title": "Consomag - L'individualisation des frais de chauffage collectif - France 2 | 12 Octobre 2017",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "ista France",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "jbrcVxdi-NU",
+     "title": "Consomag - France 2 - 29/03/2017",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "la chaine stop-linky",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Np73d4dU8nU",
+     "title": "ConsoMag France 2   Tourisme   Les Ecolabels",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Les Orangeries Hotel Restaurant",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "FOD_c9oezcM",
+     "title": "France 2 - Générique Consomag (2005)",
+     "kind": "générique",
+     "year": 2005,
+     "channelName": "ArchivoS. (Archivo)",
+     "source": "auto"
+    }
+   ],
    "score": 227,
    "fame": 2
   },
@@ -7275,7 +7586,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Dimanche_%2B",
    "views60d": 151,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "C3ocEbEhMGs",
+     "title": "CANAL+ - 1996 - Télés dimanche - Démission JP Elkabbach",
+     "kind": "episode",
+     "year": 1996,
+     "channelName": "TELE 80 TELES 90",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "wv0vSD7_I50",
+     "title": "CANAL+ Télés Dimanche Rétrospective 1994/1995",
+     "kind": "episode",
+     "year": 1994,
+     "channelName": "TOP GENERIQUES",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "iaLnS-rF2P4",
+     "title": "CANAL+ Télés Dimanche du 26 mai 1996",
+     "kind": "episode",
+     "year": 1996,
+     "channelName": "TOP GENERIQUES",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "S09ZAH3m3xs",
+     "title": "CANAL+ Télés Dimanche du 13 novembre 1994",
+     "kind": "episode",
+     "year": 1994,
+     "channelName": "TOP GENERIQUES",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "JZFB8Ax6XlI",
+     "title": "CANAL+ Télés Dimanche du 02 avril 1995",
+     "kind": "episode",
+     "year": 1995,
+     "channelName": "TOP GENERIQUES",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "F8mgtfJHCtM",
+     "title": "CANAL+ Télés Dimanche du 28 février 1993",
+     "kind": "episode",
+     "year": 1993,
+     "channelName": "TOP GENERIQUES",
+     "source": "auto"
+    }
+   ],
    "score": 226,
    "fame": 2
   },
@@ -9650,7 +10010,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/France_Europe_Express",
    "views60d": 156,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "QEOS_0RaX_0",
+     "title": "France Europe Express avec Jean-Marie Le Pen le 15/03/2007",
+     "kind": "episode",
+     "year": 2007,
+     "channelName": "ArchivesLePen2007",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-4NzB6zVxWk",
+     "title": "France 3 23 Septembre 2001 Coming Next, 3 Pubs, 3 BA, Météo, Soir 3, France Europe Express",
+     "kind": "episode",
+     "year": 2001,
+     "channelName": "M.Thierry T.V.",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "MxJaqYMaEgU",
+     "title": "France 3 - 19 Octobre 2004 - Extrait France Europe Express",
+     "kind": "episode",
+     "year": 2004,
+     "channelName": "Coyotte98 Archives",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "hgtrKMDGj7k",
+     "title": "📼 France europe express Débat sur le prix du carburant  France3  le 18 Octobre 2005 (incomplet).",
+     "kind": "episode",
+     "year": 2005,
+     "channelName": "arnomac140",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "2BkzpTVdHF8",
+     "title": "Bayrou a France Europe Express",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "kusalll",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "yvHgmK7FFwE",
+     "title": "France 3 - 23 Janvier 2000 - France Europe Express, Coming Next, Pubs, Le Cinéma De Minuit",
+     "kind": "extrait",
+     "year": 2000,
+     "channelName": "Les Pépites Du Digger",
+     "source": "auto"
+    }
+   ],
    "score": 228,
    "fame": 2
   },
@@ -11564,7 +11973,48 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/J%27y_vais..._j%27y_vais_pas_%3F",
    "views60d": 160,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "tFiSHByh84s",
+     "title": "Patrick Fiori & Florent Pagny - J'y vais (Live) - Le Grand Studio RTL",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Le Grand Studio RTL",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "mCTXECCfpTw",
+     "title": "Émotion ! Patrick Fiori interprète \"J'y vais\" pour Faustine Bollaert",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "La boîte à secrets - France Télévisions",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "oiOlJmR3uZw",
+     "title": "Chronique Théâtre \"J'Y VAIS OU J'Y VAIS PAS ?\" : GASPARD PROUST \"Nouveau Spectacle\"",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Sonia Imbert",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "cBeBSqgfgHU",
+     "title": "[France 3 Alsace] Au boulot j'y vais à vélo",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "GHR Mulhouse Sud Alsace",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "rVxonlY_RyA",
+     "title": "«J'y vais... j'y vais pas» l'ancienne émission mi-vue mi-connue de France 3",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Europe 1",
+     "source": "auto"
+    }
+   ],
    "score": 229,
    "fame": 2
   },
@@ -11920,7 +12370,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Jour_de_rugby",
    "views60d": 169,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "oVoSudaeFXE",
+     "title": "Jour de Rugby  - Dernière Journée Saison 2000/2001 - CANAL +",
+     "kind": "episode",
+     "year": 2000,
+     "channelName": "RugbyBack",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "_aA7SbTgQCQ",
+     "title": "Jour de Rugby Canal+ Ile Maurice",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Mauritius Rugby TV",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-aznjRvCoOA",
+     "title": "Canal+ Sport : 4 B.A, Jour de sport, Rugby : Sharks/Brumbies : 31-03-2005",
+     "kind": "episode",
+     "year": 2005,
+     "channelName": "FRTV Archives",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "MelibjUsqoY",
+     "title": "CANAL+ / I TELE Fin de Jour de Rugby + infos + Pub + Début Le Vrai Journal (12 octobre 2003)",
+     "kind": "extrait",
+     "year": 2003,
+     "channelName": "TOP GENERIQUES",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "PZ5CbnQrEPY",
+     "title": "RUGBY TOP14 LA ROCHELLE RCT TOULON JOUR DE RUGBY CANAL+ STUDIO TOULON LIVE 2017 2017",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Shin Barak",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "qvSdRdQayb8",
+     "title": "Générique jour de rugby canal+ 2003",
+     "kind": "générique",
+     "year": 2003,
+     "channelName": "touria ouizgane",
+     "source": "auto"
+    }
+   ],
    "score": 231,
    "fame": 2
   },
@@ -14931,7 +15430,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/La_nuit_nous_appartient_(%C3%A9mission_de_t%C3%A9l%C3%A9vision)",
    "views60d": 186,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "bzA_s4RfQ4E",
+     "title": "Mister You - La nuit nous appartient",
+     "kind": "episode",
+     "year": null,
+     "channelName": "La nuit nous appartient",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "uFncB9tU4zA",
+     "title": "Sofiane & Nabilla - La nuit nous appartient",
+     "kind": "episode",
+     "year": null,
+     "channelName": "La nuit nous appartient",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "jk6g-Bmkw7I",
+     "title": "Ayem Nour - La nuit nous appartient",
+     "kind": "episode",
+     "year": null,
+     "channelName": "La nuit nous appartient",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "lhLdZFHlSas",
+     "title": "Mister You & David Baiot, Jawad de Plus belle la vie - La nuit nous appartient",
+     "kind": "episode",
+     "year": null,
+     "channelName": "La nuit nous appartient",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "GLz5dj9Xky4",
+     "title": "Sexion d'Assaut - La nuit nous appartient",
+     "kind": "episode",
+     "year": null,
+     "channelName": "La nuit nous appartient",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "xQPaE3KJKII",
+     "title": "Ayem & caroline (Secret Story) - La nuit nous appartient",
+     "kind": "episode",
+     "year": null,
+     "channelName": "La nuit nous appartient",
+     "source": "auto"
+    }
+   ],
    "score": 235,
    "fame": 2
   },
@@ -17008,7 +17556,32 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Le_Num%C3%A9ro_gagnant_(jeu_t%C3%A9l%C3%A9vis%C3%A9)",
    "views60d": 127,
    "sitelinks": 2,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "aRLwxrBXfEE",
+     "title": "Le Numéro Gagnant (Winning Lines France) (2002)",
+     "kind": "episode",
+     "year": 2002,
+     "channelName": "UzumakiPlayroom",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "9uTnHjf5j1Y",
+     "title": "Le Numéro Gagnant partie 3 -- Ronde 2 et Le Mur des Merveilles",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "scubarv",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "KpJZO27hdFY",
+     "title": "Le Numéro Gagnant partie 2 -- Ronde 1 et Ronde 2",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "scubarv",
+     "source": "auto"
+    }
+   ],
    "score": 227,
    "fame": 2
   },
@@ -18668,7 +19241,48 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Les_Hy%C3%A8nes_(%C3%A9mission_de_t%C3%A9l%C3%A9vision)",
    "views60d": 178,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "IZGZV9GtbAY",
+     "title": "Les Hyènes - Episode 4 | Emission complète",
+     "kind": "episode",
+     "year": null,
+     "channelName": "imineo",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "8YlLQL76HUg",
+     "title": "Les Hyènes - Episode 1 | Emission complète",
+     "kind": "episode",
+     "year": null,
+     "channelName": "imineo",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "cToN7QEmuxc",
+     "title": "Les Hyènes - Episode 2 | Emission complète",
+     "kind": "episode",
+     "year": null,
+     "channelName": "imineo",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "cIVlFwsSrUA",
+     "title": "Les Hyènes - Episode 5 | Emission complète",
+     "kind": "episode",
+     "year": null,
+     "channelName": "imineo",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "m-Z8uqNUTKM",
+     "title": "Les Hyènes - Episode 3 | Emission complète",
+     "kind": "episode",
+     "year": null,
+     "channelName": "imineo",
+     "source": "auto"
+    }
+   ],
    "score": 233,
    "fame": 2
   },
@@ -20508,7 +21122,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Mon_Kanar",
    "views60d": 176,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "BEX9w7X8phQ",
+     "title": "France 3 - TO3, 2 Page de Publicité, 1 B.A., Mon Kanar (9 Juin 2004)",
+     "kind": "extrait",
+     "year": 2004,
+     "channelName": "ArchivoS. (Archivo)",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "dM-AWy_gzN4",
+     "title": "Mon Kanar",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Racconti Ricordati",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "LigEH1py-z4",
+     "title": "Mon Kanar - Generation Rap & RnB",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "MARQUES Lisa-Marie",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "eTxzM9OQ-Fs",
+     "title": "2003-09-11 - Mon Kanar (France 3) - Interview",
+     "kind": "extrait",
+     "year": 2003,
+     "channelName": "Elle, Alizée by A.Projekt",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "iU8uN1_KNOE",
+     "title": "France 3 - 24 Février 2003 - \"Mon Kanar\"",
+     "kind": "extrait",
+     "year": 2003,
+     "channelName": "mister PR70",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "_0_B6Cq-1fo",
+     "title": "Ilona Mitrecey - Interview (Mon kanar France 3)",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "ilona X Kylian",
+     "source": "auto"
+    }
+   ],
    "score": 233,
    "fame": 2
   },
@@ -21365,7 +22028,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Nous_nous_sommes_tant_aim%C3%A9s_(%C3%A9mission_de_t%C3%A9l%C3%A9vision)",
    "views60d": 160,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "BnTf53FaKkM",
+     "title": "Nous nous sommes tant aimés - Bernard Loiseau",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Bernard Loiseau",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "5qgYmYWp_4U",
+     "title": "Georges Moustaki - Nous nous sommes tant aimés [Documentaire]",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Georges Moustaki International Fan Club",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "VESfEnHrBGQ",
+     "title": "Nous nous sommes tant aimés - Roger Vadim",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Kel nah",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "XqzTHQrgpMc",
+     "title": "Nous nous sommes tant aimés - Annie Girardot",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Kel nah",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-7j7H478G5k",
+     "title": "Nous nous sommes tant aimés   Serge Gainsbourg 2010 Fr3",
+     "kind": "episode",
+     "year": 2010,
+     "channelName": "Bruno B",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "eMEy4xwBgD0",
+     "title": "Nous nous sommes tant aimés 2010 : Pascal Sevran",
+     "kind": "episode",
+     "year": 2010,
+     "channelName": "Sami Neifar",
+     "source": "auto"
+    }
+   ],
    "score": 229,
    "fame": 2
   },
@@ -23989,7 +24701,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Re-7",
    "views60d": 154,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "0Bthe8yXf8k",
+     "title": "Re 7 Emission du 4 février 2006",
+     "kind": "extrait",
+     "year": 2006,
+     "channelName": "Fabrice Lourie",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-rAF069Sekc",
+     "title": "Asterix & Obelix XXL - Emission avec Étranges Libellules ( Re-7 Canal J 2003)",
+     "kind": "extrait",
+     "year": 2003,
+     "channelName": "Nekin Speedrun",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "txGEcRpKfIU",
+     "title": "Super Mario Sunshine (test GameCube - Re-7, Canal J - 2002)",
+     "kind": "extrait",
+     "year": 2002,
+     "channelName": "Oli (Jeux vidéo et des bas)",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "eKP-4w75dW4",
+     "title": "The Legend of Zelda: The Wind Waker (test GameCube - Re-7, Canal J - 2003)",
+     "kind": "extrait",
+     "year": 2003,
+     "channelName": "Oli (Jeux vidéo et des bas)",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Le7du5N0jgw",
+     "title": "Emission spécial mario (émission Re-7) en 2002",
+     "kind": "extrait",
+     "year": 2002,
+     "channelName": "Link84 Nintendo-Océan",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "VgbjvOTaYEo",
+     "title": "Asterix & Obelix XXL (test PlayStation 2 - Re-7, Canal J - 2003)",
+     "kind": "extrait",
+     "year": 2003,
+     "channelName": "Oli (Jeux vidéo et des bas)",
+     "source": "auto"
+    }
+   ],
    "score": 227,
    "fame": 2
   },
@@ -29868,7 +30629,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Vol_de_nuit_(%C3%A9mission_de_t%C3%A9l%C3%A9vision)",
    "views60d": 155,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "KcQPtT7SE9Y",
+     "title": "Vol à la Poussette | Central Nuit | Clovis Cornillac & Michel Creton | Film Policier complet | GP",
+     "kind": "episode",
+     "year": null,
+     "channelName": "ICON TV - Polars",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "buG0_XSeMiQ",
+     "title": "TF1 - 28 Octobre 1999 - Pubs, Coming Next, Vol De Nuit",
+     "kind": "episode",
+     "year": 1999,
+     "channelName": "Les Pépites Du Digger",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Ph-RP87lcCk",
+     "title": "TF1 Vol de Nuit 2005",
+     "kind": "episode",
+     "year": 2005,
+     "channelName": "Tv autrefois",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "2SVeyUJ7U1g",
+     "title": "Vol de Nuit (émission non complet)",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Castiel gamming ",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ok1mb5n13f0",
+     "title": "TF1 (1 avril 2003) - Pubs, BAs, Coming Next, Vol de Nuit",
+     "kind": "extrait",
+     "year": 2003,
+     "channelName": "La Mire TV",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ojDia_TbUL4",
+     "title": "TF1 Vol de Nuit 1er partie 2002",
+     "kind": "extrait",
+     "year": 2002,
+     "channelName": "Tv autrefois",
+     "source": "auto"
+    }
+   ],
    "score": 227,
    "fame": 2
   },
@@ -30293,7 +31103,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Y%27a_un_truc",
    "views60d": 166,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "O_oTOpohBms",
+     "title": "Culte: Gérard Majax \"Y'a un truc\" | Archive INA",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "INA Culte",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "FI2avaOARN4",
+     "title": "Gérard Majax \"Y'a un truc\" : le génie de la bouteille | Archive INA",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "INA Culte",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Z5Y9wsyi9kM",
+     "title": "Gérard Majax \"Y'a un truc\" : Au pied du mur! | Archive INA",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "INA Culte",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "dlqW00hd0pk",
+     "title": "Gérard Majax \"Y'a un truc\" chez Thierry Ardisson | INA Arditube",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "INA Arditube",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "sI7iP4KRUrk",
+     "title": "Gérard Majax \"Y'a un truc\" : La clé du mystère! |`Archive INA",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "INA Culte",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Vv4PvM8bxb8",
+     "title": "Gérard Majax \"Y'a un truc\" : la noix magnétique | Archive INA",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "INA Culte",
+     "source": "auto"
+    }
+   ],
    "score": 230,
    "fame": 2
   },
