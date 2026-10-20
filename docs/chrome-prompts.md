@@ -1,119 +1,5 @@
-# Prompts Claude in Chrome : 641 émissions, 65 lots
+# Prompts Claude in Chrome : 581 émissions, 59 lots
 Un lot à la fois : copier tout le bloc du lot dans Claude in Chrome, puis coller sa réponse JSON à Claude Code.
-
-## Lot 3
-
-```
-TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
-Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
-
-THE 10 SHOWS (batch 3, do them one by one, in this order):
-- id: morandini | show: Morandini ! | channel: Direct 8 | years: 2006-2010 | seasons we already have: none
-- id: les-douze-coups-de-midi | show: Les Douze Coups de midi | channel: TF1 | years: 2010-2010 | seasons we already have: none
-- id: des-chiffres-et-des-lettres | show: Des chiffres et des lettres | channel: France 2 | years: 2000-2010 | seasons we already have: 1 2 6 7 10
-- id: la-minute-de-verite | show: La Minute de vérité (série documentaire) | channel: Direct 8 | years: 2004-2010 | seasons we already have: none
-- id: victoires-de-la-musique | show: Victoires de la musique | channel: ? | years: 2000-2010 | seasons we already have: none
-- id: j-irai-dormir-chez-vous | show: J'irai dormir chez vous | channel: Canal+ | years: 2005-2010 | seasons we already have: none
-- id: tout-le-monde-veut-prendre-sa-place | show: Tout le monde veut prendre sa place | channel: France 2 | years: 2006-2010 | seasons we already have: 1 2 3 4
-- id: touche-pas-a-mon-poste | show: Touche pas à mon poste ! | channel: France 4 | years: 2010-2010 | seasons we already have: none
-- id: telematin | show: Télématin | channel: France 2 | years: 2000-2010 | seasons we already have: none
-- id: la-carte-aux-tresors | show: La Carte aux trésors | channel: France 3 | years: 2000-2009 | seasons we already have: 1 2 3 4 5 6 7 10
-
-STEP 1. For each show, search on YouTube, one after the other:
-   "<show> saison 1 intégrale", "<show> saison 2 intégrale", ... for every season in the years given
-   "<show> <year> émission" for each year in "years"
-   "<show> playlist"
-   Focus first on the seasons we do NOT already have.
-
-STEP 2. Write down:
-   a) PLAYLISTS that contain a whole season (most useful). The playlist ID is the text after "list=" in the URL.
-   b) FULL episodes: usually longer than 20 minutes, or titled "intégrale", "prime", "quotidienne",
-      "émission complète", "épisode".
-
-STEP 3. Rules. Read them carefully.
-  - Only episodes that aired between 2000 and 2010.
-  - Do NOT take: short clips, reactions, interviews, trailers, best-ofs, reboots or new seasons after 2010,
-    foreign versions (other countries, other languages), video games.
-  - Season number: use the number in the video title. If the title only gives a year, put the year
-    in "year" and leave "season" as null. Never guess a season number.
-  - Episode number: the number in the title (Prime 3 = 3, Épisode 12 = 12, EM45 = 45). If none, null.
-  - "format": "Prime", "Quotidienne", "Finale", or null.
-  - "part": if one episode is cut into several videos (partie 1/3, part 2...), the part number. Otherwise null.
-  - "airDate": the broadcast date if it is in the title, format YYYY-MM-DD. Otherwise null.
-  - Maximum 40 episodes per season. For daily shows, prefer the first episodes, the last ones and the finale.
-  - Copy the video title exactly. Copy the YouTube ID exactly: the 11 characters after "watch?v=".
-  - Never invent an ID. Only include videos you actually saw on YouTube.
-  - If you find nothing for a show, give it an empty list [].
-
-STEP 4. When all the shows are done, answer with ONE JSON code block and nothing else, in this exact format:
-
-{
-  "star-academy": [
-    { "playlistId": "PLxxxxxxxxxxxxxxxx", "season": 3, "title": "Star Academy saison 3 - tous les primes" },
-    { "youtubeId": "AbCdEfGhIjK", "title": "Star Academy 3 - Prime 1 - 30 août 2003", "kind": "episode", "season": 3, "episode": 1, "format": "Prime", "part": null, "airDate": "2003-08-30", "year": 2003, "channelName": "Archives Télé", "source": "chrome" }
-  ],
-  "some-show-with-nothing": []
-}
-
-The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
-```
-
-## Lot 4
-
-```
-TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
-Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
-
-THE 10 SHOWS (batch 4, do them one by one, in this order):
-- id: le-dessous-des-cartes | show: Le Dessous des cartes | channel: Arte | years: 2000-2010 | seasons we already have: 2
-- id: art-attack | show: Art Attack | channel: Disney Channel | years: 2000-2006 | seasons we already have: 2 14
-- id: c-a-vous | show: C à vous | channel: France 5 | years: 2009-2010 | seasons we already have: none
-- id: des-trains-pas-comme-les-autres | show: Des trains pas comme les autres | channel: France 2 | years: 2000-2010 | seasons we already have: 9
-- id: domino-day | show: Domino Day | channel: TF1 | years: 2000-2009 | seasons we already have: none
-- id: la-roue-de-la-fortune | show: La Roue de la fortune | channel: TF1 | years: 2000-2010 | seasons we already have: 1 2 4 7
-- id: mot-de-passe | show: Mot de passe | channel: France 2 | years: 2009-2010 | seasons we already have: 1
-- id: secrets-d-histoire | show: Secrets d'Histoire | channel: France 2 | years: 2007-2010 | seasons we already have: none
-- id: journal-de-20-heures | show: Journal de 20 heures | channel: France 2 | years: 2000-2010 | seasons we already have: none
-- id: burger-quiz | show: Burger Quiz | channel: Canal+ | years: 2001-2002 | seasons we already have: 1
-
-STEP 1. For each show, search on YouTube, one after the other:
-   "<show> saison 1 intégrale", "<show> saison 2 intégrale", ... for every season in the years given
-   "<show> <year> émission" for each year in "years"
-   "<show> playlist"
-   Focus first on the seasons we do NOT already have.
-
-STEP 2. Write down:
-   a) PLAYLISTS that contain a whole season (most useful). The playlist ID is the text after "list=" in the URL.
-   b) FULL episodes: usually longer than 20 minutes, or titled "intégrale", "prime", "quotidienne",
-      "émission complète", "épisode".
-
-STEP 3. Rules. Read them carefully.
-  - Only episodes that aired between 2000 and 2010.
-  - Do NOT take: short clips, reactions, interviews, trailers, best-ofs, reboots or new seasons after 2010,
-    foreign versions (other countries, other languages), video games.
-  - Season number: use the number in the video title. If the title only gives a year, put the year
-    in "year" and leave "season" as null. Never guess a season number.
-  - Episode number: the number in the title (Prime 3 = 3, Épisode 12 = 12, EM45 = 45). If none, null.
-  - "format": "Prime", "Quotidienne", "Finale", or null.
-  - "part": if one episode is cut into several videos (partie 1/3, part 2...), the part number. Otherwise null.
-  - "airDate": the broadcast date if it is in the title, format YYYY-MM-DD. Otherwise null.
-  - Maximum 40 episodes per season. For daily shows, prefer the first episodes, the last ones and the finale.
-  - Copy the video title exactly. Copy the YouTube ID exactly: the 11 characters after "watch?v=".
-  - Never invent an ID. Only include videos you actually saw on YouTube.
-  - If you find nothing for a show, give it an empty list [].
-
-STEP 4. When all the shows are done, answer with ONE JSON code block and nothing else, in this exact format:
-
-{
-  "star-academy": [
-    { "playlistId": "PLxxxxxxxxxxxxxxxx", "season": 3, "title": "Star Academy saison 3 - tous les primes" },
-    { "youtubeId": "AbCdEfGhIjK", "title": "Star Academy 3 - Prime 1 - 30 août 2003", "kind": "episode", "season": 3, "episode": 1, "format": "Prime", "part": null, "airDate": "2003-08-30", "year": 2003, "channelName": "Archives Télé", "source": "chrome" }
-  ],
-  "some-show-with-nothing": []
-}
-
-The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
-```
 
 ## Lot 5
 
@@ -122,234 +8,6 @@ TASK: Find full episodes of French TV shows on YouTube, sorted by season and epi
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
 THE 10 SHOWS (batch 5, do them one by one, in this order):
-- id: non-elucide | show: Non élucidé | channel: France 2 | years: 2008-2010 | seasons we already have: none
-- id: top-chef | show: Top Chef | channel: M6 | years: 2010-2010 | seasons we already have: 1
-- id: telefoot | show: Téléfoot | channel: TF1 | years: 2000-2010 | seasons we already have: 1 4 5 6 29
-- id: c-dans-l-air | show: C dans l'air | channel: France 5 | years: 2001-2010 | seasons we already have: none
-- id: la-classe | show: La Classe | channel: France 3 | years: 2000-2005 | seasons we already have: 8
-- id: l-ecole-des-fans | show: L'École des fans | channel: France 2 | years: 2000-2010 | seasons we already have: none
-- id: thalassa | show: Thalassa | channel: France 3 | years: 2000-2010 | seasons we already have: none
-- id: telethon-en-france | show: Téléthon en France | channel: France 2 | years: 2000-2010 | seasons we already have: none
-- id: on-n-demande-qu-a-en-rire | show: On n'demande qu'à en rire | channel: France 2 | years: 2010-2010 | seasons we already have: 1
-- id: pascal-le-grand-frere | show: Pascal, le grand frère | channel: TF1 | years: 2006-2010 | seasons we already have: none
-
-STEP 1. For each show, search on YouTube, one after the other:
-   "<show> saison 1 intégrale", "<show> saison 2 intégrale", ... for every season in the years given
-   "<show> <year> émission" for each year in "years"
-   "<show> playlist"
-   Focus first on the seasons we do NOT already have.
-
-STEP 2. Write down:
-   a) PLAYLISTS that contain a whole season (most useful). The playlist ID is the text after "list=" in the URL.
-   b) FULL episodes: usually longer than 20 minutes, or titled "intégrale", "prime", "quotidienne",
-      "émission complète", "épisode".
-
-STEP 3. Rules. Read them carefully.
-  - Only episodes that aired between 2000 and 2010.
-  - Do NOT take: short clips, reactions, interviews, trailers, best-ofs, reboots or new seasons after 2010,
-    foreign versions (other countries, other languages), video games.
-  - Season number: use the number in the video title. If the title only gives a year, put the year
-    in "year" and leave "season" as null. Never guess a season number.
-  - Episode number: the number in the title (Prime 3 = 3, Épisode 12 = 12, EM45 = 45). If none, null.
-  - "format": "Prime", "Quotidienne", "Finale", or null.
-  - "part": if one episode is cut into several videos (partie 1/3, part 2...), the part number. Otherwise null.
-  - "airDate": the broadcast date if it is in the title, format YYYY-MM-DD. Otherwise null.
-  - Maximum 40 episodes per season. For daily shows, prefer the first episodes, the last ones and the finale.
-  - Copy the video title exactly. Copy the YouTube ID exactly: the 11 characters after "watch?v=".
-  - Never invent an ID. Only include videos you actually saw on YouTube.
-  - If you find nothing for a show, give it an empty list [].
-
-STEP 4. When all the shows are done, answer with ONE JSON code block and nothing else, in this exact format:
-
-{
-  "star-academy": [
-    { "playlistId": "PLxxxxxxxxxxxxxxxx", "season": 3, "title": "Star Academy saison 3 - tous les primes" },
-    { "youtubeId": "AbCdEfGhIjK", "title": "Star Academy 3 - Prime 1 - 30 août 2003", "kind": "episode", "season": 3, "episode": 1, "format": "Prime", "part": null, "airDate": "2003-08-30", "year": 2003, "channelName": "Archives Télé", "source": "chrome" }
-  ],
-  "some-show-with-nothing": []
-}
-
-The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
-```
-
-## Lot 6
-
-```
-TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
-Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
-
-THE 10 SHOWS (batch 6, do them one by one, in this order):
-- id: 27e-ceremonie-des-cesar | show: 27e cérémonie des César | channel: Canal+ | years: 2000-2010 | seasons we already have: none
-- id: masters-de-n-oubliez-pas-les-paroles | show: Masters de N'oubliez pas les paroles ! | channel: France 2 | years: 2007-2010 | seasons we already have: none
-- id: silence-ca-pousse | show: Silence, ça pousse ! | channel: France 5 | years: 2000-2010 | seasons we already have: none
-- id: la-grande-librairie | show: La Grande Librairie | channel: France 5 | years: 2008-2010 | seasons we already have: none
-- id: 30e-ceremonie-des-cesar | show: 30e cérémonie des César | channel: Canal+ | years: 2000-2010 | seasons we already have: none
-- id: echappees-belles | show: Échappées belles | channel: France 5 | years: 2006-2010 | seasons we already have: none
-- id: le-pensionnat-de-chavagnes | show: Le Pensionnat de Chavagnes | channel: M6 | years: 2004-2004 | seasons we already have: none
-- id: 26e-ceremonie-des-cesar | show: 26e cérémonie des César | channel: Canal+ | years: 2000-2010 | seasons we already have: none
-- id: slam | show: Slam | channel: France 2 | years: 2009-2010 | seasons we already have: 1 2
-- id: arret-sur-images | show: Arrêt sur images | channel: France 5 | years: 2000-2007 | seasons we already have: none
-
-STEP 1. For each show, search on YouTube, one after the other:
-   "<show> saison 1 intégrale", "<show> saison 2 intégrale", ... for every season in the years given
-   "<show> <year> émission" for each year in "years"
-   "<show> playlist"
-   Focus first on the seasons we do NOT already have.
-
-STEP 2. Write down:
-   a) PLAYLISTS that contain a whole season (most useful). The playlist ID is the text after "list=" in the URL.
-   b) FULL episodes: usually longer than 20 minutes, or titled "intégrale", "prime", "quotidienne",
-      "émission complète", "épisode".
-
-STEP 3. Rules. Read them carefully.
-  - Only episodes that aired between 2000 and 2010.
-  - Do NOT take: short clips, reactions, interviews, trailers, best-ofs, reboots or new seasons after 2010,
-    foreign versions (other countries, other languages), video games.
-  - Season number: use the number in the video title. If the title only gives a year, put the year
-    in "year" and leave "season" as null. Never guess a season number.
-  - Episode number: the number in the title (Prime 3 = 3, Épisode 12 = 12, EM45 = 45). If none, null.
-  - "format": "Prime", "Quotidienne", "Finale", or null.
-  - "part": if one episode is cut into several videos (partie 1/3, part 2...), the part number. Otherwise null.
-  - "airDate": the broadcast date if it is in the title, format YYYY-MM-DD. Otherwise null.
-  - Maximum 40 episodes per season. For daily shows, prefer the first episodes, the last ones and the finale.
-  - Copy the video title exactly. Copy the YouTube ID exactly: the 11 characters after "watch?v=".
-  - Never invent an ID. Only include videos you actually saw on YouTube.
-  - If you find nothing for a show, give it an empty list [].
-
-STEP 4. When all the shows are done, answer with ONE JSON code block and nothing else, in this exact format:
-
-{
-  "star-academy": [
-    { "playlistId": "PLxxxxxxxxxxxxxxxx", "season": 3, "title": "Star Academy saison 3 - tous les primes" },
-    { "youtubeId": "AbCdEfGhIjK", "title": "Star Academy 3 - Prime 1 - 30 août 2003", "kind": "episode", "season": 3, "episode": 1, "format": "Prime", "part": null, "airDate": "2003-08-30", "year": 2003, "channelName": "Archives Télé", "source": "chrome" }
-  ],
-  "some-show-with-nothing": []
-}
-
-The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
-```
-
-## Lot 7
-
-```
-TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
-Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
-
-THE 10 SHOWS (batch 7, do them one by one, in this order):
-- id: pyramide | show: Pyramide | channel: France 2 | years: 2000-2010 | seasons we already have: 2 4 5 8
-- id: le-grand-concours | show: Le Grand Concours | channel: TF1 | years: 2002-2010 | seasons we already have: none
-- id: la-trilogie-du-samedi | show: La Trilogie du samedi | channel: M6 | years: 2000-2008 | seasons we already have: none
-- id: motus | show: Motus | channel: France 2 | years: 2000-2010 | seasons we already have: 1 3 16
-- id: zouzous | show: Zouzous | channel: France 5 | years: 2000-2010 | seasons we already have: 1 3 5 6 9
-- id: journal-de-20-heures-2 | show: Journal de 20 heures | channel: TF1 | years: 2000-2010 | seasons we already have: none
-- id: le-mag-de-la-sante | show: Le Mag de la santé | channel: France 2 | years: 2000-2010 | seasons we already have: none
-- id: recherche-appartement-ou-maison | show: Recherche appartement ou maison | channel: M6 | years: 2006-2010 | seasons we already have: none
-- id: morning-live | show: Morning Live | channel: M6 | years: 2000-2003 | seasons we already have: 2
-- id: 28e-ceremonie-des-cesar | show: 28e cérémonie des César | channel: Canal+ | years: 2000-2010 | seasons we already have: none
-
-STEP 1. For each show, search on YouTube, one after the other:
-   "<show> saison 1 intégrale", "<show> saison 2 intégrale", ... for every season in the years given
-   "<show> <year> émission" for each year in "years"
-   "<show> playlist"
-   Focus first on the seasons we do NOT already have.
-
-STEP 2. Write down:
-   a) PLAYLISTS that contain a whole season (most useful). The playlist ID is the text after "list=" in the URL.
-   b) FULL episodes: usually longer than 20 minutes, or titled "intégrale", "prime", "quotidienne",
-      "émission complète", "épisode".
-
-STEP 3. Rules. Read them carefully.
-  - Only episodes that aired between 2000 and 2010.
-  - Do NOT take: short clips, reactions, interviews, trailers, best-ofs, reboots or new seasons after 2010,
-    foreign versions (other countries, other languages), video games.
-  - Season number: use the number in the video title. If the title only gives a year, put the year
-    in "year" and leave "season" as null. Never guess a season number.
-  - Episode number: the number in the title (Prime 3 = 3, Épisode 12 = 12, EM45 = 45). If none, null.
-  - "format": "Prime", "Quotidienne", "Finale", or null.
-  - "part": if one episode is cut into several videos (partie 1/3, part 2...), the part number. Otherwise null.
-  - "airDate": the broadcast date if it is in the title, format YYYY-MM-DD. Otherwise null.
-  - Maximum 40 episodes per season. For daily shows, prefer the first episodes, the last ones and the finale.
-  - Copy the video title exactly. Copy the YouTube ID exactly: the 11 characters after "watch?v=".
-  - Never invent an ID. Only include videos you actually saw on YouTube.
-  - If you find nothing for a show, give it an empty list [].
-
-STEP 4. When all the shows are done, answer with ONE JSON code block and nothing else, in this exact format:
-
-{
-  "star-academy": [
-    { "playlistId": "PLxxxxxxxxxxxxxxxx", "season": 3, "title": "Star Academy saison 3 - tous les primes" },
-    { "youtubeId": "AbCdEfGhIjK", "title": "Star Academy 3 - Prime 1 - 30 août 2003", "kind": "episode", "season": 3, "episode": 1, "format": "Prime", "part": null, "airDate": "2003-08-30", "year": 2003, "channelName": "Archives Télé", "source": "chrome" }
-  ],
-  "some-show-with-nothing": []
-}
-
-The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
-```
-
-## Lot 8
-
-```
-TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
-Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
-
-THE 10 SHOWS (batch 8, do them one by one, in this order):
-- id: des-racines-et-des-ailes | show: Des racines et des ailes | channel: France 3 | years: 2000-2010 | seasons we already have: none
-- id: soupcons | show: Soupçons (mini-série, 2004) | channel: Canal+ | years: 2004-2004 | seasons we already have: none
-- id: c-politique | show: C politique | channel: France 5 | years: 2009-2010 | seasons we already have: none
-- id: enquetes-criminelles-le-magazine-des-faits-divers | show: Enquêtes criminelles : le magazine des faits divers | channel: W9 | years: 2008-2010 | seasons we already have: none
-- id: in-ze-boite | show: In ze boîte | channel: Gulli | years: 2007-2010 | seasons we already have: none
-- id: jamel-comedy-club | show: Jamel Comedy Club | channel: Canal+ | years: 2006-2010 | seasons we already have: none
-- id: after-foot | show: After Foot | channel: BFM TV | years: 2006-2010 | seasons we already have: none
-- id: complement-d-enquete | show: Complément d'enquête | channel: France 2 | years: 2001-2010 | seasons we already have: none
-- id: ca-peut-vous-arriver | show: Ça peut vous arriver | channel: TF1 | years: 2001-2002 | seasons we already have: none
-- id: apocalypse | show: Apocalypse (série documentaire) | channel: ? | years: 2000-2010 | seasons we already have: none
-
-STEP 1. For each show, search on YouTube, one after the other:
-   "<show> saison 1 intégrale", "<show> saison 2 intégrale", ... for every season in the years given
-   "<show> <year> émission" for each year in "years"
-   "<show> playlist"
-   Focus first on the seasons we do NOT already have.
-
-STEP 2. Write down:
-   a) PLAYLISTS that contain a whole season (most useful). The playlist ID is the text after "list=" in the URL.
-   b) FULL episodes: usually longer than 20 minutes, or titled "intégrale", "prime", "quotidienne",
-      "émission complète", "épisode".
-
-STEP 3. Rules. Read them carefully.
-  - Only episodes that aired between 2000 and 2010.
-  - Do NOT take: short clips, reactions, interviews, trailers, best-ofs, reboots or new seasons after 2010,
-    foreign versions (other countries, other languages), video games.
-  - Season number: use the number in the video title. If the title only gives a year, put the year
-    in "year" and leave "season" as null. Never guess a season number.
-  - Episode number: the number in the title (Prime 3 = 3, Épisode 12 = 12, EM45 = 45). If none, null.
-  - "format": "Prime", "Quotidienne", "Finale", or null.
-  - "part": if one episode is cut into several videos (partie 1/3, part 2...), the part number. Otherwise null.
-  - "airDate": the broadcast date if it is in the title, format YYYY-MM-DD. Otherwise null.
-  - Maximum 40 episodes per season. For daily shows, prefer the first episodes, the last ones and the finale.
-  - Copy the video title exactly. Copy the YouTube ID exactly: the 11 characters after "watch?v=".
-  - Never invent an ID. Only include videos you actually saw on YouTube.
-  - If you find nothing for a show, give it an empty list [].
-
-STEP 4. When all the shows are done, answer with ONE JSON code block and nothing else, in this exact format:
-
-{
-  "star-academy": [
-    { "playlistId": "PLxxxxxxxxxxxxxxxx", "season": 3, "title": "Star Academy saison 3 - tous les primes" },
-    { "youtubeId": "AbCdEfGhIjK", "title": "Star Academy 3 - Prime 1 - 30 août 2003", "kind": "episode", "season": 3, "episode": 1, "format": "Prime", "part": null, "airDate": "2003-08-30", "year": 2003, "channelName": "Archives Télé", "source": "chrome" }
-  ],
-  "some-show-with-nothing": []
-}
-
-The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
-```
-
-## Lot 9
-
-```
-TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
-Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
-
-THE 10 SHOWS (batch 9, do them one by one, in this order):
 - id: nulle-part-ailleurs | show: Nulle part ailleurs | channel: Canal+ | years: 2000-2001 | seasons we already have: 8 14
 - id: une-famille-en-or | show: Une famille en or | channel: TF1 | years: 2000-2010 | seasons we already have: 1 2 3 4 5 6 7 11 12 14
 - id: les-z-amours | show: Les Z'amours | channel: France 2 | years: 2000-2010 | seasons we already have: 4 5
@@ -400,13 +58,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 10
+## Lot 6
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 10, do them one by one, in this order):
+THE 10 SHOWS (batch 6, do them one by one, in this order):
 - id: tfou | show: Tfou | channel: TF1 | years: 2007-2010 | seasons we already have: none
 - id: envoye-special | show: Envoyé spécial | channel: France 2 | years: 2000-2010 | seasons we already have: none
 - id: kd2a | show: KD2A | channel: France 2 | years: 2001-2009 | seasons we already have: none
@@ -457,13 +115,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 11
+## Lot 7
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 11, do them one by one, in this order):
+THE 10 SHOWS (batch 7, do them one by one, in this order):
 - id: stade-2 | show: Stade 2 | channel: France 2 | years: 2000-2010 | seasons we already have: none
 - id: video-gag | show: Vidéo Gag | channel: TF1 | years: 2000-2008 | seasons we already have: none
 - id: d-et-co | show: D&CO | channel: M6 | years: 2006-2010 | seasons we already have: 1 2 3 5
@@ -514,13 +172,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 12
+## Lot 8
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 12, do them one by one, in this order):
+THE 10 SHOWS (batch 8, do them one by one, in this order):
 - id: l-academie-des-neuf | show: L'Académie des neuf | channel: NRJ 12 | years: 2000-2010 | seasons we already have: none
 - id: le-pensionnat-de-sarlat | show: Le Pensionnat de Sarlat | channel: M6 | years: 2005-2005 | seasons we already have: none
 - id: journal-de-13-heures-2 | show: Journal de 13 heures | channel: France 2 | years: 2000-2010 | seasons we already have: none
@@ -571,13 +229,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 13
+## Lot 9
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 13, do them one by one, in this order):
+THE 10 SHOWS (batch 9, do them one by one, in this order):
 - id: les-enquetes-extraordinaires | show: Les Enquêtes extraordinaires | channel: NT1 | years: 2000-2010 | seasons we already have: none
 - id: canal-football-club | show: Canal Football Club | channel: Canal+ | years: 2008-2010 | seasons we already have: none
 - id: tf | show: TF! | channel: TF1 | years: 2000-2006 | seasons we already have: none
@@ -628,13 +286,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 14
+## Lot 10
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 14, do them one by one, in this order):
+THE 10 SHOWS (batch 10, do them one by one, in this order):
 - id: comment-ca-va-bien | show: Comment ça va bien ! | channel: France 2 | years: 2010-2010 | seasons we already have: none
 - id: graines-de-star | show: Graines de star | channel: M6 | years: 2000-2003 | seasons we already have: none
 - id: 90-enquetes | show: 90' Enquêtes | channel: TMC | years: 2007-2010 | seasons we already have: none
@@ -685,13 +343,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 15
+## Lot 11
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 15, do them one by one, in this order):
+THE 10 SHOWS (batch 11, do them one by one, in this order):
 - id: absolument-stars | show: Absolument stars | channel: M6 | years: 2009-2010 | seasons we already have: none
 - id: karambolage | show: Karambolage | channel: Arte | years: 2004-2010 | seasons we already have: none
 - id: 93-faubourg-saint-honore | show: 93, faubourg Saint-Honoré | channel: Paris Première | years: 2003-2007 | seasons we already have: none
@@ -742,13 +400,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 16
+## Lot 12
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 16, do them one by one, in this order):
+THE 10 SHOWS (batch 12, do them one by one, in this order):
 - id: ce-soir | show: Ce soir (ou jamais !) | channel: France 2 | years: 2006-2010 | seasons we already have: none
 - id: les-grands-du-rire | show: Les Grands du rire | channel: France 3 | years: 2003-2010 | seasons we already have: none
 - id: confessions-intimes | show: Confessions intimes | channel: TF1 | years: 2001-2010 | seasons we already have: none
@@ -799,13 +457,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 17
+## Lot 13
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 17, do them one by one, in this order):
+THE 10 SHOWS (batch 13, do them one by one, in this order):
 - id: genies-en-herbe | show: Génies en herbe | channel: France 3 | years: 2000-2010 | seasons we already have: 1
 - id: belle-toute-nue | show: Belle toute nue | channel: M6 | years: 2008-2010 | seasons we already have: none
 - id: paris-derniere | show: Paris Dernière | channel: Paris Première | years: 2000-2010 | seasons we already have: 1 2 3 4 5 7 8 9 10 12 15 16
@@ -856,13 +514,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 18
+## Lot 14
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 18, do them one by one, in this order):
+THE 10 SHOWS (batch 14, do them one by one, in this order):
 - id: la-maison-france-5 | show: La Maison France 5 | channel: France 5 | years: 2003-2010 | seasons we already have: none
 - id: vivement-dimanche-prochain | show: Vivement dimanche prochain | channel: France 2 | years: 2000-2010 | seasons we already have: none
 - id: un-tresor-dans-votre-maison | show: Un trésor dans votre maison | channel: M6 | years: 2010-2010 | seasons we already have: none
@@ -913,13 +571,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 19
+## Lot 15
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 19, do them one by one, in this order):
+THE 10 SHOWS (batch 15, do them one by one, in this order):
 - id: millionnaire | show: Millionnaire | channel: TF1 | years: 2000-2009 | seasons we already have: 1 2 3 4 6
 - id: bon-appetit-bien-sur | show: Bon appétit bien sûr | channel: France 3 | years: 2000-2009 | seasons we already have: none
 - id: la-meteo-de-gulli | show: La Météo de Gulli | channel: Gulli | years: 2008-2010 | seasons we already have: none
@@ -970,13 +628,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 20
+## Lot 16
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 20, do them one by one, in this order):
+THE 10 SHOWS (batch 16, do them one by one, in this order):
 - id: ici-12-13 | show: Ici 12/13 | channel: France 3 | years: 2000-2010 | seasons we already have: none
 - id: le-1245 | show: Le 1245 | channel: M6 | years: 2006-2010 | seasons we already have: none
 - id: le-cercle | show: Le Cercle | channel: Canal+ | years: 2004-2010 | seasons we already have: 3 4
@@ -1027,13 +685,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 21
+## Lot 17
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 21, do them one by one, in this order):
+THE 10 SHOWS (batch 17, do them one by one, in this order):
 - id: va-savoir | show: Va savoir | channel: France 3 | years: 2000-2004 | seasons we already have: none
 - id: architectures | show: Architectures | channel: Arte | years: 2000-2010 | seasons we already have: none
 - id: frequenstar | show: Fréquenstar | channel: M6 | years: 2000-2006 | seasons we already have: 2
@@ -1084,13 +742,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 22
+## Lot 18
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 22, do them one by one, in this order):
+THE 10 SHOWS (batch 18, do them one by one, in this order):
 - id: 1-contre-100 | show: 1 contre 100 | channel: TF1 | years: 2007-2008 | seasons we already have: none
 - id: voyage-au-bout-de-la-nuit | show: Voyage au bout de la nuit | channel: Direct 8 | years: 2008-2010 | seasons we already have: none
 - id: mission-pirattak | show: Mission Pirattak | channel: France 3 | years: 2000-2000 | seasons we already have: none
@@ -1141,13 +799,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 23
+## Lot 19
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 23, do them one by one, in this order):
+THE 10 SHOWS (batch 19, do them one by one, in this order):
 - id: queer-cinq-experts-dans-le-vent | show: Queer, cinq experts dans le vent | channel: TF1 | years: 2004-2004 | seasons we already have: none
 - id: velo-club | show: Vélo Club | channel: France 2 | years: 2000-2010 | seasons we already have: none
 - id: les-100-plus-grands | show: Les 100 plus grands... | channel: TF1 | years: 2003-2010 | seasons we already have: none
@@ -1198,13 +856,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 24
+## Lot 20
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 24, do them one by one, in this order):
+THE 10 SHOWS (batch 20, do them one by one, in this order):
 - id: ca-balance-a-paris | show: Ça balance à Paris | channel: Paris Première | years: 2004-2010 | seasons we already have: none
 - id: enquete-d-action | show: Enquête d'action | channel: W9 | years: 2005-2010 | seasons we already have: none
 - id: faits-divers-le-mag | show: Faits divers, le mag | channel: France 2 | years: 2008-2010 | seasons we already have: none
@@ -1255,13 +913,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 25
+## Lot 21
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 25, do them one by one, in this order):
+THE 10 SHOWS (batch 21, do them one by one, in this order):
 - id: cineastes-de-notre-temps | show: Cinéastes de notre temps | channel: Arte | years: 2000-2009 | seasons we already have: none
 - id: club-disney | show: Club Disney | channel: TF1 | years: 2000-2006 | seasons we already have: none
 - id: la-maison-du-bluff | show: La Maison du bluff | channel: NRJ 12 | years: 2010-2010 | seasons we already have: 1
@@ -1312,13 +970,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 26
+## Lot 22
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 26, do them one by one, in this order):
+THE 10 SHOWS (batch 22, do them one by one, in this order):
 - id: identity | show: Identity | channel: TF1 | years: 2009-2010 | seasons we already have: 1 2
 - id: l-il-du-cyclone | show: L'Œil du cyclone | channel: Canal+ | years: 2000-2010 | seasons we already have: none
 - id: special-investigation | show: Spécial Investigation | channel: Canal+ | years: 2006-2010 | seasons we already have: none
@@ -1369,13 +1027,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 27
+## Lot 23
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 27, do them one by one, in this order):
+THE 10 SHOWS (batch 23, do them one by one, in this order):
 - id: en-route-pour-l-aventure | show: En route pour l'aventure | channel: ? | years: 2000-2010 | seasons we already have: 1 2
 - id: islam | show: Islam | channel: TF1 | years: 2000-2010 | seasons we already have: 1 2 3 4
 - id: vie-privee-vie-publique | show: Vie privée, vie publique | channel: France 3 | years: 2000-2010 | seasons we already have: none
@@ -1426,20 +1084,20 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 28
+## Lot 24
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 28, do them one by one, in this order):
+THE 10 SHOWS (batch 24, do them one by one, in this order):
 - id: f1-a-la-une | show: F1 à la Une | channel: TF1 | years: 2000-2010 | seasons we already have: none
 - id: le-coffre | show: Le Coffre | channel: France 2 | years: 2004-2004 | seasons we already have: 1
 - id: mots-croises | show: Mots croisés | channel: France 2 | years: 2000-2010 | seasons we already have: none
 - id: prouve-le | show: Prouve-le ! | channel: Gulli | years: 2005-2007 | seasons we already have: none
 - id: direct-auto | show: Direct Auto | channel: Direct 8 | years: 2005-2010 | seasons we already have: none
 - id: incroyables-experiences | show: Incroyables Expériences | channel: France 2 | years: 2008-2010 | seasons we already have: none
-- id: les-petits-papiers-de-noel | show: Les Petits Papiers de Noël | channel: ? | years: 2000-2010 | seasons we already have: none
+- id: les-petits-papiers-de-noel | show: Les Petits Papiers de Noël | channel: ? | years: 2000-2010 | seasons we already have: 24
 - id: recre-kids | show: Récré Kids | channel: TMC | years: 2000-2002 | seasons we already have: 2
 - id: a-la-conquete-de-l-espace | show: À la conquête de l'espace | channel: Arte | years: 2005-2005 | seasons we already have: none
 - id: mysteres-d-archives | show: Mystères d'archives | channel: Arte | years: 2009-2010 | seasons we already have: none
@@ -1483,23 +1141,23 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 29
+## Lot 25
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 29, do them one by one, in this order):
+THE 10 SHOWS (batch 25, do them one by one, in this order):
 - id: l-ete-de-tous-les-records | show: L'Été de tous les records | channel: France 3 | years: 2003-2005 | seasons we already have: none
 - id: marjolaine-et-les-millionnaires | show: Marjolaine et les Millionnaires | channel: TF1 | years: 2004-2004 | seasons we already have: none
 - id: c-a-dire | show: C à dire ?! | channel: France 5 | years: 2007-2010 | seasons we already have: none
 - id: fan-de-stars | show: Fan de stars | channel: M6 | years: 2000-2010 | seasons we already have: none
-- id: nouveau-look-pour-une-nouvelle-vie | show: Nouveau Look pour une nouvelle vie | channel: M6 | years: 2004-2010 | seasons we already have: none
+- id: nouveau-look-pour-une-nouvelle-vie | show: Nouveau Look pour une nouvelle vie | channel: M6 | years: 2004-2010 | seasons we already have: 1
 - id: riding-zone | show: Riding Zone | channel: France Ô | years: 2007-2010 | seasons we already have: none
-- id: 100-foot | show: 100 % foot | channel: M6 | years: 2005-2010 | seasons we already have: none
+- id: 100-foot | show: 100 % foot | channel: M6 | years: 2005-2010 | seasons we already have: 2
 - id: accuse-a-tort | show: Accusé à tort | channel: M6 | years: 2010-2010 | seasons we already have: none
 - id: c-est-ma-vie | show: C'est ma vie | channel: M6 | years: 2010-2010 | seasons we already have: none
-- id: l-ecole-des-stars | show: L'École des stars | channel: Direct 8 | years: 2008-2009 | seasons we already have: none
+- id: l-ecole-des-stars | show: L'École des stars | channel: Direct 8 | years: 2008-2009 | seasons we already have: 2
 
 STEP 1. For each show, search on YouTube, one after the other:
    "<show> saison 1 intégrale", "<show> saison 2 intégrale", ... for every season in the years given
@@ -1540,20 +1198,20 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 30
+## Lot 26
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 30, do them one by one, in this order):
+THE 10 SHOWS (batch 26, do them one by one, in this order):
 - id: salut-les-toons | show: Salut les toons | channel: TF1 | years: 2000-2000 | seasons we already have: none
 - id: sebastien-c-est-fou | show: Sébastien c'est fou ! | channel: TF1 | years: 2000-2010 | seasons we already have: 22
 - id: sport-6 | show: Sport 6 | channel: M6 | years: 2000-2010 | seasons we already have: none
 - id: service-maximum | show: Service Maximum | channel: France 2 | years: 2008-2009 | seasons we already have: none
 - id: 60-jours-60-nuits | show: 60 jours 60 nuits | channel: Canal+ | years: 2003-2003 | seasons we already have: none
 - id: les-parents-les-plus-stricts-du-monde | show: Les Parents les plus stricts du monde | channel: M6 | years: 2009-2010 | seasons we already have: 1 2
-- id: les-sept-peches-capitaux | show: Les Sept Péchés capitaux | channel: TF1 | years: 2000-2010 | seasons we already have: none
+- id: les-sept-peches-capitaux | show: Les Sept Péchés capitaux | channel: TF1 | years: 2000-2010 | seasons we already have: 1 3 4
 - id: l-emission-impossible | show: L'Émission impossible | channel: TF1 | years: 2000-2010 | seasons we already have: none
 - id: l-il-et-la-main | show: L'Œil et la Main | channel: France 5 | years: 2000-2010 | seasons we already have: none
 - id: l-origine-du-christianisme | show: L'Origine du christianisme | channel: Arte | years: 2003-2010 | seasons we already have: none
@@ -1597,13 +1255,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 31
+## Lot 27
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 31, do them one by one, in this order):
+THE 10 SHOWS (batch 27, do them one by one, in this order):
 - id: sagas | show: Sagas | channel: TF1 | years: 2000-2007 | seasons we already have: none
 - id: bunny-et-tous-ses-amis | show: Bunny et tous ses amis | channel: France 3 | years: 2001-2008 | seasons we already have: none
 - id: etes-vous-plus-fort-qu-un-eleve-de-10-ans | show: Êtes-vous plus fort qu'un élève de 10 ans ? | channel: M6 | years: 2007-2007 | seasons we already have: none
@@ -1654,13 +1312,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 32
+## Lot 28
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 32, do them one by one, in this order):
+THE 10 SHOWS (batch 28, do them one by one, in this order):
 - id: rencontres-a-xv | show: Rencontres à XV | channel: France 2 | years: 2000-2010 | seasons we already have: none
 - id: retour-gagnant | show: Retour gagnant | channel: TF1 | years: 2003-2010 | seasons we already have: none
 - id: la-kaz | show: La Kaz | channel: Canal+ | years: 2004-2005 | seasons we already have: none
@@ -1670,7 +1328,7 @@ THE 10 SHOWS (batch 32, do them one by one, in this order):
 - id: reportages | show: Reportages | channel: TF1 | years: 2000-2010 | seasons we already have: none
 - id: les-grands-enfants | show: Les Grands Enfants | channel: ? | years: 2000-2010 | seasons we already have: none
 - id: 100-question | show: 100 % Question | channel: France 5 | years: 2000-2004 | seasons we already have: none
-- id: le-royaume | show: Le Royaume | channel: TF1 | years: 2006-2006 | seasons we already have: none
+- id: le-royaume | show: Le Royaume | channel: TF1 | years: 2006-2006 | seasons we already have: 1
 
 STEP 1. For each show, search on YouTube, one after the other:
    "<show> saison 1 intégrale", "<show> saison 2 intégrale", ... for every season in the years given
@@ -1711,15 +1369,15 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 33
+## Lot 29
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 33, do them one by one, in this order):
+THE 10 SHOWS (batch 29, do them one by one, in this order):
 - id: iapiap | show: Iapiap ! | channel: Canal J | years: 2000-2010 | seasons we already have: none
-- id: la-planete-miracle | show: La Planète Miracle | channel: ? | years: 2000-2010 | seasons we already have: none
+- id: la-planete-miracle | show: La Planète Miracle | channel: ? | years: 2000-2010 | seasons we already have: 1 2
 - id: love-and-bluff-qui-de-nous-trois | show: Love and Bluff : Qui de nous trois ? | channel: TF1 | years: 2009-2009 | seasons we already have: none
 - id: 100-mag | show: 100 % mag | channel: M6 | years: 2008-2010 | seasons we already have: none
 - id: canaille | show: Canaille + | channel: Canal+ | years: 2003-2007 | seasons we already have: none
@@ -1768,22 +1426,22 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 34
+## Lot 30
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 34, do them one by one, in this order):
+THE 10 SHOWS (batch 30, do them one by one, in this order):
 - id: game-zone | show: Game Zone | channel: ? | years: 2000-2010 | seasons we already have: none
 - id: gloire-et-fortune | show: Gloire et Fortune | channel: M6 | years: 2004-2004 | seasons we already have: none
 - id: presence-protestante | show: Présence protestante | channel: TF1 | years: 2000-2010 | seasons we already have: none
 - id: xenius | show: Xenius | channel: Arte | years: 2009-2010 | seasons we already have: none
-- id: 52-sur-la-une | show: 52 sur la Une | channel: TF1 | years: 2000-2001 | seasons we already have: none
-- id: des-mots-de-minuit | show: Des mots de minuit | channel: France 2 | years: 2000-2010 | seasons we already have: none
+- id: 52-sur-la-une | show: 52 sur la Une | channel: TF1 | years: 2000-2001 | seasons we already have: 1 12
+- id: des-mots-de-minuit | show: Des mots de minuit | channel: France 2 | years: 2000-2010 | seasons we already have: 7
 - id: entree-d-artistes | show: Entrée d'artistes | channel: France 2 | years: 2004-2007 | seasons we already have: none
 - id: euro-disney-l-ouverture | show: Euro Disney : L'Ouverture | channel: TF1 | years: 2000-2010 | seasons we already have: none
-- id: le-grand-blind-test | show: Le Grand Blind test | channel: TF1 | years: 2003-2010 | seasons we already have: none
+- id: le-grand-blind-test | show: Le Grand Blind test | channel: TF1 | years: 2003-2010 | seasons we already have: 1
 - id: morning-cafe | show: Morning Café | channel: M6 | years: 2005-2008 | seasons we already have: none
 
 STEP 1. For each show, search on YouTube, one after the other:
@@ -1825,14 +1483,14 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 35
+## Lot 31
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 35, do them one by one, in this order):
-- id: vu-du-ciel | show: Vu du ciel | channel: France 2 | years: 2006-2010 | seasons we already have: none
+THE 10 SHOWS (batch 31, do them one by one, in this order):
+- id: vu-du-ciel | show: Vu du ciel | channel: France 2 | years: 2006-2010 | seasons we already have: 1
 - id: france-2-foot | show: France 2 Foot | channel: France 2 | years: 2007-2008 | seasons we already have: none
 - id: je-passe-a-la-tele | show: Je passe à la télé | channel: France 3 | years: 2000-2010 | seasons we already have: none
 - id: le-quatrieme-duel | show: Le Quatrième Duel | channel: France 2 | years: 2008-2010 | seasons we already have: none
@@ -1882,20 +1540,20 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 36
+## Lot 32
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 36, do them one by one, in this order):
+THE 10 SHOWS (batch 32, do them one by one, in this order):
 - id: sagesses-bouddhistes | show: Sagesses bouddhistes | channel: France 2 | years: 2000-2010 | seasons we already have: none
 - id: village-depart | show: Village Départ | channel: France 3 | years: 2005-2010 | seasons we already have: none
 - id: cinema-de-quartier | show: Cinéma de quartier | channel: Canal+ | years: 2000-2007 | seasons we already have: none
 - id: i-afrique | show: I-Afrique | channel: i>Télé | years: 2001-2010 | seasons we already have: none
 - id: la-case-du-siecle | show: La Case du siècle | channel: France 5 | years: 2010-2010 | seasons we already have: none
 - id: la-soiree-de-l-etrange | show: La Soirée de l'étrange | channel: TF1 | years: 2005-2010 | seasons we already have: none
-- id: tout-vu-tout-lu | show: Tout vu tout lu | channel: France 2 | years: 2003-2006 | seasons we already have: none
+- id: tout-vu-tout-lu | show: Tout vu tout lu | channel: France 2 | years: 2003-2006 | seasons we already have: 1 2 3 4
 - id: cote-maison | show: Côté maison | channel: France 3 | years: 2000-2010 | seasons we already have: none
 - id: les-badaboks | show: Les Badaboks | channel: ? | years: 2000-2010 | seasons we already have: none
 - id: 13-h-15-le-samedi | show: 13 h 15, le samedi | channel: France 2 | years: 2007-2010 | seasons we already have: none
@@ -1939,13 +1597,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 37
+## Lot 33
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 37, do them one by one, in this order):
+THE 10 SHOWS (batch 33, do them one by one, in this order):
 - id: ca-tourne-bromby | show: Ça tourne Bromby | channel: France 5 | years: 2000-2000 | seasons we already have: none
 - id: cauetivi | show: CaueTivi | channel: MCM | years: 2003-2008 | seasons we already have: none
 - id: disney-kid-club | show: Disney Kid Club | channel: M6 | years: 2010-2010 | seasons we already have: none
@@ -1996,23 +1654,23 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 38
+## Lot 34
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 38, do them one by one, in this order):
+THE 10 SHOWS (batch 34, do them one by one, in this order):
 - id: la-nuit-nous-appartient | show: La nuit nous appartient | channel: NRJ 12 | years: 2009-2010 | seasons we already have: none
-- id: clair | show: + Clair | channel: Canal+ | years: 2001-2009 | seasons we already have: none
-- id: carnaval | show: Carnaval | channel: TF1 | years: 2000-2010 | seasons we already have: none
+- id: clair | show: + Clair | channel: Canal+ | years: 2001-2009 | seasons we already have: 2
+- id: carnaval | show: Carnaval | channel: TF1 | years: 2000-2010 | seasons we already have: 2 3
 - id: les-hyenes | show: Les Hyènes | channel: France 2 | years: 2004-2004 | seasons we already have: none
 - id: mon-kanar | show: Mon Kanar | channel: France 3 | years: 2002-2005 | seasons we already have: none
 - id: 100-minutes-pour-convaincre | show: 100 minutes pour convaincre | channel: France 2 | years: 2002-2005 | seasons we already have: none
 - id: carte-postale-gourmande | show: Carte postale gourmande | channel: France 5 | years: 2000-2006 | seasons we already have: none
 - id: jour-de-rugby | show: Jour de rugby | channel: Canal+ | years: 2000-2010 | seasons we already have: none
 - id: y-a-un-truc | show: Y'a un truc | channel: ? | years: 2000-2010 | seasons we already have: none
-- id: j-y-vais-j-y-vais-pas | show: J'y vais... j'y vais pas ? | channel: France 3 | years: 2004-2004 | seasons we already have: none
+- id: j-y-vais-j-y-vais-pas | show: J'y vais... j'y vais pas ? | channel: France 3 | years: 2004-2004 | seasons we already have: 1
 
 STEP 1. For each show, search on YouTube, one after the other:
    "<show> saison 1 intégrale", "<show> saison 2 intégrale", ... for every season in the years given
@@ -2053,20 +1711,20 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 39
+## Lot 35
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 39, do them one by one, in this order):
+THE 10 SHOWS (batch 35, do them one by one, in this order):
 - id: le-visiophon-d-omar-et-fred | show: Le Visiophon, d'Omar et Fred | channel: Canal+ | years: 2000-2010 | seasons we already have: none
 - id: nous-nous-sommes-tant-aimes | show: Nous nous sommes tant aimés | channel: France 3 | years: 2010-2010 | seasons we already have: none
 - id: amour-gloire-et-debats-d-idees | show: Amour, gloire et débats d'idées | channel: Canal+ | years: 2000-2010 | seasons we already have: none
 - id: france-europe-express | show: France Europe Express | channel: France 3 | years: 2000-2007 | seasons we already have: none
 - id: 120-minutes-de-bonheur | show: 120 minutes de bonheur | channel: TF1 | years: 2000-2005 | seasons we already have: none
 - id: consomag | show: ConsoMag | channel: France 2 | years: 2000-2010 | seasons we already have: none
-- id: le-numero-gagnant | show: Le Numéro gagnant | channel: France 2 | years: 2001-2002 | seasons we already have: none
+- id: le-numero-gagnant | show: Le Numéro gagnant | channel: France 2 | years: 2001-2002 | seasons we already have: 1
 - id: re-7 | show: Re-7 | channel: Canal J | years: 2001-2009 | seasons we already have: none
 - id: vol-de-nuit | show: Vol de nuit | channel: TF1 | years: 2000-2008 | seasons we already have: none
 - id: dimanche | show: Dimanche + | channel: Canal+ | years: 2006-2010 | seasons we already have: none
@@ -2110,21 +1768,21 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 40
+## Lot 36
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 40, do them one by one, in this order):
+THE 10 SHOWS (batch 36, do them one by one, in this order):
 - id: le-plus-grand-quiz-de-france | show: Le Plus Grand Quiz de France | channel: TF1 | years: 2009-2010 | seasons we already have: none
-- id: sacha-show | show: Sacha Show | channel: ? | years: 2000-2010 | seasons we already have: none
+- id: sacha-show | show: Sacha Show | channel: ? | years: 2000-2010 | seasons we already have: 1 2
 - id: ca-va-s-cauet | show: Ça va s'Cauet | channel: TF1 | years: 2010-2010 | seasons we already have: none
 - id: one-shot-not | show: One Shot Not | channel: Arte | years: 2007-2010 | seasons we already have: none
-- id: campus | show: Campus | channel: France 2 | years: 2001-2006 | seasons we already have: none
+- id: campus | show: Campus | channel: France 2 | years: 2001-2006 | seasons we already have: 1 3 4
 - id: lindor-de-la-musique-guyanaise | show: Lindor de la musique guyanaise | channel: ? | years: 2000-2010 | seasons we already have: none
-- id: metropolis | show: Metropolis | channel: Arte | years: 2000-2010 | seasons we already have: none
-- id: tous-a-la-une | show: Tous à la une | channel: TF1 | years: 2000-2010 | seasons we already have: none
+- id: metropolis | show: Metropolis | channel: Arte | years: 2000-2010 | seasons we already have: 5
+- id: tous-a-la-une | show: Tous à la une | channel: TF1 | years: 2000-2010 | seasons we already have: 1 2 3 4
 - id: un-il-sur-la-planete | show: Un œil sur la planète | channel: France 2 | years: 2002-2010 | seasons we already have: none
 - id: le-hit-w9 | show: Le Hit W9 | channel: W9 | years: 2007-2010 | seasons we already have: none
 
@@ -2167,13 +1825,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 41
+## Lot 37
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 41, do them one by one, in this order):
+THE 10 SHOWS (batch 37, do them one by one, in this order):
 - id: 90-minutes | show: 90 Minutes (investigation) | channel: Canal+ | years: 2000-2010 | seasons we already have: none
 - id: face-a-france | show: Face à France | channel: NRJ 12 | years: 2000-2010 | seasons we already have: none
 - id: la-bande-a-dexter | show: La Bande à Dexter | channel: France 3 | years: 2000-2004 | seasons we already have: none
@@ -2181,7 +1839,7 @@ THE 10 SHOWS (batch 41, do them one by one, in this order):
 - id: qui-sera-le-meilleur-ce-soir | show: Qui sera le meilleur ce soir ? | channel: TF1 | years: 2007-2010 | seasons we already have: none
 - id: 19-00-dimanche | show: 19:00 Dimanche | channel: TF1 | years: 2000-2000 | seasons we already have: none
 - id: histoire-de-comprendre | show: Histoire de comprendre | channel: France 5 | years: 2000-2001 | seasons we already have: none
-- id: hors-serie | show: Hors Série | channel: France 3 | years: 2009-2010 | seasons we already have: none
+- id: hors-serie | show: Hors Série | channel: France 3 | years: 2009-2010 | seasons we already have: 1 2
 - id: plies-en-4 | show: Pliés en 4 | channel: France 4 | years: 2008-2010 | seasons we already have: none
 - id: le-bateau-livre | show: Le Bateau livre | channel: France 5 | years: 2004-2008 | seasons we already have: none
 
@@ -2224,13 +1882,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 42
+## Lot 38
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 42, do them one by one, in this order):
+THE 10 SHOWS (batch 38, do them one by one, in this order):
 - id: le-journal-du-cinema | show: Le Journal du cinéma | channel: Canal+ | years: 2000-2010 | seasons we already have: none
 - id: c-est-quoi-l-amour | show: C'est quoi l'amour ? | channel: TF1 | years: 2000-2010 | seasons we already have: none
 - id: esprits-libres | show: Esprits libres | channel: France 2 | years: 2006-2008 | seasons we already have: none
@@ -2281,13 +1939,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 43
+## Lot 39
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 43, do them one by one, in this order):
+THE 10 SHOWS (batch 39, do them one by one, in this order):
 - id: cafe-picouly | show: Café Picouly | channel: France 5 | years: 2005-2010 | seasons we already have: none
 - id: semaine-critique | show: Semaine critique ! | channel: France 2 | years: 2010-2010 | seasons we already have: none
 - id: destination-noel | show: Destination Noël | channel: ? | years: 2000-2010 | seasons we already have: none
@@ -2338,13 +1996,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 44
+## Lot 40
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 44, do them one by one, in this order):
+THE 10 SHOWS (batch 40, do them one by one, in this order):
 - id: disney-kid | show: Disney Kid | channel: M6 | years: 2000-2002 | seasons we already have: none
 - id: drole-de-reveil | show: Drôle de réveil ! | channel: M6 | years: 2007-2009 | seasons we already have: none
 - id: la-teloose | show: La Téloose | channel: Comédie ! | years: 2004-2010 | seasons we already have: none
@@ -2395,13 +2053,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 45
+## Lot 41
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 45, do them one by one, in this order):
+THE 10 SHOWS (batch 41, do them one by one, in this order):
 - id: tres-chasse | show: Très chasse | channel: TF1 | years: 2000-2010 | seasons we already have: none
 - id: 100-poker | show: 100 % poker | channel: M6 | years: 2010-2010 | seasons we already have: none
 - id: pop-com | show: Pop Com | channel: Canal+ | years: 2009-2010 | seasons we already have: none
@@ -2452,13 +2110,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 46
+## Lot 42
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 46, do them one by one, in this order):
+THE 10 SHOWS (batch 42, do them one by one, in this order):
 - id: empreintes | show: Empreintes | channel: France 5 | years: 2007-2010 | seasons we already have: none
 - id: harry-roselmack-en-immersion | show: Harry Roselmack en immersion | channel: TF1 | years: 2009-2010 | seasons we already have: none
 - id: disney-channel-talents | show: Disney Channel Talents | channel: Disney Channel | years: 2006-2010 | seasons we already have: 5
@@ -2509,13 +2167,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 47
+## Lot 43
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 47, do them one by one, in this order):
+THE 10 SHOWS (batch 43, do them one by one, in this order):
 - id: qui-peut-battre | show: Qui peut battre… ? | channel: TF1 | years: 2008-2010 | seasons we already have: none
 - id: club | show: Club | channel: M6 | years: 2006-2009 | seasons we already have: none
 - id: cafe-litteraire | show: Café littéraire | channel: France 2 | years: 2008-2009 | seasons we already have: none
@@ -2566,13 +2224,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 48
+## Lot 44
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 48, do them one by one, in this order):
+THE 10 SHOWS (batch 44, do them one by one, in this order):
 - id: duel-sur-la-3 | show: Duel sur la 3 | channel: France 3 | years: 2007-2008 | seasons we already have: none
 - id: le-monde-est-scoop | show: Le monde est scoop | channel: Canal J | years: 2002-2010 | seasons we already have: none
 - id: un-autre-journal | show: Un autre journal | channel: Canal+ | years: 2000-2001 | seasons we already have: none
@@ -2623,13 +2281,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 49
+## Lot 45
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 49, do them one by one, in this order):
+THE 10 SHOWS (batch 45, do them one by one, in this order):
 - id: tele-la-question | show: Télé la question | channel: France 3 | years: 2005-2006 | seasons we already have: none
 - id: code-de-la-route | show: Code de la route | channel: TF1 | years: 2003-2008 | seasons we already have: none
 - id: la-musicale | show: La Musicale | channel: Canal+ | years: 2004-2010 | seasons we already have: none
@@ -2680,13 +2338,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 50
+## Lot 46
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 50, do them one by one, in this order):
+THE 10 SHOWS (batch 46, do them one by one, in this order):
 - id: c-est-votre-vie | show: C'est votre vie ! | channel: France 2 | years: 2000-2010 | seasons we already have: none
 - id: gulli-mag | show: Gulli Mag | channel: Gulli | years: 2006-2010 | seasons we already have: none
 - id: n-ayons-pas-peur-des-mots | show: N'ayons pas peur des mots | channel: i>Télé | years: 2004-2010 | seasons we already have: none
@@ -2737,13 +2395,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 51
+## Lot 47
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 51, do them one by one, in this order):
+THE 10 SHOWS (batch 47, do them one by one, in this order):
 - id: un-deux-trois-series | show: Un, deux, trois, séries | channel: TF1 | years: 2000-2000 | seasons we already have: none
 - id: l-aventuriere | show: L'Aventurière | channel: ? | years: 2006-2007 | seasons we already have: none
 - id: 60-secondes-du-colisee | show: 60 secondes du Colisée | channel: France 2 | years: 2007-2007 | seasons we already have: none
@@ -2794,13 +2452,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 52
+## Lot 48
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 52, do them one by one, in this order):
+THE 10 SHOWS (batch 48, do them one by one, in this order):
 - id: field-dans-ta-chambre | show: Field dans ta chambre | channel: Paris Première | years: 2002-2010 | seasons we already have: none
 - id: la-gym-des-neurones | show: La Gym des neurones | channel: France 2 | years: 2001-2002 | seasons we already have: none
 - id: trafic-musique | show: Trafic.musique | channel: France 2 | years: 2002-2010 | seasons we already have: none
@@ -2851,13 +2509,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 53
+## Lot 49
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 53, do them one by one, in this order):
+THE 10 SHOWS (batch 49, do them one by one, in this order):
 - id: good-as-you | show: Good As You | channel: ? | years: 2001-2010 | seasons we already have: none
 - id: link-la-vie-en-face | show: Link, la vie en face | channel: TF1 | years: 2010-2010 | seasons we already have: none
 - id: tubissimo | show: Tubissimo | channel: M6 | years: 2002-2007 | seasons we already have: none
@@ -2908,13 +2566,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 54
+## Lot 50
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 54, do them one by one, in this order):
+THE 10 SHOWS (batch 50, do them one by one, in this order):
 - id: double-je | show: Double je | channel: France 2 | years: 2002-2006 | seasons we already have: none
 - id: droit-d-inventaire | show: Droit d'inventaire | channel: France 3 | years: 2007-2009 | seasons we already have: none
 - id: foot-3 | show: Foot 3 | channel: France 3 | years: 2001-2004 | seasons we already have: none
@@ -2965,13 +2623,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 55
+## Lot 51
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 55, do them one by one, in this order):
+THE 10 SHOWS (batch 51, do them one by one, in this order):
 - id: decrochez-vos-vacances | show: Décrochez vos vacances | channel: France 3 | years: 2002-2007 | seasons we already have: none
 - id: happy-hour | show: Happy Hour | channel: Canal+ | years: 2010-2010 | seasons we already have: none
 - id: panorama | show: Panorama | channel: ? | years: 2000-2010 | seasons we already have: none
@@ -3022,13 +2680,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 56
+## Lot 52
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 56, do them one by one, in this order):
+THE 10 SHOWS (batch 52, do them one by one, in this order):
 - id: graffiti | show: Graffiti (série documentaire) | channel: ? | years: 2004-2008 | seasons we already have: none
 - id: kiosque-de-tv5-monde | show: Kiosque de TV5 Monde | channel: ? | years: 2000-2010 | seasons we already have: none
 - id: adn-accelerateur-de-neurones | show: ADN : Accélérateur de neurones | channel: France 2 | years: 2009-2010 | seasons we already have: none
@@ -3079,13 +2737,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 57
+## Lot 53
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 57, do them one by one, in this order):
+THE 10 SHOWS (batch 53, do them one by one, in this order):
 - id: lorsque-le-monde-parlait-arabe | show: Lorsque le monde parlait arabe | channel: ? | years: 2001-2010 | seasons we already have: none
 - id: jules-et-les-filles | show: Jules et les Filles | channel: France 3 | years: 2005-2005 | seasons we already have: none
 - id: repas-de-familles | show: Repas de familles | channel: France 3 | years: 2010-2010 | seasons we already have: none
@@ -3136,13 +2794,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 58
+## Lot 54
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 58, do them one by one, in this order):
+THE 10 SHOWS (batch 54, do them one by one, in this order):
 - id: rayons-x | show: Rayons X | channel: France 2 | years: 2002-2007 | seasons we already have: none
 - id: allo-rufo | show: Allô Rufo | channel: France 5 | years: 2009-2010 | seasons we already have: none
 - id: avenue-de-l-europe-le-mag | show: Avenue de l'Europe, le mag | channel: France 3 | years: 2006-2010 | seasons we already have: none
@@ -3193,13 +2851,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 59
+## Lot 55
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 59, do them one by one, in this order):
+THE 10 SHOWS (batch 55, do them one by one, in this order):
 - id: l-histoire-du-cinema-francais-par-ceux-qui-l-ont-fait | show: L'Histoire du cinéma français par ceux qui l'ont fait | channel: TF1 | years: 2000-2010 | seasons we already have: none
 - id: le-rebut-global | show: Le Rebut global | channel: ? | years: 2004-2010 | seasons we already have: none
 - id: contes-a-trembler-debout | show: Contes à trembler debout | channel: TF1 | years: 2000-2010 | seasons we already have: none
@@ -3250,13 +2908,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 60
+## Lot 56
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 60, do them one by one, in this order):
+THE 10 SHOWS (batch 56, do them one by one, in this order):
 - id: 18-30-aujourd-hui | show: 18:30 aujourd'hui | channel: France 3 | years: 2009-2010 | seasons we already have: none
 - id: d-un-monde-a-l-autre | show: D'un monde à l'autre | channel: France 2 | years: 2000-2005 | seasons we already have: none
 - id: generations-famille | show: Générations famille | channel: M6 | years: 2009-2009 | seasons we already have: none
@@ -3307,13 +2965,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 61
+## Lot 57
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 61, do them one by one, in this order):
+THE 10 SHOWS (batch 57, do them one by one, in this order):
 - id: la-traversee-du-miroir | show: La Traversée du miroir | channel: France 5 | years: 2009-2010 | seasons we already have: none
 - id: passe-simple | show: Passé simple | channel: M6 | years: 2000-2001 | seasons we already have: none
 - id: reporters-2 | show: Reporters (magazine de NT1) | channel: NT1 | years: 2008-2010 | seasons we already have: none
@@ -3364,13 +3022,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 62
+## Lot 58
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 62, do them one by one, in this order):
+THE 10 SHOWS (batch 58, do them one by one, in this order):
 - id: y-a-une-solution-a-tout | show: Y'a une solution à tout ! | channel: Direct 8 | years: 2009-2009 | seasons we already have: none
 - id: 88-minutes | show: 88 minutes | channel: Direct 8 | years: 2005-2008 | seasons we already have: none
 - id: droits-d-auteurs | show: Droits d'auteurs | channel: France 5 | years: 2000-2004 | seasons we already have: none
@@ -3421,13 +3079,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 63
+## Lot 59
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 63, do them one by one, in this order):
+THE 10 SHOWS (batch 59, do them one by one, in this order):
 - id: mondes-et-merveilles | show: Mondes et Merveilles | channel: France 5 | years: 2006-2007 | seasons we already have: none
 - id: une-fois-par-jour | show: Une fois par jour | channel: ? | years: 2000-2010 | seasons we already have: none
 - id: gaia-le-rendez-vous-du-developpement-durable | show: Gaïa, le rendez-vous du développement durable | channel: France 5 | years: 2000-2004 | seasons we already have: none
@@ -3478,13 +3136,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 64
+## Lot 60
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 64, do them one by one, in this order):
+THE 10 SHOWS (batch 60, do them one by one, in this order):
 - id: theatre-en-direct | show: Théâtre en direct | channel: Direct 8 | years: 2005-2010 | seasons we already have: none
 - id: c-est-positif | show: C'est positif | channel: M6 | years: 2009-2009 | seasons we already have: none
 - id: europole-tv | show: Europole TV | channel: France 3 | years: 2000-2010 | seasons we already have: none
@@ -3535,13 +3193,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 65
+## Lot 61
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 65, do them one by one, in this order):
+THE 10 SHOWS (batch 61, do them one by one, in this order):
 - id: chacun-sa-place | show: Chacun sa place ! | channel: RTL9 | years: 2006-2006 | seasons we already have: none
 - id: l-emploi-par-le-net | show: L'Emploi par le Net | channel: France 5 | years: 2002-2010 | seasons we already have: none
 - id: tour-de-france-inter | show: Tour de France Inter | channel: ? | years: 2000-2010 | seasons we already have: none
@@ -3592,13 +3250,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 66
+## Lot 62
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 10 SHOWS (batch 66, do them one by one, in this order):
+THE 10 SHOWS (batch 62, do them one by one, in this order):
 - id: comic-hall-stars | show: Comic Hall Stars | channel: France 4 | years: 2008-2010 | seasons we already have: none
 - id: immersion-totale | show: Immersion totale | channel: France 2 | years: 2004-2010 | seasons we already have: none
 - id: otrement-dit | show: Ôtrement dit | channel: France Ô | years: 2007-2010 | seasons we already have: none
@@ -3649,13 +3307,13 @@ STEP 4. When all the shows are done, answer with ONE JSON code block and nothing
 The keys are the "id" values above, exactly as written. Every video must have "kind": "episode" and "source": "chrome".
 ```
 
-## Lot 67
+## Lot 63
 
 ```
 TASK: Find full episodes of French TV shows on YouTube, sorted by season and episode number.
 Use ONLY YouTube. Do not open any other website. Work slowly and carefully. Follow the steps in order.
 
-THE 1 SHOWS (batch 67, do them one by one, in this order):
+THE 1 SHOWS (batch 63, do them one by one, in this order):
 - id: l-or-sauvage | show: L'Or sauvage | channel: ? | years: 2004-2010 | seasons we already have: none
 
 STEP 1. For each show, search on YouTube, one after the other:
