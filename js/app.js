@@ -1,4 +1,4 @@
-// Années 2000 : catalogue, fiches et replays YouTube. Aucune dépendance.
+// Les années milléniales : catalogue télé et musique des années 2000, replays YouTube, blind test. Aucune dépendance.
 
 const CATEGORIES = {
   'téléréalité': 'Téléréalité',
@@ -110,7 +110,7 @@ function filtered() {
 }
 
 function renderHome() {
-  document.title = "La télé des années 2000 · Années 2000";
+  document.title = "La télé des années 2000 · Les années milléniales";
   const channels = [...new Set(SHOWS.flatMap((s) => s.channels))].sort((a, b) =>
     SHOWS.filter((s) => s.channels[0] === b).length - SHOWS.filter((s) => s.channels[0] === a).length);
   const recent = store.get('recent', []).map((id) => BY_ID.get(id)).filter(Boolean);
@@ -228,7 +228,7 @@ function tvBox(s, wide = false, href = null) {
     : `<span class="noise"></span><a class="tv__msg" href="${href || `#/e/${encodeURIComponent(s.id)}`}" style="text-decoration:none">${esc(s.title)}<br>▶ ${esc(s.channels[0] || 'Télé')}</a>`;
   return `<div class="tv ${wide ? 'tv--wide' : ''}">
     <div class="tv__screen" id="tv-screen">${screen}</div>
-    <span class="tv__brand">TÉLÉ 2000</span>
+    <span class="tv__brand">MILLÉNIALES</span>
     <span class="tv__knobs" aria-hidden="true"><i></i><i></i></span>
   </div>`;
 }
@@ -313,7 +313,7 @@ function renderShow(id) {
     $view.innerHTML = `<div class="panel empty" style="margin-top:30px">Cette émission n'est pas (encore) au programme. <a href="#/tv">Retour au catalogue</a></div>`;
     return;
   }
-  document.title = `${s.title} · Années 2000`;
+  document.title = `${s.title} · Les années milléniales`;
   store.set('recent', [s.id, ...store.get('recent', []).filter((x) => x !== s.id)].slice(0, 12));
 
   const vids = s.videos || [];
@@ -398,7 +398,7 @@ function renderShow(id) {
 
 /* ---------- Frise chronologique ---------- */
 function renderTimeline() {
-  document.title = 'Frise · Années 2000';
+  document.title = 'Frise · Les années milléniales';
   const starts = SHOWS.filter((s) => s.yearStart >= 2000 && s.yearStart <= 2010);
   $view.innerHTML = `
     <section class="hero" style="grid-template-columns:1fr">
@@ -419,7 +419,7 @@ function renderTimeline() {
 /* ---------- Accueil : la télé ou la musique ? ---------- */
 function renderChooser() {
   setMode('home');
-  document.title = 'Années 2000 · La télé et la musique des années 2000';
+  document.title = 'Les années milléniales · La télé et la musique des années 2000';
   const replays = SHOWS.filter((s) => s.videos?.length).length;
   const clips = HITS.filter((h) => h.videos?.length).length;
   $view.innerHTML = `
@@ -442,6 +442,7 @@ function renderChooser() {
           <span class="gel gel--zap">🎵 Lancer le CD</span>
         </a>
       </div>
+      <p class="choose__more"><a class="gel gel--lime" href="#/blindtest">🎧 Ou teste-toi au blind test des années 2000</a></p>
     </section>`;
 }
 
@@ -513,7 +514,7 @@ function filteredHits() {
 
 function renderMusicHome() {
   setMode('music');
-  document.title = 'La musique des années 2000 · Années 2000';
+  document.title = 'La musique des années 2000 · Les années milléniales';
   const top = [...HITS].sort((a, b) => b.score - a.score).slice(0, 20);
   const pick = top[Math.floor(Math.random() * Math.min(10, top.length))];
   const digits = String(HITS.length).padStart(5, '0').split('').map((d) => `<span>${d}</span>`).join('');
@@ -658,7 +659,7 @@ function renderHit(id) {
     $view.innerHTML = `<div class="panel empty" style="margin-top:30px">Ce tube n'est pas (encore) dans la playlist. <a href="#/musique">Retour aux tubes</a></div>`;
     return;
   }
-  document.title = `${h.title} · ${h.artist} · Années 2000`;
+  document.title = `${h.title} · ${h.artist} · Les années milléniales`;
   const vids = h.videos || [];
   const main = MUSIC_MAIN.map(([kind, label, icon]) => ({
     key: kind, label: `${icon} ${label}`, items: vids.filter((v) => v.kind === kind),
@@ -718,7 +719,7 @@ function renderHit(id) {
 
 function renderMusicTimeline() {
   setMode('music');
-  document.title = 'Frise des tubes · Années 2000';
+  document.title = 'Frise des tubes · Les années milléniales';
   $view.innerHTML = `
     <section class="hero" style="grid-template-columns:1fr">
       <div><h1>La frise des <em>tubes</em></h1>
@@ -735,6 +736,250 @@ function renderMusicTimeline() {
     </div>`;
 }
 
+/* ---------- Blind test ---------- */
+const bt = { duration: 10, level: 'normal', year: 0, genre: '', rounds: 10, queue: [], i: 0, score: 0, results: [], player: null, timer: null, revealed: false };
+const BT_LEVELS = { facile: ['Facile', 150], normal: ['Normal', 450], expert: ['Expert', Infinity] };
+
+// Le lecteur YouTube programmable (API IFrame), chargé une seule fois à la demande.
+let ytReady = null;
+function loadYouTubeApi() {
+  if (ytReady) return ytReady;
+  ytReady = new Promise((resolve) => {
+    if (window.YT?.Player) return resolve(window.YT);
+    window.onYouTubeIframeAPIReady = () => resolve(window.YT);
+    const s = document.createElement('script');
+    s.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(s);
+  });
+  return ytReady;
+}
+
+const clipOf = (h) => h.videos?.find((v) => v.kind === 'clip');
+const words = (s) => fold(s.replace(/\(.*?\)|\[.*?\]/g, '')).replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((w) => w.length > 1 && !['le', 'la', 'les', 'de', 'des', 'du', 'un', 'une', 'et', 'the', 'feat', 'featuring'].includes(w));
+// Une réponse est bonne si elle contient l'essentiel des mots du titre (ou de l'artiste).
+function guessMatches(answer, target) {
+  const a = new Set(words(answer));
+  const t = words(target);
+  if (!t.length || !a.size) return false;
+  const found = t.filter((w) => a.has(w)).length;
+  return found / t.length >= 0.6;
+}
+
+function renderBlindSetup() {
+  setMode('music');
+  document.title = 'Blind test · Les années milléniales';
+  const pool = blindPool();
+  $view.innerHTML = `
+    <section class="hero" style="grid-template-columns:1fr">
+      <div>
+        <h1>Le <em>blind test</em> des années 2000</h1>
+        <p>On te fait écouter les premières secondes d'un tube, l'image est cachée. Trouve le titre ou l'artiste, puis on dévoile le clip.</p>
+      </div>
+    </section>
+    <section class="panel controls blind-setup">
+      <div class="filters">
+        <span class="muted">Durée de l'extrait</span>
+        <div class="chips">${[5, 10].map((d) => `<button class="chip" type="button" data-bt-dur="${d}" aria-pressed="${bt.duration === d}">${d} secondes</button>`).join('')}</div>
+      </div>
+      <div class="filters">
+        <span class="muted">Difficulté</span>
+        <div class="chips">${Object.entries(BT_LEVELS).map(([k, [label]]) => `<button class="chip" type="button" data-bt-level="${k}" aria-pressed="${bt.level === k}">${label}</button>`).join('')}</div>
+      </div>
+      <div class="filters">
+        <label for="bt-genre">Genre</label>
+        <select id="bt-genre" class="select"><option value="">Tous</option>${Object.entries(GENRES).map(([k, v]) => `<option value="${k}" ${bt.genre === k ? 'selected' : ''}>${v}</option>`).join('')}</select>
+        <label for="bt-rounds">Manches</label>
+        <select id="bt-rounds" class="select">${[5, 10, 20].map((n) => `<option ${bt.rounds === n ? 'selected' : ''}>${n}</option>`).join('')}</select>
+      </div>
+      <div class="chips" role="group" aria-label="Année">
+        <button class="chip" type="button" data-bt-year="0" aria-pressed="${!bt.year}">Toutes les années</button>
+        ${YEARS.map((y) => `<button class="chip" type="button" data-bt-year="${y}" aria-pressed="${bt.year === y}">${y}</button>`).join('')}
+      </div>
+      <div class="actions">
+        <button class="gel gel--zap" type="button" id="bt-start" ${pool.length < 3 ? 'disabled' : ''}>🎧 Lancer la partie</button>
+        <span class="muted">${pool.length} tubes possibles avec ces réglages</span>
+      </div>
+    </section>`;
+  const rerender = () => renderBlindSetup();
+  $view.querySelectorAll('[data-bt-dur]').forEach((b) => b.addEventListener('click', () => { bt.duration = +b.dataset.btDur; rerender(); }));
+  $view.querySelectorAll('[data-bt-level]').forEach((b) => b.addEventListener('click', () => { bt.level = b.dataset.btLevel; rerender(); }));
+  $view.querySelectorAll('[data-bt-year]').forEach((b) => b.addEventListener('click', () => { bt.year = +b.dataset.btYear; rerender(); }));
+  document.getElementById('bt-genre').addEventListener('change', (e) => { bt.genre = e.target.value; rerender(); });
+  document.getElementById('bt-rounds').addEventListener('change', (e) => { bt.rounds = +e.target.value; });
+  document.getElementById('bt-start').addEventListener('click', startBlindGame);
+}
+
+function blindPool() {
+  const max = BT_LEVELS[bt.level][1];
+  return [...HITS].filter((h) => clipOf(h)).sort((a, b) => b.score - a.score).slice(0, max)
+    .filter((h) => (!bt.year || h.year === bt.year) && (!bt.genre || h.genre === bt.genre));
+}
+
+function startBlindGame() {
+  const pool = blindPool();
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  Object.assign(bt, { queue: pool, i: 0, score: 0, results: [] });
+  renderBlindRound();
+}
+
+function renderBlindRound() {
+  clearTimeout(bt.timer);
+  if (bt.results.length >= bt.rounds || bt.i >= bt.queue.length) return renderBlindEnd();
+  const h = bt.queue[bt.i];
+  bt.revealed = false;
+  $view.innerHTML = `
+    <section class="blind">
+      <div class="blind__bar">
+        <span class="blind__round">Manche ${bt.results.length + 1} / ${bt.rounds}</span>
+        <span class="blind__score">Score : <b>${bt.score}</b></span>
+      </div>
+      <div class="tv tv--wide">
+        <div class="tv__screen is-playing" id="bt-screen">
+          <div id="bt-player"></div>
+          <div class="blind__cover" id="bt-cover">
+            <span class="noise"></span>
+            <span class="blind__q" id="bt-q">?</span>
+            <span class="blind__count" id="bt-count"></span>
+          </div>
+        </div>
+        <span class="tv__brand">MILLÉNIALES</span>
+        <span class="tv__knobs" aria-hidden="true"><i></i><i></i></span>
+      </div>
+      <div class="blind__panel panel">
+        <div class="actions" id="bt-listen">
+          <button class="gel gel--zap" type="button" id="bt-play">▶ Écouter l'extrait (${bt.duration} s)</button>
+          <button class="gel gel--ghost" type="button" id="bt-replay" hidden>🔁 Réécouter</button>
+        </div>
+        <form class="search" id="bt-form" autocomplete="off">
+          <label class="skip" for="bt-guess">Ta réponse</label>
+          <input id="bt-guess" type="search" placeholder="Le titre ou l'artiste…">
+          <button class="gel" type="submit">Valider</button>
+        </form>
+        <div class="actions"><button class="gel gel--ghost gel--small" type="button" id="bt-giveup">Je donne ma langue au chat</button></div>
+        <div id="bt-answer" class="blind__answer" hidden></div>
+      </div>
+    </section>`;
+
+  const status = (txt) => { document.getElementById('bt-count').textContent = txt; };
+  status('Prêt ?');
+  const playExtract = async () => {
+    status('Chargement…');
+    const YT = await loadYouTubeApi();
+    const id = clipOf(h).youtubeId;
+    const onState = (e) => {
+      if (e.data === YT.PlayerState.PLAYING && !bt.revealed) {
+        clearTimeout(bt.timer);
+        let left = bt.duration;
+        status(`${left}`);
+        const tick = () => {
+          left -= 1;
+          if (bt.revealed) return;
+          if (left <= 0) {
+            bt.player.pauseVideo();
+            status('À toi !');
+            document.getElementById('bt-replay').hidden = false;
+          } else {
+            status(`${left}`);
+            bt.timer = setTimeout(tick, 1000);
+          }
+        };
+        bt.timer = setTimeout(tick, 1000);
+      }
+    };
+    const onError = () => {
+      // Vidéo non lisible ici : on passe au tube suivant sans compter la manche.
+      status('Extrait indisponible, on passe au suivant…');
+      bt.i += 1;
+      setTimeout(renderBlindRound, 1200);
+    };
+    // Un lecteur neuf à chaque manche (l'écran est redessiné entre deux manches).
+    try { bt.player?.destroy?.(); } catch {}
+    bt.player = new YT.Player('bt-player', {
+      videoId: id,
+      playerVars: { autoplay: 1, controls: 0, disablekb: 1, modestbranding: 1, rel: 0, playsinline: 1, start: 0 },
+      events: { onReady: (e) => e.target.playVideo(), onStateChange: onState, onError },
+    });
+  };
+  document.getElementById('bt-play').addEventListener('click', (e) => {
+    e.target.hidden = true;
+    playExtract();
+    document.getElementById('bt-guess').focus();
+  });
+  document.getElementById('bt-replay').addEventListener('click', () => {
+    bt.player?.seekTo(0, true);
+    bt.player?.playVideo();
+  });
+  document.getElementById('bt-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const g = document.getElementById('bt-guess').value;
+    if (!g.trim()) return;
+    const title = guessMatches(g, h.title);
+    const artist = guessMatches(g, mainArtistOf(h.artist));
+    revealBlind(h, title ? 2 : artist ? 1 : 0, g);
+  });
+  document.getElementById('bt-giveup').addEventListener('click', () => revealBlind(h, 0, ''));
+}
+
+const mainArtistOf = (a) => a.split(/\s+(?:featuring|feat\.?|ft\.?|et|&|avec|vs\.?|x)\s+|\s*[/,]\s*/i)[0];
+
+function revealBlind(h, points, guess) {
+  if (bt.revealed) return;
+  bt.revealed = true;
+  clearTimeout(bt.timer);
+  bt.score += points;
+  bt.results.push({ h, points, guess });
+  document.getElementById('bt-cover').classList.add('is-gone');
+  bt.player?.playVideo?.();
+  const verdict = points === 2 ? '🎉 Bravo, c\'est le bon titre ! +2' : points === 1 ? '👍 Bon artiste ! +1' : guess ? '😅 Raté !' : '🙈 Dommage !';
+  const box = document.getElementById('bt-answer');
+  box.hidden = false;
+  box.innerHTML = `
+    <p class="blind__verdict">${verdict}</p>
+    <p class="show__artist">${esc(h.artist)}</p>
+    <h2 class="show__title" style="font-size:clamp(22px,4vw,34px)">${esc(h.title)}</h2>
+    <p class="muted">${h.year}${h.numberOne ? ` · Numéro un ${h.weeksAtOne} semaine${h.weeksAtOne > 1 ? 's' : ''}` : h.yearRank ? ` · ${h.yearRank.rank}e des ventes en ${h.yearRank.year}` : ''}</p>
+    <div class="actions">
+      <button class="gel gel--zap" type="button" id="bt-next">${bt.results.length >= bt.rounds ? '🏁 Voir le résultat' : 'Manche suivante →'}</button>
+      <a class="gel gel--ghost gel--small" href="#/m/${encodeURIComponent(h.id)}">Voir la fiche du tube</a>
+    </div>`;
+  document.getElementById('bt-form').hidden = true;
+  document.getElementById('bt-giveup').hidden = true;
+  document.getElementById('bt-listen').hidden = true;
+  document.getElementById('bt-next').addEventListener('click', () => {
+    bt.player?.stopVideo?.();
+    bt.i += 1;
+    renderBlindRound();
+  });
+}
+
+function renderBlindEnd() {
+  try { bt.player?.destroy?.(); } catch {}
+  bt.player = null;
+  const max = bt.results.length * 2;
+  const best = store.get('blindBest', 0);
+  const pct = max ? bt.score / max : 0;
+  if (pct > best) store.set('blindBest', pct);
+  const mood = pct >= 0.8 ? 'Légende des années 2000 ! 🏆' : pct >= 0.5 ? 'Pas mal du tout ! 🎶' : pct > 0 ? 'Il faut réviser ton Hit Machine 📼' : 'Retour en 2001 obligatoire 😄';
+  $view.innerHTML = `
+    <section class="hero" style="grid-template-columns:1fr">
+      <div>
+        <h1>Score final : <em>${bt.score} / ${max}</em></h1>
+        <p>${mood}${best ? ` Ton meilleur score : ${Math.round(Math.max(best, pct) * 100)} %.` : ''}</p>
+        <div class="actions">
+          <button class="gel gel--zap" type="button" id="bt-again">🔁 Rejouer</button>
+          <a class="gel gel--ghost" href="#/blindtest" id="bt-settings">⚙️ Changer les réglages</a>
+        </div>
+      </div>
+    </section>
+    <h2 class="row-title">Les tubes de la partie</h2>
+    <div class="grid">${bt.results.map((r) => hitCard(r.h)).join('')}</div>`;
+  document.getElementById('bt-again').addEventListener('click', startBlindGame);
+  document.getElementById('bt-settings').addEventListener('click', (e) => { e.preventDefault(); renderBlindSetup(); });
+}
+
 /* ---------- Routeur ---------- */
 function setMode(mode) {
   document.body.dataset.mode = mode;
@@ -742,10 +987,15 @@ function setMode(mode) {
   frise.href = mode === 'music' ? '#/musique/frise' : '#/tv/frise';
   frise.hidden = mode === 'home';
   document.getElementById('nav-tv').setAttribute('aria-current', String(mode === 'tv'));
-  document.getElementById('nav-music').setAttribute('aria-current', String(mode === 'music'));
+  document.getElementById('nav-music').setAttribute('aria-current', String(mode === 'music' && !location.hash.startsWith('#/blindtest')));
+  document.getElementById('nav-blind').setAttribute('aria-current', String(location.hash.startsWith('#/blindtest')));
 }
 
 function route() {
+  // On quitte une partie de blind test : on coupe le son.
+  clearTimeout(bt.timer);
+  try { bt.player?.destroy?.(); } catch {}
+  bt.player = null;
   const hash = location.hash.slice(1) || '/';
   let m;
   if ((m = hash.match(/^\/e\/(.+)$/))) { setMode('tv'); renderShow(decodeURIComponent(m[1])); }
@@ -753,6 +1003,7 @@ function route() {
   else if (hash === '/tv/frise' || hash === '/frise') { setMode('tv'); renderTimeline(); }
   else if (hash === '/tv') { setMode('tv'); renderHome(); }
   else if (hash === '/musique/frise') renderMusicTimeline();
+  else if (hash === '/blindtest') renderBlindSetup();
   else if (hash === '/musique') renderMusicHome();
   else renderChooser();
   window.scrollTo(0, 0);

@@ -97,8 +97,8 @@ img { max-width: 100%; display: block; }
 .logo { position: relative; text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
 .logo__chrome {
   font-family: Audiowide, Verdana, sans-serif;
-  font-size: clamp(22px, 4.5vw, 34px);
-  letter-spacing: 0.04em;
+  font-size: clamp(17px, 3.4vw, 30px);
+  letter-spacing: 0.03em;
   background: var(--chrome);
   -webkit-background-clip: text; background-clip: text; color: transparent;
   filter: drop-shadow(0 2px 0 #0a1a4a) drop-shadow(0 0 10px rgba(95, 211, 255, 0.55));
@@ -417,3 +417,19 @@ img { max-width: 100%; display: block; }
   .cd { width: 140px; height: 140px; }
 }
 .playlists { margin: 0 0 12px; }
+
+/* ---------- Blind test ---------- */
+.choose__more { margin: 22px 0 0; text-align: center; }
+.blind { margin-top: 22px; display: grid; gap: 16px; max-width: 860px; margin-left: auto; margin-right: auto; }
+.blind__bar { display: flex; justify-content: space-between; align-items: center; font-family: VT323, monospace; font-size: 24px; }
+.blind__score b { color: var(--pink); }
+.blind .tv__screen iframe, .blind #bt-player { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.blind__cover { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; background: #020611; transition: opacity .6s ease; }
+.blind__cover.is-gone { opacity: 0; pointer-events: none; }
+.blind__q { position: relative; font-family: Audiowide, sans-serif; font-size: clamp(64px, 14vw, 140px); color: #fff; text-shadow: 0 0 24px var(--pink), 0 0 6px #fff; }
+.blind__count { position: absolute; bottom: 14%; left: 0; right: 0; text-align: center; font-family: VT323, monospace; font-size: clamp(22px, 4vw, 34px); color: #39ff14; text-shadow: 0 0 8px #39ff14; }
+.blind__panel { padding: 16px; display: grid; gap: 12px; }
+.blind__panel [hidden] { display: none; }
+.blind__verdict { margin: 0; font-weight: 700; font-size: 18px; }
+.blind__answer .show__title { margin: 0; }
+.gel[disabled] { opacity: .5; cursor: not-allowed; }
