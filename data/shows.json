@@ -560,7 +560,16 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/50_minutes_inside",
    "views60d": 1793,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "qaq79Bb09dQ",
+     "title": "50 minutes inside - Le Maroc sublimé sur la chaîne TF1 - vidéo intégrale",
+     "kind": "episode",
+     "year": null,
+     "channelName": "onmt",
+     "source": "auto"
+    }
+   ],
    "score": 333,
    "fame": 1
   },
@@ -1016,7 +1025,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Action_discr%C3%A8te",
    "views60d": 1795,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "oFdynLIc4RU",
+     "title": "L'intégrale des 30 ans - Action Discrète",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Action Discrète - CANAL+",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "NMaCcMdUYRI",
+     "title": "Le cannabis arrive en pharmacie ! - Action Discrète",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Action Discrète - CANAL+",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "VozoqHlAAG8",
+     "title": "Le jonc le plus long - Action Discrète",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Action Discrète - CANAL+",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "QwMQMQaRsoo",
+     "title": "Les Hooligans - Action Discrète",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Action Discrète - CANAL+",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "oIX8bXNy0-s",
+     "title": "DSK - Action Discrète",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Action Discrète - CANAL+",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "35iKm1ZGCqA",
+     "title": "L'immobilier - Action Discrète",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Action Discrète - CANAL+",
+     "source": "auto"
+    }
+   ],
    "score": 333,
    "fame": 1
   },
@@ -3217,7 +3275,16 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Canal_Football_Club",
    "views60d": 1960,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "HYLLsr2mrJk",
+     "title": "Canal Football Club:  10 Ans de clashs !",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "Skrillex Zone11",
+     "source": "auto"
+    }
+   ],
    "score": 337,
    "fame": 1
   },
@@ -3238,7 +3305,24 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Capital_(%C3%A9mission_de_t%C3%A9l%C3%A9vision)",
    "views60d": 1788,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "9ctnDxZdBDY",
+     "title": "Capital (M6) Hamburgers, pizzas les secrets du Fast Food",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Christain Ghys",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "zIzT9E5N5tU",
+     "title": "🎥 Reportage Capital M6 | 4 janvier 2026",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "ensmv paris",
+     "source": "auto"
+    }
+   ],
    "score": 333,
    "fame": 1
   },
@@ -5273,7 +5357,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/E%3DM6",
    "views60d": 1805,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "ComL9tXlUJA",
+     "title": "Canicule : l'erreur que nous faisons tous avec nos volets | E=m6",
+     "kind": "episode",
+     "year": null,
+     "channelName": "E=m6 - M6+",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "NNsXbm54beU",
+     "title": "VIANDE : faut-il vraiment arrêter d'en manger ? | E=m6",
+     "kind": "episode",
+     "year": null,
+     "channelName": "E=m6 - M6+",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "xHuR-JYXL2k",
+     "title": "Le Jet de Luxe avec Mac Lesggy : e=m6, Ozempic, frères Bogdanov, conseils santé",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Jordan De Luxe",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "btdd2Gzi5AE",
+     "title": "E=M6 Dvd-n°9 Les Animaux Dangereux (2002)",
+     "kind": "episode",
+     "year": 2002,
+     "channelName": "ArchiOverFr",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ej2KBzoyHrI",
+     "title": "E=M6   Les secrets scientifiques des aliments que nous consommons tous les jours M6 2018 10 20 17 35",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Ricks",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "JT1jxz1y47Y",
+     "title": "E=M6   Les secrets d'un bon sommeil, décryptés par la science ! M6 2018 10 27 17 35",
+     "kind": "episode",
+     "year": null,
+     "channelName": "alain grand",
+     "source": "auto"
+    }
+   ],
    "score": 334,
    "fame": 1
   },
@@ -5954,7 +6087,56 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Fa_si_la_chanter",
    "views60d": 1781,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "cZ2bESebr1s",
+     "title": "fa si la chanter 7",
+     "kind": "episode",
+     "year": null,
+     "channelName": "stephane heroguer",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "IEBb95QYZaU",
+     "title": "\"FA SI LA CHANTER\" Pascal BRUNNER avec COLETTE (Janvier 1995)",
+     "kind": "episode",
+     "year": 1995,
+     "channelName": "Arno Arnogh",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "CKL99ycOu84",
+     "title": "Fa Si La Chanter - Un candidat belge!",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Pierre PILAT",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Z__1R8KFKz8",
+     "title": "fa si la chanter 4",
+     "kind": "episode",
+     "year": null,
+     "channelName": "stephane heroguer",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "WBesG5inqyE",
+     "title": "fa si la chanter 3",
+     "kind": "episode",
+     "year": null,
+     "channelName": "stephane heroguer",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "WUELpw88in0",
+     "title": "France 3 Fa Si La Chanter",
+     "kind": "episode",
+     "year": null,
+     "channelName": "Tv autrefois",
+     "source": "auto"
+    }
+   ],
    "score": 333,
    "fame": 1
   },
@@ -12268,7 +12450,16 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Les_Enqu%C3%AAtes_extraordinaires",
    "views60d": 314,
    "sitelinks": 11,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "if0ArgnrtwU",
+     "title": "Enquêtes Extraordinaires Les Signes De L'au Delà   10 Juin 2010",
+     "kind": "episode",
+     "year": 2010,
+     "channelName": "Radya Singh",
+     "source": "auto"
+    }
+   ],
    "score": 338,
    "fame": 1
   },
@@ -14713,7 +14904,24 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Op%C3%A9ration_s%C3%A9duction_aux_Cara%C3%AFbes",
    "views60d": 1797,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "hQw0znvWJNU",
+     "title": "Opération séduction : Les célibataires partent aux caraïbes 🌴 | S2 EM01 | Intégrale | TV Réalité",
+     "kind": "episode",
+     "year": null,
+     "channelName": "ICON TV - Réalité",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "66XYSG2OwiU",
+     "title": "M6 - Opération séduction aux Caraïbes (bande-annonce)",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "🎞️ Band'annonce TV",
+     "source": "auto"
+    }
+   ],
    "score": 333,
    "fame": 2
   },
@@ -17877,7 +18085,32 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/TF!",
    "views60d": 1581,
    "sitelinks": 2,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "ichzhtEnHow",
+     "title": "TF1 24 Février 2003 Extraits TF!,4 Pubs,3 B.A.,Météo",
+     "kind": "episode",
+     "year": 2003,
+     "channelName": "GregTVarchives",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "J6-sIlSj_-8",
+     "title": "TF1 - 25 Mars 2000 - TF! Jeunesse, 5 Pages de pub, 2 BA",
+     "kind": "episode",
+     "year": 2000,
+     "channelName": "Florian 3",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "UE8nl7481_I",
+     "title": "TF1 - TF! Jeunesse (TF Week-end !) - Samedi 25 Mars 2000 (Intégrale)",
+     "kind": "episode",
+     "year": 2000,
+     "channelName": "Axel Mathieu-Haybrard",
+     "source": "auto"
+    }
+   ],
    "score": 336,
    "fame": 1
   },
@@ -18456,7 +18689,48 @@
    "wikipedia": "https://fr.wikipedia.org/wiki/Tous_ensemble",
    "views60d": 1892,
    "sitelinks": 1,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "t4d33187cjc",
+     "title": "TOUS ENSEMBLE - Une maman seule, deux enfants, et une maison en ruines   ...",
+     "kind": "episode",
+     "year": null,
+     "channelName": "REPORTER PRO",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "yxOhZcSEq64",
+     "title": "Tous ensemble - bande annonce",
+     "kind": "extrait",
+     "year": null,
+     "channelName": "imineo Bandes Annonces",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "gbkoNIK3lpc",
+     "title": "Tous Ensemble ! présentation Jean Pierre Pernaut et Flavie Flament en 2002",
+     "kind": "extrait",
+     "year": 2002,
+     "channelName": "Pascal Teddy Vinny Easy",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "8OIiGr8neR0",
+     "title": "France vs Uruguay 2002 - Extrait Tous Ensemble TF1 (Après-match)",
+     "kind": "extrait",
+     "year": 2002,
+     "channelName": "Retro Foot",
+     "source": "auto"
+    },
+    {
+     "youtubeId": "FlWDXZo6pZg",
+     "title": "générique tous ensemble TF1 2009",
+     "kind": "générique",
+     "year": 2009,
+     "channelName": "David Gametro",
+     "source": "auto"
+    }
+   ],
    "score": 336,
    "fame": 1
   },
