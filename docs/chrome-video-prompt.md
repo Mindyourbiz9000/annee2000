@@ -27,7 +27,7 @@ node scripts/make-todo.mjs      # écrit data/video-todo.csv (lots de 25, cultes
 > ```json
 > {
 >   "loft-story": [
->     { "youtubeId": "XXXXXXXXXXX", "title": "Titre exact de la vidéo", "kind": "episode", "year": 2001, "channelName": "INA", "source": "chrome" }
+>     { "youtubeId": "XXXXXXXXXXX", "title": "Titre exact de la vidéo", "kind": "episode", "season": 1, "episode": 3, "format": "Prime", "part": null, "airDate": "2001-05-10", "year": 2001, "channelName": "INA", "source": "chrome" }
 >   ],
 >   "nice-people": [
 >     { "youtubeId": "YYYYYYYYYYY", "remove": true }
@@ -35,7 +35,10 @@ node scripts/make-todo.mjs      # écrit data/video-todo.csv (lots de 25, cultes
 > }
 > ```
 >
-> `kind` vaut `episode`, `extrait`, `générique` ou `best-of`. `youtubeId` = les 11 caractères après `watch?v=`.
+> `kind` vaut `episode` (épisode, prime ou émission complète) ou, pour le dossier bonus : `react` (réactions, critiques),
+> `coulisses` (interviews, making-of, documentaires, « que sont-ils devenus »), `extrait` (moments cultes), `best-of`, `générique`.
+> Pour un épisode, remplis si possible `season` (numéro de saison), `episode` (numéro), `format` (`Prime`, `Quotidienne`, `Finale` ou rien),
+> `part` (partie 1, 2… si l'épisode est coupé en morceaux) et `airDate` (date de diffusion AAAA-MM-JJ). `youtubeId` = les 11 caractères après `watch?v=`.
 > Pour retirer une mauvaise vidéo proposée automatiquement, utilise `"remove": true`.
 > Si tu ne trouves rien pour une émission, mets une liste vide.
 

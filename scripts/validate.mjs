@@ -17,6 +17,20 @@ for (const s of shows) {
 }
 for (const id of Object.keys(extras)) if (!id.startsWith('_') && !ids.has(id)) errors.push(`extras.json : id inconnu ${id}`);
 
+try {
+  const { hits } = JSON.parse(await readFile(ROOT + 'data/hits.json', 'utf8'));
+  const hitIds = new Set();
+  for (const h of hits) {
+    if (!h.id || hitIds.has(h.id)) errors.push(`tube : id manquant ou en double ${h.id}`);
+    hitIds.add(h.id);
+    if (!h.title || !h.artist) errors.push(`${h.id} : titre ou artiste manquant`);
+    if (h.year < 2000 || h.year > 2010) errors.push(`${h.id} : année hors période`);
+    for (const v of h.videos || []) if (!/^[A-Za-z0-9_-]{11}$/.test(v.youtubeId)) errors.push(`${h.id} : youtubeId invalide`);
+  }
+} catch (e) {
+  errors.push(`data/hits.json illisible : ${e.message}`);
+}
+
 if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
