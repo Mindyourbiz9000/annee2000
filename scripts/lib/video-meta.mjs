@@ -103,7 +103,8 @@ export function enrich(video, show = null) {
 // Clé d'un épisode pour repérer les doublons (même épisode mis en ligne plusieurs fois).
 export function episodeKey(v) {
   if (v.kind !== 'episode') return null;
-  if (v.episode != null || v.format === 'Finale') return `s${v.season ?? '?'}-${v.format || 'ep'}-${v.episode ?? 'f'}-p${v.part ?? 0}`;
+  // Sans saison, l'année distingue « E01 2001 » de « E01 2002 ».
+  if (v.episode != null || v.format === 'Finale') return `s${v.season ?? `y${v.year ?? '?'}`}-${v.format || 'ep'}-${v.episode ?? 'f'}-p${v.part ?? 0}`;
   if (v.airDate) return `d${v.airDate}-p${v.part ?? 0}`;
   return null;
 }

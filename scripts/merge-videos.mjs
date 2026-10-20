@@ -6,7 +6,7 @@
 // Usage : node scripts/merge-videos.mjs
 
 import { readdir, readFile, writeFile } from 'node:fs/promises';
-import { enrich, episodeKey, foreignScript, KINDS, maxSeason } from './lib/video-meta.mjs';
+import { classify, enrich, episodeKey, foreignScript, KINDS, maxSeason } from './lib/video-meta.mjs';
 
 const ROOT = new URL('../', import.meta.url).pathname;
 const ID_RE = /^[A-Za-z0-9_-]{11}$/;
@@ -62,6 +62,11 @@ for (const f of files) {
         channelName: v.channelName || '',
         source: v.source || f.replace(/\.json$/, ''),
       }, byId.get(showId));
+      // Vidéo relue marquée « episode » mais dont le titre dit best-of, réaction ou coulisses : direction le dossier bonus.
+      if (clean.source !== 'auto' && clean.kind === 'episode' && clean.episode == null && !clean.format) {
+        const k = classify(clean.title, clean.seconds);
+        if (['best-of', 'react', 'coulisses'].includes(k)) clean.kind = k;
+      }
       if (clean.season > maxSeason(byId.get(showId))) continue;
       // Contenu daté d'après 2011 (nouvelles saisons, réactions à une version récente) : hors sujet.
       if (clean.source === 'auto' && +(clean.title.match(/\b(20[1-3]\d)\b/)?.[1] || 0) > 2011) continue;
