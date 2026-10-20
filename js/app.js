@@ -833,7 +833,8 @@ function renderBlindSetup() {
         ${YEARS.map((y) => `<button class="chip" type="button" data-bt-year="${y}" aria-pressed="${bt.year === y}">${y}</button>`).join('')}
       </div>
       <div class="actions">
-        <button class="gel gel--zap" type="button" id="bt-start" ${pool.length < 3 ? 'disabled' : ''}>🎧 Lancer la partie</button>
+        <button class="gel gel--zap" type="button" id="bt-start" ${pool.length < 3 ? 'disabled' : ''}>🎧 Jouer en solo</button>
+        <a class="gel gel--lime" href="#/blindtest/hote">👥 Jouer à plusieurs</a>
         <span class="muted">${pool.length} tubes possibles avec ces réglages</span>
       </div>
     </section>`;
@@ -1082,6 +1083,426 @@ function renderBlindEnd() {
   document.getElementById('bt-settings').addEventListener('click', (e) => { e.preventDefault(); renderBlindSetup(); });
 }
 
+/* ---------- Blind test à plusieurs ---------- */
+// Partie en réseau sans serveur à nous : les navigateurs se connectent directement (WebRTC via PeerJS).
+// L'hôte arbitre tout : il choisit les tubes, reçoit les réponses, compte les points. Rien n'est enregistré.
+const MP_PREFIX = 'milleniales-bt-';
+const MP_POINTS = [5, 4, 3]; // or, argent, bronze ; ensuite 2 (titre) ou 1 (artiste)
+const MEDALS = ['🥇', '🥈', '🥉'];
+const mp = { peer: null, conns: new Map(), role: null, code: '', name: '', players: new Map(), round: null, queue: [], qi: 0, n: 0, total: 10, everywhere: true, player: null, timer: null, guard: null, host: null };
+
+let peerReady = null;
+function loadPeerJs() {
+  if (peerReady) return peerReady;
+  peerReady = new Promise((resolve, reject) => {
+    if (window.Peer) return resolve(window.Peer);
+    const s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.5.4/peerjs.min.js';
+    s.onload = () => resolve(window.Peer);
+    s.onerror = () => reject(new Error('PeerJS indisponible'));
+    document.head.appendChild(s);
+  });
+  return peerReady;
+}
+
+function mpLeave() {
+  clearTimeout(mp.timer);
+  clearTimeout(mp.guard);
+  try { mp.player?.destroy?.(); } catch {}
+  try { mp.peer?.destroy(); } catch {}
+  Object.assign(mp, { peer: null, conns: new Map(), role: null, players: new Map(), round: null, player: null, host: null });
+}
+const mpCode = () => Array.from({ length: 5 }, () => 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[Math.floor(Math.random() * 31)]).join('');
+const mpLink = (code) => `${location.origin}${location.pathname}#/blindtest/partie/${code}`;
+const mpBoard = () => [...mp.players.values()].sort((a, b) => b.score - a.score).map((p) => ({ name: p.name, score: p.score }));
+function mpSendAll(msg) {
+  for (const c of mp.conns.values()) if (c.open) c.send(msg);
+  mpOnMessage(msg); // l'hôte joue aussi : il applique ses propres messages
+}
+
+/* --- Écrans --- */
+function mpShell(inner) {
+  setMode('music');
+  $view.innerHTML = `<section class="blind mp">${inner}</section>`;
+}
+function renderMpHost() {
+  mpLeave();
+  document.title = 'Blind test à plusieurs · Les années milléniales';
+  mpShell(`
+    <div class="hero" style="grid-template-columns:1fr;margin:10px 0 0">
+      <div><h1>Blind test <em>à plusieurs</em></h1>
+      <p>Crée une partie, envoie le lien à tes amis : chacun répond sur son téléphone. Le plus rapide gagne l'or 🥇 (5 pts), puis l'argent 🥈 (4) et le bronze 🥉 (3). Ensuite : 2 points pour le titre, 1 pour l'artiste.</p></div>
+    </div>
+    <div class="panel blind__panel">
+      <form class="search" id="mp-host-form" autocomplete="off">
+        <label class="skip" for="mp-name">Ton pseudo</label>
+        <input id="mp-name" maxlength="20" placeholder="Ton pseudo" value="${esc(store.get('mpName', ''))}" required>
+        <button class="gel gel--zap" type="submit">Créer la partie</button>
+      </form>
+      <label class="check"><input type="checkbox" id="mp-everywhere" checked> La musique joue sur le téléphone de chaque joueur (décoche si vous êtes tous dans la même pièce : seul l'écran de l'hôte joue)</label>
+      <p class="muted">Réglages repris du blind test solo : ${bt.duration} s d'extrait, difficulté ${BT_LEVELS[bt.level][0].toLowerCase()}${bt.genre ? `, ${GENRES[bt.genre]}` : ''}${bt.year ? `, ${bt.year}` : ''}, ${bt.rounds} manches. <a href="#/blindtest">Changer</a></p>
+    </div>`);
+  document.getElementById('mp-host-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('mp-name').value.trim().slice(0, 20);
+    if (!name) return;
+    store.set('mpName', name);
+    mp.everywhere = document.getElementById('mp-everywhere').checked;
+    await mpCreate(name);
+  });
+}
+
+async function mpCreate(name, attempt = 0) {
+  let Peer;
+  try { Peer = await loadPeerJs(); } catch { return mpError('Impossible de charger le module de jeu en réseau. Vérifie ta connexion.'); }
+  mp.role = 'host';
+  mp.name = name;
+  mp.code = mpCode();
+  mp.players = new Map([[name, { name, score: 0 }]]);
+  mp.peer = new Peer(MP_PREFIX + mp.code);
+  mp.peer.on('error', (err) => {
+    if (err.type === 'unavailable-id' && attempt < 3) { mp.peer.destroy(); return mpCreate(name, attempt + 1); }
+    if (err.type !== 'peer-unavailable') mpError(`Problème de connexion (${err.type}).`);
+  });
+  mp.peer.on('open', () => renderMpLobby());
+  mp.peer.on('connection', (conn) => {
+    conn.on('data', (msg) => mpHostReceive(conn, msg));
+    conn.on('close', () => {
+      mp.conns.delete(conn.peer);
+      mpBroadcastLobby();
+    });
+  });
+}
+
+function renderMpLobby() {
+  const isHost = mp.role === 'host';
+  const players = isHost ? [...mp.players.keys()] : mp.lobby || [];
+  mpShell(`
+    <div class="blind__bar"><span>Partie <b class="mp-code">${esc(mp.code)}</b></span><span>${players.length} joueur${players.length > 1 ? 's' : ''}</span></div>
+    <div class="panel blind__panel">
+      ${isHost ? `
+        <p><b>Invite tes amis</b> avec ce lien (ou le code <b>${esc(mp.code)}</b>) :</p>
+        <div class="search"><input id="mp-link" readonly value="${esc(mpLink(mp.code))}"><button class="gel" type="button" id="mp-copy">📋 Copier</button></div>
+        ${navigator.share ? '<div class="actions"><button class="gel gel--ghost gel--small" type="button" id="mp-share">📤 Partager</button></div>' : ''}` : '<p>Tu es dans la partie ! On attend que l\'hôte lance le premier tube…</p>'}
+      <div class="mp-players">${players.map((n) => `<span class="tag">${n === mp.name ? '⭐ ' : ''}${esc(n)}</span>`).join('')}</div>
+      ${isHost ? `<div class="actions"><button class="gel gel--zap" type="button" id="mp-go" ${players.length < 1 ? 'disabled' : ''}>🎧 Lancer la partie</button></div>` : ''}
+    </div>`);
+  if (!isHost) return;
+  document.getElementById('mp-copy').addEventListener('click', async () => {
+    const input = document.getElementById('mp-link');
+    try { await navigator.clipboard.writeText(input.value); } catch { input.select(); document.execCommand('copy'); }
+    document.getElementById('mp-copy').textContent = '✅ Copié';
+  });
+  document.getElementById('mp-share')?.addEventListener('click', () => navigator.share({ title: 'Blind test des années 2000', text: `Rejoins ma partie de blind test (code ${mp.code})`, url: mpLink(mp.code) }).catch(() => {}));
+  document.getElementById('mp-go').addEventListener('click', mpStartGame);
+}
+function mpBroadcastLobby() {
+  if (mp.role !== 'host') return;
+  const msg = { t: 'lobby', code: mp.code, players: [...mp.players.keys()] };
+  for (const c of mp.conns.values()) if (c.open) c.send(msg);
+  if (!mp.round) renderMpLobby();
+}
+
+function renderMpJoin(code) {
+  mpLeave();
+  document.title = 'Rejoindre un blind test · Les années milléniales';
+  mpShell(`
+    <div class="hero" style="grid-template-columns:1fr;margin:10px 0 0">
+      <div><h1>Rejoindre la partie <em>${esc(code)}</em></h1><p>Choisis un pseudo, puis attends que l'hôte lance le premier tube.</p></div>
+    </div>
+    <div class="panel blind__panel">
+      <form class="search" id="mp-join-form" autocomplete="off">
+        <label class="skip" for="mp-jname">Ton pseudo</label>
+        <input id="mp-jname" maxlength="20" placeholder="Ton pseudo" value="${esc(store.get('mpName', ''))}" required>
+        <button class="gel gel--zap" type="submit">Rejoindre</button>
+      </form>
+      <p class="muted" id="mp-join-status"></p>
+    </div>`);
+  document.getElementById('mp-join-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('mp-jname').value.trim().slice(0, 20);
+    if (!name) return;
+    store.set('mpName', name);
+    document.getElementById('mp-join-status').textContent = 'Connexion…';
+    // Débloque le son sur mobile pendant le geste de l'utilisateur.
+    loadYouTubeApi();
+    let Peer;
+    try { Peer = await loadPeerJs(); } catch { return mpError('Impossible de charger le module de jeu en réseau.'); }
+    mp.role = 'player';
+    mp.name = name;
+    mp.code = code.toUpperCase();
+    mp.peer = new Peer();
+    mp.peer.on('error', (err) => mpError(err.type === 'peer-unavailable' ? 'Cette partie n\'existe pas ou est terminée.' : `Problème de connexion (${err.type}).`));
+    mp.peer.on('open', () => {
+      const conn = mp.peer.connect(MP_PREFIX + mp.code, { reliable: true });
+      mp.host = conn;
+      conn.on('open', () => conn.send({ t: 'hello', name }));
+      conn.on('data', mpOnMessage);
+      conn.on('close', () => mpError('La partie est terminée (l\'hôte s\'est déconnecté).'));
+    });
+  });
+}
+function mpError(text) {
+  mpShell(`<div class="panel empty">${esc(text)}<div class="actions" style="justify-content:center"><a class="gel" href="#/blindtest">Retour au blind test</a></div></div>`);
+}
+
+/* --- Logique de l'hôte --- */
+function mpHostReceive(conn, msg) {
+  if (msg.t === 'hello') {
+    let name = String(msg.name || 'Joueur').slice(0, 20);
+    // Même pseudo qu'un joueur déjà connecté : on ajoute un numéro (une reconnexion garde ses points).
+    const taken = [...mp.conns.values()].some((c) => c.mpName === name && c.open && c !== conn);
+    if (taken || name === mp.name) name = `${name} ${mp.players.size + 1}`;
+    conn.mpName = name;
+    mp.conns.set(conn.peer, conn);
+    if (!mp.players.has(name)) mp.players.set(name, { name, score: 0 });
+    conn.send({ t: 'welcome', name, code: mp.code, everywhere: mp.everywhere });
+    mpBroadcastLobby();
+    if (mp.round && !mp.round.revealed) conn.send(mpRoundMsg());
+  } else if (msg.t === 'guess') {
+    mpJudge(conn.mpName, String(msg.text || ''), conn);
+  }
+}
+function mpStartGame() {
+  const pool = blindPool();
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  Object.assign(mp, { queue: pool, qi: 0, n: 0, total: bt.rounds });
+  for (const p of mp.players.values()) p.score = 0;
+  mpNextRound();
+}
+function mpNextRound() {
+  if (mp.n >= mp.total) return mpSendAll({ t: 'end', board: mpBoard() });
+  while (mp.qi < mp.queue.length && !clipOf(mp.queue[mp.qi])) mp.qi += 1;
+  if (mp.qi >= mp.queue.length) return mpSendAll({ t: 'end', board: mpBoard() });
+  const h = mp.queue[mp.qi];
+  mp.n += 1;
+  mp.round = { h, found: [], revealed: false, id: Date.now() };
+  mpSendAll(mpRoundMsg());
+}
+const mpRoundMsg = () => ({ t: 'round', n: mp.n, total: mp.total, videoId: clipOf(mp.round.h).youtubeId, duration: bt.duration, everywhere: mp.everywhere, id: mp.round.id });
+// Le clip de l'hôte ne se lit pas : on change de tube, même manche.
+function mpSwapSong() {
+  if (mp.role !== 'host' || !mp.round || mp.round.revealed) return;
+  const c = clipOf(mp.round.h);
+  if (c) bt.broken.add(c.youtubeId);
+  // Les points gagnés sur le tube en panne sont annulés : la manche repart à zéro avec un autre tube.
+  for (const f of mp.round.found) {
+    const p = mp.players.get(f.name);
+    if (p) p.score -= f.pts;
+  }
+  mp.qi += 1;
+  mp.n -= 1;
+  mpNextRound();
+}
+function mpJudge(name, text, conn) {
+  const r = mp.round;
+  if (!r || r.revealed || !mp.players.has(name)) return;
+  if (r.found.some((f) => f.name === name)) return;
+  const title = titleMatches(text, r.h.title);
+  const artist = !title && (artistMatches(text, mainArtistOf(r.h.artist)) || artistMatches(text, r.h.artist));
+  const reply = (m) => (conn ? conn.send(m) : mpOnMessage(m));
+  if (!title && !artist) return reply({ t: 'judge', ok: false });
+  const rank = r.found.length;
+  const pts = rank < 3 ? MP_POINTS[rank] : title ? 2 : 1;
+  r.found.push({ name, kind: title ? 'titre' : 'artiste', pts, medal: MEDALS[rank] || '' });
+  mp.players.get(name).score += pts;
+  reply({ t: 'judge', ok: true, kind: title ? 'titre' : 'artiste', pts, medal: MEDALS[rank] || '' });
+  mpSendAll({ t: 'found', list: r.found.map(({ name: n, medal }) => ({ name: n, medal })) });
+}
+function mpReveal() {
+  const r = mp.round;
+  if (!r || r.revealed) return;
+  r.revealed = true;
+  const h = r.h;
+  mp.qi += 1;
+  mpSendAll({ t: 'reveal', title: h.title, artist: h.artist, year: h.year, hitId: h.id, gains: r.found, board: mpBoard(), last: mp.n >= mp.total });
+}
+
+/* --- Ce que tout le monde voit (hôte compris) --- */
+function mpOnMessage(msg) {
+  if (msg.t === 'welcome') {
+    mp.name = msg.name;
+    mp.everywhere = msg.everywhere;
+    renderMpLobby();
+  } else if (msg.t === 'lobby') {
+    mp.lobby = msg.players;
+    mp.code = msg.code;
+    if (!mp.round) renderMpLobby();
+  } else if (msg.t === 'round') {
+    renderMpRound(msg);
+  } else if (msg.t === 'more') {
+    mpListen(msg.seconds, false);
+  } else if (msg.t === 'judge') {
+    const box = document.getElementById('mp-feedback');
+    if (!box) return;
+    if (msg.ok) {
+      box.innerHTML = `${msg.medal || '✅'} Bien joué : bon ${msg.kind} ! +${msg.pts} point${msg.pts > 1 ? 's' : ''}`;
+      document.getElementById('mp-form').hidden = true;
+    } else {
+      box.textContent = '😅 Raté, essaie encore !';
+      const g = document.getElementById('mp-guess');
+      if (g) { g.value = ''; g.focus(); }
+    }
+  } else if (msg.t === 'found') {
+    const box = document.getElementById('mp-found');
+    if (box) box.innerHTML = msg.list.length ? `Ont trouvé : ${msg.list.map((f) => `<span class="tag">${f.medal} ${esc(f.name)}</span>`).join(' ')}` : '';
+  } else if (msg.t === 'reveal') {
+    renderMpReveal(msg);
+  } else if (msg.t === 'end') {
+    renderMpEnd(msg.board);
+  }
+}
+
+function renderMpRound(msg) {
+  clearTimeout(mp.timer);
+  clearTimeout(mp.guard);
+  const isHost = mp.role === 'host';
+  const playsHere = isHost || msg.everywhere;
+  mp.round = isHost ? mp.round : { id: msg.id };
+  mpShell(`
+    <div class="blind__bar"><span>Manche ${msg.n} / ${msg.total}</span><span>Partie ${esc(mp.code)}</span></div>
+    <div class="tv tv--wide">
+      <div class="tv__screen is-playing" id="mp-screen">
+        <div id="mp-player"></div>
+        <div class="blind__cover" id="mp-cover"><span class="noise"></span><span class="blind__q">?</span><span class="blind__count" id="mp-count">${playsHere ? 'Chargement…' : 'Écoute l\'écran de l\'hôte !'}</span></div>
+      </div>
+      <span class="tv__brand">MILLÉNIALES</span><span class="tv__knobs" aria-hidden="true"><i></i><i></i></span>
+    </div>
+    <div class="panel blind__panel">
+      ${playsHere ? '<div class="actions"><button class="gel gel--zap" type="button" id="mp-play" hidden>▶ Écouter</button></div>' : ''}
+      <form class="search" id="mp-form" autocomplete="off">
+        <label class="skip" for="mp-guess">Ta réponse</label>
+        <input id="mp-guess" type="search" placeholder="Le titre ou l'artiste…">
+        <button class="gel" type="submit">Valider</button>
+      </form>
+      <p class="blind__verdict" id="mp-feedback"></p>
+      <p id="mp-found" class="mp-found"></p>
+      ${isHost ? `<div class="actions mp-host-actions">
+        <button class="gel gel--lime" type="button" id="mp-more">⏩ 10 secondes de plus pour tous</button>
+        <button class="gel gel--ghost" type="button" id="mp-reveal">👀 Révéler la réponse</button>
+      </div>` : '<p class="muted">L\'hôte décide quand on ajoute 10 secondes ou quand on révèle la réponse.</p>'}
+    </div>`);
+  document.getElementById('mp-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = document.getElementById('mp-guess').value.trim();
+    if (!text) return;
+    if (isHost) mpJudge(mp.name, text, null);
+    else mp.host?.send({ t: 'guess', text });
+  });
+  document.getElementById('mp-guess').focus();
+  if (isHost) {
+    document.getElementById('mp-more').addEventListener('click', () => mpSendAll({ t: 'more', seconds: 10 }));
+    document.getElementById('mp-reveal').addEventListener('click', mpReveal);
+  }
+  if (playsHere) mpPlay(msg.videoId, msg.duration);
+}
+
+// Lecteur de l'extrait (même principe que le solo : image cachée, compte à rebours, pause).
+let mpPending = 0;
+function mpListen(seconds, fromStart) {
+  if (!mp.player?.playVideo) return;
+  mpPending = seconds;
+  if (fromStart) mp.player.seekTo(0, true);
+  mp.player.playVideo();
+}
+async function mpPlay(videoId, duration) {
+  const YT = await loadYouTubeApi();
+  const status = (t) => { const el = document.getElementById('mp-count'); if (el) el.textContent = t; };
+  let playing = false;
+  let ready = false;
+  mpPending = duration;
+  try { mp.player?.destroy?.(); } catch {}
+  const countdown = (sec) => {
+    clearTimeout(mp.timer);
+    let left = sec;
+    status(`${left}`);
+    const tick = () => {
+      left -= 1;
+      if (left <= 0) { mp.player?.pauseVideo?.(); status('À vous !'); }
+      else { status(`${left}`); mp.timer = setTimeout(tick, 1000); }
+    };
+    mp.timer = setTimeout(tick, 1000);
+  };
+  const failed = () => {
+    if (mp.role === 'host') { status('Extrait indisponible, on change de tube…'); setTimeout(mpSwapSong, 800); }
+    else status('Pas de son ici : écoute l\'écran de l\'hôte !');
+  };
+  mp.player = new YT.Player('mp-player', {
+    videoId,
+    playerVars: { autoplay: 1, controls: 0, disablekb: 1, modestbranding: 1, rel: 0, playsinline: 1, start: 0 },
+    events: {
+      onReady: (e) => {
+        ready = true;
+        e.target.playVideo();
+        mp.guard = setTimeout(() => {
+          if (playing) return;
+          status('Appuie sur ▶ pour écouter');
+          const b = document.getElementById('mp-play');
+          if (b) {
+            b.hidden = false;
+            b.onclick = () => { b.hidden = true; mpListen(mpPending || duration, true); };
+          }
+        }, 4000);
+      },
+      onStateChange: (e) => {
+        if (e.data !== YT.PlayerState.PLAYING) return;
+        playing = true;
+        clearTimeout(mp.guard);
+        document.getElementById('mp-play')?.setAttribute('hidden', '');
+        if (mpPending) { countdown(mpPending); mpPending = 0; }
+      },
+      onError: failed,
+    },
+  });
+  setTimeout(() => { if (!ready) failed(); }, 12000);
+}
+
+function mpBoardHTML(board, gains = []) {
+  const won = new Map(gains.map((g) => [g.name, g]));
+  return `<ol class="mp-board">${board.map((p, i) => {
+    const g = won.get(p.name);
+    return `<li class="${p.name === mp.name ? 'is-me' : ''}"><span class="mp-rank">${i + 1}</span><b>${esc(p.name)}</b>${g ? `<span class="mp-gain">${g.medal} +${g.pts}</span>` : ''}<span class="mp-score">${p.score} pt${p.score > 1 ? 's' : ''}</span></li>`;
+  }).join('')}</ol>`;
+}
+function renderMpReveal(msg) {
+  clearTimeout(mp.timer);
+  clearTimeout(mp.guard);
+  if (mp.round) mp.round.revealedLocal = true;
+  document.getElementById('mp-cover')?.classList.add('is-gone');
+  mp.player?.playVideo?.();
+  const isHost = mp.role === 'host';
+  const panel = document.querySelector('.mp .blind__panel');
+  if (!panel) return;
+  panel.innerHTML = `
+    <p class="show__artist">${esc(msg.artist)}</p>
+    <h2 class="show__title" style="font-size:clamp(22px,4vw,34px);margin:0">${esc(msg.title)}</h2>
+    <p class="muted">${msg.year} · <a href="#/m/${encodeURIComponent(msg.hitId)}" target="_blank">fiche du tube</a></p>
+    <h3 class="row-title" style="margin:10px 0 0">Classement</h3>
+    ${mpBoardHTML(msg.board, msg.gains)}
+    ${isHost ? `<div class="actions"><button class="gel gel--zap" type="button" id="mp-next">${msg.last ? '🏁 Voir le podium' : 'Tube suivant →'}</button></div>` : '<p class="muted">L\'hôte lance le tube suivant…</p>'}`;
+  document.getElementById('mp-next')?.addEventListener('click', () => {
+    try { mp.player?.stopVideo?.(); } catch {}
+    mpNextRound();
+  });
+}
+function renderMpEnd(board) {
+  try { mp.player?.destroy?.(); } catch {}
+  mp.player = null;
+  const isHost = mp.role === 'host';
+  const podium = board.slice(0, 3);
+  mpShell(`
+    <div class="hero" style="grid-template-columns:1fr;margin:10px 0 0"><div><h1>Le <em>podium</em> 🏆</h1></div></div>
+    <div class="mp-podium">${podium.map((p, i) => `<div class="mp-step mp-step--${i + 1}"><span>${MEDALS[i]}</span><b>${esc(p.name)}</b><small>${p.score} pts</small></div>`).join('')}</div>
+    <div class="panel blind__panel">
+      ${mpBoardHTML(board)}
+      ${isHost ? '<div class="actions"><button class="gel gel--zap" type="button" id="mp-again">🔁 Rejouer avec les mêmes joueurs</button></div>' : '<p class="muted">Merci d\'avoir joué ! L\'hôte peut relancer une partie.</p>'}
+    </div>`);
+  document.getElementById('mp-again')?.addEventListener('click', () => { mp.round = null; mpStartGame(); });
+}
+
 /* ---------- Routeur ---------- */
 function setMode(mode) {
   document.body.dataset.mode = mode;
@@ -1091,6 +1512,7 @@ function setMode(mode) {
   document.getElementById('nav-tv').setAttribute('aria-current', String(mode === 'tv'));
   document.getElementById('nav-music').setAttribute('aria-current', String(mode === 'music' && !location.hash.startsWith('#/blindtest')));
   document.getElementById('nav-blind').setAttribute('aria-current', String(location.hash.startsWith('#/blindtest')));
+  document.getElementById('nav-music').setAttribute('aria-current', String(mode === 'music' && !location.hash.startsWith('#/blindtest')));
 }
 
 function route() {
@@ -1098,6 +1520,7 @@ function route() {
   clearTimeout(bt.timer);
   try { bt.player?.destroy?.(); } catch {}
   bt.player = null;
+  mpLeave();
   const hash = location.hash.slice(1) || '/';
   let m;
   if ((m = hash.match(/^\/e\/(.+)$/))) { setMode('tv'); renderShow(decodeURIComponent(m[1])); }
@@ -1106,6 +1529,8 @@ function route() {
   else if (hash === '/tv') { setMode('tv'); renderHome(); }
   else if (hash === '/musique/frise') renderMusicTimeline();
   else if (hash === '/blindtest') renderBlindSetup();
+  else if (hash === '/blindtest/hote') renderMpHost();
+  else if ((m = hash.match(/^\/blindtest\/partie\/([A-Za-z0-9]{4,8})$/))) renderMpJoin(m[1]);
   else if (hash === '/musique') renderMusicHome();
   else renderChooser();
   window.scrollTo(0, 0);

@@ -433,3 +433,21 @@ img { max-width: 100%; display: block; }
 .blind__verdict { margin: 0; font-weight: 700; font-size: 18px; }
 .blind__answer .show__title { margin: 0; }
 .gel[disabled] { opacity: .5; cursor: not-allowed; }
+
+/* ---------- Blind test à plusieurs ---------- */
+.mp-code { font-family: VT323, monospace; font-size: 28px; color: var(--pink); letter-spacing: .12em; }
+.mp-players { display: flex; flex-wrap: wrap; gap: 6px; }
+.mp-found { margin: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.mp-board { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.mp-board li { display: grid; grid-template-columns: 34px 1fr auto auto; gap: 10px; align-items: center; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); }
+.mp-board li.is-me { border-color: var(--pink); }
+.mp-rank { font-family: VT323, monospace; font-size: 24px; color: var(--ink-soft); text-align: center; }
+.mp-gain { font-weight: 700; color: var(--lime); }
+.mp-score { font-family: VT323, monospace; font-size: 22px; }
+.mp-podium { display: flex; justify-content: center; align-items: flex-end; gap: 10px; margin: 10px 0; }
+.mp-step { display: grid; justify-items: center; gap: 4px; width: 120px; padding: 12px 8px; border-radius: 14px 14px 0 0; color: #3a2400; text-align: center; }
+.mp-step span { font-size: 34px; }
+.mp-step b { overflow-wrap: anywhere; }
+.mp-step--1 { order: 2; height: 170px; background: linear-gradient(180deg, #ffe680, #f5b700); }
+.mp-step--2 { order: 1; height: 135px; background: linear-gradient(180deg, #f1f1f1, #b9c0cc); }
+.mp-step--3 { order: 3; height: 110px; background: linear-gradient(180deg, #f2c9a0, #c98a52); }
