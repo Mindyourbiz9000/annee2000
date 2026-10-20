@@ -2752,7 +2752,170 @@
    "description": "Entre nous est une chanson écrite et composée par Rick Allison et interprétée par la chanteuse française Chimène Badi. Elle figure sur l'album du même titre. C'est le premier single de la chanteuse, sorti en janvier 2003.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Entre_nous_(chanson)",
    "views60d": 312,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "y6kVUleBG2c",
+     "title": "Chimène Badi - Entre nous",
+     "kind": "clip",
+     "channelName": "Chimène Badi",
+     "seconds": 201,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "muzpCorzumk",
+     "title": "Chimène Badi - Entre nous (Live a L'Olympia 2005)",
+     "kind": "live",
+     "channelName": "Christina Katsouli (restck1989)",
+     "seconds": 271,
+     "year": 2005,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "FCaI95-kbJE",
+     "title": "Chimène Badi - Entre nous & Elle vit / Live dans les années bonheur",
+     "kind": "live",
+     "channelName": "Patrick Sébastien",
+     "seconds": 382,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "dAPY5SiXTdk",
+     "title": "Entre nous  - Chimène Badi & Laury Thilleman - Live 2021",
+     "kind": "live",
+     "channelName": "Pop Rock",
+     "seconds": 165,
+     "year": 2021,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "oCwgA5G6Xmw",
+     "title": "Chimene Badi - Entre Nous / En équilibre",
+     "kind": "live",
+     "channelName": "Chimène Badi - Manoir Des Fans",
+     "seconds": 684,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "GwHdGWXGdrU",
+     "title": "Chimène Badi - Entre nous - Génération Hit Machine",
+     "kind": "live",
+     "channelName": "Musique TV",
+     "seconds": 289,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ZtNlMeUWhkg",
+     "title": "Chimène Badi - Entre nous (Live) - Le Grand Studio RTL",
+     "kind": "live",
+     "channelName": "Le Grand Studio RTL",
+     "seconds": 219,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "bYtB163crug",
+     "title": "Chimene Badi - Entre Nous (Hit Machine 2003)",
+     "kind": "live",
+     "channelName": "JukeBoxMaarouf",
+     "seconds": 197,
+     "year": 2003,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "D8RBqsMF2Tg",
+     "title": "Chimène Badi - entre nous live. Nesle 14.11.2025",
+     "kind": "live",
+     "channelName": "l'Eden de Rose",
+     "seconds": 240,
+     "year": 2025,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ZfTOZt2HcDY",
+     "title": "Chimène Badi - Entre nous | Live - Olympia 2005 ( 4K | 60 fps )",
+     "kind": "live",
+     "channelName": "MUSIC EVOLUTION",
+     "seconds": 267,
+     "year": 2005,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "E_MnuTs6mbY",
+     "title": "Helene Segara et Chimene Badi-Entre nous",
+     "kind": "version",
+     "channelName": "roxoulinou2",
+     "seconds": 289,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "yrHDtEpccLY",
+     "title": "Chimène Badi - Entre Nous (version album)",
+     "kind": "version",
+     "channelName": "Chimène Badi - Manoir Des Fans",
+     "seconds": 192,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "f7pmqEVEj_0",
+     "title": "Chimene Badi - Entre Nous",
+     "kind": "version",
+     "channelName": "Nathalie Ange",
+     "seconds": 200,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "jljOZEATPrw",
+     "title": "Entre Nous - Chimène Badi, Alexandra Maquet, Camille Lou, Sonia Lacen",
+     "kind": "version",
+     "channelName": "Petite Marrante",
+     "seconds": 66,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "TGDGgtpZb4I",
+     "title": "chimene badi - entre nous.wmv",
+     "kind": "version",
+     "channelName": "Laurent Dm",
+     "seconds": 202,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "q6aZzBZMcR8",
+     "title": "Julie FORT - Entre Nous de Chimène BADI - NOPLP",
+     "kind": "version",
+     "channelName": "17138FORT",
+     "seconds": 268,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "SiGbtwlTqjc",
+     "title": "Chimene Badi   Entre Nous Paroles",
+     "kind": "paroles",
+     "channelName": "azizou boutchi",
+     "seconds": 200,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "P7tVAMlzivo",
+     "title": "Chimene Badi   Entre Nous Paroles]",
+     "kind": "paroles",
+     "channelName": "dababi anis",
+     "seconds": 200,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 335
   },
   {
@@ -3893,7 +4056,134 @@
    "description": "Monday, Tuesday... Laissez-moi danser (Voglio l'anima en version italienne) est une chanson écrite par Toto Cutugno et Cristiano Minellono, adaptée en français par Pierre Delanoë et chantée par Dalida en 1979. La chanson reste un des plus grands succès de la chanteuse.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Monday,_Tuesday..._Laissez-moi_danser",
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "a_zKCORe5HU",
+     "title": "Gregory Lemarchal (Star Ac 4) 13.11.2004 Prime 11. Laissez - moi danser.",
+     "kind": "clip",
+     "channelName": "La voix d’un ange",
+     "seconds": 163,
+     "year": 2004,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "2EiqBW1JNKM",
+     "title": "Star Academy 4 Laissez Moi Danser",
+     "kind": "live",
+     "channelName": "ghost3181",
+     "seconds": 182,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "0q1g1vRc1Qo",
+     "title": "Star Academy 4 laissez moi danser 2me prime",
+     "kind": "live",
+     "channelName": "rogzamp",
+     "seconds": 221,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-yY70dXNj4k",
+     "title": "Star Academy 4 - « Laissez-moi danser » (prime 9, 29/10/04) [VHSRIP]",
+     "kind": "live",
+     "channelName": "cyrilusone",
+     "seconds": 188,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "nJIPPmm8XuU",
+     "title": "Grégory Lemarchal & Star Academy4 - Laissez moi danser",
+     "kind": "live",
+     "channelName": "Ida Х",
+     "seconds": 213,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "piPasSokR3s",
+     "title": "Star Academy 4 - Laissez Moi Danser - Fait Son Cinéma",
+     "kind": "live",
+     "channelName": "Star Academy Audio",
+     "seconds": 225,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "6HzjqaFuUCs",
+     "title": "Star Academy 4 - Laissez Moi Danser (Prime 3 HD)",
+     "kind": "live",
+     "channelName": "Alice Lerser",
+     "seconds": 178,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "HjSP1XISBys",
+     "title": "Star Academy 4 - Laissez moi danser (Prime 18 HD)",
+     "kind": "live",
+     "channelName": "Alice Lerser",
+     "seconds": 162,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-g93gT4UkJo",
+     "title": "Star Academy 4 - Laissez Moi Danser (Prime 7 HD)",
+     "kind": "live",
+     "channelName": "Alice Lerser",
+     "seconds": 162,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "SNz-CqF2Ja8",
+     "title": "Star Academy 4 - Laissez Moi Danser (Prime 2 HD)",
+     "kind": "live",
+     "channelName": "Alice Lerser",
+     "seconds": 217,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "hJ3y5Uinwdo",
+     "title": "Star Academy 4 - Laissez moi danser ( Prime 14 HD)",
+     "kind": "live",
+     "channelName": "Alice Lerser",
+     "seconds": 162,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-eE6xz8V77w",
+     "title": "Star Academy 4 - Laissez moi danser (Prime 8 HD)",
+     "kind": "live",
+     "channelName": "Alice Lerser",
+     "seconds": 164,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "EcS7wQ0_mBQ",
+     "title": "Star Academy 4 - Laissez Moi Danser (Prime 4 HD)",
+     "kind": "live",
+     "channelName": "Alice Lerser",
+     "seconds": 178,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "duQtXq2AteQ",
+     "title": "Star Academy 4 (2005) 'Laissez-moi danser (Monday, Tuesday)' - Lyrics/Paroles",
+     "kind": "paroles",
+     "channelName": "MoonLyrics",
+     "seconds": 182,
+     "year": 2005,
+     "source": "auto"
+    }
+   ],
    "score": 330
   },
   {
@@ -6426,7 +6716,17 @@
    "description": "Zidane il a tapé (Coup de boule) est une chanson single écrite et interprétée par les frères Sébastien et Emmanuel Lipszyc, qui dirigent un label s'appelant La Plage Records, ainsi que Franck Lascombes, devenant un tube de l'été 2006. Dans un style soca, la chanson parodie Zidane y va marquer en se moquant de la performance de l'équipe française de football pendant la finale de la Coupe du monde 2006, en particulier du coup de tête de Zidane contre Marco Materazzi. La chanson a été écrite et enregistrée en une demi-heure[réf.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Coup_de_boule_(chanson)",
    "views60d": 590,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "4gVeXCi0XDI",
+     "title": "Planete Rap 2006 volume 2   01 la plage coup de boule version originale",
+     "kind": "clip",
+     "channelName": "mirouf01",
+     "seconds": 161,
+     "year": 2006,
+     "source": "auto"
+    }
+   ],
    "score": 351
   },
   {
@@ -11381,7 +11681,260 @@
    "description": "Stereo Love est une chanson composée en 2009 par le musicien roumain Edward Maya en duo avec la DJ et chanteuse Vika Jigulina, et sortie en fin d'année 2009. Elle a été une des chansons les plus passées en discothèques dans de nombreux pays à travers le monde et elle a été dans le top des ventes de singles notamment en France et en Allemagne. La chanson ainsi que le clip vidéo ont tous les deux été intégrés dans la compilation NRJ Music Awards 2010.",
    "wikipedia": "https://fr.wikipedia.org/wiki/Stereo_Love",
    "views60d": 0,
-   "videos": [],
+   "videos": [
+    {
+     "youtubeId": "p-Z3YrHJ1sU",
+     "title": "Edward Maya & Vika Jigulina - Stereo Love (Official Music Video)",
+     "kind": "clip",
+     "channelName": "Spinnin' Records",
+     "seconds": 253,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "sCfdE36OPsU",
+     "title": "Edward Maya feat. Vika Jigulina - Stereo Love (Clip Officiel)",
+     "kind": "clip",
+     "channelName": "Cat Music",
+     "seconds": 185,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "YJ2XfkBdIH4",
+     "title": "Edward Maya Feat. Alicia - Stereo Love (Official Music Video)",
+     "kind": "clip",
+     "channelName": "Din O’Neil",
+     "seconds": 322,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "GFGEo1EGcWM",
+     "title": "Edward Maya-Stereo Love ( LIVE )",
+     "kind": "live",
+     "channelName": "Nagaraj Shiva",
+     "seconds": 219,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "W8FHKhUvQYw",
+     "title": "Edward Maya  Stereo Love  LIVE",
+     "kind": "live",
+     "channelName": "Negócios No Mundo",
+     "seconds": 202,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "zMDup5gj6Xw",
+     "title": "EDWARD MAYA LIVE - DESERT RAIN - STEREO LOVE @ iMUSiC SEATTLE",
+     "kind": "live",
+     "channelName": "iMUSiCSeattle",
+     "seconds": 289,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "zateibjZmqQ",
+     "title": "Edward Maya feat. Vika Jigulina Stereo Love LIVE in Vancouver (1080p)",
+     "kind": "live",
+     "channelName": "David Schuurman",
+     "seconds": 361,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ndSt1qTALrs",
+     "title": "Edward Maya \" Stereo Love \" Live @ The Venue, Clearwater Florida 03/16/2011",
+     "kind": "live",
+     "channelName": "ALCAPONNE100",
+     "seconds": 614,
+     "year": 2011,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "0iWD1xLVn4E",
+     "title": "Edward Maya at EXPOFACIC ( HD Video ) ,  Live         \"Stereo love\"  Portugal",
+     "kind": "live",
+     "channelName": "TECNOGADJETBOY",
+     "seconds": 403,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "_YTfJFvftfE",
+     "title": "Stereo Love with Edward Maya & Vika Jigulina Concert Dubai 2015",
+     "kind": "live",
+     "channelName": "Selfie Tv",
+     "seconds": 292,
+     "year": 2015,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "4fAjDh4wnBw",
+     "title": "Edward Maya & Vika Jigulina - Stereo Love (Live)",
+     "kind": "live",
+     "channelName": "WithMyOwnEyesHD",
+     "seconds": 361,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "YKiZjs5HZWY",
+     "title": "Semaine de la dance européenne ! N°4 - Edward Maya & Vika Jigulina - Stereo Love",
+     "kind": "live",
+     "channelName": "Weekly Top 5",
+     "seconds": 721,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "_6RQlKBWRU0",
+     "title": "Edward Maya & Vika Jigulina - Stereo Love (Live In Ballerman Hits 2010) RTL 2",
+     "kind": "live",
+     "channelName": "GMF",
+     "seconds": 187,
+     "year": 2010,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "uTVyJ0n_CNk",
+     "title": "Edward Maya- Stereo Love live- Love Machine Nightclub (Melbourne). 25/1/2023 #stereolove #mrsaxobeat",
+     "kind": "live",
+     "channelName": "Dean Sal",
+     "seconds": 294,
+     "year": 2023,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Or-GhD9nZkg",
+     "title": "EDWARD MAYA & VIKA JIGULINA - Stereo Love (Molella remix) [Official video HD]",
+     "kind": "version",
+     "channelName": "DO IT YOURSELF",
+     "seconds": 200,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "qC2HnSLxw_I",
+     "title": "Edward Maya - Stereo Love (feat. Vika Jigulina) (Extended Mix)",
+     "kind": "version",
+     "channelName": "Chance Nehring",
+     "seconds": 497,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "dy2nBvtkgyE",
+     "title": "Edward Maya & Vika Jigulina - Stereo Love (OFFICIAL HQ VIDEO) (Ultra Music)",
+     "kind": "version",
+     "channelName": "Ultra Records",
+     "seconds": 191,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "6_5D4y6x-oo",
+     "title": "Edward Maya & Mia Martina - Stereo Love (Ultra Music)",
+     "kind": "version",
+     "channelName": "Ultra Records",
+     "seconds": 255,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "aXojslK7w4I",
+     "title": "Edward Maya, Tiger J Shroff, Zahrah S Khan, Tanishk Bagchi | Love Stereo Again (Video) Bhushan Kumar",
+     "kind": "version",
+     "channelName": "T-Series",
+     "seconds": 236,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "s5IIWKZr_2w",
+     "title": "Edward Maya - Stereo Love (Sadrican 2026 Remix) | Progressive House Rework",
+     "kind": "version",
+     "channelName": "Sadrican et 2 autre(s)",
+     "seconds": 242,
+     "year": 2026,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "DmRfCvdFT5U",
+     "title": "African Friends Reacts To LOVE STEREO AGAIN M/V  Edward Maya, Tiger J Shroff, Zahrah S Khan,",
+     "kind": "react",
+     "channelName": "Dee & Vee",
+     "seconds": 461,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "bMpKSdhr3Ck",
+     "title": "EDWARD MAYA Ft. ALICIA Stereo Love Reaction (+1 More)",
+     "kind": "react",
+     "channelName": "Enoma",
+     "seconds": 892,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "0Mpk7alvy0Q",
+     "title": "Edward Maya, Tiger J Shroff, Zahrah S Khan, Tanishq Bagchi | Love Stereo Again (Video) REACTION",
+     "kind": "react",
+     "channelName": "SISTERS REACTION",
+     "seconds": 517,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "FLq6_Dtez9c",
+     "title": "Listening to Edward Maya & Vika Jigulina - Stereo Love for the FIRST TIME in 10 years -  REACTION",
+     "kind": "react",
+     "channelName": "Peezy Reid",
+     "seconds": 344,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "fqik9ctTNE8",
+     "title": "Edward Maya - Stereo Love - This Is My Life interview",
+     "kind": "coulisses",
+     "channelName": "rockdetente",
+     "seconds": 154,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "3ODIrYoSVxg",
+     "title": "INTERVIEW w/ EDWARD MAYA 'Stereo Love' LIVE @ MOOMBA Restaurant & Club [Montreal]",
+     "kind": "coulisses",
+     "channelName": "ONELOVEMTL",
+     "seconds": 129,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "y9Kqb2z9Lzs",
+     "title": "Edward Maya, Vika Jigulina - Stereo love (Radio Edit) (Lyrics)",
+     "kind": "paroles",
+     "channelName": "LyricsZone",
+     "seconds": 185,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "AwojvnebEe0",
+     "title": "Edward Maya, Vika Jigulina — Stereo Love [Letra]",
+     "kind": "paroles",
+     "channelName": "armxndo",
+     "seconds": 250,
+     "year": null,
+     "source": "auto"
+    }
+   ],
    "score": 360
   },
   {

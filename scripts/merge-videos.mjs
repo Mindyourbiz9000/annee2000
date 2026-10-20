@@ -19,6 +19,8 @@ const files = (await readdir(ROOT + 'data/videos')).filter((f) => f.endsWith('.j
   .sort((a, b) => (a === 'auto.json' ? -1 : b === 'auto.json' ? 1 : a.localeCompare(b)));
 
 const merged = new Map();
+const playlists = new Map();
+const PL_RE = /^[A-Za-z0-9_-]{12,64}$/;
 const removed = new Map();
 const unknown = [];
 for (const f of files) {
@@ -31,6 +33,15 @@ for (const f of files) {
     const list = merged.get(showId) || [];
     const gone = removed.get(showId) || new Set();
     for (const v of videos) {
+      // Une playlist YouTube (par ex. toute une saison) : { "playlistId": "PL...", "season": 1, "title": "..." }
+      if (v.playlistId && !v.youtubeId) {
+        if (!PL_RE.test(v.playlistId)) continue;
+        const pl = playlists.get(showId) || new Map();
+        if (v.remove) pl.delete(v.playlistId);
+        else pl.set(v.playlistId, { playlistId: v.playlistId, season: Number.isInteger(v.season) ? v.season : null, title: String(v.title || '').slice(0, 200) });
+        playlists.set(showId, pl);
+        continue;
+      }
       if (!ID_RE.test(v.youtubeId || '') || foreignScript(v.title)) continue;
       if (v.remove) {
         gone.add(v.youtubeId);
@@ -79,6 +90,9 @@ for (const s of data.shows) {
     keys.add(k);
     return true;
   });
+  const pl = [...(playlists.get(s.id)?.values() || [])].sort((a, b) => (a.season ?? 99) - (b.season ?? 99));
+  if (pl.length) s.playlists = pl;
+  else delete s.playlists;
   if (s.videos.length) withVideos++;
   total += s.videos.length;
 }

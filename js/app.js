@@ -363,6 +363,7 @@ function renderShow(id) {
       <div class="folder folder--episodes">
         <h2 class="folder__tab">📼 Épisodes <span>${episodes.length}</span></h2>
         <div class="folder__body">
+          ${s.playlists?.length ? `<div class="actions playlists">${s.playlists.map((p) => `<a class="gel gel--small" href="https://www.youtube.com/playlist?list=${encodeURIComponent(p.playlistId)}" target="_blank" rel="noopener">▶ Playlist ${p.season != null ? `saison ${p.season}` : esc(p.title || 'YouTube')}</a>`).join('')}</div>` : ''}
           ${seasons.length ? `
             <div class="chips seasons" role="tablist" aria-label="Saisons">
               ${seasons.map((g, i) => `<button class="chip" type="button" role="tab" data-season="${g.key}" aria-selected="${i === 0}" aria-pressed="${i === 0}">${esc(g.label)} <small>(${g.items.length})</small></button>`).join('')}
