@@ -1,0 +1,51 @@
+name: Déploiement AWS (S3 + CloudFront)
+
+on:
+  push:
+    branches: [main, claude/wizardly-mendel-ojlr60]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy-aws
+  cancel-in-progress: true
+
+env:
+  AWS_REGION: eu-west-3
+  BUCKET: annee2000-site-158346964722
+  DISTRIBUTION_ID: EEIGRQEPYF5X3
+  ROLE_ARN: arn:aws:iam::158346964722:role/annee2000-deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Vérifier le catalogue
+        run: node scripts/validate.mjs
+
+      - name: Connexion à AWS (OIDC, sans clé stockée)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Envoyer le site sur S3
+        run: |
+          aws s3 sync . "s3://$BUCKET" --delete \
+            --exclude "*" \
+            --include "index.html" --include "404.html" \
+            --include "css/*" --include "js/*" \
+            --include "data/shows.json" --include "data/extras.json" --include "data/hits.json" \
+            --cache-control "public, max-age=300"
+
+      - name: Rafraîchir le cache CloudFront
+        run: aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION_ID" --paths "/*"
