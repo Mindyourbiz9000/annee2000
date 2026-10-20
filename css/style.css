@@ -451,3 +451,25 @@ img { max-width: 100%; display: block; }
 .mp-step--1 { order: 2; height: 170px; background: linear-gradient(180deg, #ffe680, #f5b700); }
 .mp-step--2 { order: 1; height: 135px; background: linear-gradient(180deg, #f1f1f1, #b9c0cc); }
 .mp-step--3 { order: 3; height: 110px; background: linear-gradient(180deg, #f2c9a0, #c98a52); }
+/* Panneau « en direct » d'une partie à plusieurs */
+.blind.mp { max-width: 1180px; }
+.mp-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
+.mp-main { display: grid; gap: 16px; min-width: 0; }
+.mp-live { padding: 14px; position: sticky; top: 90px; }
+.mp-live h3 { margin: 0 0 10px; font-family: Audiowide, Verdana, sans-serif; font-size: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
+.mp-live h3 small { font: 400 12px Verdana, sans-serif; color: var(--ink-soft); }
+.mp-live__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.mp-live__list li { display: grid; grid-template-columns: 22px minmax(0, 1fr) 26px auto; gap: 8px; align-items: center; padding: 8px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); transition: background .3s ease; }
+.mp-live__list li.is-found { background: color-mix(in srgb, var(--lime) 16%, var(--panel)); border-color: color-mix(in srgb, var(--lime) 55%, var(--line)); }
+.mp-live__list li.is-me { box-shadow: 0 0 0 2px color-mix(in srgb, var(--pink) 45%, transparent); }
+.mp-live__list li.is-off { opacity: .55; }
+.mp-live__pos { font-family: VT323, monospace; font-size: 20px; color: var(--ink-soft); text-align: center; }
+.mp-live__who { display: grid; min-width: 0; }
+.mp-live__who b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mp-live__who small { font-size: 11px; color: var(--ink-soft); }
+.mp-live__medal { font-size: 22px; text-align: center; }
+.mp-live__score { font-family: VT323, monospace; font-size: 24px; min-width: 2ch; text-align: right; }
+@media (max-width: 900px) {
+  .mp-layout { grid-template-columns: 1fr; }
+  .mp-live { position: static; }
+}

@@ -1116,6 +1116,17 @@ function mpLeave() {
 const mpCode = () => Array.from({ length: 5 }, () => 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[Math.floor(Math.random() * 31)]).join('');
 const mpLink = (code) => `${location.origin}${location.pathname}#/blindtest/partie/${code}`;
 const mpBoard = () => [...mp.players.values()].sort((a, b) => b.score - a.score).map((p) => ({ name: p.name, score: p.score }));
+// État en direct de la manche : qui a trouvé (et dans quel ordre), qui cherche encore, les scores.
+function mpLiveMsg() {
+  const r = mp.round;
+  const online = new Set([mp.name, ...[...mp.conns.values()].filter((c) => c.open).map((c) => c.mpName)]);
+  const players = [...mp.players.values()].map((p) => {
+    const f = r?.found.find((x) => x.name === p.name);
+    return { name: p.name, score: p.score, online: online.has(p.name), medal: f?.medal || '', kind: f?.kind || '', rank: f ? r.found.indexOf(f) + 1 : 0, tries: r?.tries?.get(p.name) || 0 };
+  }).sort((a, b) => b.score - a.score || (a.rank || 99) - (b.rank || 99));
+  return { t: 'live', players, revealed: !!r?.revealed };
+}
+const mpSendLive = () => { if (mp.role === 'host' && mp.round) mpSendAll(mpLiveMsg()); };
 function mpSendAll(msg) {
   for (const c of mp.conns.values()) if (c.open) c.send(msg);
   mpOnMessage(msg); // l'hôte joue aussi : il applique ses propres messages
@@ -1202,6 +1213,7 @@ function mpBroadcastLobby() {
   const msg = { t: 'lobby', code: mp.code, players: [...mp.players.keys()] };
   for (const c of mp.conns.values()) if (c.open) c.send(msg);
   if (!mp.round) renderMpLobby();
+  else mpSendLive();
 }
 
 function renderMpJoin(code) {
@@ -1259,7 +1271,10 @@ function mpHostReceive(conn, msg) {
     if (!mp.players.has(name)) mp.players.set(name, { name, score: 0 });
     conn.send({ t: 'welcome', name, code: mp.code, everywhere: mp.everywhere });
     mpBroadcastLobby();
-    if (mp.round && !mp.round.revealed) conn.send(mpRoundMsg());
+    if (mp.round && !mp.round.revealed) {
+      conn.send(mpRoundMsg());
+      conn.send(mpLiveMsg());
+    }
   } else if (msg.t === 'guess') {
     mpJudge(conn.mpName, String(msg.text || ''), conn);
   }
@@ -1280,8 +1295,9 @@ function mpNextRound() {
   if (mp.qi >= mp.queue.length) return mpSendAll({ t: 'end', board: mpBoard() });
   const h = mp.queue[mp.qi];
   mp.n += 1;
-  mp.round = { h, found: [], revealed: false, id: Date.now() };
+  mp.round = { h, found: [], tries: new Map(), revealed: false, id: Date.now() };
   mpSendAll(mpRoundMsg());
+  mpSendLive();
 }
 const mpRoundMsg = () => ({ t: 'round', n: mp.n, total: mp.total, videoId: clipOf(mp.round.h).youtubeId, duration: bt.duration, everywhere: mp.everywhere, id: mp.round.id });
 // Le clip de l'hôte ne se lit pas : on change de tube, même manche.
@@ -1305,13 +1321,17 @@ function mpJudge(name, text, conn) {
   const title = titleMatches(text, r.h.title);
   const artist = !title && (artistMatches(text, mainArtistOf(r.h.artist)) || artistMatches(text, r.h.artist));
   const reply = (m) => (conn ? conn.send(m) : mpOnMessage(m));
-  if (!title && !artist) return reply({ t: 'judge', ok: false });
+  r.tries.set(name, (r.tries.get(name) || 0) + 1);
+  if (!title && !artist) {
+    reply({ t: 'judge', ok: false });
+    return mpSendLive();
+  }
   const rank = r.found.length;
   const pts = rank < 3 ? MP_POINTS[rank] : title ? 2 : 1;
   r.found.push({ name, kind: title ? 'titre' : 'artiste', pts, medal: MEDALS[rank] || '' });
   mp.players.get(name).score += pts;
   reply({ t: 'judge', ok: true, kind: title ? 'titre' : 'artiste', pts, medal: MEDALS[rank] || '' });
-  mpSendAll({ t: 'found', list: r.found.map(({ name: n, medal }) => ({ name: n, medal })) });
+  mpSendLive();
 }
 function mpReveal() {
   const r = mp.round;
@@ -1320,6 +1340,7 @@ function mpReveal() {
   const h = r.h;
   mp.qi += 1;
   mpSendAll({ t: 'reveal', title: h.title, artist: h.artist, year: h.year, hitId: h.id, gains: r.found, board: mpBoard(), last: mp.n >= mp.total });
+  mpSendLive();
 }
 
 /* --- Ce que tout le monde voit (hôte compris) --- */
@@ -1347,9 +1368,8 @@ function mpOnMessage(msg) {
       const g = document.getElementById('mp-guess');
       if (g) { g.value = ''; g.focus(); }
     }
-  } else if (msg.t === 'found') {
-    const box = document.getElementById('mp-found');
-    if (box) box.innerHTML = msg.list.length ? `Ont trouvé : ${msg.list.map((f) => `<span class="tag">${f.medal} ${esc(f.name)}</span>`).join(' ')}` : '';
+  } else if (msg.t === 'live') {
+    renderMpLive(msg);
   } else if (msg.t === 'reveal') {
     renderMpReveal(msg);
   } else if (msg.t === 'end') {
@@ -1365,6 +1385,7 @@ function renderMpRound(msg) {
   mp.round = isHost ? mp.round : { id: msg.id };
   mpShell(`
     <div class="blind__bar"><span>Manche ${msg.n} / ${msg.total}</span><span>Partie ${esc(mp.code)}</span></div>
+    <div class="mp-layout"><div class="mp-main">
     <div class="tv tv--wide">
       <div class="tv__screen is-playing" id="mp-screen">
         <div id="mp-player"></div>
@@ -1380,11 +1401,13 @@ function renderMpRound(msg) {
         <button class="gel" type="submit">Valider</button>
       </form>
       <p class="blind__verdict" id="mp-feedback"></p>
-      <p id="mp-found" class="mp-found"></p>
       ${isHost ? `<div class="actions mp-host-actions">
         <button class="gel gel--lime" type="button" id="mp-more">⏩ 10 secondes de plus pour tous</button>
         <button class="gel gel--ghost" type="button" id="mp-reveal">👀 Révéler la réponse</button>
       </div>` : '<p class="muted">L\'hôte décide quand on ajoute 10 secondes ou quand on révèle la réponse.</p>'}
+    </div>
+    </div>
+    <aside class="panel mp-live" id="mp-live" aria-live="polite"><h3>🏆 En direct</h3><p class="muted">Chargement des joueurs…</p></aside>
     </div>`);
   document.getElementById('mp-form').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -1459,6 +1482,23 @@ async function mpPlay(videoId, duration) {
     },
   });
   setTimeout(() => { if (!ready) failed(); }, 12000);
+}
+
+function renderMpLive(msg) {
+  const box = document.getElementById('mp-live');
+  if (!box) return;
+  const found = msg.players.filter((p) => p.rank).length;
+  box.innerHTML = `
+    <h3>🏆 En direct <small>${found} / ${msg.players.length} ont trouvé</small></h3>
+    <ol class="mp-live__list">${msg.players.map((p, i) => `
+      <li class="${p.name === mp.name ? 'is-me' : ''} ${p.rank ? 'is-found' : ''} ${p.online ? '' : 'is-off'}">
+        <span class="mp-live__pos">${i + 1}</span>
+        <span class="mp-live__who"><b>${esc(p.name)}</b>
+          <small>${p.rank ? `${p.medal || '✅'} ${p.rank}${p.rank === 1 ? 'er' : 'e'} · ${esc(p.kind)}` : msg.revealed ? '❌ pas trouvé' : p.online ? `⏳ cherche…${p.tries ? ` · ${p.tries} essai${p.tries > 1 ? 's' : ''}` : ''}` : '📴 déconnecté'}</small>
+        </span>
+        <span class="mp-live__medal" aria-hidden="true">${p.medal || (p.rank ? '✅' : '')}</span>
+        <span class="mp-live__score">${p.score}</span>
+      </li>`).join('')}</ol>`;
 }
 
 function mpBoardHTML(board, gains = []) {
