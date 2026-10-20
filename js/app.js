@@ -430,6 +430,32 @@ function renderTimeline() {
 }
 
 /* ---------- Accueil : la télé ou la musique ? ---------- */
+// Grande illustration « Blind test » (CSS + SVG, aucune image externe).
+function blindArt(size = '') {
+  const bars = Array.from({ length: 11 }, (_, i) => `<i style="--d:${(i * 0.13) % 0.9}s;--h:${30 + ((i * 37) % 60)}%"></i>`).join('');
+  return `
+  <div class="bt-art ${size}" aria-hidden="true">
+    <span class="bt-art__grid"></span>
+    <span class="bt-art__stars"><i>✦</i><i>✧</i><i>✦</i><i>✧</i><i>✦</i></span>
+    <span class="bt-art__cd cd"></span>
+    <svg class="bt-art__phones" viewBox="0 0 200 170">
+      <defs>
+        <linearGradient id="bt-chrome" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="#c9d6e8"/><stop offset=".5" stop-color="#6f819e"/><stop offset=".62" stop-color="#e7eef8"/><stop offset="1" stop-color="#8fa1bb"/></linearGradient>
+        <linearGradient id="bt-pad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff7ad0"/><stop offset="1" stop-color="#b0006a"/></linearGradient>
+      </defs>
+      <path d="M30 110 C30 40 170 40 170 110" fill="none" stroke="url(#bt-chrome)" stroke-width="16" stroke-linecap="round"/>
+      <path d="M30 110 C30 40 170 40 170 110" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="3" stroke-linecap="round" transform="translate(0 -5)"/>
+      <rect x="10" y="95" width="42" height="64" rx="18" fill="url(#bt-pad)" stroke="url(#bt-chrome)" stroke-width="5"/>
+      <rect x="148" y="95" width="42" height="64" rx="18" fill="url(#bt-pad)" stroke="url(#bt-chrome)" stroke-width="5"/>
+      <ellipse cx="24" cy="112" rx="6" ry="12" fill="rgba(255,255,255,.55)"/>
+      <ellipse cx="162" cy="112" rx="6" ry="12" fill="rgba(255,255,255,.55)"/>
+    </svg>
+    <span class="bt-art__notes"><i>♪</i><i>♫</i><i>♪</i><i>♬</i></span>
+    <span class="bt-art__eq">${bars}</span>
+    <span class="bt-art__title">BLIND<b>TEST</b></span>
+  </div>`;
+}
+
 function renderChooser() {
   setMode('home');
   document.title = 'Les années milléniales · La télé et la musique des années 2000';
@@ -455,7 +481,19 @@ function renderChooser() {
           <span class="gel gel--zap">🎵 Lancer le CD</span>
         </a>
       </div>
-      <p class="choose__more"><a class="gel gel--lime" href="#/blindtest">🎧 Ou teste-toi au blind test des années 2000</a></p>
+      <div class="bt-banner">
+        <a class="bt-banner__art" href="#/blindtest" aria-label="Ouvrir le blind test">${blindArt()}</a>
+        <div class="bt-banner__text">
+          <p class="choose__kicker">Nouveau ✦ Jeu</p>
+          <h2 class="bt-banner__title">Le <em>blind test</em> des années 2000</h2>
+          <p class="bt-banner__desc">Les tubes de la Star Ac' au R'n'B, et les génériques d'Intervilles, du Bigdil ou de Loft Story. Devine le titre, l'artiste ou l'émission avant la fin du compte à rebours, seul ou avec tes amis sur leur téléphone.</p>
+          <ul class="bt-banner__facts"><li>🎵 ${HITS.filter((h) => h.videos?.length).length} tubes</li><li>📺 ${TV_ITEMS.length} génériques</li><li>👥 Partie entre amis par lien</li></ul>
+          <div class="actions">
+            <a class="gel gel--zap" href="#/blindtest">🎧 Jouer en solo</a>
+            <a class="gel gel--lime" href="#/blindtest/hote">👥 Jouer à plusieurs</a>
+          </div>
+        </div>
+      </div>
     </section>`;
 }
 
@@ -872,54 +910,104 @@ function screenCountdown(cover, seconds, { label, answer = false, onEnd }) {
   }, 1000);
 }
 
+const BT_SRC_INFO = {
+  hits: ['🎵', 'Tubes', 'Les hits de 2000 à 2010'],
+  tv: ['📺', 'Génériques', 'Intervilles, le Bigdil, Loft Story…'],
+  both: ['🎵📺', 'Les deux', 'Tubes et génériques mélangés'],
+};
+const BT_LEVEL_INFO = { facile: 'Les plus connus', normal: 'Tout le catalogue', expert: 'Pour les vrais fans' };
+const segmented = (label, attr, items, current) => `
+  <fieldset class="bt-field">
+    <legend>${label}</legend>
+    <div class="seg">${items.map(([v, main, sub]) => `<button class="seg__btn" type="button" data-${attr}="${v}" aria-pressed="${String(current) === String(v)}"><b>${main}</b>${sub ? `<small>${sub}</small>` : ''}</button>`).join('')}</div>
+  </fieldset>`;
+
 function renderBlindSetup() {
   setMode('music');
   document.title = 'Blind test · Les années milléniales';
   const pool = blindPool();
+  const filters = (bt.genre && bt.source !== 'tv' ? 1 : 0) + (bt.year ? 1 : 0);
   $view.innerHTML = `
-    <section class="hero" style="grid-template-columns:1fr">
-      <div>
-        <h1>Le <em>blind test</em> des années 2000</h1>
-        <p>On te fait écouter le début d'un tube ou d'un générique télé, l'image est cachée. Tube : le titre (2 pts), l'artiste (1 pt) ou les deux (3 pts). Générique : le nom de l'émission (3 pts).</p>
+    <section class="bt-setup">
+      <header class="bt-head">
+        ${blindArt('bt-art--head')}
+        <div class="bt-head__text">
+          <p class="choose__kicker">Les années milléniales ✦ Jeu</p>
+          <h1>Le <em>blind test</em> des années 2000</h1>
+          <p>L'image est cachée, seul le son passe. Écoute l'extrait, puis tu as ${ANSWER_SECONDS} secondes pour trouver le tube ou l'émission. Les fautes de frappe sont pardonnées.</p>
+        </div>
+      </header>
+
+      <div class="bt-modes">
+        <button class="bt-mode bt-mode--solo" type="button" id="bt-start" ${pool.length < 3 ? 'disabled' : ''}>
+          <span class="bt-mode__icon" aria-hidden="true">🎧</span>
+          <span class="bt-mode__title">Solo</span>
+          <span class="bt-mode__desc">Tu joues seul, à ton rythme. Ton meilleur score est gardé sur cet appareil.</span>
+          <span class="gel gel--zap">Jouer en solo</span>
+        </button>
+        <a class="bt-mode bt-mode--multi" href="#/blindtest/hote">
+          <span class="bt-mode__icon" aria-hidden="true">👥</span>
+          <span class="bt-mode__title">À plusieurs</span>
+          <span class="bt-mode__desc">Crée une partie, envoie le lien : chacun répond sur son téléphone, classement en direct.</span>
+          <span class="gel gel--lime">Créer une partie</span>
+        </a>
       </div>
-    </section>
-    <section class="panel controls blind-setup">
-      <div class="filters">
-        <span class="muted">Durée de l'extrait</span>
-        <div class="chips">${[5, 10, 20].map((d) => `<button class="chip" type="button" data-bt-dur="${d}" aria-pressed="${bt.duration === d}">${d} secondes</button>`).join('')}</div>
-        <span class="muted">puis ${ANSWER_SECONDS} s pour répondre</span>
+
+      <div class="panel bt-settings">
+        <h2 class="bt-settings__title">⚙️ Réglages de la partie</h2>
+        <fieldset class="bt-field">
+          <legend>Quoi deviner ?</legend>
+          <div class="bt-tiles">${Object.entries(BT_SRC_INFO).map(([k, [icon, title, sub]]) => `
+            <button class="bt-tile" type="button" data-bt-src="${k}" aria-pressed="${bt.source === k}">
+              <span class="bt-tile__icon" aria-hidden="true">${icon}</span><b>${title}</b><small>${sub}</small>
+            </button>`).join('')}</div>
+        </fieldset>
+        <div class="bt-row">
+          ${segmented('Durée de l\'extrait', 'bt-dur', [5, 10, 20].map((d) => [d, `${d} s`]), bt.duration)}
+          ${segmented('Manches', 'bt-rounds', [5, 10, 20].map((n) => [n, String(n)]), bt.rounds)}
+        </div>
+        ${segmented('Difficulté', 'bt-level', Object.entries(BT_LEVELS).map(([k, [label]]) => [k, label, BT_LEVEL_INFO[k]]), bt.level)}
+        <details class="bt-more" ${filters ? 'open' : ''}>
+          <summary>Plus de filtres${filters ? ` <span class="bt-count">${filters}</span>` : ''}</summary>
+          ${bt.source === 'tv' ? '' : `
+          <fieldset class="bt-field">
+            <legend>Genre musical</legend>
+            <div class="chips"><button class="chip" type="button" data-bt-genre="" aria-pressed="${!bt.genre}">Tous</button>${Object.entries(GENRES).map(([k, v]) => `<button class="chip" type="button" data-bt-genre="${k}" aria-pressed="${bt.genre === k}">${v}</button>`).join('')}</div>
+          </fieldset>`}
+          <fieldset class="bt-field">
+            <legend>Année</legend>
+            <div class="chips" role="group" aria-label="Année">
+              <button class="chip" type="button" data-bt-year="0" aria-pressed="${!bt.year}">Toutes</button>
+              ${YEARS.map((y) => `<button class="chip" type="button" data-bt-year="${y}" aria-pressed="${bt.year === y}">${y}</button>`).join('')}
+            </div>
+          </fieldset>
+        </details>
+        <p class="bt-recap"><b>${pool.length}</b> extraits possibles · <b>${bt.rounds}</b> manches · <b>${bt.duration} s</b> d'écoute + <b>${ANSWER_SECONDS} s</b> pour répondre</p>
+        ${pool.length < 3 ? '<p class="bt-warn">Pas assez d\'extraits avec ces filtres : élargis la recherche.</p>' : ''}
       </div>
-      <div class="filters">
-        <span class="muted">Quoi deviner ?</span>
-        <div class="chips">${Object.entries(BT_SOURCES).map(([k, v]) => `<button class="chip" type="button" data-bt-src="${k}" aria-pressed="${bt.source === k}">${v}</button>`).join('')}</div>
-      </div>
-      <div class="filters">
-        <span class="muted">Difficulté</span>
-        <div class="chips">${Object.entries(BT_LEVELS).map(([k, [label]]) => `<button class="chip" type="button" data-bt-level="${k}" aria-pressed="${bt.level === k}">${label}</button>`).join('')}</div>
-      </div>
-      <div class="filters">
-        <label for="bt-genre" ${bt.source === 'tv' ? 'hidden' : ''}>Genre musical</label>
-        <select id="bt-genre" class="select" ${bt.source === 'tv' ? 'hidden' : ''}><option value="">Tous</option>${Object.entries(GENRES).map(([k, v]) => `<option value="${k}" ${bt.genre === k ? 'selected' : ''}>${v}</option>`).join('')}</select>
-        <label for="bt-rounds">Manches</label>
-        <select id="bt-rounds" class="select">${[5, 10, 20].map((n) => `<option ${bt.rounds === n ? 'selected' : ''}>${n}</option>`).join('')}</select>
-      </div>
-      <div class="chips" role="group" aria-label="Année">
-        <button class="chip" type="button" data-bt-year="0" aria-pressed="${!bt.year}">Toutes les années</button>
-        ${YEARS.map((y) => `<button class="chip" type="button" data-bt-year="${y}" aria-pressed="${bt.year === y}">${y}</button>`).join('')}
-      </div>
-      <div class="actions">
-        <button class="gel gel--zap" type="button" id="bt-start" ${pool.length < 3 ? 'disabled' : ''}>🎧 Jouer en solo</button>
-        <a class="gel gel--lime" href="#/blindtest/hote">👥 Jouer à plusieurs</a>
-        <span class="muted">${pool.length} extraits possibles avec ces réglages</span>
+
+      <div class="panel bt-rules">
+        <h2 class="bt-settings__title">🏅 Le barème</h2>
+        <div class="bt-rules__grid">
+          <div><span class="bt-pts">3</span><b>Titre + artiste</b><small>ou le nom de l'émission</small></div>
+          <div><span class="bt-pts bt-pts--2">2</span><b>Le titre</b><small>tout seul</small></div>
+          <div><span class="bt-pts bt-pts--1">1</span><b>L'artiste</b><small>tout seul</small></div>
+          <div><span class="bt-pts bt-pts--medal">🥇🥈🥉</span><b>À plusieurs</b><small>+3, +2, +1 pour les plus rapides</small></div>
+        </div>
       </div>
     </section>`;
-  const rerender = () => renderBlindSetup();
-  $view.querySelectorAll('[data-bt-dur]').forEach((b) => b.addEventListener('click', () => { bt.duration = +b.dataset.btDur; rerender(); }));
-  $view.querySelectorAll('[data-bt-src]').forEach((b) => b.addEventListener('click', () => { bt.source = b.dataset.btSrc; rerender(); }));
-  $view.querySelectorAll('[data-bt-level]').forEach((b) => b.addEventListener('click', () => { bt.level = b.dataset.btLevel; rerender(); }));
-  $view.querySelectorAll('[data-bt-year]').forEach((b) => b.addEventListener('click', () => { bt.year = +b.dataset.btYear; rerender(); }));
-  document.getElementById('bt-genre').addEventListener('change', (e) => { bt.genre = e.target.value; rerender(); });
-  document.getElementById('bt-rounds').addEventListener('change', (e) => { bt.rounds = +e.target.value; });
+  const rerender = () => {
+    const open = $view.querySelector('.bt-more')?.open;
+    renderBlindSetup();
+    if (open) $view.querySelector('.bt-more').open = true;
+  };
+  const bind = (attr, fn) => $view.querySelectorAll(`[data-${attr}]`).forEach((b) => b.addEventListener('click', () => { fn(b.getAttribute(`data-${attr}`)); rerender(); }));
+  bind('bt-dur', (v) => { bt.duration = +v; });
+  bind('bt-rounds', (v) => { bt.rounds = +v; });
+  bind('bt-src', (v) => { bt.source = v; });
+  bind('bt-level', (v) => { bt.level = v; });
+  bind('bt-year', (v) => { bt.year = +v; });
+  bind('bt-genre', (v) => { bt.genre = v; });
   document.getElementById('bt-start').addEventListener('click', startBlindGame);
 }
 
@@ -952,6 +1040,15 @@ function startBlindGame() {
   renderBlindRound();
 }
 
+// Barre du haut : progression de la partie (une pastille par manche) et score.
+function blindBar(n, total, right) {
+  const dots = total <= 20 ? `<span class="bt-dots" aria-hidden="true">${Array.from({ length: total }, (_, i) => `<i class="${i < n - 1 ? 'is-done' : i === n - 1 ? 'is-now' : ''}"></i>`).join('')}</span>` : '';
+  return `<div class="blind__bar bt-bar">
+    <span class="bt-bar__round"><span class="blind__round">Manche <b>${n}</b> / ${total}</span>${dots}</span>
+    ${right}
+  </div>`;
+}
+
 function renderBlindRound() {
   clearTimeout(bt.guard);
   stopScreenCountdown();
@@ -963,10 +1060,7 @@ function renderBlindRound() {
   bt.revealed = false;
   $view.innerHTML = `
     <section class="blind">
-      <div class="blind__bar">
-        <span class="blind__round">Manche ${bt.results.length + 1} / ${bt.rounds}</span>
-        <span class="blind__score">Score : <b>${bt.score}</b></span>
-      </div>
+      ${blindBar(bt.results.length + 1, bt.rounds, `<span class="blind__score bt-pill">Score <b>${bt.score}</b></span>`)}
       <div class="tv tv--wide">
         <div class="tv__screen is-playing" id="bt-screen">
           <div id="bt-player"></div>
@@ -976,10 +1070,10 @@ function renderBlindRound() {
         <span class="tv__knobs" aria-hidden="true"><i></i><i></i></span>
       </div>
       <div class="blind__panel panel">
-        <form class="search" id="bt-form" autocomplete="off">
+        <form class="search bt-answer-form" id="bt-form" autocomplete="off">
           <label class="skip" for="bt-guess">Ta réponse</label>
           <input id="bt-guess" type="search" placeholder="${blindPlaceholder()}">
-          <button class="gel" type="submit">Valider</button>
+          <button class="gel gel--zap" type="submit">Valider</button>
         </form>
         <div class="actions" id="bt-actions">
           <button class="gel gel--zap" type="button" id="bt-play" hidden>▶ Écouter l'extrait</button>
@@ -1085,16 +1179,27 @@ function revealBlind(h, points, guess, timeout = false) {
   stopScreenCountdown();
   bt.score += points;
   bt.results.push({ h, points, guess });
+  const pill = document.querySelector('.blind__score b');
+  if (pill) pill.textContent = bt.score;
   document.getElementById('bt-cover').classList.add('is-gone');
   bt.player?.playVideo?.();
-  const verdict = points === 3 && h.isShow ? '📺 Bonne émission ! +3' : points === 3 ? '🏆 Titre et artiste ! +3' : points === 2 ? '🎉 Bravo, c\'est le bon titre ! +2' : points === 1 ? '👍 Bon artiste ! +1' : guess ? '😅 Raté !' : timeout ? '⏱ Temps écoulé !' : '🙈 Dommage !';
+  const verdict = points === 3 && h.isShow ? '📺 Bonne émission !' : points === 3 ? '🏆 Titre et artiste !' : points === 2 ? '🎉 Bravo, c\'est le bon titre !' : points === 1 ? '👍 Bon artiste !' : guess ? '😅 Raté !' : timeout ? '⏱ Temps écoulé !' : '🙈 Dommage !';
   const box = document.getElementById('bt-answer');
   box.hidden = false;
   box.innerHTML = `
-    <p class="blind__verdict">${verdict}</p>
-    <p class="show__artist">${esc(h.isShow ? `📺 Générique · ${h.channel}` : h.artist)}</p>
-    <h2 class="show__title" style="font-size:clamp(22px,4vw,34px)">${esc(h.title)}</h2>
-    <p class="muted">${h.isShow ? years(BY_ID.get(h.showId)) : h.year}${h.isShow ? '' : h.numberOne ? ` · Numéro un ${h.weeksAtOne} semaine${h.weeksAtOne > 1 ? 's' : ''}` : h.yearRank ? ` · ${h.yearRank.rank}e des ventes en ${h.yearRank.year}` : ''}</p>
+    <div class="bt-verdict ${points ? 'is-win' : 'is-lose'}">
+      <span class="blind__verdict">${verdict}</span>
+      <span class="bt-pts ${points === 2 ? 'bt-pts--2' : points === 1 ? 'bt-pts--1' : points ? '' : 'bt-pts--0'}">+${points}</span>
+    </div>
+    ${guess ? `<p class="bt-guess">Ta réponse : « ${esc(guess)} »</p>` : ''}
+    <div class="bt-reveal">
+      <img class="bt-reveal__thumb" onerror="this.style.visibility='hidden'" src="https://i.ytimg.com/vi/${clipOf(h)?.youtubeId}/mqdefault.jpg" alt="" loading="lazy">
+      <div>
+        <p class="show__artist">${esc(h.isShow ? `📺 Générique · ${h.channel}` : h.artist)}</p>
+        <h2 class="show__title bt-reveal__title">${esc(h.title)}</h2>
+        <p class="muted">${h.isShow ? years(BY_ID.get(h.showId)) : h.year}${h.isShow ? '' : h.numberOne ? ` · Numéro un ${h.weeksAtOne} semaine${h.weeksAtOne > 1 ? 's' : ''}` : h.yearRank ? ` · ${h.yearRank.rank}e des ventes en ${h.yearRank.year}` : ''}</p>
+      </div>
+    </div>
     <div class="actions">
       <button class="gel gel--zap" type="button" id="bt-next">${bt.results.length >= bt.rounds ? '🏁 Voir le résultat' : 'Manche suivante →'}</button>
       <a class="gel gel--ghost gel--small" href="${h.isShow ? `#/e/${encodeURIComponent(h.showId)}` : `#/m/${encodeURIComponent(h.id)}`}">${h.isShow ? 'Voir la fiche de l\'émission' : 'Voir la fiche du tube'}</a>
@@ -1116,19 +1221,33 @@ function renderBlindEnd() {
   const pct = max ? bt.score / max : 0;
   if (pct > best) store.set('blindBest', pct);
   const mood = pct >= 0.8 ? 'Légende des années 2000 ! 🏆' : pct >= 0.5 ? 'Pas mal du tout ! 🎶' : pct > 0 ? 'Il faut réviser ton Hit Machine 📼' : 'Retour en 2001 obligatoire 😄';
+  const stars = pct >= 0.8 ? 3 : pct >= 0.5 ? 2 : pct > 0 ? 1 : 0;
   $view.innerHTML = `
-    <section class="hero" style="grid-template-columns:1fr">
-      <div>
-        <h1>Score final : <em>${bt.score} / ${max}</em></h1>
-        <p>${mood}${best ? ` Ton meilleur score : ${Math.round(Math.max(best, pct) * 100)} %.` : ''}</p>
-        <div class="actions">
-          <button class="gel gel--zap" type="button" id="bt-again">🔁 Rejouer</button>
-          <a class="gel gel--ghost" href="#/blindtest" id="bt-settings">⚙️ Changer les réglages</a>
+    <section class="bt-end">
+      <div class="panel bt-end__card">
+        ${blindArt('bt-art--small')}
+        <div class="bt-end__text">
+          <p class="choose__kicker">Partie terminée</p>
+          <h1 class="bt-end__score"><b>${bt.score}</b><span>/ ${max}</span></h1>
+          <p class="bt-end__stars" aria-label="${stars} étoile${stars > 1 ? 's' : ''} sur 3">${'★'.repeat(stars)}<span>${'★'.repeat(3 - stars)}</span></p>
+          <p class="bt-end__mood">${mood}</p>
+          ${best ? `<p class="muted">Ton meilleur score : ${Math.round(Math.max(best, pct) * 100)} %</p>` : ''}
+          <div class="actions">
+            <button class="gel gel--zap" type="button" id="bt-again">🔁 Rejouer</button>
+            <a class="gel gel--ghost" href="#/blindtest" id="bt-settings">⚙️ Changer les réglages</a>
+            <a class="gel gel--lime" href="#/blindtest/hote">👥 Défier mes amis</a>
+          </div>
         </div>
       </div>
-    </section>
-    <h2 class="row-title">Les tubes de la partie</h2>
-    <div class="grid">${bt.results.map((r) => (r.h.isShow ? card(BY_ID.get(r.h.showId)) : hitCard(r.h))).join('')}</div>`;
+      <h2 class="row-title">Les extraits de la partie</h2>
+      <ol class="bt-recaplist">${bt.results.map((r, i) => `
+        <li class="${r.points ? 'is-win' : 'is-lose'}">
+          <span class="bt-recaplist__n">${i + 1}</span>
+          <img onerror="this.style.visibility='hidden'" src="https://i.ytimg.com/vi/${r.h.videos?.find((v) => v.kind === 'clip')?.youtubeId}/default.jpg" alt="" loading="lazy">
+          <a class="bt-recaplist__what" href="${r.h.isShow ? `#/e/${encodeURIComponent(r.h.showId)}` : `#/m/${encodeURIComponent(r.h.id)}`}"><b>${esc(r.h.title)}</b><small>${esc(r.h.isShow ? `📺 ${r.h.channel}` : r.h.artist)}${r.guess ? ` · ta réponse : « ${esc(r.guess)} »` : ''}</small></a>
+          <span class="bt-recaplist__pts">${r.points ? `✓ +${r.points}` : '✗'}</span>
+        </li>`).join('')}</ol>
+    </section>`;
   document.getElementById('bt-again').addEventListener('click', startBlindGame);
   document.getElementById('bt-settings').addEventListener('click', (e) => { e.preventDefault(); renderBlindSetup(); });
 }
@@ -1192,8 +1311,9 @@ function renderMpHost() {
   mpLeave();
   document.title = 'Blind test à plusieurs · Les années milléniales';
   mpShell(`
-    <div class="hero" style="grid-template-columns:1fr;margin:10px 0 0">
-      <div><h1>Blind test <em>à plusieurs</em></h1>
+    <div class="bt-head bt-head--compact">
+      ${blindArt('bt-art--small')}
+      <div class="bt-head__text"><h1>Blind test <em>à plusieurs</em></h1>
       <p>Crée une partie, envoie le lien à tes amis : chacun répond sur son téléphone. Titre + artiste : 3 points, titre seul : 2, artiste seul : 1. Les plus rapides gagnent en plus l'or 🥇 (+3), l'argent 🥈 (+2) et le bronze 🥉 (+1).</p></div>
     </div>
     <div class="panel blind__panel">
@@ -1241,14 +1361,18 @@ function renderMpLobby() {
   const isHost = mp.role === 'host';
   const players = isHost ? [...mp.players.keys()] : mp.lobby || [];
   mpShell(`
-    <div class="blind__bar"><span>Partie <b class="mp-code">${esc(mp.code)}</b></span><span>${players.length} joueur${players.length > 1 ? 's' : ''}</span></div>
-    <div class="panel blind__panel">
+    <div class="panel bt-lobby">
+      <div class="bt-lobby__code">
+        <span class="muted">Code de la partie</span>
+        <b class="mp-code">${esc(mp.code)}</b>
+      </div>
       ${isHost ? `
-        <p><b>Invite tes amis</b> avec ce lien (ou le code <b>${esc(mp.code)}</b>) :</p>
+        <p><b>Invite tes amis</b> : envoie-leur ce lien, ils rejoignent depuis leur téléphone.</p>
         <div class="search"><input id="mp-link" readonly value="${esc(mpLink(mp.code))}"><button class="gel" type="button" id="mp-copy">📋 Copier</button></div>
-        ${navigator.share ? '<div class="actions"><button class="gel gel--ghost gel--small" type="button" id="mp-share">📤 Partager</button></div>' : ''}` : '<p>Tu es dans la partie ! On attend que l\'hôte lance le premier tube…</p>'}
-      <div class="mp-players">${players.map((n) => `<span class="tag">${n === mp.name ? '⭐ ' : ''}${esc(n)}</span>`).join('')}</div>
-      ${isHost ? `<div class="actions"><button class="gel gel--zap" type="button" id="mp-go" ${players.length < 1 ? 'disabled' : ''}>🎧 Lancer la partie</button></div>` : ''}
+        ${navigator.share ? '<div class="actions"><button class="gel gel--ghost gel--small" type="button" id="mp-share">📤 Partager</button></div>' : ''}` : '<p class="bt-lobby__wait">Tu es dans la partie ! On attend que l\'hôte lance le premier tube…</p>'}
+      <h3 class="bt-lobby__count">${players.length} joueur${players.length > 1 ? 's' : ''} dans la salle</h3>
+      <div class="mp-players">${players.map((n) => `<span class="bt-avatar ${n === mp.name ? 'is-me' : ''}"><i style="--hue:${[...n].reduce((a, c) => a + c.charCodeAt(0) * 37, 0) % 360}">${esc([...n][0]?.toUpperCase() || '?')}</i>${esc(n)}</span>`).join('')}</div>
+      ${isHost ? `<div class="actions"><button class="gel gel--zap" type="button" id="mp-go" ${players.length < 1 ? 'disabled' : ''}>🎧 Lancer la partie</button><span class="muted">${bt.rounds} manches · ${bt.duration} s d'écoute</span></div>` : ''}
     </div>`);
   if (!isHost) return;
   document.getElementById('mp-copy').addEventListener('click', async () => {
@@ -1271,8 +1395,9 @@ function renderMpJoin(code) {
   mpLeave();
   document.title = 'Rejoindre un blind test · Les années milléniales';
   mpShell(`
-    <div class="hero" style="grid-template-columns:1fr;margin:10px 0 0">
-      <div><h1>Rejoindre la partie <em>${esc(code)}</em></h1><p>Choisis un pseudo, puis attends que l'hôte lance le premier tube.</p></div>
+    <div class="bt-head bt-head--compact">
+      ${blindArt('bt-art--small')}
+      <div class="bt-head__text"><h1>Rejoindre la partie <em>${esc(code)}</em></h1><p>Choisis un pseudo, puis attends que l'hôte lance le premier tube.</p></div>
     </div>
     <div class="panel blind__panel">
       <form class="search" id="mp-join-form" autocomplete="off">
@@ -1515,7 +1640,7 @@ function renderMpRound(msg) {
   const playsHere = isHost || msg.everywhere;
   mp.round = isHost ? mp.round : { id: msg.id };
   mpShell(`
-    <div class="blind__bar"><span>Manche ${msg.n} / ${msg.total}</span><span>Partie ${esc(mp.code)}</span></div>
+    ${blindBar(msg.n, msg.total, `<span class="bt-pill">Partie <b>${esc(mp.code)}</b></span>`)}
     <div class="mp-layout"><div class="mp-main">
     <div class="tv tv--wide">
       <div class="tv__screen is-playing" id="mp-screen">
@@ -1526,10 +1651,10 @@ function renderMpRound(msg) {
     </div>
     <div class="panel blind__panel">
       ${playsHere ? '<div class="actions"><button class="gel gel--zap" type="button" id="mp-play" hidden>▶ Écouter</button></div>' : ''}
-      <form class="search" id="mp-form" autocomplete="off">
+      <form class="search bt-answer-form" id="mp-form" autocomplete="off">
         <label class="skip" for="mp-guess">Ta réponse</label>
         <input id="mp-guess" type="search" placeholder="${msg.placeholder || 'Le titre et/ou l\'artiste…'}">
-        <button class="gel" type="submit">Valider</button>
+        <button class="gel gel--zap" type="submit">Valider</button>
       </form>
       <p class="blind__verdict" id="mp-feedback"></p>
       ${isHost ? '<div class="actions"><button class="gel gel--ghost gel--small" type="button" id="mp-reveal">👀 Révéler la réponse maintenant</button></div>' : ''}
