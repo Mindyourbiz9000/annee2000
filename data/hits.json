@@ -13265,15 +13265,6 @@
    "views60d": 179,
    "videos": [
     {
-     "youtubeId": "vzerbXFwGCE",
-     "title": "The Corrs - Breathless [Official Video]",
-     "kind": "clip",
-     "channelName": "The Corrs",
-     "seconds": 223,
-     "year": null,
-     "source": "auto"
-    },
-    {
      "youtubeId": "-e_IuYgvdf8",
      "title": "The Corrs - Breathless (Official Music Video) [HD]",
      "kind": "clip",
@@ -13301,11 +13292,38 @@
      "source": "auto"
     },
     {
+     "youtubeId": "ySEPjEzCpTo",
+     "title": "The Corrs - Live in Dublin - Breathless HQ",
+     "kind": "live",
+     "channelName": "haylie9411",
+     "seconds": 215,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "qqnp_6-I-lQ",
+     "title": "The Corrs Breathless from the Cork concert in Ireland 6th June 2025 from the front row centre.",
+     "kind": "live",
+     "channelName": "gregbugno",
+     "seconds": 224,
+     "year": 2025,
+     "source": "auto"
+    },
+    {
      "youtubeId": "IdbkByz0imw",
      "title": "2000-07 - The Corrs - Breathless (Live @ TOTP)",
      "kind": "live",
      "channelName": "isntitironicCORRS",
      "seconds": 203,
+     "year": 2000,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "orffCMdb-18",
+     "title": "The Corrs- Live in London/ Wembley 2000- Breathless",
+     "kind": "live",
+     "channelName": "CorrsFanPortugal3",
+     "seconds": 291,
      "year": 2000,
      "source": "auto"
     },
@@ -13316,6 +13334,51 @@
      "channelName": "Mejo Kuriachan",
      "seconds": 204,
      "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "uDy06cqiZDo",
+     "title": "Corrs - Breathless (live on Good Morning Australia)",
+     "kind": "live",
+     "channelName": "Mike Devery",
+     "seconds": 212,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "wQ4xZM0urMk",
+     "title": "The Corrs- Breathless- Live Rosie O'Donell 2000",
+     "kind": "live",
+     "channelName": "CorrsFanPortugal3",
+     "seconds": 222,
+     "year": 2000,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "t0FJR1GY0LU",
+     "title": "The Corrs Live in London - Breathless (Andrea Corr , Caroline Corr, Sharon Corr & Jim Corr Angles)",
+     "kind": "live",
+     "channelName": "We Love Country Music",
+     "seconds": 895,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "CKJ_oXwkwLk",
+     "title": "The Corrs- Breathless- Live Chris Evans TFI 2000",
+     "kind": "live",
+     "channelName": "CorrsFanPortugal3",
+     "seconds": 229,
+     "year": 2000,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "E9Lb4PaZJxM",
+     "title": "The Corrs - Breathless - Top Of The Pops - Friday 14th July 2000",
+     "kind": "live",
+     "channelName": "mymusicfootage",
+     "seconds": 190,
+     "year": 2000,
      "source": "auto"
     },
     {
@@ -13355,21 +13418,129 @@
      "source": "auto"
     },
     {
-     "youtubeId": "QVlmb4QUDcc",
+     "youtubeId": "fMfAx4BjHYE",
+     "title": "The Corrs - Breathless (Today Show 2001)",
+     "kind": "version",
+     "channelName": "Katia Costa",
+     "seconds": 235,
+     "year": 2001,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "tfewipe7fUk",
      "title": "The Corrs - Breathless",
      "kind": "version",
-     "channelName": "John Taylor",
-     "seconds": 205,
+     "channelName": "Maddy Rose",
+     "seconds": 207,
      "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "3vCkwTHAiX4",
-     "title": "Breathless - The Corrs (Lyrics) 🎵",
-     "kind": "paroles",
-     "channelName": "Pillow",
-     "seconds": 217,
+     "youtubeId": "OvhHuQZjhGw",
+     "title": "WOW!| FIRST TIME HEARING The Corrs -  Breathless REACTION",
+     "kind": "react",
+     "channelName": "Rob Squad Reactions",
+     "seconds": 499,
      "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "bjZboNxEFq8",
+     "title": "Rapper FIRST time REACTION to The Corrs - Breathless! Is that a YODEL....",
+     "kind": "react",
+     "channelName": "Black Pegasus",
+     "seconds": 851,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "3-kGfwZe2AY",
+     "title": "THE CORRS - BREATHLESS | REACTION",
+     "kind": "react",
+     "channelName": "WILBURN MUSIC REACTIONS",
+     "seconds": 509,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "HWdUw6WHGQs",
+     "title": "Réaction d'un coach vocal à la chanson « Breathless » des Corrs en direct",
+     "kind": "react",
+     "channelName": "Honest Vocal Coach",
+     "seconds": 479,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "9zxHVsgz3YI",
+     "title": "The Corrs - Breathless | FIRST TIME REACTION",
+     "kind": "react",
+     "channelName": "LizXP Reacts",
+     "seconds": 478,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "EHPwS_QIhsM",
+     "title": "The Corrs - Breathless (Live in London 2000 | GK INT'L REACTION",
+     "kind": "react",
+     "channelName": "Glasses Kingdom",
+     "seconds": 534,
+     "year": 2000,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "gTmDozsNtUs",
+     "title": "The Corrs - the Making of  Breathless",
+     "kind": "coulisses",
+     "channelName": "dyeidee07",
+     "seconds": 112,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "HtDyAgH03og",
+     "title": "The Corrs - Breathless & Interview - VH1 Awards",
+     "kind": "coulisses",
+     "channelName": "Katia Costa",
+     "seconds": 346,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ZR4DbTJB-Q0",
+     "title": "The Corrs HD - Breathless & Interview - AM Canada (2001)",
+     "kind": "coulisses",
+     "channelName": "ErynShore",
+     "seconds": 399,
+     "year": 2001,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "TC7q-mJO7d4",
+     "title": "The Corrs HD - Breathless & Interview - Good morning Australia (10 Aug 2000)",
+     "kind": "coulisses",
+     "channelName": "ErynShore",
+     "seconds": 739,
+     "year": 2000,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "h5xuAyD04zY",
+     "title": "The Corrs HD - Breathless & Interview - Good Morning America (16 Mar 2001)",
+     "kind": "coulisses",
+     "channelName": "ErynShore",
+     "seconds": 297,
+     "year": 2001,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "NGs63lraHYE",
+     "title": "The Corrs HD - Interview - Law suit, Demanda Breathless (2004)",
+     "kind": "coulisses",
+     "channelName": "ErynShore",
+     "seconds": 121,
+     "year": 2004,
      "source": "auto"
     },
     {
@@ -13387,6 +13558,15 @@
      "kind": "paroles",
      "channelName": "Millennial Pause",
      "seconds": 208,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "egPWehvcs4s",
+     "title": "the corrs - breathless // sub español & lyrics // The Wedding Date",
+     "kind": "paroles",
+     "channelName": "arctic mercurio",
+     "seconds": 217,
      "year": null,
      "source": "auto"
     }
@@ -13438,6 +13618,15 @@
      "source": "auto"
     },
     {
+     "youtubeId": "_Yt9Xfo4VN4",
+     "title": "Bon Jovi - It's My Life - The Crush Tour Live in Zurich 2000",
+     "kind": "live",
+     "channelName": "Bon Jovi Live",
+     "seconds": 275,
+     "year": 2000,
+     "source": "auto"
+    },
+    {
      "youtubeId": "nPr0P8HrrlY",
      "title": "Bon Jovi - It's My Life 2012 Live Video FULL HD",
      "kind": "live",
@@ -13483,65 +13672,182 @@
      "source": "auto"
     },
     {
-     "youtubeId": "5DWHBpWYL5I",
-     "title": "Bon Jovi - It's My Life (Live) 60fps",
+     "youtubeId": "UpdGCnFc4Ao",
+     "title": "Bon Jovi - It`s my life Live 2000 VH1",
      "kind": "live",
-     "channelName": "Jav",
-     "seconds": 247,
+     "channelName": "Ayatollah7800",
+     "seconds": 251,
+     "year": 2000,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "NquproojyGQ",
+     "title": "It's my life: The real Jon Bon Jovi | 60 Minutes Australia",
+     "kind": "live",
+     "channelName": "60 Minutes Australia",
+     "seconds": 804,
      "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "_WHQ2iBDy6g",
-     "title": "It's My Life Bon Jovi Live From Home 2020 Quarantine Covid 19",
+     "youtubeId": "OWzHCp0Ibhk",
+     "title": "Bon Jovi - It's My Life (Live 8 2005)",
      "kind": "live",
-     "channelName": "John Henry Montoya Sánchez",
+     "channelName": "Live 8",
      "seconds": 238,
-     "year": 2020,
+     "year": 2005,
      "source": "auto"
     },
     {
-     "youtubeId": "AwWF8j1C3oo",
-     "title": "Bon Jovi - It’s My Life",
-     "kind": "version",
-     "channelName": "Bon Jovi",
-     "seconds": 239,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "OJcDpuZd_xU",
-     "title": "Bon Jovi - \"It's My Life\" | 2018 Induction",
-     "kind": "version",
-     "channelName": "Rock & Roll Hall of Fame",
-     "seconds": 235,
-     "year": 2018,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "BlpqWN2T59c",
-     "title": "Bon Jovi - It's My Life (Tradução) (Legendado) (Clipe Oficial)",
-     "kind": "version",
-     "channelName": "Max Legendas",
+     "youtubeId": "3jHLk67Hizc",
+     "title": "Bon Jovi - It's My Life (live in Osaka 2000)",
+     "kind": "live",
+     "channelName": "Damned TV",
      "seconds": 240,
+     "year": 2000,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "u6IpD9ty2bo",
+     "title": "Bon Jovi - It's My Life (live Toronto 2000)",
+     "kind": "live",
+     "channelName": "Damned TV",
+     "seconds": 232,
+     "year": 2000,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Nshjh2BkX54",
+     "title": "Bon Jovi - LIVE 2025 - It's My Life",
+     "kind": "live",
+     "channelName": "BonJovi Archives",
+     "seconds": 222,
+     "year": 2025,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "a8A8IDk_Hd8",
+     "title": "Jon Bon Jovi and Bruce Springsteen - It's my life",
+     "kind": "version",
+     "channelName": "lucaziopentagramma",
+     "seconds": 292,
      "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "9SKFwtgUJHs",
-     "title": "Bon Jovi - It's my life w/ lyrics",
-     "kind": "paroles",
-     "channelName": "MusicVidLyrics",
-     "seconds": 242,
+     "youtubeId": "ZM0iomt-a5I",
+     "title": "Bon Jovi - It's My Life Through The Years (2000-2018)",
+     "kind": "version",
+     "channelName": "Ava Burnham",
+     "seconds": 230,
+     "year": 2000,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "OCzP_oOEh_g",
+     "title": "Bon Jovi - It's My Life (Times Square 2002)",
+     "kind": "version",
+     "channelName": "PabloSantaFe87",
+     "seconds": 258,
+     "year": 2002,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "m3R4hgkc2aw",
+     "title": "DBZ AMV - Bon Jovi - It's My Life",
+     "kind": "version",
+     "channelName": "AMV JC",
+     "seconds": 227,
      "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "EwfnND6pHCc",
-     "title": "Bon Jovi - It's my life(Sub Español + Lyrics)",
-     "kind": "paroles",
-     "channelName": "Maycoll Sempai",
-     "seconds": 226,
+     "youtubeId": "Gh04aLeL9LI",
+     "title": "Bon Jovi - It's My Life - Brasil 2002",
+     "kind": "version",
+     "channelName": "Almir Jovi",
+     "seconds": 218,
+     "year": 2002,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "bXJ85s75dNM",
+     "title": "Bon Jovi - It's My Life (Late Night Show 2000)",
+     "kind": "version",
+     "channelName": "PabloSantaFe87",
+     "seconds": 235,
+     "year": 2000,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "F8FSmoQla5Y",
+     "title": "Jon Bon Jovi Reacts To Kelly Singing 'It's My Life'",
+     "kind": "react",
+     "channelName": "The Kelly Clarkson Show",
+     "seconds": 111,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "vM1GxH7Xc1c",
+     "title": "MUCH NEEDED SONG!! First Time Reaction to Bon Jovi - \"It's My Life\"",
+     "kind": "react",
+     "channelName": "StaceyRPG ",
+     "seconds": 1042,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "O7h1Vdl8TDo",
+     "title": "TRÈS BIEN.. | Bon Jovi - It's My Life (Clip Officiel) RÉACTION !",
+     "kind": "react",
+     "channelName": "Mr. Video ",
+     "seconds": 494,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Sr-z14Di90M",
+     "title": "It's My Life by Bon Jovi Reaction",
+     "kind": "react",
+     "channelName": "JEM Reactions",
+     "seconds": 461,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "svAg8a61DSw",
+     "title": "Un rappeur RÉAGIT à Bon Jovi - It's My Life ! Une vraie philosophie de vie...",
+     "kind": "react",
+     "channelName": "Black Pegasus",
+     "seconds": 835,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-Wz1_DPqriw",
+     "title": "First time hearing Bon Jovi “It's My Life” Reaction | Asia and BJ",
+     "kind": "react",
+     "channelName": "Asia and BJ",
+     "seconds": 377,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "KamBsQlWlUY",
+     "title": "Bon Jovi- MTV News Weekend Edition: Behind The Scenes It's My Life video shoot, May 2000",
+     "kind": "coulisses",
+     "channelName": "Dolph7800",
+     "seconds": 202,
+     "year": 2000,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "CWU-Zc8pofE",
+     "title": "Bon Jovi - interview it's my life",
+     "kind": "coulisses",
+     "channelName": "hardrock7800",
+     "seconds": 157,
      "year": null,
      "source": "auto"
     },
@@ -13551,6 +13857,24 @@
      "kind": "paroles",
      "channelName": "Cactus Rock",
      "seconds": 225,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "on_5rCUHNso",
+     "title": "Bon Jovi - It's My Life [Lyrics English - Español Subtitulado]",
+     "kind": "paroles",
+     "channelName": "Luis Mihajlow 1",
+     "seconds": 270,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "kfcCoV8kBiQ",
+     "title": "Bon Jovi - It's My Life (Lyrics)",
+     "kind": "paroles",
+     "channelName": "Vast",
+     "seconds": 228,
      "year": null,
      "source": "auto"
     }
@@ -30309,11 +30633,29 @@
      "source": "auto"
     },
     {
+     "youtubeId": "LnhnpGcDaFo",
+     "title": "Cylia karaoké Un monde à refaire",
+     "kind": "paroles",
+     "channelName": "Joss Bret",
+     "seconds": 232,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "3-s-WB29ZAQ",
      "title": "Un Monde à Refaire - Cylia (Cover)",
      "kind": "reprise",
      "channelName": "Aurore Covers",
      "seconds": 229,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "nDGjf37UP0k",
+     "title": "Cylia - Un Monde A Refaire (Didier Cover Bass)",
+     "kind": "reprise",
+     "channelName": "Didier Cover Bass",
+     "seconds": 233,
      "year": null,
      "source": "auto"
     }
@@ -30383,6 +30725,69 @@
      "source": "auto"
     },
     {
+     "youtubeId": "7ZCU2j3pXgs",
+     "title": "Alizée - Parler Tout Bas Live (2001-05-04 - Droles de Champions)",
+     "kind": "live",
+     "channelName": "Data4664",
+     "seconds": 297,
+     "year": 2001,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "CjeXYP_KjkU",
+     "title": "Alizée - Parler Tout Bas (En Concert / Live) High Quality",
+     "kind": "live",
+     "channelName": "xxxILoveAlizeexxx",
+     "seconds": 320,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "FcGVZyqDuV8",
+     "title": "Alizée - 2001-07-06 - Performance - Parler Tout Bas - Bébés stars M6",
+     "kind": "live",
+     "channelName": "Vibhash Chandra",
+     "seconds": 332,
+     "year": 2001,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "OPV0P2EQops",
+     "title": "Alizée - \"Parler tout bas\" - Hit Machine (M6) - 21.04.2001",
+     "kind": "live",
+     "channelName": "Le Nid d’Alizée",
+     "seconds": 275,
+     "year": 2001,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "kS-zsGZM024",
+     "title": "Alizée - Parler Tout Bas (Live vocals mix) -  Droles de Champions",
+     "kind": "live",
+     "channelName": "A-Life",
+     "seconds": 287,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "4_Z7UtB7pqw",
+     "title": "Alizee - Parler Tout Bas [Live]",
+     "kind": "live",
+     "channelName": "AlizeesNewBoyFriend",
+     "seconds": 261,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "xotWICxTo9M",
+     "title": "Alizée - Parler tout bas - Zénith de Lille 2026 #alizée  #alizee #mylenefarmer #concert #lille ",
+     "kind": "live",
+     "channelName": "Mes concerts en direct ",
+     "seconds": 272,
+     "year": 2026,
+     "source": "auto"
+    },
+    {
      "youtubeId": "OE2Hh-TCjdM",
      "title": "2001-04-21 - Hit Machine (M6) - Parler tout bas",
      "kind": "live",
@@ -30392,21 +30797,21 @@
      "source": "auto"
     },
     {
-     "youtubeId": "ySOCHQD3Lwg",
-     "title": "Alizée - \"Parler tout bas\" - Publicité TV 20 secondes",
+     "youtubeId": "fwKMBjvvGk8",
+     "title": "Alizée \"Parler Tout Bas\" 2001/07/12  Le Grand Hit M6 1080p 50 FPS",
      "kind": "live",
-     "channelName": "Le Nid d’Alizée",
-     "seconds": 21,
-     "year": null,
+     "channelName": "MusicOnTv",
+     "seconds": 249,
+     "year": 2001,
      "source": "auto"
     },
     {
-     "youtubeId": "_Y6ZL5FVhwo",
-     "title": "Alizée - Parler tout bas - Live Paris Olympia 2025",
+     "youtubeId": "ho56kvp3P5U",
+     "title": "Alizée \"Parler Tout Bas\" 2001/04/21  Hit Machine M6 1080P 50 FPS",
      "kind": "live",
-     "channelName": "Dylan 1405",
-     "seconds": 59,
-     "year": 2025,
+     "channelName": "MusicOnTv",
+     "seconds": 246,
+     "year": 2001,
      "source": "auto"
     },
     {
@@ -30428,6 +30833,33 @@
      "source": "auto"
     },
     {
+     "youtubeId": "0g2rMTGnU4s",
+     "title": "Alizée / Parler tout bas (On set) [Bonus]",
+     "kind": "version",
+     "channelName": "Alizée",
+     "seconds": 109,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "3AgF9BvlgIA",
+     "title": "Alizée - Parler tout bas",
+     "kind": "version",
+     "channelName": "Wilkinson Bastidas",
+     "seconds": 253,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "kwe7bh83swA",
+     "title": "\"Parler tout bas\" d'Alizée par Eva Anderssen",
+     "kind": "version",
+     "channelName": "IDF1",
+     "seconds": 283,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "dwlSfZUxLjg",
      "title": "Alizée  Parler Tout Bas  2001 05 04  Drôles de Champions",
      "kind": "version",
@@ -30437,30 +30869,12 @@
      "source": "auto"
     },
     {
-     "youtubeId": "4WP50jeSYPM",
-     "title": "Alizée - Parler Tout Bas (Remastered) [Audio HQ]",
-     "kind": "version",
-     "channelName": "GoldenMusic",
-     "seconds": 283,
+     "youtubeId": "jfn7_t483vM",
+     "title": "Alizée  -  Parler tout bas  \"CREEPY\" (Clip Official) | Ricky life reaction",
+     "kind": "react",
+     "channelName": "Ricky Life",
+     "seconds": 328,
      "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "r5_h2DVZ5aA",
-     "title": "Alizée - Parler Tout Bas @Tapis Rouge",
-     "kind": "version",
-     "channelName": "Alizée",
-     "seconds": 242,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "1MGPD1XTkY8",
-     "title": "Alizée - Parler tout bas, Lyon 2026",
-     "kind": "version",
-     "channelName": "Jeff Kardos Jr.",
-     "seconds": 341,
-     "year": 2026,
      "source": "auto"
     }
    ],
@@ -45398,6 +45812,15 @@
    "views60d": 0,
    "videos": [
     {
+     "youtubeId": "psKXa8QzvSo",
+     "title": "benoit tourne toi clip officiel",
+     "kind": "clip",
+     "channelName": "elodie vigneaux",
+     "seconds": 418,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "zRufDLswMLQ",
      "title": "Benoit - Tourne Toi Benoit (2002 - Official Music Video)",
      "kind": "clip",
@@ -45416,11 +45839,11 @@
      "source": "auto"
     },
     {
-     "youtubeId": "UIpDuNLYkkg",
-     "title": "Benoit Tourne Toi - Official Stool Clip!!!!!!! Ft. Esteban/Philippe",
-     "kind": "clip",
-     "channelName": "Benoît",
-     "seconds": 105,
+     "youtubeId": "huxb8yNn6yc",
+     "title": "BENOÎT TOURNE TOI ! - ZDINEZDINE #5",
+     "kind": "live",
+     "channelName": "ZdineZdine",
+     "seconds": 424,
      "year": null,
      "source": "auto"
     },
@@ -45439,6 +45862,15 @@
      "kind": "live",
      "channelName": "Référenciel",
      "seconds": 22,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "zMksIH3mjBg",
+     "title": "BENOIT - Tourne Toi Benoit (Vinyl 12\")",
+     "kind": "live",
+     "channelName": "DependingName",
+     "seconds": 826,
      "year": null,
      "source": "auto"
     },
@@ -45504,6 +45936,60 @@
      "seconds": 499,
      "year": null,
      "source": "auto"
+    },
+    {
+     "youtubeId": "P6WIzTsWa-k",
+     "title": "Benoit - Tourne toi Benoit [Karaoké Lyrics Audio HQ]",
+     "kind": "paroles",
+     "channelName": "100% Lyrics Karaoké ♪",
+     "seconds": 217,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "9vUvOfuEkbA",
+     "title": "[PARODIE] Benoît tourne-toi - Beulu, touche ton cul (par Dr. Willy & Paral&Piped)",
+     "kind": "reprise",
+     "channelName": "Doc Willy ernest",
+     "seconds": 226,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "1SjsHWswJF8",
+     "title": "Parodie Benoit tourne toi",
+     "kind": "reprise",
+     "channelName": "R0drigoOoOo",
+     "seconds": 196,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "cWCNIrsxmyE",
+     "title": "# LRDTS - Benoît - Tourne-toi (Guitar & ukulélé cover HD)",
+     "kind": "reprise",
+     "channelName": "LA REPRISE DE TA SEMAINE",
+     "seconds": 190,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "UVLlxYp3Rp0",
+     "title": "Benoit - Tourne toi le clip parodie",
+     "kind": "reprise",
+     "channelName": "equinoxe76888",
+     "seconds": 215,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "yLVKc-gfrO4",
+     "title": "Daft Punk  - Voyager VS Benoît tourne toi ! Cover Mashup",
+     "kind": "reprise",
+     "channelName": "Animashup Covers",
+     "seconds": 355,
+     "year": null,
+     "source": "auto"
     }
    ],
    "score": 168
@@ -45551,12 +46037,30 @@
      "source": "auto"
     },
     {
+     "youtubeId": "Gh47rRyNbPY",
+     "title": "Christina Milian - When You Look At Me - live HQ",
+     "kind": "live",
+     "channelName": "TheVeryNiceGirls",
+     "seconds": 221,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "Q7GrKXAHT4Y",
      "title": "Christina Milian - When You Look At Me | Live at the TMF Awards 2002 | TMF",
      "kind": "live",
      "channelName": "TMF - The Music Factory",
      "seconds": 188,
      "year": 2002,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "H_85YdXYgeI",
+     "title": "christina milian   when you look at me live @ viva interakt",
+     "kind": "live",
+     "channelName": "David Benvenuto",
+     "seconds": 232,
+     "year": null,
      "source": "auto"
     },
     {
@@ -45596,6 +46100,15 @@
      "source": "auto"
     },
     {
+     "youtubeId": "LPiKQD6Rops",
+     "title": "christina milian   when you look at me (mpg)",
+     "kind": "version",
+     "channelName": "russiababiih",
+     "seconds": 82,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "Xs6RLLPBIng",
      "title": "Christina Milian-When you look at me (2009 fanmade video)",
      "kind": "version",
@@ -45614,12 +46127,12 @@
      "source": "auto"
     },
     {
-     "youtubeId": "LKMpbUl_Rw0",
-     "title": "CHRISTINA MILIAN - When You Look At Me (Festivalbar 2002 Italy)",
-     "kind": "version",
-     "channelName": "Musicware TV",
-     "seconds": 328,
-     "year": 2002,
+     "youtubeId": "zjKNAP3e_mg",
+     "title": "Christina Milian | When You Look At Me | Réaction britannique",
+     "kind": "react",
+     "channelName": "BK vlogz",
+     "seconds": 312,
+     "year": null,
      "source": "auto"
     },
     {
@@ -59994,11 +60507,29 @@
      "source": "auto"
     },
     {
+     "youtubeId": "uEjPuB_lUsE",
+     "title": "Thierry Amiel - Les Mots Bleus - \"chansons d'amour M6\"",
+     "kind": "live",
+     "channelName": "Syllou",
+     "seconds": 364,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "LFISarH080k",
      "title": "\"Les mots bleus\" : le live de Thierry Amiel dans Culture médias",
      "kind": "live",
      "channelName": "Europe 1",
      "seconds": 659,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "uKGkeqSo9Go",
+     "title": "Les mots bleus (Christophe, Alain Bashung, Thierry Amiel) - v. live",
+     "kind": "live",
+     "channelName": "Bruno Das - Tribute \"100% Goldman\", Anim'&Concerts",
+     "seconds": 210,
      "year": null,
      "source": "auto"
     },
@@ -60048,11 +60579,11 @@
      "source": "auto"
     },
     {
-     "youtubeId": "tl00SoSFKKQ",
-     "title": "Thierry Amiel - Les mots bleus",
+     "youtubeId": "pao_nRsxzEU",
+     "title": "Les mots bleus - Thierry Amiel",
      "kind": "version",
-     "channelName": "legion 99",
-     "seconds": 242,
+     "channelName": "Pretthy",
+     "seconds": 266,
      "year": null,
      "source": "auto"
     },
@@ -60062,6 +60593,15 @@
      "kind": "paroles",
      "channelName": "lolalexcool",
      "seconds": 209,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "4zDoGExyY4I",
+     "title": "Christophe - Les mots bleus - Version Thierry Amiel - Vidéo Officiel Cover Benoit WACRENIER",
+     "kind": "reprise",
+     "channelName": "passionzik AUCHEL ",
+     "seconds": 250,
      "year": null,
      "source": "auto"
     }
@@ -60140,6 +60680,60 @@
      "source": "auto"
     },
     {
+     "youtubeId": "MJm1ckpH7xY",
+     "title": "Lorie - Stars à Domicile (20 Ans plus tard)",
+     "kind": "live",
+     "channelName": "Syl'Vain",
+     "seconds": 603,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "hfm24YUGG40",
+     "title": "20 ANS DE CARRIÈRE DE LORIE : VOS 10 ÉVÈNEMENTS MARQUANTS !",
+     "kind": "live",
+     "channelName": "Lorie Pester Forum",
+     "seconds": 1966,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "_WSsMVd4DoQ",
+     "title": "Les 19 clips de Lorie 3/10 - A 20 ans, Sur un air latino  (chris62junior)",
+     "kind": "live",
+     "channelName": "Christian Ghys",
+     "seconds": 444,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "6dCRjmz487M",
+     "title": "LORIE - Intro + A 20 Ans - Live à Lille",
+     "kind": "live",
+     "channelName": "FrenchMetalTrotter",
+     "seconds": 348,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ThqYdLxorYo",
+     "title": "Lorie : 20 ans de carrière - C l’hebdo - 16/03/2024",
+     "kind": "live",
+     "channelName": "C l'hebdo - France Télévisions",
+     "seconds": 505,
+     "year": 2024,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "bsDIUpNl41M",
+     "title": "Lorie - À 20 ans (live in Montreal, June 18, 2026)",
+     "kind": "live",
+     "channelName": "nick703",
+     "seconds": 140,
+     "year": 2026,
+     "source": "auto"
+    },
+    {
      "youtubeId": "q7l_p6iccjI",
      "title": "Lorie \" A 20 ans \" TV Perf' - Usfoods72 France.",
      "kind": "live",
@@ -60167,6 +60761,33 @@
      "source": "auto"
     },
     {
+     "youtubeId": "S184ni_jsQQ",
+     "title": "Lorie - A 20 ans - Bravo les petits coeurs (décembre 2002)",
+     "kind": "version",
+     "channelName": "Amandine MiniMoi",
+     "seconds": 203,
+     "year": 2002,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "q8Hqd4V9E7w",
+     "title": "lorie a 20 ans la chanson de l'année",
+     "kind": "version",
+     "channelName": "vince93221",
+     "seconds": 190,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ddC3x-v2J6c",
+     "title": "Lorie a reçu une belle surprise de ses fans au Trianon pour ses 20 ans de carrière",
+     "kind": "version",
+     "channelName": "LeHuffPost",
+     "seconds": 129,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "PR22U6AaUks",
      "title": "Lorie - A 20 ans (Avec Parole)",
      "kind": "version",
@@ -60176,29 +60797,29 @@
      "source": "auto"
     },
     {
-     "youtubeId": "dgFrXCL2nc8",
-     "title": "Lorie - A 20 ANS",
-     "kind": "version",
-     "channelName": "Syl'Vain",
-     "seconds": 197,
+     "youtubeId": "JN3psbGrn2I",
+     "title": "Lorie - A 20 ans - Making Of",
+     "kind": "coulisses",
+     "channelName": "Backstages Making Of",
+     "seconds": 576,
      "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "h2MUZtngGQA",
-     "title": "LORIE — \"A 20 ANS\"",
-     "kind": "version",
-     "channelName": "sererhini",
-     "seconds": 245,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "CKtmbp2OWGA",
-     "title": "Lorie - 20 ans x2 (Lyrics Video)",
+     "youtubeId": "1h8BxbeJGCY",
+     "title": "Lorie - A 20 ans (avec paroles)",
      "kind": "paroles",
-     "channelName": "LORIE",
-     "seconds": 161,
+     "channelName": "Gaila87",
+     "seconds": 202,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "N_QfIkX0XhA",
+     "title": "Isabelle Arnaud - A 30 ans (parodie Lorie - A 20 ans)",
+     "kind": "reprise",
+     "channelName": "Webrip84",
+     "seconds": 199,
      "year": null,
      "source": "auto"
     }
@@ -60257,6 +60878,51 @@
      "source": "auto"
     },
     {
+     "youtubeId": "scwf4rtjD9M",
+     "title": "3T performance @ Star Academy France ! MJ Medley & Stuck on you (2003)",
+     "kind": "live",
+     "channelName": "ThreeT .Fans United",
+     "seconds": 562,
+     "year": 2003,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "k9Eig28ExRU",
+     "title": "3T - Stuck On You LIVE @  We Love The 90s festival Nijmegen Goffertpark 27-08-2022",
+     "kind": "live",
+     "channelName": "Wenxia'sConcerts",
+     "seconds": 195,
+     "year": 2022,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "81AvqiVd2OM",
+     "title": "3T \"Stuck On You\" live 2013",
+     "kind": "live",
+     "channelName": "StineDenmark",
+     "seconds": 177,
+     "year": 2013,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "vvzvCLD1j4w",
+     "title": "3T performing \"Stuck On You\" and \"Sex Appeal\" @ Dayzers Camping Tour (fan footage)",
+     "kind": "live",
+     "channelName": "Jackson Source",
+     "seconds": 554,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "UUQoNa_tPiA",
+     "title": "3T performing \"Stuck On You\" @ Life & Cooking 🇳🇱",
+     "kind": "live",
+     "channelName": "Jackson Source",
+     "seconds": 508,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "ppI0tRkO-k0",
      "title": "Stuck on you | 3T | Zumba® | Erwin Mendana",
      "kind": "version",
@@ -60293,11 +60959,11 @@
      "source": "auto"
     },
     {
-     "youtubeId": "HRPrtym_8_g",
-     "title": "3T - STUCK ON YOU - LEGENDADO EM PORTUGUÊS BR",
+     "youtubeId": "xZHbPz9zyIk",
+     "title": "3T Stuck on you",
      "kind": "version",
-     "channelName": "Etevaldo Pinto",
-     "seconds": 208,
+     "channelName": "AnnieATMJJ62",
+     "seconds": 211,
      "year": null,
      "source": "auto"
     },
@@ -60311,11 +60977,47 @@
      "source": "auto"
     },
     {
+     "youtubeId": "coDYjp2mQWY",
+     "title": "3T performing \"Stuck On You\" +@ Interview @ Pulse 🇳🇱",
+     "kind": "coulisses",
+     "channelName": "Jackson Source",
+     "seconds": 708,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "VLTVFeoYUuo",
+     "title": "3T performing \"Stuck On You\" and interview @ Fox Kids Top 20 🇳🇱",
+     "kind": "coulisses",
+     "channelName": "Jackson Source",
+     "seconds": 417,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "C6TgXkgoX2M",
+     "title": "3T performing \"Stuck On You\" and \"Sex Appeal\" + Interview @ Fox Kids Planet Live 🇳🇱",
+     "kind": "coulisses",
+     "channelName": "Jackson Source",
+     "seconds": 869,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "L5ggXTVMdws",
      "title": "3T - Stuck On You (Lyrics)",
      "kind": "paroles",
      "channelName": "SingTV Lyrics",
      "seconds": 221,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "tMAGygpgt6o",
+     "title": "3T - Stuck On You (live Foute Party with Lyrics)",
+     "kind": "paroles",
+     "channelName": "Starbound",
+     "seconds": 200,
      "year": null,
      "source": "auto"
     }
@@ -60351,11 +61053,11 @@
    "views60d": 0,
    "videos": [
     {
-     "youtubeId": "Reyta_2_V2s",
-     "title": "Jessica Jay - Maria Magdalena [Eurodance 98]",
+     "youtubeId": "WNH5MTLY1pg",
+     "title": "Jessica Marquez Maria Magdalena",
      "kind": "clip",
-     "channelName": "Deedo L.",
-     "seconds": 285,
+     "channelName": "Braveland Paradise",
+     "seconds": 226,
      "year": null,
      "source": "auto"
     },
@@ -60378,11 +61080,29 @@
      "source": "auto"
     },
     {
+     "youtubeId": "2IoSB5tbFZc",
+     "title": "Jessica Marquez Maria Magdalena extrait live",
+     "kind": "live",
+     "channelName": "Braveland Paradise",
+     "seconds": 64,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "GkkHFUl54aE",
      "title": "Jessica Marquez    Maria Magdalena  Clip360p H 264 AAC",
      "kind": "live",
      "channelName": "Leo Maestracci",
      "seconds": 454,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Reyta_2_V2s",
+     "title": "Jessica Jay - Maria Magdalena [Eurodance 98]",
+     "kind": "version",
+     "channelName": "Deedo L.",
+     "seconds": 285,
      "year": null,
      "source": "auto"
     },
@@ -60405,11 +61125,20 @@
      "source": "auto"
     },
     {
-     "youtubeId": "vbcP6-BpGaI",
-     "title": "Jessica Marquez   Maria Magdalena",
+     "youtubeId": "pCCtZAHcyCw",
+     "title": "Maria Magdalena ( Jessica Marquez )",
      "kind": "version",
-     "channelName": "clips",
-     "seconds": 228,
+     "channelName": "Max As",
+     "seconds": 247,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "wUn_FlH3b20",
+     "title": "JESSICA MARQUEZ - MARIA MAGDALENA (@mespetitskaraokes)",
+     "kind": "paroles",
+     "channelName": "Mes Petits Karaokes",
+     "seconds": 231,
      "year": null,
      "source": "auto"
     }
@@ -74917,6 +75646,60 @@
      "source": "auto"
     },
     {
+     "youtubeId": "p-lfIwXbDSM",
+     "title": "YoungChris2kreact: Baby Bash  - Suga Suga (Official Music Video) ft. Frankie J",
+     "kind": "clip",
+     "channelName": "YOUNG CHRIS2K",
+     "seconds": 668,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "mrqEmmrIrT8",
+     "title": "Why Baby Bash Never Became a Star After “Suga Suga”",
+     "kind": "live",
+     "channelName": "StuntedGrowthMusic",
+     "seconds": 665,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Sr3JbUkn4b0",
+     "title": "Baby Bash - Suga Suga LIVE in Tucson, AZ",
+     "kind": "live",
+     "channelName": "YSLmusic",
+     "seconds": 287,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "zjcRZ9fiZr4",
+     "title": "Baby Bash - Suga Suga Live",
+     "kind": "live",
+     "channelName": "TruSoldier64",
+     "seconds": 200,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "6HO02x6h-RM",
+     "title": "Baby Bash Live Suga Suga Hard Rock ",
+     "kind": "live",
+     "channelName": "Mybeautifulfamilylife",
+     "seconds": 239,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Xt7mbe3Ndoo",
+     "title": "Suga Suga | Baby Bash Live In Minneapolis MN 06/01/24",
+     "kind": "live",
+     "channelName": "AJromantico07",
+     "seconds": 240,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "DU8gasuFBC4",
      "title": "Baby Bash - Suga Suga (feat. Freankie J.)",
      "kind": "version",
@@ -74926,20 +75709,20 @@
      "source": "auto"
     },
     {
-     "youtubeId": "qFB135O7U_I",
-     "title": "Baby Bash x Drake - Suga Suga + Best I Ever Had (Mashup)",
+     "youtubeId": "zmp6U2QfV8g",
+     "title": "Baby Bash - Suga Suga",
      "kind": "version",
-     "channelName": "Sonority.",
-     "seconds": 240,
+     "channelName": "mvNMusic",
+     "seconds": 239,
      "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "hrM1HjtHXIg",
-     "title": "Baby Bash - Suga Suga (Rex Hooligan Bootleg) (Free Download)",
+     "youtubeId": "jjwxq0Bn3a0",
+     "title": "Baby Bash - Suga Suga(Instrumental)",
      "kind": "version",
-     "channelName": "RELEVANT DNB",
-     "seconds": 133,
+     "channelName": "Alley Jones",
+     "seconds": 244,
      "year": null,
      "source": "auto"
     },
@@ -74962,11 +75745,92 @@
      "source": "auto"
     },
     {
-     "youtubeId": "GwAdQfpdhNY",
-     "title": "Baby Bash \"Suga Suga (feat. Frankie J)\" [J5's Super Clean Edit]",
+     "youtubeId": "y5P4T_mJFhc",
+     "title": "Paula DeAnda and Baby Bash perform \"Suga Suga\" in Vegas!",
      "kind": "version",
-     "channelName": "SuperUltraClean",
-     "seconds": 244,
+     "channelName": "PaulaDeAndaDiaries",
+     "seconds": 250,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "voPWyMn0v2E",
+     "title": "FIRST TIME HEARING Baby Bash ft. Frankie J - Suga Suga (Official Video) REACTION",
+     "kind": "react",
+     "channelName": "Twinsthenewtrend ",
+     "seconds": 431,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ivTx_7DW4Lo",
+     "title": "Baby Bash - Suga Suga ft. Frankie J REACTION",
+     "kind": "react",
+     "channelName": "BestFriends Since Birth",
+     "seconds": 509,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "GoH6gGXCjHE",
+     "title": "FIRST TIME HEARING Baby Bash - Suga Suga Ft. Frankie J",
+     "kind": "react",
+     "channelName": "ProDayDJ ",
+     "seconds": 557,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "BfLGwJHMhnQ",
+     "title": "Baby Bash ft. Frankie J Reaction Suga Suga (SUMMERTIME CHILL!) | Dereck Reacts",
+     "kind": "react",
+     "channelName": "Dereck Reacts",
+     "seconds": 808,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "cZjqZ1FEiJI",
+     "title": "FIRST TIME HEARING Baby Bash – Suga Suga (Official Video) REACTION",
+     "kind": "react",
+     "channelName": "DezzyD",
+     "seconds": 309,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "WZHRNJK0IO8",
+     "title": "Baby Bash - Suga Suga (Première réaction) 😮‍💨",
+     "kind": "react",
+     "channelName": "Rabbit-Hole TV",
+     "seconds": 382,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "LUe3oGdsDOo",
+     "title": "Baby Bash & Frankie J Tell the Story Behind Suga Suga [FULL INTERVIEW]",
+     "kind": "coulisses",
+     "channelName": "Kevan Kenney",
+     "seconds": 1082,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "LAv20Aia9bU",
+     "title": "Suga Suga by Baby Bash Lyrics",
+     "kind": "paroles",
+     "channelName": "HaileyMGK Kaiser",
+     "seconds": 240,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "UUkjPuyjBck",
+     "title": "Baby Bash - Suga suga [ ft. Frankie J. ]  (Lyrics on Screen)",
+     "kind": "paroles",
+     "channelName": "Shawtyy43",
+     "seconds": 217,
      "year": null,
      "source": "auto"
     },
@@ -74976,15 +75840,6 @@
      "kind": "paroles",
      "channelName": "Lyrixa",
      "seconds": 239,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "3s4kNpLNmv8",
-     "title": "Baby Bash ft. Frankie J. - Suga Suga   (lyrics)",
-     "kind": "paroles",
-     "channelName": "Músicas Para Cantar",
-     "seconds": 237,
      "year": null,
      "source": "auto"
     }
@@ -75054,12 +75909,102 @@
      "source": "auto"
     },
     {
+     "youtubeId": "ZW_MnEwFS4Y",
+     "title": "Kevin Lyttle Talks Chris Brown Sampling 'Turn Me On', Selling Millions & More With Manny Norté",
+     "kind": "live",
+     "channelName": "Capital XTRA",
+     "seconds": 734,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "hro_TN4XTlo",
+     "title": "\"TURN ME ON\" KEVIN LYTTLE | SAMANTHA CAUDLE BEG/INT CLASS",
+     "kind": "live",
+     "channelName": "Samantha Caudle",
+     "seconds": 821,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "qSeBzyyUtwI",
+     "title": "Kevin Lyttle: The Untold Story of “Turn Me On”, Millions, Fame & the $20M Master Offer",
+     "kind": "live",
+     "channelName": "Shizzio et 2 autre(s)",
+     "seconds": 8832,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "b0J6_bt1p5U",
+     "title": "LIVE Kevin Lyttle and Spragge Benz- TURN ME ON- July 26th 2012",
+     "kind": "live",
+     "channelName": "Kevin Lyttle",
+     "seconds": 174,
+     "year": 2012,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "x47znZUMzMg",
+     "title": "LiveMiamiTV - Kevin Lyttle Performs Turn Me On In Europe",
+     "kind": "live",
+     "channelName": "Abebe Lewis the Marketing Guru 🎬",
+     "seconds": 452,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "SA2KKcY25Rg",
+     "title": "Kevin Lyttle: \"Turn Me On\" (Live) 2004",
+     "kind": "live",
+     "channelName": "wiitrieve",
+     "seconds": 203,
+     "year": 2004,
+     "source": "auto"
+    },
+    {
      "youtubeId": "ap3-2C03zkg",
      "title": "Kevin Lyttle - Turn Me On (Live des studios de Generations)",
      "kind": "live",
      "channelName": "GENERATIONS",
      "seconds": 105,
      "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "0AzIopm748w",
+     "title": "Kevin Lyttle - Turn Me On | Dance Choreography | ArbenGiga | NOT JUST HIP HOP",
+     "kind": "live",
+     "channelName": "Arben GiGa",
+     "seconds": 987,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "wu4qJPbirx0",
+     "title": "Kevin Lyttle - Turn Me On [Top Of The Pops 2004]",
+     "kind": "live",
+     "channelName": "JukeBoxMaarouf",
+     "seconds": 147,
+     "year": 2004,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "oG0ZRi5v7ig",
+     "title": "Kevin Lyttle - Turn Me On live @ Amsterdam Latin Festival 2010 in HMH",
+     "kind": "live",
+     "channelName": "ARAudhoe",
+     "seconds": 187,
+     "year": 2010,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "E2DCmAvPSd4",
+     "title": "Kevin Lyttle - Turn Me On (Live @ Old but Gold - Ü30 Hip Hop Party - FZW Dortmund - 2023-02-04)",
+     "kind": "live",
+     "channelName": "Gee Six",
+     "seconds": 229,
+     "year": 2023,
      "source": "auto"
     },
     {
@@ -75077,6 +76022,15 @@
      "kind": "version",
      "channelName": "Joshua Flores",
      "seconds": 179,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-dDXZGZlqw4",
+     "title": "Astra feat. Kevin Lyttle & Costi - Turn Me On Fuego  ( produced by Costi )",
+     "kind": "version",
+     "channelName": "Costi",
+     "seconds": 209,
      "year": null,
      "source": "auto"
     },
@@ -75108,11 +76062,47 @@
      "source": "auto"
     },
     {
-     "youtubeId": "Pi2mvu_l8WI",
-     "title": "KEVIN LYTTLE - Turn Me On Dubplate (Dub) for CONVICT SOUND - HIGH QUALITY!",
-     "kind": "version",
-     "channelName": "CONVICTxxSOUND",
-     "seconds": 243,
+     "youtubeId": "UXD1WClQqQU",
+     "title": "OUAH ! | PREMIÈRE ÉCOUTE DE Kevin Lyttle - Turn Me On *C'EST DE LA SOCA ?*",
+     "kind": "react",
+     "channelName": "Rob Squad Reactions",
+     "seconds": 492,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "MeWvxbHU_-k",
+     "title": "Caribbean Throwback. Kevin Lyttle - Turn Me On Reaction",
+     "kind": "react",
+     "channelName": "Purpose Driven",
+     "seconds": 366,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "DQ-U6RTXXXg",
+     "title": "TURN ME ON - KEVIN LYTTLE (ft SPRAGA BENZ) (OFFICIAL VIDEO) REACTION",
+     "kind": "react",
+     "channelName": "Gift reacts.",
+     "seconds": 299,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Hqujmbx-HiU",
+     "title": "Kevin Lyttle sur les succès et les échecs de \"Turn Me On\" + raconte une histoire folle sur Jamie ...",
+     "kind": "coulisses",
+     "channelName": "HOT 97",
+     "seconds": 1084,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "zPokIfxwNLo",
+     "title": "Interview with Kevin Lyttle about his famous single \"Turn Me On\"",
+     "kind": "coulisses",
+     "channelName": "Mike Sherman",
+     "seconds": 374,
      "year": null,
      "source": "auto"
     },
@@ -75182,6 +76172,15 @@
      "source": "auto"
     },
     {
+     "youtubeId": "zKaIkkZQixE",
+     "title": "Benassi Bros feat Dhany \"Hit My Heart\" live @ Madclub 20.09.2013",
+     "kind": "live",
+     "channelName": "MAD Club - Lausanne",
+     "seconds": 204,
+     "year": 2013,
+     "source": "auto"
+    },
+    {
      "youtubeId": "dK5oZ6dUSfI",
      "title": "Benassi Bros ft Dhani - Hit My Heart (Live at Energiya Megadance 2005) Enhanced 4K sznail",
      "kind": "live",
@@ -75197,6 +76196,33 @@
      "channelName": "SquizurBoom",
      "seconds": 385,
      "year": 2005,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "20FRvhEnbZk",
+     "title": "Benassi Bros feat. Dhany - Hit My Heart (2004 / 1 HOUR LOOP)",
+     "kind": "live",
+     "channelName": "Rocket-Media * SSC Napoli Legends",
+     "seconds": 3797,
+     "year": 2004,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "z-rV9wHF8qc",
+     "title": "Dhany Benassi Bros LIVE - Make Me Feel, Hit My Heart, Show Me Love - Chicago, IL - 3/21/2026 - USA",
+     "kind": "live",
+     "channelName": "NightWarriorAlive",
+     "seconds": 717,
+     "year": 2026,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "6-3xsMf3Gnk",
+     "title": "Benassi Bros Feat. Dhany - Hit my heart (Live in Sofia 2006) HD",
+     "kind": "live",
+     "channelName": "Drebin",
+     "seconds": 197,
+     "year": 2006,
      "source": "auto"
     },
     {
@@ -75227,6 +76253,15 @@
      "source": "auto"
     },
     {
+     "youtubeId": "218gemFX23Q",
+     "title": "Benassi Bros - Hit My Heart (Dj $unny Edit) 2004",
+     "kind": "version",
+     "channelName": "Dj $unny",
+     "seconds": 195,
+     "year": 2004,
+     "source": "auto"
+    },
+    {
      "youtubeId": "NPmkV6w7qJA",
      "title": "Benassi Bros Ft. Dhany - Hit My Heart (NOIZBASSES REMIX)",
      "kind": "version",
@@ -75245,20 +76280,47 @@
      "source": "auto"
     },
     {
-     "youtubeId": "yb7US6eg8cQ",
-     "title": "Benassi Bros, Dhany - Hit My Heart (97Kickstvr Remix)",
-     "kind": "version",
-     "channelName": "97Kickstvr",
-     "seconds": 189,
+     "youtubeId": "eWnLO2sg4Js",
+     "title": "Benny Benassi Bros feat. Dhany - Hit My Heart (Lyrics Polskie tłumaczenie tekst 🇵🇱)",
+     "kind": "paroles",
+     "channelName": "Timeless Songs",
+     "seconds": 197,
      "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "C-upE01L7Hs",
-     "title": "Benassi Bros. - Hit My Heart (Lyrics) ft. Dhany ",
+     "youtubeId": "IIb432S8tww",
+     "title": "Benassi Bros. - Hit My Heart (Instrumental Tutorial + Lyrics) [Synthesia]",
      "kind": "paroles",
-     "channelName": "Sound Of Luck",
-     "seconds": 197,
+     "channelName": "Midistart.com",
+     "seconds": 196,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "o5eBZDcLTQg",
+     "title": "Benassi Bros. feat.Dhany - Hit My Heart (Accordion cover by 2MAKERS)",
+     "kind": "reprise",
+     "channelName": "2MAKERS",
+     "seconds": 234,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "we7KBC8P36Q",
+     "title": "HIT MY HEART (Benassi Bros. feat. Dhany cover)",
+     "kind": "reprise",
+     "channelName": "LEUSIN SINGER",
+     "seconds": 194,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-opW5LY-Rxg",
+     "title": "Benassi bros - Hit my heart cover piano",
+     "kind": "reprise",
+     "channelName": "Celine",
+     "seconds": 48,
      "year": null,
      "source": "auto"
     }
@@ -88351,6 +89413,69 @@
      "source": "auto"
     },
     {
+     "youtubeId": "m9YInO_KqoE",
+     "title": "Keane - Everybody's Changing live @ The Graham Norton Show 17/01/2014",
+     "kind": "live",
+     "channelName": "CAPTUREBOX ■ TUBE",
+     "seconds": 216,
+     "year": 2014,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "u7Fo6u0IOBM",
+     "title": "Sondre Bjelland | Everybody's Changing  (Keane) |Blind audition | The Voice Norway | S06",
+     "kind": "live",
+     "channelName": "The Voice Norway",
+     "seconds": 118,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "zqjKozpWpi8",
+     "title": "Keane   Everybody's changing   Subtítulos Español   Live! HQ",
+     "kind": "live",
+     "channelName": "benja rodriguez.bonilla",
+     "seconds": 223,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "u4LBvhBQWr8",
+     "title": "Keane \"Everybody's Changing\" (Concept Cut)",
+     "kind": "live",
+     "channelName": "johndick1001",
+     "seconds": 479,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "JlilQd1f-TQ",
+     "title": "Keane – Everybody’s Changing | Maax | The Voice France 2015 | Blind Audition",
+     "kind": "live",
+     "channelName": "The Voice : la plus belle voix",
+     "seconds": 136,
+     "year": 2015,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "3lQMeZ1Ftzo",
+     "title": "Keane - Everybody's Changing (Live AOL Session / 2004)",
+     "kind": "live",
+     "channelName": "Keane",
+     "seconds": 213,
+     "year": 2004,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "hcSPm0tjhbc",
+     "title": "Keane - Everybody's Changing & Somewhere Only We Know @ Hello Festival 2019",
+     "kind": "live",
+     "channelName": "1993remco",
+     "seconds": 507,
+     "year": 2019,
+     "source": "auto"
+    },
+    {
      "youtubeId": "pOEtfnlNVpA",
      "title": "Keane - Everybody's Changing (Live Strangers 2005 DVD) (High Quality video)(HQ)",
      "kind": "live",
@@ -88360,12 +89485,12 @@
      "source": "auto"
     },
     {
-     "youtubeId": "UYbtBE4vozo",
-     "title": "Keane - Everybody's Changing | Live on BBC Strictly Come Dancing (2013)",
+     "youtubeId": "StELJyM-UGY",
+     "title": "Keane - Everybody's Changing (Live @ HRL 2004)",
      "kind": "live",
-     "channelName": "Keane Analytics",
-     "seconds": 208,
-     "year": 2013,
+     "channelName": "Mrdnevniki",
+     "seconds": 211,
+     "year": 2004,
      "source": "auto"
     },
     {
@@ -88378,11 +89503,29 @@
      "source": "auto"
     },
     {
+     "youtubeId": "5KiuXwYMqOI",
+     "title": "Keane-Everybody's Changing",
+     "kind": "version",
+     "channelName": "KeaneSunshine",
+     "seconds": 211,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "FEBlfrfW2Ls",
      "title": "Everybody's Changing // Keane (Subtitulado al español)",
      "kind": "version",
      "channelName": "Winemarker",
      "seconds": 219,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "j1f63pYUX_Q",
+     "title": "keane- everybody's changing- subtitulado en español",
+     "kind": "version",
+     "channelName": "joegomez666",
+     "seconds": 218,
      "year": null,
      "source": "auto"
     },
@@ -88405,20 +89548,56 @@
      "source": "auto"
     },
     {
-     "youtubeId": "1vYdyHL1US8",
-     "title": "EVERYBODY'S CHANGING - KEANE (VÍDEO 4K OFICIAL) (UHD)",
-     "kind": "version",
-     "channelName": "CBE HD",
-     "seconds": 212,
+     "youtubeId": "P5iDXAaD3nI",
+     "title": "FIRST TIME HEARING Keane - Everybody's Changing REACTION",
+     "kind": "react",
+     "channelName": "JayveeTV",
+     "seconds": 453,
      "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "R77Gw0D3Yl8",
-     "title": "Keane - Everybody's Changing (Tradução) (Legendado) (Clipe Oficial)",
-     "kind": "version",
-     "channelName": "Max Legendas",
-     "seconds": 211,
+     "youtubeId": "SGWSIzHeUtw",
+     "title": "First Time Reaction to Keane - Everybody's Changing Reaction",
+     "kind": "react",
+     "channelName": "Olavity Music",
+     "seconds": 381,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "tmwNgSnLed0",
+     "title": "Keane - Everybody's Changing : My Reaction Videos #1364",
+     "kind": "react",
+     "channelName": "NearlySeniorCitizen Yetagamer",
+     "seconds": 686,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "5_zjw5Rn0lY",
+     "title": "🎵 Keane - Everybody's Changing REACTION",
+     "kind": "react",
+     "channelName": "Brad After Dark",
+     "seconds": 372,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "MovfOxaxBaI",
+     "title": "Keane  - Everybody's Changing - COOL! Grandparents from Tennessee (USA) react - first time watching",
+     "kind": "react",
+     "channelName": "Grandparents React",
+     "seconds": 455,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "RNle9ctjizo",
+     "title": "Keane - Everybody's Changing | Reaction!",
+     "kind": "react",
+     "channelName": "InsignificantNick",
+     "seconds": 760,
      "year": null,
      "source": "auto"
     },
@@ -88432,20 +89611,20 @@
      "source": "auto"
     },
     {
+     "youtubeId": "OZD6H9SGIB8",
+     "title": "Keane - Everybody's Changing (Karaoke Version)",
+     "kind": "paroles",
+     "channelName": "Sing King",
+     "seconds": 235,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "1gKAXci3FDE",
      "title": "Keane - Everybody's Changing (Lyrics)",
      "kind": "paroles",
      "channelName": "RouxioMusic",
      "seconds": 218,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "zdy3GiqACZw",
-     "title": "Keane - Everybody's Changing // Lyrics + Sub Español // Video Oficial",
-     "kind": "paroles",
-     "channelName": "BrunoTraductor Official",
-     "seconds": 213,
      "year": null,
      "source": "auto"
     }
@@ -88533,11 +89712,11 @@
    "views60d": 0,
    "videos": [
     {
-     "youtubeId": "z6OXv25__jE",
-     "title": "M.Pokora - Elle Me Controle",
+     "youtubeId": "nMkNG6Au8KI",
+     "title": "m pokora feat sweety elle me contrôle (Clip officiel HD)",
      "kind": "clip",
-     "channelName": "Kelly Kessler",
-     "seconds": 213,
+     "channelName": "Clip Introuvable",
+     "seconds": 228,
      "year": null,
      "source": "auto"
     },
@@ -88551,6 +89730,42 @@
      "source": "auto"
     },
     {
+     "youtubeId": "0bPofDsJngs",
+     "title": "M. Pokora - Elle Me Contrôle / De Retour Medley Live @ Parc des Expos, Autun, 2011",
+     "kind": "live",
+     "channelName": "kekeLMB",
+     "seconds": 154,
+     "year": 2011,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "c8u06hETdlg",
+     "title": "M Pokora - Elle me contrôle - [Live Marseille]",
+     "kind": "live",
+     "channelName": "Laetizia13",
+     "seconds": 142,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "jU4Ifp9Q44E",
+     "title": "M Pokora - Elle me contrôle - Zenith Paris - 21.03.17",
+     "kind": "live",
+     "channelName": "Charline BENTLEY",
+     "seconds": 202,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "z6OXv25__jE",
+     "title": "M.Pokora - Elle Me Controle",
+     "kind": "version",
+     "channelName": "Kelly Kessler",
+     "seconds": 213,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "AncCu7Xz0a0",
      "title": "M. Pokora - Elle me contrôle feat. Tenny [Version 2015] (Audio officiel)",
      "kind": "version",
@@ -88560,20 +89775,56 @@
      "source": "auto"
     },
     {
-     "youtubeId": "_w8cIQeVS4Q",
-     "title": "M.POKORA - Elle me contrôle (Feat. Lady Sweety) 4K Remaster Directed by Karim Ouaret",
+     "youtubeId": "3nuNqDJ-51Y",
+     "title": "M. Pokora - Elle me controle @ St Jean de Monts 20.07.10",
      "kind": "version",
-     "channelName": "Karim Ouaret",
-     "seconds": 233,
+     "channelName": "lamissSev",
+     "seconds": 122,
      "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "RSclM1W6qGk",
-     "title": "M.Pokora Elle Me Controle",
+     "youtubeId": "a6Cn-K2-UpE",
+     "title": "Différence 2005-2015 M.pokora Elle me contrôle",
      "kind": "version",
-     "channelName": "Matt Pokora",
-     "seconds": 213,
+     "channelName": "Mathilde Moreau",
+     "seconds": 61,
+     "year": 2005,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "KLF7lD2KzKA",
+     "title": "M. Pokora ft. Tenny - Elle me contrôle (Nightcore) 🎧",
+     "kind": "version",
+     "channelName": "NightCore Musics",
+     "seconds": 192,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "AA9s28BPb18",
+     "title": "M Pokora - Elle me controle + Dangerous - Douai - 24 novembre 2012",
+     "kind": "version",
+     "channelName": "Xxxilier",
+     "seconds": 335,
+     "year": 2012,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "O4ZR6MezGgA",
+     "title": "M. Pokora Reaction ft. Sweety Elle me contrôle (SO DAMN SEXY!) | Dereck Reacts",
+     "kind": "react",
+     "channelName": "Dereck Reacts",
+     "seconds": 568,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "_8ugjOktF54",
+     "title": "Réaction de m pokora ft Lady sweety elle me contrôle.",
+     "kind": "react",
+     "channelName": "Bastien le bg du 26",
+     "seconds": 285,
      "year": null,
      "source": "auto"
     }
@@ -102044,20 +103295,20 @@
      "source": "auto"
     },
     {
-     "youtubeId": "4q84OEpL6Cc",
-     "title": "Rihanna - Unfaithful Official Music Video",
-     "kind": "clip",
-     "channelName": "Bad Boy Edd",
-     "seconds": 376,
-     "year": null,
-     "source": "auto"
-    },
-    {
      "youtubeId": "Il45Jqw_uFw",
      "title": "Rihanna   Unfaithful Official music video   YouTube",
      "kind": "clip",
      "channelName": "Sidd Gupta",
      "seconds": 296,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "cRAYjkWoakk",
+     "title": "Rihanna Unfaithful clip et traduction",
+     "kind": "clip",
+     "channelName": "chahinaize06",
+     "seconds": 295,
      "year": null,
      "source": "auto"
     },
@@ -102071,6 +103322,42 @@
      "source": "auto"
     },
     {
+     "youtubeId": "EXSmK9PVU74",
+     "title": "Rihanna – Unfaithful | Melissa Bon | The Voice France 2014 | Blind Audition",
+     "kind": "live",
+     "channelName": "The Voice : la plus belle voix",
+     "seconds": 156,
+     "year": 2014,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "88zofktpSHg",
+     "title": "Henriette Schei vs Martine Gussiås | Unfaithful (Rihanna) | Battles | The Voice Norway 2023",
+     "kind": "live",
+     "channelName": "The Voice Norway",
+     "seconds": 161,
+     "year": 2023,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "OrEIh1hyuXQ",
+     "title": "Rihanna - Unfaithful 2006 Live",
+     "kind": "live",
+     "channelName": "Adorable Rihanna",
+     "seconds": 240,
+     "year": 2006,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "TAD9vdsdb0M",
+     "title": "Rihanna - Unfaithful Live 1080p.mp4",
+     "kind": "live",
+     "channelName": "angelika fischer",
+     "seconds": 247,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "jUOjsN3RSH4",
      "title": "Rihanna - Unfaithful (Live)",
      "kind": "live",
@@ -102080,12 +103367,66 @@
      "source": "auto"
     },
     {
-     "youtubeId": "AuuDRVQejrQ",
-     "title": "Rihanna - Unfaithful Live NBC 2008 (720p HD)",
+     "youtubeId": "kg9LdTkbomI",
+     "title": "Rihanna - Unfaithful (Live at MEN Arena Mánchester 2007)",
      "kind": "live",
-     "channelName": "VideoMusicHD",
-     "seconds": 260,
-     "year": 2008,
+     "channelName": "Rihanna Fan Videos",
+     "seconds": 310,
+     "year": 2007,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "4gc9_Qbk0eA",
+     "title": "Rihanna & Dominique Fidanza - Unfaithful live Star Academy 2006",
+     "kind": "live",
+     "channelName": "manumusic87",
+     "seconds": 224,
+     "year": 2006,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "4BLjF9lz0mo",
+     "title": "Rihanna - Unfaithful live Evolution 2006 -2015",
+     "kind": "live",
+     "channelName": "Highkey Allpressure",
+     "seconds": 258,
+     "year": 2006,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "GdheOUyeGmw",
+     "title": "Rihanna - Unfaithful (GMTV 2006)",
+     "kind": "live",
+     "channelName": "Divas Forever",
+     "seconds": 226,
+     "year": 2006,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "bc5TNn9Ni60",
+     "title": "Rihanna - Unfaithful (Live at Sunrise 2006)",
+     "kind": "live",
+     "channelName": "Gary H.",
+     "seconds": 219,
+     "year": 2006,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "as-ZkNcfRrg",
+     "title": "2006 Rihanna - Hit Machine (Unfaithful)",
+     "kind": "live",
+     "channelName": "Estilo Rihanna",
+     "seconds": 239,
+     "year": 2006,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "JBxovdziKfo",
+     "title": "Rihanna  Unfaithful / Love The Way You Lie / Take a Bow ( Rock in Rio 2015)",
+     "kind": "version",
+     "channelName": "mary",
+     "seconds": 336,
+     "year": 2015,
      "source": "auto"
     },
     {
@@ -102107,6 +103448,15 @@
      "source": "auto"
     },
     {
+     "youtubeId": "Zc864NqRkwY",
+     "title": "Rihanna - Unfaithful (AOL Sessions #2)",
+     "kind": "version",
+     "channelName": "Rihanna",
+     "seconds": 280,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "_5NT2jg75kw",
      "title": "Rihanna - Unfaithful (AOL Sessions)",
      "kind": "version",
@@ -102116,11 +103466,74 @@
      "source": "auto"
     },
     {
-     "youtubeId": "8snCD9NJPYs",
-     "title": "3pgCondo - Unfaithful Rihanna Remix (Official Music Video)",
+     "youtubeId": "SIicEU0_FNI",
+     "title": "\"Unfaithful\" - Rihanna at the 2006 WMA",
      "kind": "version",
-     "channelName": "6ixBuzz Premieres",
-     "seconds": 228,
+     "channelName": "World Music Awards",
+     "seconds": 239,
+     "year": 2006,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "bWvWWULkFZ0",
+     "title": "Ne-Yo analyse les paroles de « Unfaithful » de Rihanna | Ép. 82 | Club Shay Shay",
+     "kind": "react",
+     "channelName": "Club Shay Shay",
+     "seconds": 135,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "wHWq9BM7Il0",
+     "title": "EXIT EDEN - Unfaithful (Rihanna Cover)  Napalm Records | THE WOLF HUNTERZ Reactions",
+     "kind": "react",
+     "channelName": "The Wolf HunterZ",
+     "seconds": 443,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "kIMAKUv6SUc",
+     "title": "Rihanna - Unfaithful (REACTION)",
+     "kind": "react",
+     "channelName": "CHASEYODREAMS",
+     "seconds": 542,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "vznmyeXkcYI",
+     "title": "Nah She Trippin!* Rihanna - Unfaithful (Reaction)",
+     "kind": "react",
+     "channelName": "Jimmy Reacts!",
+     "seconds": 526,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "WBmbS70Dbsk",
+     "title": "Rihanna - Unfaithful (Clip officiel) | ELLE L'A TROMPÉ ?! | RÉACTION DES JUMEAUX",
+     "kind": "react",
+     "channelName": "KTwinsTV",
+     "seconds": 425,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "wjudzhvRGa8",
+     "title": "Lit Up AV Reactions: Rihanna UNFAITHFUL [Good Girl Gone Bad LIVE]",
+     "kind": "react",
+     "channelName": "Lit Up AV",
+     "seconds": 798,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "IXInojjs3Hc",
+     "title": "Rihanna - Unfaithful (Lyrics)",
+     "kind": "paroles",
+     "channelName": "MusicLava Channel",
+     "seconds": 227,
      "year": null,
      "source": "auto"
     },
@@ -102143,11 +103556,11 @@
      "source": "auto"
     },
     {
-     "youtubeId": "QJF0psARsLc",
-     "title": "Rihanna - Unfaithful (Lyrics) | 4K Visualizer",
-     "kind": "paroles",
-     "channelName": "Forever Hits",
-     "seconds": 228,
+     "youtubeId": "dN2adfaZvdU",
+     "title": "UNFAITHFUL ( FRENCH VERSION ) RIHANNA ( SARA'H COVER )",
+     "kind": "reprise",
+     "channelName": "SARA’H",
+     "seconds": 194,
      "year": null,
      "source": "auto"
     }
@@ -102193,6 +103606,15 @@
      "kind": "version",
      "channelName": "A la Vibe de Chez Nous | Reggae & Hip-Hop Spirit",
      "seconds": 233,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "oJmSOtKAfHA",
+     "title": "Akhenaton - Street Football (Générique Foot 2 Rue) [Zyratek Bootleg]",
+     "kind": "version",
+     "channelName": "Zyratek",
+     "seconds": 231,
      "year": null,
      "source": "auto"
     },
@@ -117286,6 +118708,15 @@
      "source": "auto"
     },
     {
+     "youtubeId": "1aIamCMg7EA",
+     "title": "Charlotte Aux Fraises   Rien Que Du Bonheur",
+     "kind": "version",
+     "channelName": "Nour Lahlou",
+     "seconds": 136,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "qJshR2vJXQ4",
      "title": "Charlotte au fraises : chanson 🍓🍓🍓rien que du bonheur🍓🍓🍓",
      "kind": "version",
@@ -117376,6 +118807,15 @@
      "source": "auto"
     },
     {
+     "youtubeId": "FIwDj9Z6jjA",
+     "title": "shanna Il est interdit",
+     "kind": "version",
+     "channelName": "elise76",
+     "seconds": 291,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "rjc9mNnEyeo",
      "title": "Shanna - Il est interdit 2020 (Radio Edit)",
      "kind": "version",
@@ -117394,20 +118834,11 @@
      "source": "auto"
     },
     {
-     "youtubeId": "flWec6uAQpg",
-     "title": "shanna sarkozy : il est interdit",
+     "youtubeId": "55HO_yO4sWM",
+     "title": "Shanna - Il est interdit",
      "kind": "version",
-     "channelName": "ameumeu",
-     "seconds": 207,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "QPhNNF0yc9c",
-     "title": "Shanna  - II Est Interdit",
-     "kind": "version",
-     "channelName": "rdsmusiclabel",
-     "seconds": 234,
+     "channelName": "BeeFreeProduction",
+     "seconds": 231,
      "year": null,
      "source": "auto"
     }
@@ -133520,6 +134951,60 @@
      "source": "auto"
     },
     {
+     "youtubeId": "2WCt3WryS5U",
+     "title": "Pacha TV: David Guetta Live \"Tomorrow Can't Wait\" @ Pacha NYC | November 2008",
+     "kind": "live",
+     "channelName": "pachanewyork",
+     "seconds": 137,
+     "year": 2008,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "etafGO7jnpw",
+     "title": "David Guetta And Chris Willis - Tomorrow Can Wait",
+     "kind": "live",
+     "channelName": "Levente Fejes",
+     "seconds": 437,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "x2CYsV2ZU90",
+     "title": "David Guetta - Tomorrow can wait - Live in Luxembourg",
+     "kind": "live",
+     "channelName": "argonetto",
+     "seconds": 82,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "C9E74RCwO_I",
+     "title": "UNICUTT TV Chris Willis \"Tomorrow Can Wait\" David Guetta 19.6.2010 Hannover Infinity",
+     "kind": "live",
+     "channelName": "Alex Unicutt",
+     "seconds": 244,
+     "year": 2010,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "tqKGFjU2Nmg",
+     "title": "David Guetta live @ LC Club 07/05/08  #5 Tomorrow can wait",
+     "kind": "live",
+     "channelName": "gregmanta",
+     "seconds": 51,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "ZEfjBwQeAyU",
+     "title": "David Guetta  - Tomorrow Can Wait [High Audio Quality]",
+     "kind": "version",
+     "channelName": "redfr3dd1",
+     "seconds": 215,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "32ACuUWDGQk",
      "title": "David Guetta & Chris Willis - Tomorrow Can Wait (OFFICIAL)",
      "kind": "version",
@@ -133529,47 +135014,38 @@
      "source": "auto"
     },
     {
-     "youtubeId": "u9FhZTX7WrQ",
-     "title": "Tomorrow Can Wait - Music Video Teaser 1",
+     "youtubeId": "FVqNbYU708s",
+     "title": "David Guetta - Tomorrow Can Wait - Summer Eletrohits 5",
      "kind": "version",
-     "channelName": "David Guetta",
-     "seconds": 35,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "ExKY_DjCUJE",
-     "title": "Tomorrow Can Wait - Music Video Teaser 4",
-     "kind": "version",
-     "channelName": "David Guetta",
-     "seconds": 60,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "ZVY4d4Axocc",
-     "title": "Tomorrow Can Wait - Music Video Teaser 3",
-     "kind": "version",
-     "channelName": "David Guetta",
-     "seconds": 59,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "erpqB4RNfb8",
-     "title": "Tomorrow Can Wait - Music Video Teaser 2",
-     "kind": "version",
-     "channelName": "David Guetta",
-     "seconds": 38,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "dleSC-Rg8cA",
-     "title": "David Guetta Tomorrow Can Wait",
-     "kind": "version",
-     "channelName": "mega798",
+     "channelName": "Dance Club",
      "seconds": 189,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "4zaqouNOb0s",
+     "title": "David Guetta vs Tocadisco - Tomorrow can wait",
+     "kind": "version",
+     "channelName": "RodrigO0812",
+     "seconds": 214,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "y2P70BT8zC8",
+     "title": "David guetta - Tomorrow Can Wait",
+     "kind": "version",
+     "channelName": "ya69",
+     "seconds": 214,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "zh3k2I80l2A",
+     "title": "David Guetta ft Chris Willis & Tocadisco - Tomorrow Can Wait",
+     "kind": "version",
+     "channelName": "xXHouseBeatzXx",
+     "seconds": 328,
      "year": null,
      "source": "auto"
     },
@@ -133639,12 +135115,102 @@
      "source": "auto"
     },
     {
+     "youtubeId": "-uT_T6am69I",
+     "title": "Yelle LIVE \"Je Veux Te Voir\" NYC February 19th 2008",
+     "kind": "live",
+     "channelName": "supmag",
+     "seconds": 285,
+     "year": 2008,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "T9RqhKWCwyw",
+     "title": "Yelle - \"Je Veux Te Voir\" (UCSD) live from La Jolla on 11/03/08",
+     "kind": "live",
+     "channelName": "YelleACMix",
+     "seconds": 412,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "se9tgjsnkPc",
      "title": "Yelle - Je Veux Te Voir Live @ Elsewhere, Brooklyn (2018)",
      "kind": "live",
      "channelName": "kekeLMB",
      "seconds": 211,
      "year": 2018,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "nBF2LmpHHDQ",
+     "title": "Yelle - \"Je Veux Te Voir\" (Live) long, Music Box (AC Mix...)",
+     "kind": "live",
+     "channelName": "YelleACMix",
+     "seconds": 406,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "_M5GL32HGC0",
+     "title": "Yelle \"Je Veux Te Voir\" Live at Coachella 2008",
+     "kind": "live",
+     "channelName": "enono13",
+     "seconds": 155,
+     "year": 2008,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Mgo63bLduWU",
+     "title": "Yelle live au Cargo - Je veux te voir",
+     "kind": "live",
+     "channelName": "21sacha",
+     "seconds": 40,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "gEvECGDb3uI",
+     "title": "Yelle -\"Je Veux Te Voir\"Live Orlando Fl 10/11/08 (AC Mix...)",
+     "kind": "live",
+     "channelName": "YelleACMix",
+     "seconds": 275,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "UdP8yTgyAUU",
+     "title": "YELLE \"Ce Jeu\" and \"Je Veux Te Voir LIVE\" in NYC May '08!!",
+     "kind": "live",
+     "channelName": "XLouderThanBombsX",
+     "seconds": 445,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "TqKMITq8aqs",
+     "title": "Yelle Concert: Washington DC '08 - Je Veux Te Voir",
+     "kind": "live",
+     "channelName": "Piztachio",
+     "seconds": 92,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "cd10Iw5Vjjc",
+     "title": "YELLE - Je veux te voir (live) Québec",
+     "kind": "live",
+     "channelName": "Lilou2024",
+     "seconds": 15,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "h8oNXuMwt9w",
+     "title": "YELLE LIVE je veux te voir -final-",
+     "kind": "live",
+     "channelName": "coolgado",
+     "seconds": 280,
+     "year": null,
      "source": "auto"
     },
     {
@@ -133662,6 +135228,24 @@
      "kind": "version",
      "channelName": "superdupperripper",
      "seconds": 199,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "xZJ0M0W6oXs",
+     "title": "Yelle - Je Veux Te Voir OFFICIEL MUSIC VIDEO",
+     "kind": "version",
+     "channelName": "maibrock78",
+     "seconds": 199,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "R9TBFJrHiq8",
+     "title": "Yelle \"Je Veux te Voir\"",
+     "kind": "version",
+     "channelName": "Jacob Skorza",
+     "seconds": 266,
      "year": null,
      "source": "auto"
     },
@@ -133684,29 +135268,38 @@
      "source": "auto"
     },
     {
-     "youtubeId": "ixNk7D5oG9Y",
-     "title": "YELLE - Je Veux Te Voir @ Vieilles Charrues 2011",
-     "kind": "version",
-     "channelName": "SYRENE98",
-     "seconds": 288,
-     "year": 2011,
+     "youtubeId": "Oi3XE4XriLQ",
+     "title": "First Time Reaction Yelle Je veux te voir (OUT OF NOWHERE!) | Dereck Reacts",
+     "kind": "react",
+     "channelName": "Dereck Reacts",
+     "seconds": 637,
+     "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "NqCWLaQM_Vg",
-     "title": "Yelle - Je Veux Te Voir (2007)",
-     "kind": "version",
-     "channelName": "Micka Décamps",
-     "seconds": 263,
-     "year": 2007,
+     "youtubeId": "_-vCpr9ma7w",
+     "title": "YELLE \"JE VEUX TE VOIR\" reaction to americans",
+     "kind": "react",
+     "channelName": "Sophia Hong",
+     "seconds": 283,
+     "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "7ETE9SRk-9Q",
-     "title": "Yelle Je veux te voir Paroles/Lyrics",
-     "kind": "paroles",
-     "channelName": "tiki395",
-     "seconds": 239,
+     "youtubeId": "3EjOdUfILC4",
+     "title": "Yelle - Je Veux Te Voir - Jojo Gomez Choreography |Reaction Video|",
+     "kind": "react",
+     "channelName": "Simply_Chyna",
+     "seconds": 279,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "GizEgwPkxyU",
+     "title": "YELLE MAKING OF  \" JE VEUX TE VOIR \"",
+     "kind": "coulisses",
+     "channelName": "DjTreps",
+     "seconds": 57,
      "year": null,
      "source": "auto"
     },
@@ -133769,15 +135362,6 @@
      "source": "auto"
     },
     {
-     "youtubeId": "D4vkdBR-0Zw",
-     "title": "Quentin-il y a je t'aime et je t'aime",
-     "kind": "live",
-     "channelName": "pandikaze84",
-     "seconds": 429,
-     "year": null,
-     "source": "auto"
-    },
-    {
      "youtubeId": "BlCAuyKlvAE",
      "title": "Quentin Mosimann - Il y a je t'aime et je t'aime (live)",
      "kind": "live",
@@ -133787,11 +135371,38 @@
      "source": "auto"
     },
     {
+     "youtubeId": "ML8fetiYCVU",
+     "title": "Quentin \"Il y a je t'aime et je t'aime\" 4juin l'Européen",
+     "kind": "live",
+     "channelName": "riv2013",
+     "seconds": 499,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "rAI5pONKd6Q",
+     "title": "Quentin Mosimann - il y a je t'aime et je t'aime",
+     "kind": "version",
+     "channelName": "Raiden V",
+     "seconds": 222,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "I6W9b9KBSXU",
      "title": "Quentin Mosimann - Il y a je t'aime et je t'aime www.Vosclips.com",
      "kind": "version",
      "channelName": "vosclips1",
      "seconds": 222,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "-ElNzFu_SAw",
+     "title": "Il y a je t'aime et je t'aime QUENTIN ET MALIKA",
+     "kind": "version",
+     "channelName": "mali1217",
+     "seconds": 24,
      "year": null,
      "source": "auto"
     },
@@ -133814,29 +135425,11 @@
      "source": "auto"
     },
     {
-     "youtubeId": "bGowe9R0rs0",
-     "title": "Quentin 16 Juillet - Il y a je t'aime et je t'aime",
+     "youtubeId": "G-h8DoKZv_Y",
+     "title": "Il y a je t'aime et je t'aime ( Quentin Mosimann ).wmv",
      "kind": "version",
-     "channelName": "Loora83",
-     "seconds": 301,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "a3xMIU1jXk0",
-     "title": "Quentin Mosimann - Il y a je t'aime & je t'aime",
-     "kind": "version",
-     "channelName": "Gautierax3",
-     "seconds": 264,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "LrzXT5Kt77g",
-     "title": "Quentin Mosimann - Il y a je t'aime et je t'aime",
-     "kind": "version",
-     "channelName": "AmeliineViideo",
-     "seconds": 150,
+     "channelName": "123BRUELCHRISTINE",
+     "seconds": 222,
      "year": null,
      "source": "auto"
     },
@@ -133846,6 +135439,24 @@
      "kind": "paroles",
      "channelName": "miissouiille",
      "seconds": 225,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "hhBWGthkSgI",
+     "title": "Il y a je t'aime et je t'aime - Quentin Mosimann (avec paroles)",
+     "kind": "paroles",
+     "channelName": "Sran De Romulus",
+     "seconds": 219,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "SVMIgSeK-og",
+     "title": "Lyrics   Il Y A Je T'aime Et Je T'Aime   Mosimann",
+     "kind": "paroles",
+     "channelName": "EspaceMusique",
+     "seconds": 219,
      "year": null,
      "source": "auto"
     }
@@ -133888,6 +135499,15 @@
      "source": "auto"
     },
     {
+     "youtubeId": "lwV-tfb1gpU",
+     "title": "Quentin M - Cherchez Un Garcon.. Live",
+     "kind": "live",
+     "channelName": "michelelkhoury",
+     "seconds": 220,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "jARORZJuXK4",
      "title": "Quentin Mosimann - Cherchez le garçon",
      "kind": "version",
@@ -133903,6 +135523,15 @@
      "channelName": "Micka Décamps",
      "seconds": 213,
      "year": 2008,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "RlAKnH6VzM8",
+     "title": "Quentin Mosimann - Eleven 4 juillet - Cherchez le garçon",
+     "kind": "version",
+     "channelName": "martinou45",
+     "seconds": 204,
+     "year": null,
      "source": "auto"
     },
     {
@@ -133929,15 +135558,6 @@
      "kind": "version",
      "channelName": "quentin581254",
      "seconds": 19,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "VkYrcxlaN68",
-     "title": "Quentin Mosimann - Cherchez le garcon (Fred rister remix).wmv",
-     "kind": "version",
-     "channelName": "Deadlines 93",
-     "seconds": 211,
      "year": null,
      "source": "auto"
     }
@@ -150499,6 +152119,51 @@
      "source": "auto"
     },
     {
+     "youtubeId": "QJ7qYAPZixc",
+     "title": "\"L'accord\" Cleopatre 31 janvier 2010 20h Palais des Sports Paris",
+     "kind": "live",
+     "channelName": "lagrandelili87",
+     "seconds": 211,
+     "year": 2010,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "f8rc7_asH0I",
+     "title": "Cléopatre Main dans la main et l'Accord",
+     "kind": "live",
+     "channelName": "pouki5678",
+     "seconds": 436,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "9ZzqYjj23Vo",
+     "title": "L'accord - Cléopatre Montpellier Zénith sud 6/06/2009 (15h).",
+     "kind": "live",
+     "channelName": "killykilly30",
+     "seconds": 50,
+     "year": 2009,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "oXw-ml2iPwk",
+     "title": "Cléopâtre - L'Accord (live Geneve 05/07/09)",
+     "kind": "live",
+     "channelName": "chrisdu74",
+     "seconds": 160,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "wJ3eZ6p2HI8",
+     "title": "NRJ Music Tour - \"L'accord\" - Cléopâtre",
+     "kind": "version",
+     "channelName": "MontrealKebec",
+     "seconds": 207,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "fm2ctc6d-j0",
      "title": "Cléopâtre - L'accord",
      "kind": "version",
@@ -150517,6 +152182,24 @@
      "source": "auto"
     },
     {
+     "youtubeId": "cDHE15-v3PY",
+     "title": "Cléopatre, L'accord, Palais des Sports",
+     "kind": "version",
+     "channelName": "orelylafolle",
+     "seconds": 208,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "fMW_rSoa3A8",
+     "title": "Cléopatre - L'accord, sofia essaidi (remplacé par Fanny Fourquez) et christopher stills",
+     "kind": "version",
+     "channelName": "layticia",
+     "seconds": 136,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "jBRcfaXHILg",
      "title": "CLEOPATRE - L'accord",
      "kind": "version",
@@ -150526,29 +152209,20 @@
      "source": "auto"
     },
     {
-     "youtubeId": "Z4OT--kqGWA",
-     "title": "cleopatre : L'accord",
-     "kind": "version",
-     "channelName": "Vavaa95",
-     "seconds": 181,
+     "youtubeId": "P1njy3LXX_U",
+     "title": "Karaoké - Cléopâtre - L'accord (Christopher Stills & Sofia Essaïdi) Duo",
+     "kind": "paroles",
+     "channelName": "youpe Karaoké",
+     "seconds": 214,
      "year": null,
      "source": "auto"
     },
     {
-     "youtubeId": "IBIZ4cILuOc",
-     "title": "Cléopâtre - L'accord ( qui nous tien )",
-     "kind": "version",
-     "channelName": "333ATR83",
-     "seconds": 194,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "Rlxs-7BlsRc",
-     "title": "Cléopâtre - L' accord",
-     "kind": "version",
-     "channelName": "lathebaddu80120V",
-     "seconds": 226,
+     "youtubeId": "UFJXVWtHkq8",
+     "title": "Karaoké - Cléopâtre - L'accord (Christopher Stills & Sofia Essaïdi) Voix Masculine",
+     "kind": "paroles",
+     "channelName": "youpe Karaoké",
+     "seconds": 214,
      "year": null,
      "source": "auto"
     },
@@ -150558,15 +152232,6 @@
      "kind": "paroles",
      "channelName": "Valentin TRASTET ",
      "seconds": 257,
-     "year": null,
-     "source": "auto"
-    },
-    {
-     "youtubeId": "Ds920A0i7XQ",
-     "title": "L' Accord (Sub. Español + Paroles) - Cléopâtre: La Dernière Reine d’Egypte",
-     "kind": "paroles",
-     "channelName": "MttMusic",
-     "seconds": 205,
      "year": null,
      "source": "auto"
     },
@@ -166976,6 +168641,78 @@
      "source": "auto"
     },
     {
+     "youtubeId": "3HEomIK_ld0",
+     "title": "Replay (feat. Sean Kingston) [Live] - Iyaz",
+     "kind": "live",
+     "channelName": "iyazlive",
+     "seconds": 149,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "UGiFOxxSqe8",
+     "title": "Iyaz - Replay (BILLBOARD LIVE VERSION!!!!)",
+     "kind": "live",
+     "channelName": "Billboard",
+     "seconds": 186,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "I-1tIOjRi_U",
+     "title": "Iyaz- \"Replay\" (HD) Live at the New York State Fair on 9-1-2010",
+     "kind": "live",
+     "channelName": "TheBieberExperiment",
+     "seconds": 178,
+     "year": 2010,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "uSxcug97ZAE",
+     "title": "Iyaz performance live at King High (singing Solo and Replay)",
+     "kind": "live",
+     "channelName": "Alfonso M.",
+     "seconds": 503,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "oDXcpatFf2c",
+     "title": "IYAZ REPLAY INDIA  TOUR 2025| IMPHAL| ",
+     "kind": "live",
+     "channelName": "Life with Nez ",
+     "seconds": 870,
+     "year": 2025,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "0sF5HeSu5Tg",
+     "title": "IYAZ-Replay LIVE @ Club Arena! (Hollywood Live!!)",
+     "kind": "live",
+     "channelName": "AyumiPULP",
+     "seconds": 195,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "eMFqD3rkyO8",
+     "title": "Iyaz Replay live with Gabrielle",
+     "kind": "live",
+     "channelName": "gabrbach",
+     "seconds": 413,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "R4M3Z1P0W3w",
+     "title": "Iyaz - Replay Live at Kiss 108 Concert 5/22/10",
+     "kind": "live",
+     "channelName": "concertsarelove",
+     "seconds": 168,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "3cbIQG8RUrU",
      "title": "Replay - Iyaz | Live performance at Blackout Manila 2025",
      "kind": "live",
@@ -166985,11 +168722,47 @@
      "source": "auto"
     },
     {
+     "youtubeId": "PYnk-lSJRvY",
+     "title": "Iyaz - Replay LIVE in Japan 2010",
+     "kind": "live",
+     "channelName": "MomoJP",
+     "seconds": 193,
+     "year": 2010,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "xCffU5SMIC8",
+     "title": "iYAZ  \" REPLAY \" live @ Azukar Lounge, Sacramento Ca",
+     "kind": "live",
+     "channelName": "azukarloung",
+     "seconds": 264,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "LWZuBd5kjE8",
+     "title": "IYAZ Live Performance \"Replay\" At BVI Music Festival 2010",
+     "kind": "live",
+     "channelName": "JustJayzEyez",
+     "seconds": 260,
+     "year": 2010,
+     "source": "auto"
+    },
+    {
      "youtubeId": "WXxV9g7lsFE",
      "title": "Replay (Prequel) [Music Video] - Iyaz",
      "kind": "version",
      "channelName": "iyazlive",
      "seconds": 198,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "2txqwHJ5PNw",
+     "title": "Iyaz - Replay (Danley Remix) (Tropical House)",
+     "kind": "version",
+     "channelName": "WYFT - Main Channel",
+     "seconds": 193,
      "year": null,
      "source": "auto"
     },
@@ -167021,6 +168794,33 @@
      "source": "auto"
     },
     {
+     "youtubeId": "3W-BedOOSSg",
+     "title": "Replay (acoustic) by Iyaz - Feat. Dan Kanter - OFFICIAL HD",
+     "kind": "version",
+     "channelName": "Robert Caplin",
+     "seconds": 253,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "Vf3J8kLBAtI",
+     "title": "Replay [Clip Officiel] - Réaction à Iyaz",
+     "kind": "react",
+     "channelName": "C.J.C",
+     "seconds": 380,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "89VG64K0g90",
+     "title": "Iyaz the guy who sings Replay interview",
+     "kind": "coulisses",
+     "channelName": "demuredemented",
+     "seconds": 173,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "GqYj_f9gVqM",
      "title": "Iyaz - Replay | Lyrics",
      "kind": "paroles",
@@ -167044,6 +168844,15 @@
      "kind": "paroles",
      "channelName": "British Pop Bangers",
      "seconds": 185,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "5eB1iEDQiIg",
+     "title": "IYAZ Replay cover  - Legaci & Summerbreeze",
+     "kind": "reprise",
+     "channelName": "legaci",
+     "seconds": 274,
      "year": null,
      "source": "auto"
     }
@@ -167075,15 +168884,6 @@
    "views60d": 0,
    "videos": [
     {
-     "youtubeId": "BXXzuQw5OIs",
-     "title": "Duck Sauce - Barbra Streisand (Official Video)",
-     "kind": "clip",
-     "channelName": "pegasuslite10",
-     "seconds": 197,
-     "year": null,
-     "source": "auto"
-    },
-    {
      "youtubeId": "wWhtcU4-xAM",
      "title": "Duck Sauce - Barbra Streisand (Official Music Video)",
      "kind": "clip",
@@ -167102,11 +168902,101 @@
      "source": "auto"
     },
     {
+     "youtubeId": "_l4pH3xxUV4",
+     "title": "Duck Sauce - Barbra Streisand (Official Video)",
+     "kind": "clip",
+     "channelName": "Blanco y Negro Music",
+     "seconds": 197,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "pFmDmc7PdBI",
+     "title": "Aircraft Live - Barbra Streisand (by Duck Sauce)",
+     "kind": "live",
+     "channelName": "AircraftLive",
+     "seconds": 239,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "kMK7Aba0hbM",
+     "title": "Duck Sauce - Barbra Streisand (Live)",
+     "kind": "live",
+     "channelName": "SteveAATW",
+     "seconds": 86,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "WWulV-RjWs4",
+     "title": "Show Me The Sample ‣ Duck Sauce - Barbra Streisand [YouTube Edit]",
+     "kind": "live",
+     "channelName": "Show Me The Sample",
+     "seconds": 1074,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "vigWsbEsssA",
+     "title": "Duck Sauce - Barbra Streisand Live - JurusDiction / Justin Hood Kruxfest 2010",
+     "kind": "live",
+     "channelName": "JurusDiction",
+     "seconds": 61,
+     "year": 2010,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "V0WH3g677ks",
+     "title": "DJ A-Trak - Duck Sauce (Barbra Streisand) (Live @ Fun Fun Fun Fest 2010!!)",
+     "kind": "live",
+     "channelName": "TheBlackMamba1980",
+     "seconds": 85,
+     "year": 2010,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "RqRDtv_6uDU",
+     "title": "Duck Sauce - Barbra Streisand live @ TAO 2012",
+     "kind": "live",
+     "channelName": "Brendon Price",
+     "seconds": 124,
+     "year": 2012,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "g_t50VAem4I",
+     "title": "Barbra Streisand (Live) - Duck Sauce @ EDC LV '22",
+     "kind": "live",
+     "channelName": "Brian",
+     "seconds": 29,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "9VQdVA2hjsA",
+     "title": "Duck Sauce - Barbra Streisand (Radio Edit)",
+     "kind": "version",
+     "channelName": "Scorpio Music",
+     "seconds": 195,
+     "year": null,
+     "source": "auto"
+    },
+    {
      "youtubeId": "6Io3aSEkG_s",
      "title": "Duck Sauce - Barbra Streisand  Official HD Music Video",
      "kind": "version",
      "channelName": "Scorpio Music",
      "seconds": 197,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "W9nCYK1vJaA",
+     "title": "Duck Sauce - Barbra Streisand",
+     "kind": "version",
+     "channelName": "FreedomX10",
+     "seconds": 151,
      "year": null,
      "source": "auto"
     },
@@ -167125,6 +169015,24 @@
      "kind": "version",
      "channelName": "Duck Sauce",
      "seconds": 215,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "cagGtHtJMNo",
+     "title": "Barbra Streisand (TB1 & David A Remix) - Duck Sauce",
+     "kind": "version",
+     "channelName": "tb1vids",
+     "seconds": 185,
+     "year": null,
+     "source": "auto"
+    },
+    {
+     "youtubeId": "qs9-7bL8W1I",
+     "title": "Sample Breakdown: Duck Sauce - Barbra Streisand",
+     "kind": "react",
+     "channelName": "oasis15",
+     "seconds": 47,
      "year": null,
      "source": "auto"
     }
