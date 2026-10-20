@@ -4,7 +4,7 @@
 //
 // Usage : node scripts/make-chrome-prompts.mjs
 
-import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { maxSeason } from './lib/video-meta.mjs';
 
 const ROOT = new URL('../', import.meta.url).pathname;
@@ -78,4 +78,11 @@ const out = [`# Prompts Claude in Chrome : ${queue.length} émissions, ${batches
   'Un lot à la fois : copier tout le bloc du lot dans Claude in Chrome, puis coller sa réponse JSON à Claude Code.\n'];
 batches.forEach((b, i) => out.push(`\n## Lot ${first + i}\n\n\`\`\`\n${prompt(first + i, b)}\n\`\`\`\n`));
 await writeFile(ROOT + 'docs/chrome-prompts.md', out.join(''));
+
+// La même liste, publiée sur le site (chrome/emissions.html) pour le prompt unique.
+const txt = [`ANNEES 2000 - LISTE DES EMISSIONS A TRAITER (${queue.length} émissions, lots ${first} à ${first + batches.length - 1})`, ''];
+batches.forEach((b, i) => txt.push(`=== LOT ${first + i} ===`, ...b.map(line), ''));
+await mkdir(ROOT + 'chrome', { recursive: true });
+const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+await writeFile(ROOT + 'chrome/emissions.html', `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Liste des émissions</title></head><body><pre>${esc(txt.join('\n'))}</pre></body></html>\n`);
 console.log(`${batches.length} lots (${first} à ${first + batches.length - 1}) écrits dans docs/chrome-prompts.md`);

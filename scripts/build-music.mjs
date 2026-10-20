@@ -1,10 +1,11 @@
 // Construit data/hits.json : les plus gros tubes en France de 2000 à 2010.
-// Sources : les pages Wikipédia « Liste des titres musicaux numéro un en France en AAAA »
-// (numéros un de la semaine + dix meilleures ventes de l'année), complétées par Wikidata (genre).
+// Sources : le Top 100 annuel des singles du SNEP (snepmusique.com) pour chaque année,
+// les pages Wikipédia « Liste des titres musicaux numéro un en France en AAAA » (numéros un de la semaine),
+// et Wikipédia / Wikidata pour la fiche de chaque chanson (résumé, genre, date de sortie).
 //
 // Usage : node scripts/build-music.mjs
 
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { api } from './lib/wiki.mjs';
 
 const ROOT = new URL('../', import.meta.url).pathname;
@@ -56,6 +57,43 @@ function sections(wikitext) {
   return parts.map((p) => ({ heading: (p.match(/^=+\s*(.*?)\s*=+/) || [])[1] || '', body: p }));
 }
 
+// Artiste principal : avant « featuring », « & », « et », « / ».
+const mainArtist = (a) => a.split(/\s+(?:featuring|feat\.?|ft\.?|et|&|avec|vs\.?|x)\s+|\s*[/,]\s*/i)[0];
+const keyOf = (title, artist) =>
+  fold(title.replace(/\(.*?\)|\[.*?\]/g, '')).replace(/[^a-z0-9]/g, '') + '|' + fold(mainArtist(artist)).replace(/[^a-z0-9]/g, '').slice(0, 12);
+
+const decode = (s) => s.replace(/&amp;/g, '&').replace(/&#0?39;|&rsquo;|&lsquo;/g, "'").replace(/&quot;/g, '"').replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)).trim();
+
+// Le SNEP écrit tout en majuscules : on remet une casse lisible en attendant le vrai titre (Wikipédia).
+const KEEP_UPPER = new Set(['DJ', 'MC', 'RNB', 'R&B', 'USA', 'UK', 'II', 'III', 'IV', 'OK', 'TV', 'NRJ', 'BB', 'NTM', 'IAM', 'K2R', 'AC/DC', 'ABBA', 'UB40', 'TLC', 'DMX', 'LMFAO', 'OMG', 'SOS', 'MJ', 'JLO', 'NZ', 'KD2A']);
+function smartCase(s, words = false) {
+  const lower = s.toLowerCase();
+  let out = lower.replace(/(^|[\s(\["'/-])([\p{L}\d])/gu, (m, sep, c, i) => (words || i === 0 || sep === '(' ? sep + c.toUpperCase() : m));
+  out = out.replace(/\b[\p{L}\d&/]+\b/gu, (w) => (KEEP_UPPER.has(w.toUpperCase()) ? w.toUpperCase() : w));
+  return out.replace(/\bi\b/g, 'I').replace(/^./, (c) => c.toUpperCase());
+}
+
+const SNEP_URL = (y) => `https://snepmusique.com/les-tops/le-top-de-lannee/top-singles-annee/?annee=${y}`;
+async function snepYear(year) {
+  const file = new URL(`../data/cache/snep-${year}.html`, import.meta.url).pathname;
+  let html;
+  try {
+    html = await readFile(file, 'utf8');
+  } catch {
+    const res = await fetch(SNEP_URL(year), { headers: { 'User-Agent': 'Mozilla/5.0 (annee2000 catalog)' } });
+    if (!res.ok) throw new Error(`SNEP ${year}: HTTP ${res.status}`);
+    html = await res.text();
+    await mkdir(new URL('../data/cache/', import.meta.url).pathname, { recursive: true });
+    await writeFile(file, html);
+    await new Promise((r) => setTimeout(r, 1500));
+  }
+  const rows = [];
+  const re = /<div class="rang">(\d+)<\/div>[\s\S]*?<div class="titre">([^<]*)<\/div>\s*<div class="artiste">([^<]*)<\/div>/g;
+  let m;
+  while ((m = re.exec(html))) rows.push({ rank: +m[1], title: decode(m[2]), artist: decode(m[3]) });
+  return rows;
+}
+
 async function main() {
   const hits = new Map();
   for (const year of YEARS) {
@@ -71,8 +109,8 @@ async function main() {
 
     const add = (p, extra) => {
       const id = slugify(`${p.artist}-${p.title}`).slice(0, 80);
-      const key = fold(`${p.title}`).replace(/[^a-z0-9]/g, '') + '|' + fold(p.artist).replace(/[^a-z0-9]/g, '').slice(0, 12);
-      const h = hits.get(key) || { id, title: p.title, artist: p.artist, songPage: p.songPage, artistPage: p.artistPage, years: new Set(), weeksAtOne: 0, yearRank: null, firstNumberOne: null };
+      const key = keyOf(p.title, p.artist);
+      const h = hits.get(key) || { id, title: p.title, artist: p.artist, songPage: p.songPage, artistPage: p.artistPage, years: new Set(), weeksAtOne: 0, yearRank: null, charts: [], firstNumberOne: null };
       h.songPage ||= p.songPage;
       h.artistPage ||= p.artistPage;
       h.years.add(year);
@@ -85,9 +123,35 @@ async function main() {
     };
     const w = weekly ? pairs(weekly.body) : [];
     w.forEach((p) => add(p, { weekly: true }));
-    const t = top && top !== weekly ? pairs(top.body).slice(0, 10) : [];
-    t.forEach((p, i) => add(p, { rank: i + 1 }));
-    process.stderr.write(`${year}: ${w.length} cellules numéro un, ${t.length} meilleures ventes\n`);
+    process.stderr.write(`${year}: ${w.length} cellules numéro un\n`);
+  }
+
+  // Top 100 annuel du SNEP : le classement officiel des meilleures ventes de chaque année.
+  for (const year of YEARS) {
+    const rows = await snepYear(year);
+    for (const r of rows) {
+      const key = keyOf(r.title, r.artist);
+      let h = hits.get(key);
+      if (!h) {
+        const title = smartCase(r.title);
+        const artist = smartCase(r.artist, true);
+        h = { id: slugify(`${artist}-${title}`).slice(0, 80), title, artist, fromSnep: true, songPage: null, years: new Set(), weeksAtOne: 0, yearRank: null, charts: [], firstNumberOne: null };
+        hits.set(key, h);
+      }
+      h.years.add(year);
+      h.charts.push({ year, rank: r.rank });
+      if (!h.yearRank || r.rank < h.yearRank.rank) h.yearRank = { year, rank: r.rank };
+    }
+    process.stderr.write(`${year}: ${rows.length} titres au Top 100 annuel du SNEP\n`);
+  }
+
+  // Page Wikipédia des titres venus du SNEP : recherche « titre artiste », retenue seulement si le titre correspond.
+  const bare = (t) => fold(t.replace(/\(.*?\)/g, '')).replace(/[^a-z0-9]/g, '');
+  for (const h of hits.values()) {
+    if (h.songPage) continue;
+    const d = await api({ action: 'query', list: 'search', srsearch: `${h.title.replace(/\(.*?\)/g, '')} ${mainArtist(h.artist)} chanson`, srlimit: '5' });
+    const hit = (d.query?.search || []).find((r) => bare(r.title) === bare(h.title) || bare(r.title.replace(/\s*\((?:chanson|single)[^)]*\)$/i, '')) === bare(h.title));
+    if (hit) h.songPage = hit.title;
   }
 
   // Détails des chansons : résumé, vues, Wikidata (genre, date de sortie).
@@ -130,7 +194,14 @@ async function main() {
   }
 
   const out = list.map((h) => {
-    const p = h.songPage ? info.get(h.songPage) : null;
+    let p = h.songPage ? info.get(h.songPage) : null;
+    // Page trouvée par recherche : elle doit parler du bon artiste, sinon on l'ignore.
+    if (p && h.fromSnep) {
+      const a = fold(mainArtist(h.artist)).replace(/[^a-z0-9 ]/g, ' ').split(' ').filter((w) => w.length > 2);
+      const text = fold(`${p.title} ${p.extract || ''}`);
+      if (p.missing || !a.some((w) => text.includes(w))) p = null;
+      else h.title = p.title.replace(/\s*\((?:chanson|single)[^)]*\)$/i, '');
+    }
     const w = wd.get(p?.pageprops?.wikibase_item) || {};
     const genreNames = (w.genres || []).map((g) => genreLabels.get(g)).filter(Boolean);
     const cats = (p?.categories || []).map((c) => c.title).join(' | ');
@@ -145,6 +216,7 @@ async function main() {
       weeksAtOne: h.weeksAtOne,
       numberOne: h.weeksAtOne > 0,
       yearRank: h.yearRank,
+      charts: h.charts.sort((a, b) => a.year - b.year),
       genre: bucket(genreNames, cats, h),
       genres: genreNames.slice(0, 4),
       description: (p?.extract || '').replace(/\s+/g, ' ').trim(),
@@ -153,7 +225,10 @@ async function main() {
       videos: [],
     };
   });
-  for (const h of out) h.score = Math.round(h.weeksAtOne * 30 + (h.yearRank ? (11 - h.yearRank.rank) * 25 : 0) + Math.log10(1 + h.views60d) * 40);
+  // Popularité : semaines numéro un, rang au Top 100 annuel (bonus si classé deux années), vues Wikipédia.
+  for (const h of out) {
+    h.score = Math.round(h.weeksAtOne * 30 + (h.yearRank ? (101 - h.yearRank.rank) * 4 : 0) + (h.charts.length > 1 ? 60 : 0) + Math.log10(1 + h.views60d) * 40);
+  }
 
   // Ids uniques, et on garde les vidéos d'une exécution précédente.
   const seen = new Set();
@@ -169,7 +244,7 @@ async function main() {
   } catch {}
 
   out.sort((a, b) => a.year - b.year || b.score - a.score);
-  await writeFile(ROOT + 'data/hits.json', JSON.stringify({ generated: new Date().toISOString().slice(0, 10), source: 'Wikipédia FR (CC BY-SA 4.0) et Wikidata', count: out.length, hits: out }, null, 1));
+  await writeFile(ROOT + 'data/hits.json', JSON.stringify({ generated: new Date().toISOString().slice(0, 10), source: 'Top 100 annuel SNEP, Wikipédia FR (CC BY-SA 4.0) et Wikidata', count: out.length, hits: out }, null, 1));
   console.log(`${out.length} tubes écrits dans data/hits.json`);
 }
 

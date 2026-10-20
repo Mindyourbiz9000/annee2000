@@ -89,8 +89,11 @@ async function main() {
   }
   await writeFile(CACHE, JSON.stringify(cache, null, 1));
 
-  for (const h of data.hits) h.videos = cache[h.id] || h.videos || [];
-  await writeFile(ROOT + 'data/hits.json', JSON.stringify(data, null, 1));
+  // On relit hits.json : le catalogue a pu être reconstruit pendant la recherche.
+  const fresh = JSON.parse(await readFile(ROOT + 'data/hits.json', 'utf8'));
+  for (const h of fresh.hits) h.videos = cache[h.id] || h.videos || [];
+  data.hits = fresh.hits;
+  await writeFile(ROOT + 'data/hits.json', JSON.stringify(fresh, null, 1));
   console.log(`${data.hits.filter((h) => h.videos.length).length}/${data.hits.length} tubes avec vidéos.`);
 }
 

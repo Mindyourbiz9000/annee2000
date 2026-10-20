@@ -23,7 +23,7 @@ export async function api({ __host = 'wikipedia', ...params }) {
     return JSON.parse(await readFile(file, 'utf8'));
   } catch {}
 
-  for (let attempt = 0; attempt < 8; attempt++) {
+  for (let attempt = 0; attempt < 12; attempt++) {
     const wait = last + MIN_INTERVAL_MS - Date.now();
     if (wait > 0) await sleep(wait);
     last = Date.now();
@@ -36,6 +36,13 @@ export async function api({ __host = 'wikipedia', ...params }) {
     }
     if (!res.ok) throw new Error(`HTTP ${res.status} pour ${qs}`);
     const data = await res.json();
+    // Serveur de recherche surchargé ou limitation de débit : on patiente et on réessaie.
+    if (data.error && /busy|ratelimit|maxlag|too many/i.test(`${data.error.code} ${data.error.info}`)) {
+      const backoff = Math.min(60000, 3000 * 2 ** attempt);
+      process.stderr.write(`  ${data.error.code}, nouvelle tentative dans ${backoff / 1000}s\n`);
+      await sleep(backoff);
+      continue;
+    }
     if (data.error) throw new Error(`API: ${data.error.info}`);
     await mkdir(CACHE_DIR, { recursive: true });
     await writeFile(file, JSON.stringify(data));

@@ -45,6 +45,7 @@ jobs:
             --include "index.html" --include "404.html" \
             --include "css/*" --include "js/*" \
             --include "data/shows.json" --include "data/extras.json" --include "data/hits.json" \
+            --include "chrome/*" \
             --cache-control "public, max-age=300"
 
       - name: Rafraîchir le cache CloudFront
