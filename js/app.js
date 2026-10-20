@@ -811,7 +811,7 @@ function renderBlindSetup() {
     <section class="hero" style="grid-template-columns:1fr">
       <div>
         <h1>Le <em>blind test</em> des années 2000</h1>
-        <p>On te fait écouter les premières secondes d'un tube, l'image est cachée. Trouve le titre ou l'artiste, puis on dévoile le clip.</p>
+        <p>On te fait écouter les premières secondes d'un tube, l'image est cachée. Trouve le titre (2 pts), l'artiste (1 pt) ou les deux (3 pts), puis on dévoile le clip.</p>
       </div>
     </section>
     <section class="panel controls blind-setup">
@@ -1019,7 +1019,7 @@ function renderBlindRound() {
     if (!g.trim()) return;
     const title = titleMatches(g, h.title);
     const artist = artistMatches(g, mainArtistOf(h.artist)) || artistMatches(g, h.artist);
-    revealBlind(h, title ? 2 : artist ? 1 : 0, g);
+    revealBlind(h, title && artist ? 3 : title ? 2 : artist ? 1 : 0, g);
   });
   $('bt-giveup').addEventListener('click', () => revealBlind(h, 0, ''));
   $('bt-guess').focus();
@@ -1037,7 +1037,7 @@ function revealBlind(h, points, guess) {
   bt.results.push({ h, points, guess });
   document.getElementById('bt-cover').classList.add('is-gone');
   bt.player?.playVideo?.();
-  const verdict = points === 2 ? '🎉 Bravo, c\'est le bon titre ! +2' : points === 1 ? '👍 Bon artiste ! +1' : guess ? '😅 Raté !' : '🙈 Dommage !';
+  const verdict = points === 3 ? '🏆 Titre et artiste ! +3' : points === 2 ? '🎉 Bravo, c\'est le bon titre ! +2' : points === 1 ? '👍 Bon artiste ! +1' : guess ? '😅 Raté !' : '🙈 Dommage !';
   const box = document.getElementById('bt-answer');
   box.hidden = false;
   box.innerHTML = `
@@ -1062,7 +1062,7 @@ function revealBlind(h, points, guess) {
 function renderBlindEnd() {
   try { bt.player?.destroy?.(); } catch {}
   bt.player = null;
-  const max = bt.results.length * 2;
+  const max = bt.results.length * 3;
   const best = store.get('blindBest', 0);
   const pct = max ? bt.score / max : 0;
   if (pct > best) store.set('blindBest', pct);
@@ -1088,8 +1088,9 @@ function renderBlindEnd() {
 // Partie en réseau sans serveur à nous : les navigateurs se connectent directement (WebRTC via PeerJS).
 // L'hôte arbitre tout : il choisit les tubes, reçoit les réponses, compte les points. Rien n'est enregistré.
 const MP_PREFIX = 'milleniales-bt-';
-const MP_POINTS = [5, 4, 3]; // or, argent, bronze ; ensuite 2 (titre) ou 1 (artiste)
+const MP_POINTS = [3, 2, 1]; // bonus de rapidité : or, argent, bronze
 const MEDALS = ['🥇', '🥈', '🥉'];
+const MP_ANSWER_SECONDS = 5; // temps pour répondre une fois l'extrait terminé
 const mp = { peer: null, conns: new Map(), role: null, code: '', name: '', players: new Map(), round: null, queue: [], qi: 0, n: 0, total: 10, everywhere: true, player: null, timer: null, guard: null, host: null };
 
 let peerReady = null;
@@ -1108,6 +1109,8 @@ function loadPeerJs() {
 
 function mpLeave() {
   clearTimeout(mp.timer);
+  clearTimeout(mp.answerTimer);
+  clearInterval(mp.phaseTick);
   clearTimeout(mp.guard);
   try { mp.player?.destroy?.(); } catch {}
   try { mp.peer?.destroy(); } catch {}
@@ -1122,7 +1125,7 @@ function mpLiveMsg() {
   const online = new Set([mp.name, ...[...mp.conns.values()].filter((c) => c.open).map((c) => c.mpName)]);
   const players = [...mp.players.values()].map((p) => {
     const f = r?.found.find((x) => x.name === p.name);
-    return { name: p.name, score: p.score, online: online.has(p.name), medal: f?.medal || '', kind: f?.kind || '', rank: f ? r.found.indexOf(f) + 1 : 0, tries: r?.tries?.get(p.name) || 0 };
+    return { name: p.name, score: p.score, online: online.has(p.name), medal: f?.medal || '', kind: f ? MP_KIND_LABEL[f.kind] : '', rank: f ? r.found.indexOf(f) + 1 : 0, tries: r?.tries?.get(p.name) || 0 };
   }).sort((a, b) => b.score - a.score || (a.rank || 99) - (b.rank || 99));
   return { t: 'live', players, revealed: !!r?.revealed };
 }
@@ -1143,7 +1146,7 @@ function renderMpHost() {
   mpShell(`
     <div class="hero" style="grid-template-columns:1fr;margin:10px 0 0">
       <div><h1>Blind test <em>à plusieurs</em></h1>
-      <p>Crée une partie, envoie le lien à tes amis : chacun répond sur son téléphone. Le plus rapide gagne l'or 🥇 (5 pts), puis l'argent 🥈 (4) et le bronze 🥉 (3). Ensuite : 2 points pour le titre, 1 pour l'artiste.</p></div>
+      <p>Crée une partie, envoie le lien à tes amis : chacun répond sur son téléphone. Titre + artiste : 3 points, titre seul : 2, artiste seul : 1. Les plus rapides gagnent en plus l'or 🥇 (+3), l'argent 🥈 (+2) et le bronze 🥉 (+1).</p></div>
     </div>
     <div class="panel blind__panel">
       <form class="search" id="mp-host-form" autocomplete="off">
@@ -1290,6 +1293,7 @@ function mpStartGame() {
   mpNextRound();
 }
 function mpNextRound() {
+  clearTimeout(mp.answerTimer);
   if (mp.n >= mp.total) return mpSendAll({ t: 'end', board: mpBoard() });
   while (mp.qi < mp.queue.length && !clipOf(mp.queue[mp.qi])) mp.qi += 1;
   if (mp.qi >= mp.queue.length) return mpSendAll({ t: 'end', board: mpBoard() });
@@ -1314,28 +1318,64 @@ function mpSwapSong() {
   mp.n -= 1;
   mpNextRound();
 }
+// Points d'une manche : titre + artiste 3, titre 2, artiste 1 ; bonus de rapidité +3 (or), +2 (argent), +1 (bronze).
+// Qui n'a trouvé qu'une moitié peut continuer pour compléter (sa médaille est gardée).
+const MP_BASE = { both: 3, titre: 2, artiste: 1 };
+const MP_KIND_LABEL = { both: 'titre + artiste', titre: 'titre', artiste: 'artiste' };
 function mpJudge(name, text, conn) {
   const r = mp.round;
   if (!r || r.revealed || !mp.players.has(name)) return;
-  if (r.found.some((f) => f.name === name)) return;
-  const title = titleMatches(text, r.h.title);
-  const artist = !title && (artistMatches(text, mainArtistOf(r.h.artist)) || artistMatches(text, r.h.artist));
   const reply = (m) => (conn ? conn.send(m) : mpOnMessage(m));
+  if (r.closed) return reply({ t: 'judge', ok: false, closed: true });
+  const prev = r.found.find((f) => f.name === name);
+  if (prev?.kind === 'both') return;
+  const title = titleMatches(text, r.h.title) || prev?.kind === 'titre';
+  const artist = artistMatches(text, mainArtistOf(r.h.artist)) || artistMatches(text, r.h.artist) || prev?.kind === 'artiste';
   r.tries.set(name, (r.tries.get(name) || 0) + 1);
-  if (!title && !artist) {
-    reply({ t: 'judge', ok: false });
+  const kind = title && artist ? 'both' : title ? 'titre' : artist ? 'artiste' : null;
+  if (!kind || kind === prev?.kind) {
+    reply({ t: 'judge', ok: false, partial: prev ? MP_KIND_LABEL[prev.kind] : '' });
     return mpSendLive();
   }
-  const rank = r.found.length;
-  const pts = rank < 3 ? MP_POINTS[rank] : title ? 2 : 1;
-  r.found.push({ name, kind: title ? 'titre' : 'artiste', pts, medal: MEDALS[rank] || '' });
-  mp.players.get(name).score += pts;
-  reply({ t: 'judge', ok: true, kind: title ? 'titre' : 'artiste', pts, medal: MEDALS[rank] || '' });
+  let gain;
+  if (prev) {
+    // Complète sa réponse : on ajoute la différence de points de base.
+    gain = MP_BASE[kind] - MP_BASE[prev.kind];
+    prev.kind = kind;
+    prev.pts += gain;
+  } else {
+    const rank = r.found.length;
+    const bonus = MP_POINTS[rank] || 0;
+    gain = MP_BASE[kind] + bonus;
+    r.found.push({ name, kind, pts: gain, medal: MEDALS[rank] || '' });
+  }
+  const entry = r.found.find((f) => f.name === name);
+  mp.players.get(name).score += gain;
+  reply({ t: 'judge', ok: true, kind: MP_KIND_LABEL[kind], complete: kind === 'both', pts: gain, total: entry.pts, medal: entry.medal });
   mpSendLive();
 }
+// Fin de l'extrait côté hôte : 5 secondes pour répondre, puis la manche se ferme (sauf « 10 secondes de plus »).
+function mpOpenAnswerWindow() {
+  const r = mp.round;
+  if (mp.role !== 'host' || !r || r.revealed) return;
+  clearTimeout(mp.answerTimer);
+  mpSendAll({ t: 'phase', phase: 'answer', seconds: MP_ANSWER_SECONDS });
+  mp.answerTimer = setTimeout(() => {
+    r.closed = true;
+    mpReveal();
+  }, MP_ANSWER_SECONDS * 1000 + 400);
+}
+function mpMoreTime() {
+  if (!mp.round || mp.round.revealed) return;
+  clearTimeout(mp.answerTimer);
+  mp.round.closed = false;
+  mpSendAll({ t: 'more', seconds: 10 });
+}
+
 function mpReveal() {
   const r = mp.round;
   if (!r || r.revealed) return;
+  clearTimeout(mp.answerTimer);
   r.revealed = true;
   const h = r.h;
   mp.qi += 1;
@@ -1356,15 +1396,47 @@ function mpOnMessage(msg) {
   } else if (msg.t === 'round') {
     renderMpRound(msg);
   } else if (msg.t === 'more') {
+    clearInterval(mp.phaseTick);
+    mpSetAnswering(true);
+    const t = document.getElementById('mp-timer');
+    if (t) t.textContent = `⏩ +${msg.seconds} secondes d'écoute !`;
     mpListen(msg.seconds, false);
+  } else if (msg.t === 'phase' && msg.phase === 'answer') {
+    clearInterval(mp.phaseTick);
+    let left = msg.seconds;
+    const t = document.getElementById('mp-timer');
+    const draw = () => {
+      if (!t) return;
+      t.textContent = left > 0 ? `⏱ Plus que ${left} s pour répondre !` : '⏱ Temps écoulé !';
+      t.classList.toggle('is-urgent', left <= 3);
+    };
+    draw();
+    mp.phaseTick = setInterval(() => {
+      left -= 1;
+      draw();
+      if (left <= 0) {
+        clearInterval(mp.phaseTick);
+        mpSetAnswering(false);
+      }
+    }, 1000);
   } else if (msg.t === 'judge') {
     const box = document.getElementById('mp-feedback');
     if (!box) return;
     if (msg.ok) {
-      box.innerHTML = `${msg.medal || '✅'} Bien joué : bon ${msg.kind} ! +${msg.pts} point${msg.pts > 1 ? 's' : ''}`;
-      document.getElementById('mp-form').hidden = true;
+      box.innerHTML = `${msg.medal || '✅'} Bien joué : ${esc(msg.kind)} ! +${msg.pts} point${msg.pts > 1 ? 's' : ''}${msg.complete ? '' : ' · trouve aussi l\'autre moitié pour plus de points'}`;
+      const g = document.getElementById('mp-guess');
+      if (msg.complete) {
+        document.getElementById('mp-form').hidden = true;
+        mp.foundMe = true;
+      } else if (g) {
+        g.value = '';
+        g.placeholder = msg.kind === 'titre' ? 'Et l\'artiste ?' : 'Et le titre ?';
+        g.focus();
+      }
+    } else if (msg.closed) {
+      box.textContent = '⏱ Trop tard, le temps est écoulé !';
     } else {
-      box.textContent = '😅 Raté, essaie encore !';
+      box.textContent = msg.partial ? `😅 Raté pour l'autre moitié (tu as déjà le ${msg.partial}).` : '😅 Raté, essaie encore !';
       const g = document.getElementById('mp-guess');
       if (g) { g.value = ''; g.focus(); }
     }
@@ -1377,9 +1449,22 @@ function mpOnMessage(msg) {
   }
 }
 
+// Ouvre ou ferme la saisie de la réponse (sauf pour qui a déjà trouvé).
+function mpSetAnswering(open) {
+  const g = document.getElementById('mp-guess');
+  const b = document.querySelector('#mp-form button');
+  if (!g || mp.foundMe) return;
+  g.disabled = !open;
+  if (b) b.disabled = !open;
+  g.placeholder = open ? 'Le titre ou l\'artiste…' : 'Temps écoulé…';
+  if (open) g.focus();
+}
+
 function renderMpRound(msg) {
   clearTimeout(mp.timer);
   clearTimeout(mp.guard);
+  clearInterval(mp.phaseTick);
+  mp.foundMe = false;
   const isHost = mp.role === 'host';
   const playsHere = isHost || msg.everywhere;
   mp.round = isHost ? mp.round : { id: msg.id };
@@ -1400,6 +1485,7 @@ function renderMpRound(msg) {
         <input id="mp-guess" type="search" placeholder="Le titre ou l'artiste…">
         <button class="gel" type="submit">Valider</button>
       </form>
+      <p class="mp-timer" id="mp-timer">🎧 Écoute bien…</p>
       <p class="blind__verdict" id="mp-feedback"></p>
       ${isHost ? `<div class="actions mp-host-actions">
         <button class="gel gel--lime" type="button" id="mp-more">⏩ 10 secondes de plus pour tous</button>
@@ -1418,7 +1504,7 @@ function renderMpRound(msg) {
   });
   document.getElementById('mp-guess').focus();
   if (isHost) {
-    document.getElementById('mp-more').addEventListener('click', () => mpSendAll({ t: 'more', seconds: 10 }));
+    document.getElementById('mp-more').addEventListener('click', mpMoreTime);
     document.getElementById('mp-reveal').addEventListener('click', mpReveal);
   }
   if (playsHere) mpPlay(msg.videoId, msg.duration);
@@ -1445,8 +1531,11 @@ async function mpPlay(videoId, duration) {
     status(`${left}`);
     const tick = () => {
       left -= 1;
-      if (left <= 0) { mp.player?.pauseVideo?.(); status('À vous !'); }
-      else { status(`${left}`); mp.timer = setTimeout(tick, 1000); }
+      if (left <= 0) {
+        mp.player?.pauseVideo?.();
+        status('À vous !');
+        if (mp.role === 'host') mpOpenAnswerWindow();
+      } else { status(`${left}`); mp.timer = setTimeout(tick, 1000); }
     };
     mp.timer = setTimeout(tick, 1000);
   };
@@ -1511,6 +1600,7 @@ function mpBoardHTML(board, gains = []) {
 function renderMpReveal(msg) {
   clearTimeout(mp.timer);
   clearTimeout(mp.guard);
+  clearInterval(mp.phaseTick);
   if (mp.round) mp.round.revealedLocal = true;
   document.getElementById('mp-cover')?.classList.add('is-gone');
   mp.player?.playVideo?.();

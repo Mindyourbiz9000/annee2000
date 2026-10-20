@@ -473,3 +473,6 @@ img { max-width: 100%; display: block; }
   .mp-layout { grid-template-columns: 1fr; }
   .mp-live { position: static; }
 }
+.mp-timer { margin: 0; font-family: VT323, monospace; font-size: 26px; color: var(--aqua); }
+.mp-timer.is-urgent { color: var(--pink); animation: twinkle 1s ease-in-out infinite; }
+#mp-guess:disabled { opacity: .55; }
