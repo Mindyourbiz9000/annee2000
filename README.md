@@ -58,8 +58,10 @@ Les vidéos sont seulement intégrées via le lecteur YouTube (`youtube-nocookie
 
 ## Déploiement
 
-Le workflow `.github/workflows/pages.yml` publie le site sur GitHub Pages à chaque push sur `main`
-(activer Pages dans *Settings → Pages → Source : GitHub Actions*).
+Le site est hébergé sur AWS : bucket S3 privé `annee2000-site-158346964722` (Paris) servi par CloudFront
+(https://d22mgjxgcxd3e3.cloudfront.net). Le workflow `.github/workflows/deploy-aws.yml` le met à jour à chaque push :
+il se connecte à AWS par OIDC avec le rôle `annee2000-deploy` (aucune clé stockée sur GitHub), synchronise les fichiers
+du site et vide le cache CloudFront.
 
 ## Licences
 
