@@ -803,6 +803,61 @@ function artistMatches(answer, artist) {
   return ok.some((w) => w.length >= 4) || ok.length === t.length;
 }
 
+/* --- Écran du blind test : un seul compte à rebours, au centre de la télé --- */
+const ANSWER_SECONDS = 10; // temps pour répondre une fois l'extrait terminé
+let screenTick = null;
+const RING = 2 * Math.PI * 54;
+const coverHTML = (id, label) => `
+  <div class="blind__cover" id="${id}">
+    <span class="noise"></span>
+    <div class="blind__timer">
+      <svg class="blind__ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="blind__ring-bg" cx="60" cy="60" r="54"/><circle class="blind__ring-fg" cx="60" cy="60" r="54" style="stroke-dasharray:${RING};stroke-dashoffset:${RING}"/></svg>
+      <span class="blind__num">?</span>
+      <span class="blind__label">${label}</span>
+    </div>
+  </div>`;
+function stopScreenCountdown() {
+  clearInterval(screenTick);
+  screenTick = null;
+}
+// Message fixe sur l'écran (chargement, extrait indisponible…).
+function screenMessage(cover, label, num = '?') {
+  if (!cover) return;
+  stopScreenCountdown();
+  const t = cover.querySelector('.blind__timer');
+  t.classList.remove('is-urgent', 'is-answer');
+  t.querySelector('.blind__num').textContent = num;
+  t.querySelector('.blind__label').textContent = label;
+  t.querySelector('.blind__ring-fg').style.strokeDashoffset = RING;
+}
+// Compte à rebours : chiffre + anneau qui se vide ; les 5 dernières secondes pulsent en rose.
+function screenCountdown(cover, seconds, { label, answer = false, onEnd }) {
+  if (!cover) return;
+  stopScreenCountdown();
+  const t = cover.querySelector('.blind__timer');
+  const num = t.querySelector('.blind__num');
+  const ring = t.querySelector('.blind__ring-fg');
+  t.querySelector('.blind__label').textContent = label;
+  t.classList.toggle('is-answer', answer);
+  let left = seconds;
+  const draw = () => {
+    num.textContent = left > 0 ? String(left) : '0';
+    ring.style.strokeDashoffset = String(RING * (1 - left / seconds));
+    t.classList.toggle('is-urgent', answer && left > 0 && left <= 5);
+  };
+  ring.style.transition = 'none';
+  ring.style.strokeDashoffset = '0';
+  requestAnimationFrame(() => { ring.style.transition = ''; draw(); });
+  screenTick = setInterval(() => {
+    left -= 1;
+    draw();
+    if (left <= 0) {
+      stopScreenCountdown();
+      onEnd?.();
+    }
+  }, 1000);
+}
+
 function renderBlindSetup() {
   setMode('music');
   document.title = 'Blind test · Les années milléniales';
@@ -817,7 +872,8 @@ function renderBlindSetup() {
     <section class="panel controls blind-setup">
       <div class="filters">
         <span class="muted">Durée de l'extrait</span>
-        <div class="chips">${[5, 10].map((d) => `<button class="chip" type="button" data-bt-dur="${d}" aria-pressed="${bt.duration === d}">${d} secondes</button>`).join('')}</div>
+        <div class="chips">${[5, 10, 20].map((d) => `<button class="chip" type="button" data-bt-dur="${d}" aria-pressed="${bt.duration === d}">${d} secondes</button>`).join('')}</div>
+        <span class="muted">puis ${ANSWER_SECONDS} s pour répondre</span>
       </div>
       <div class="filters">
         <span class="muted">Difficulté</span>
@@ -865,8 +921,8 @@ function startBlindGame() {
 }
 
 function renderBlindRound() {
-  clearTimeout(bt.timer);
   clearTimeout(bt.guard);
+  stopScreenCountdown();
   if (bt.results.length >= bt.rounds) return renderBlindEnd();
   // Tube suivant de la file qui a encore un clip lisible.
   while (bt.i < bt.queue.length && !clipOf(bt.queue[bt.i])) bt.i += 1;
@@ -882,74 +938,44 @@ function renderBlindRound() {
       <div class="tv tv--wide">
         <div class="tv__screen is-playing" id="bt-screen">
           <div id="bt-player"></div>
-          <div class="blind__cover" id="bt-cover">
-            <span class="noise"></span>
-            <span class="blind__q" id="bt-q">?</span>
-            <span class="blind__count" id="bt-count"></span>
-          </div>
+          ${coverHTML('bt-cover', 'Chargement…')}
         </div>
         <span class="tv__brand">MILLÉNIALES</span>
         <span class="tv__knobs" aria-hidden="true"><i></i><i></i></span>
       </div>
       <div class="blind__panel panel">
-        <div class="actions" id="bt-listen">
-          <button class="gel gel--zap" type="button" id="bt-play" hidden>▶ Écouter l'extrait</button>
-          <button class="gel gel--lime" type="button" id="bt-more" hidden>⏩ 10 secondes de plus</button>
-          <button class="gel gel--ghost" type="button" id="bt-replay" hidden>🔁 Réécouter</button>
-        </div>
         <form class="search" id="bt-form" autocomplete="off">
           <label class="skip" for="bt-guess">Ta réponse</label>
-          <input id="bt-guess" type="search" placeholder="Le titre ou l'artiste…">
+          <input id="bt-guess" type="search" placeholder="Le titre et/ou l'artiste…">
           <button class="gel" type="submit">Valider</button>
         </form>
-        <div class="actions"><button class="gel gel--ghost gel--small" type="button" id="bt-giveup">Je donne ma langue au chat</button></div>
+        <div class="actions" id="bt-actions">
+          <button class="gel gel--zap" type="button" id="bt-play" hidden>▶ Écouter l'extrait</button>
+          <button class="gel gel--ghost gel--small" type="button" id="bt-giveup">Je donne ma langue au chat</button>
+        </div>
         <div id="bt-answer" class="blind__answer" hidden></div>
       </div>
     </section>`;
 
   const $ = (id) => document.getElementById(id);
-  const status = (txt) => { $('bt-count').textContent = txt; };
-  const show = (id, on) => { $(id).hidden = !on; };
+  const cover = $('bt-cover');
   let playing = false;
   let ready = false;
-  let pending = 0; // secondes à écouter au prochain démarrage de la lecture
+  let started = false; // le compte à rebours d'écoute n'est lancé qu'une fois
 
-  // Écoute pendant `seconds` à partir de la position actuelle, puis pause.
-  const countdown = (seconds) => {
-    clearTimeout(bt.timer);
-    let left = seconds;
-    status(`${left}`);
-    show('bt-more', false);
-    show('bt-replay', false);
-    const tick = () => {
-      if (bt.revealed) return;
-      left -= 1;
-      if (left <= 0) {
-        bt.player?.pauseVideo?.();
-        status('À toi !');
-        show('bt-more', true);
-        show('bt-replay', true);
-      } else {
-        status(`${left}`);
-        bt.timer = setTimeout(tick, 1000);
-      }
-    };
-    bt.timer = setTimeout(tick, 1000);
-  };
-  const listenFor = (seconds, fromStart) => {
-    pending = seconds;
-    if (fromStart) bt.player?.seekTo?.(0, true);
-    bt.player?.playVideo?.();
+  // Écoute terminée : la musique s'arrête et on a 10 secondes pour répondre.
+  const answerWindow = () => {
+    bt.player?.pauseVideo?.();
+    screenCountdown(cover, ANSWER_SECONDS, { label: 'À toi !', answer: true, onEnd: () => revealBlind(h, 0, '', true) });
   };
 
   // Extrait en panne : on note la vidéo et on passe au tube suivant, sans changer de manche.
   const swapSong = () => {
     clearTimeout(bt.guard);
-    clearTimeout(bt.timer);
     if (bt.revealed) return;
     const c = clipOf(h);
     if (c) bt.broken.add(c.youtubeId);
-    status('Extrait indisponible, on change de tube…');
+    screenMessage(cover, 'Extrait indisponible, on change de tube…');
     bt.i += 1;
     while (bt.i < bt.queue.length && !clipOf(bt.queue[bt.i])) bt.i += 1;
     if (bt.i >= bt.queue.length) return renderBlindEnd();
@@ -958,28 +984,16 @@ function renderBlindRound() {
   };
 
   const start = async () => {
-    status('Chargement…');
+    screenMessage(cover, 'Chargement…');
     playing = false;
     ready = false;
-    show('bt-play', false);
+    started = false;
+    $('bt-play').hidden = true;
     const YT = await loadYouTubeApi();
     if (bt.revealed) return;
-    const id = clipOf(h).youtubeId;
-    pending = bt.duration;
-    const onState = (e) => {
-      if (e.data === YT.PlayerState.PLAYING && !bt.revealed) {
-        playing = true;
-        clearTimeout(bt.guard);
-        show('bt-play', false);
-        if (pending) {
-          countdown(pending);
-          pending = 0;
-        }
-      }
-    };
     try { bt.player?.destroy?.(); } catch {}
     bt.player = new YT.Player('bt-player', {
-      videoId: id,
+      videoId: clipOf(h).youtubeId,
       playerVars: { autoplay: 1, controls: 0, disablekb: 1, modestbranding: 1, rel: 0, playsinline: 1, start: 0 },
       events: {
         onReady: (e) => {
@@ -989,17 +1003,24 @@ function renderBlindRound() {
           // Lecture automatique bloquée par le navigateur : on propose le bouton.
           bt.guard = setTimeout(() => {
             if (playing || bt.revealed) return;
-            const st = bt.player?.getPlayerState?.();
-            if (st === YT.PlayerState.BUFFERING) {
+            if (bt.player?.getPlayerState?.() === YT.PlayerState.BUFFERING) {
               bt.guard = setTimeout(() => { if (!playing) swapSong(); }, 8000);
               return;
             }
-            status('Appuie sur ▶ pour écouter');
-            show('bt-play', true);
-            bt.guard = setTimeout(() => { if (!playing && $('bt-play')?.hidden) swapSong(); }, 15000);
+            screenMessage(cover, 'Appuie sur ▶ pour écouter', '▶');
+            $('bt-play').hidden = false;
           }, 4000);
         },
-        onStateChange: onState,
+        onStateChange: (e) => {
+          if (e.data !== YT.PlayerState.PLAYING || bt.revealed) return;
+          playing = true;
+          clearTimeout(bt.guard);
+          $('bt-play').hidden = true;
+          if (!started) {
+            started = true;
+            screenCountdown(cover, bt.duration, { label: 'Écoute…', onEnd: answerWindow });
+          }
+        },
         onError: swapSong,
       },
     });
@@ -1008,11 +1029,10 @@ function renderBlindRound() {
   };
 
   $('bt-play').addEventListener('click', () => {
-    show('bt-play', false);
-    listenFor(bt.duration, true);
+    $('bt-play').hidden = true;
+    bt.player?.seekTo?.(0, true);
+    bt.player?.playVideo?.();
   });
-  $('bt-more').addEventListener('click', () => listenFor(10, false));
-  $('bt-replay').addEventListener('click', () => listenFor(bt.duration, true));
   $('bt-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const g = $('bt-guess').value;
@@ -1028,16 +1048,16 @@ function renderBlindRound() {
 
 const mainArtistOf = (a) => a.split(/\s+(?:featuring|feat\.?|ft\.?|et|&|avec|vs\.?|x)\s+|\s*[/,]\s*/i)[0];
 
-function revealBlind(h, points, guess) {
+function revealBlind(h, points, guess, timeout = false) {
   if (bt.revealed) return;
   bt.revealed = true;
-  clearTimeout(bt.timer);
   clearTimeout(bt.guard);
+  stopScreenCountdown();
   bt.score += points;
   bt.results.push({ h, points, guess });
   document.getElementById('bt-cover').classList.add('is-gone');
   bt.player?.playVideo?.();
-  const verdict = points === 3 ? '🏆 Titre et artiste ! +3' : points === 2 ? '🎉 Bravo, c\'est le bon titre ! +2' : points === 1 ? '👍 Bon artiste ! +1' : guess ? '😅 Raté !' : '🙈 Dommage !';
+  const verdict = points === 3 ? '🏆 Titre et artiste ! +3' : points === 2 ? '🎉 Bravo, c\'est le bon titre ! +2' : points === 1 ? '👍 Bon artiste ! +1' : guess ? '😅 Raté !' : timeout ? '⏱ Temps écoulé !' : '🙈 Dommage !';
   const box = document.getElementById('bt-answer');
   box.hidden = false;
   box.innerHTML = `
@@ -1050,8 +1070,7 @@ function revealBlind(h, points, guess) {
       <a class="gel gel--ghost gel--small" href="#/m/${encodeURIComponent(h.id)}">Voir la fiche du tube</a>
     </div>`;
   document.getElementById('bt-form').hidden = true;
-  document.getElementById('bt-giveup').hidden = true;
-  document.getElementById('bt-listen').hidden = true;
+  document.getElementById('bt-actions').hidden = true;
   document.getElementById('bt-next').addEventListener('click', () => {
     bt.player?.stopVideo?.();
     bt.i += 1;
@@ -1090,7 +1109,6 @@ function renderBlindEnd() {
 const MP_PREFIX = 'milleniales-bt-';
 const MP_POINTS = [3, 2, 1]; // bonus de rapidité : or, argent, bronze
 const MEDALS = ['🥇', '🥈', '🥉'];
-const MP_ANSWER_SECONDS = 5; // temps pour répondre une fois l'extrait terminé
 const mp = { peer: null, conns: new Map(), role: null, code: '', name: '', players: new Map(), round: null, queue: [], qi: 0, n: 0, total: 10, everywhere: true, player: null, timer: null, guard: null, host: null };
 
 let peerReady = null;
@@ -1110,7 +1128,7 @@ function loadPeerJs() {
 function mpLeave() {
   clearTimeout(mp.timer);
   clearTimeout(mp.answerTimer);
-  clearInterval(mp.phaseTick);
+  stopScreenCountdown();
   clearTimeout(mp.guard);
   try { mp.player?.destroy?.(); } catch {}
   try { mp.peer?.destroy(); } catch {}
@@ -1155,7 +1173,7 @@ function renderMpHost() {
         <button class="gel gel--zap" type="submit">Créer la partie</button>
       </form>
       <label class="check"><input type="checkbox" id="mp-everywhere" checked> La musique joue sur le téléphone de chaque joueur (décoche si vous êtes tous dans la même pièce : seul l'écran de l'hôte joue)</label>
-      <p class="muted">Réglages repris du blind test solo : ${bt.duration} s d'extrait, difficulté ${BT_LEVELS[bt.level][0].toLowerCase()}${bt.genre ? `, ${GENRES[bt.genre]}` : ''}${bt.year ? `, ${bt.year}` : ''}, ${bt.rounds} manches. <a href="#/blindtest">Changer</a></p>
+      <p class="muted">Réglages repris du blind test solo : ${bt.duration} s d'extrait puis ${ANSWER_SECONDS} s pour répondre, difficulté ${BT_LEVELS[bt.level][0].toLowerCase()}${bt.genre ? `, ${GENRES[bt.genre]}` : ''}${bt.year ? `, ${bt.year}` : ''}, ${bt.rounds} manches. <a href="#/blindtest">Changer</a></p>
     </div>`);
   document.getElementById('mp-host-form').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1354,22 +1372,17 @@ function mpJudge(name, text, conn) {
   reply({ t: 'judge', ok: true, kind: MP_KIND_LABEL[kind], complete: kind === 'both', pts: gain, total: entry.pts, medal: entry.medal });
   mpSendLive();
 }
-// Fin de l'extrait côté hôte : 5 secondes pour répondre, puis la manche se ferme (sauf « 10 secondes de plus »).
+// Fin de l'extrait côté hôte : 10 secondes pour répondre, puis la manche se ferme et la réponse s'affiche.
 function mpOpenAnswerWindow() {
   const r = mp.round;
-  if (mp.role !== 'host' || !r || r.revealed) return;
+  if (mp.role !== 'host' || !r || r.revealed || r.answering) return;
+  r.answering = true;
   clearTimeout(mp.answerTimer);
-  mpSendAll({ t: 'phase', phase: 'answer', seconds: MP_ANSWER_SECONDS });
+  mpSendAll({ t: 'phase', phase: 'answer', seconds: ANSWER_SECONDS });
   mp.answerTimer = setTimeout(() => {
     r.closed = true;
     mpReveal();
-  }, MP_ANSWER_SECONDS * 1000 + 400);
-}
-function mpMoreTime() {
-  if (!mp.round || mp.round.revealed) return;
-  clearTimeout(mp.answerTimer);
-  mp.round.closed = false;
-  mpSendAll({ t: 'more', seconds: 10 });
+  }, ANSWER_SECONDS * 1000 + 400);
 }
 
 function mpReveal() {
@@ -1395,30 +1408,15 @@ function mpOnMessage(msg) {
     if (!mp.round) renderMpLobby();
   } else if (msg.t === 'round') {
     renderMpRound(msg);
-  } else if (msg.t === 'more') {
-    clearInterval(mp.phaseTick);
-    mpSetAnswering(true);
-    const t = document.getElementById('mp-timer');
-    if (t) t.textContent = `⏩ +${msg.seconds} secondes d'écoute !`;
-    mpListen(msg.seconds, false);
-  } else if (msg.t === 'phase' && msg.phase === 'answer') {
-    clearInterval(mp.phaseTick);
-    let left = msg.seconds;
-    const t = document.getElementById('mp-timer');
-    const draw = () => {
-      if (!t) return;
-      t.textContent = left > 0 ? `⏱ Plus que ${left} s pour répondre !` : '⏱ Temps écoulé !';
-      t.classList.toggle('is-urgent', left <= 3);
-    };
-    draw();
-    mp.phaseTick = setInterval(() => {
-      left -= 1;
-      draw();
-      if (left <= 0) {
-        clearInterval(mp.phaseTick);
-        mpSetAnswering(false);
-      }
-    }, 1000);
+  } else if (msg.t === 'phase') {
+    // L'hôte donne le tempo à tout le monde : écoute, puis 10 secondes pour répondre.
+    const cover = document.getElementById('mp-cover');
+    if (msg.phase === 'listen') {
+      screenCountdown(cover, msg.seconds, { label: 'Écoute…', onEnd: () => { if (mp.role === 'host') mpOpenAnswerWindow(); } });
+    } else if (msg.phase === 'answer') {
+      mp.player?.pauseVideo?.();
+      screenCountdown(cover, msg.seconds, { label: 'À vous !', answer: true, onEnd: () => mpSetAnswering(false) });
+    }
   } else if (msg.t === 'judge') {
     const box = document.getElementById('mp-feedback');
     if (!box) return;
@@ -1456,14 +1454,13 @@ function mpSetAnswering(open) {
   if (!g || mp.foundMe) return;
   g.disabled = !open;
   if (b) b.disabled = !open;
-  g.placeholder = open ? 'Le titre ou l\'artiste…' : 'Temps écoulé…';
+  g.placeholder = open ? 'Le titre et/ou l\'artiste…' : 'Temps écoulé…';
   if (open) g.focus();
 }
 
 function renderMpRound(msg) {
-  clearTimeout(mp.timer);
   clearTimeout(mp.guard);
-  clearInterval(mp.phaseTick);
+  stopScreenCountdown();
   mp.foundMe = false;
   const isHost = mp.role === 'host';
   const playsHere = isHost || msg.everywhere;
@@ -1474,7 +1471,7 @@ function renderMpRound(msg) {
     <div class="tv tv--wide">
       <div class="tv__screen is-playing" id="mp-screen">
         <div id="mp-player"></div>
-        <div class="blind__cover" id="mp-cover"><span class="noise"></span><span class="blind__q">?</span><span class="blind__count" id="mp-count">${playsHere ? 'Chargement…' : 'Écoute l\'écran de l\'hôte !'}</span></div>
+        ${coverHTML('mp-cover', playsHere ? 'Chargement…' : 'Écoute l\'écran de l\'hôte !')}
       </div>
       <span class="tv__brand">MILLÉNIALES</span><span class="tv__knobs" aria-hidden="true"><i></i><i></i></span>
     </div>
@@ -1482,15 +1479,11 @@ function renderMpRound(msg) {
       ${playsHere ? '<div class="actions"><button class="gel gel--zap" type="button" id="mp-play" hidden>▶ Écouter</button></div>' : ''}
       <form class="search" id="mp-form" autocomplete="off">
         <label class="skip" for="mp-guess">Ta réponse</label>
-        <input id="mp-guess" type="search" placeholder="Le titre ou l'artiste…">
+        <input id="mp-guess" type="search" placeholder="Le titre et/ou l'artiste…">
         <button class="gel" type="submit">Valider</button>
       </form>
-      <p class="mp-timer" id="mp-timer">🎧 Écoute bien…</p>
       <p class="blind__verdict" id="mp-feedback"></p>
-      ${isHost ? `<div class="actions mp-host-actions">
-        <button class="gel gel--lime" type="button" id="mp-more">⏩ 10 secondes de plus pour tous</button>
-        <button class="gel gel--ghost" type="button" id="mp-reveal">👀 Révéler la réponse</button>
-      </div>` : '<p class="muted">L\'hôte décide quand on ajoute 10 secondes ou quand on révèle la réponse.</p>'}
+      ${isHost ? '<div class="actions"><button class="gel gel--ghost gel--small" type="button" id="mp-reveal">👀 Révéler la réponse maintenant</button></div>' : ''}
     </div>
     </div>
     <aside class="panel mp-live" id="mp-live" aria-live="polite"><h3>🏆 En direct</h3><p class="muted">Chargement des joueurs…</p></aside>
@@ -1504,44 +1497,21 @@ function renderMpRound(msg) {
   });
   document.getElementById('mp-guess').focus();
   if (isHost) {
-    document.getElementById('mp-more').addEventListener('click', mpMoreTime);
     document.getElementById('mp-reveal').addEventListener('click', mpReveal);
   }
-  if (playsHere) mpPlay(msg.videoId, msg.duration);
+  if (playsHere) mpPlay(msg.videoId);
 }
 
-// Lecteur de l'extrait (même principe que le solo : image cachée, compte à rebours, pause).
-let mpPending = 0;
-function mpListen(seconds, fromStart) {
-  if (!mp.player?.playVideo) return;
-  mpPending = seconds;
-  if (fromStart) mp.player.seekTo(0, true);
-  mp.player.playVideo();
-}
-async function mpPlay(videoId, duration) {
+// Lecteur de l'extrait : il joue dès que possible ; c'est l'hôte qui donne le départ du compte à rebours.
+async function mpPlay(videoId) {
   const YT = await loadYouTubeApi();
-  const status = (t) => { const el = document.getElementById('mp-count'); if (el) el.textContent = t; };
+  const cover = () => document.getElementById('mp-cover');
   let playing = false;
   let ready = false;
-  mpPending = duration;
   try { mp.player?.destroy?.(); } catch {}
-  const countdown = (sec) => {
-    clearTimeout(mp.timer);
-    let left = sec;
-    status(`${left}`);
-    const tick = () => {
-      left -= 1;
-      if (left <= 0) {
-        mp.player?.pauseVideo?.();
-        status('À vous !');
-        if (mp.role === 'host') mpOpenAnswerWindow();
-      } else { status(`${left}`); mp.timer = setTimeout(tick, 1000); }
-    };
-    mp.timer = setTimeout(tick, 1000);
-  };
   const failed = () => {
-    if (mp.role === 'host') { status('Extrait indisponible, on change de tube…'); setTimeout(mpSwapSong, 800); }
-    else status('Pas de son ici : écoute l\'écran de l\'hôte !');
+    if (mp.role === 'host') { screenMessage(cover(), 'Extrait indisponible, on change de tube…'); setTimeout(mpSwapSong, 800); }
+    else screenMessage(cover(), 'Pas de son ici : écoute l\'écran de l\'hôte !');
   };
   mp.player = new YT.Player('mp-player', {
     videoId,
@@ -1552,11 +1522,11 @@ async function mpPlay(videoId, duration) {
         e.target.playVideo();
         mp.guard = setTimeout(() => {
           if (playing) return;
-          status('Appuie sur ▶ pour écouter');
+          if (!mp.round?.listening) screenMessage(cover(), 'Appuie sur ▶ pour écouter', '▶');
           const b = document.getElementById('mp-play');
           if (b) {
             b.hidden = false;
-            b.onclick = () => { b.hidden = true; mpListen(mpPending || duration, true); };
+            b.onclick = () => { b.hidden = true; mp.player?.playVideo?.(); };
           }
         }, 4000);
       },
@@ -1565,7 +1535,11 @@ async function mpPlay(videoId, duration) {
         playing = true;
         clearTimeout(mp.guard);
         document.getElementById('mp-play')?.setAttribute('hidden', '');
-        if (mpPending) { countdown(mpPending); mpPending = 0; }
+        // L'hôte lance le compte à rebours d'écoute pour tout le monde, une seule fois par manche.
+        if (mp.role === 'host' && mp.round && !mp.round.listening) {
+          mp.round.listening = true;
+          mpSendAll({ t: 'phase', phase: 'listen', seconds: bt.duration });
+        }
       },
       onError: failed,
     },
@@ -1598,9 +1572,8 @@ function mpBoardHTML(board, gains = []) {
   }).join('')}</ol>`;
 }
 function renderMpReveal(msg) {
-  clearTimeout(mp.timer);
   clearTimeout(mp.guard);
-  clearInterval(mp.phaseTick);
+  stopScreenCountdown();
   if (mp.round) mp.round.revealedLocal = true;
   document.getElementById('mp-cover')?.classList.add('is-gone');
   mp.player?.playVideo?.();
@@ -1649,6 +1622,7 @@ function setMode(mode) {
 function route() {
   // On quitte une partie de blind test : on coupe le son.
   clearTimeout(bt.timer);
+  stopScreenCountdown();
   try { bt.player?.destroy?.(); } catch {}
   bt.player = null;
   mpLeave();
